@@ -3,6 +3,6 @@ module.exports = {
   addons: ["@storybook/addon-links", "@storybook/addon-essentials"],
   framework: "@storybook/web-components",
   core: {
-    builder: "storybook-builder-vite",
-  },
+    builder: "@storybook/builder-vite"
+  }
 };

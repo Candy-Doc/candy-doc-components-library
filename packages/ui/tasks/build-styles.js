@@ -8,7 +8,7 @@ const cssnano = require("cssnano");
 
 const sass = require("sass");
 
-const componentPath = path.join(__dirname, "../", `src/components/**/*`);
+const componentPath = path.join(__dirname, "../", `src/components/**/*`).replace(/\\/g, '/');
 
 const styleFilesCss = glob.sync(componentPath + ".css");
 const styleFilesScss = glob.sync(componentPath + ".scss");
@@ -56,16 +56,12 @@ styleFiles.forEach((filePath) => {
                  @tailwind utilities;
                  ${styleOutput}`;
 
-  //   const tailwindConfig = require('./tailwind.config.js');
+  const tailwindConfig = require('../tailwind.config.js');
 
-  const tailwindConfig = {
-    enabled: true,
-    content: [
-      /* the files you want tailwind to purge from nearby to the original css/scss file */
-      `${parsedFilePath.dir}/**/*.{ts,css}`,
-    ],
-    options: {},
-  };
+  tailwindConfig.content = 
+  [
+    `${parsedFilePath.dir}/**/*.{ts,css}`
+  ];
 
   postcss([autoprefixer, require("tailwindcss")(tailwindConfig), cssnano])
     // the 'from' property in the options makes sure that any
@@ -87,4 +83,4 @@ styleFiles.forEach((filePath) => {
     });
 });
 
-console.log("Lit tailwind CSS generated");
+console.log("(CandyDoc) Lit tailwind CSS generated.");
