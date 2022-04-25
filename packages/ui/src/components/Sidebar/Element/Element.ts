@@ -5,6 +5,7 @@ import styles from "./element.css.js";
 export type CandySidebarElementProps = {
   label: string;
   active: boolean;
+  disabled: boolean;
 };
 
 @customElement("candy-sidebar-element")
