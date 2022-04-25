@@ -28,11 +28,8 @@ export class CandySidebarElement extends LitElement {
     return html`
       <button
         href="#"
-        class=${
-          "w-full mb-1 rounded-md py-2 px-2 flex items-center text-base font-medium disabled:bg-slate-50 disabled:text-slate-500 disabled:border-slate-200 disabled:shadow-none" +
-          " " +
-          styleClass
-        }"}
+        class="${"w-full mb-1 rounded-md py-2 px-2 flex items-center text-base font-medium disabled:bg-slate-50 disabled:text-slate-500 disabled:border-slate-200 disabled:shadow-none " +
+        styleClass}"
         ?disabled="${this.disabled}"
       >
         <div class="mr-4"><slot name="icon" /></div>
