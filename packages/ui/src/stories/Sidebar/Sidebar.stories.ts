@@ -27,7 +27,6 @@ const elements = [
 export default {
   title: "Sidebar",
   component: "candy-sidebar",
-  argTypes: {},
 };
 
 const Template: Story = () =>
