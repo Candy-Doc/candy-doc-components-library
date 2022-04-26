@@ -32,7 +32,7 @@ export class CandySidebarElement extends LitElement {
         styleClass}"
         ?disabled="${this.disabled}"
       >
-        <div class="mr-4"><slot name="icon" /></div>
+        <div class="mr-4"><slot name="icon"></slot></div>
         ${this.label}
       </button>
     `;

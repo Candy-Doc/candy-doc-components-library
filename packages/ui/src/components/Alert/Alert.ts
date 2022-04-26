@@ -23,7 +23,7 @@ export class CandyAlert extends LitElement {
         <div class=${"flex-shrink-0 " + currentAlert.iconColor}>${currentAlert.icon}</div>
         <div class="ml-3">
           <p class=${"text-sm " + currentAlert.textColor}>
-            <slot name="content" />
+            <slot name="content"></slot>
           </p>
         </div>
       </div>

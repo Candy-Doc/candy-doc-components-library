@@ -12,6 +12,7 @@
     "lint": "turbo run lint"
   },
   "devDependencies": {
+    "eslint": "^8.14.0",
     "turbo": "^1.2.5"
   },
   "packageManager": "yarn@1.22.18",

@@ -8,7 +8,7 @@ const cssnano = require("cssnano");
 
 const sass = require("sass");
 
-const componentPath = path.join(__dirname, "../", `src/components/**/*`).replace(/\\/g, '/');
+const componentPath = path.join(__dirname, "../", `src/components/**/*`).replace(/\\/g, "/");
 
 const styleFilesCss = glob.sync(componentPath + ".css");
 const styleFilesScss = glob.sync(componentPath + ".scss");
@@ -56,12 +56,9 @@ styleFiles.forEach((filePath) => {
                  @tailwind utilities;
                  ${styleOutput}`;
 
-  const tailwindConfig = require('../tailwind.config.js');
+  const tailwindConfig = require("../tailwind.config.js");
 
-  tailwindConfig.content = 
-  [
-    `${parsedFilePath.dir}/**/*.{ts,css}`
-  ];
+  tailwindConfig.content = [`${parsedFilePath.dir}/**/*.{ts,css}`];
 
   postcss([autoprefixer, require("tailwindcss")(tailwindConfig), cssnano])
     // the 'from' property in the options makes sure that any
