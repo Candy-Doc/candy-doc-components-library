@@ -3,3 +3,4 @@ dist
 types
 **/*.css.ts
 **/build-styles.js
+storybook-static
