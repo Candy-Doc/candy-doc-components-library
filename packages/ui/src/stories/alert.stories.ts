@@ -14,12 +14,12 @@ export default {
   component: "candy-alert",
   args: {
     text: "I'm the text inside the alert",
+    type: AlertTypes.Info,
   },
   argTypes: {
     type: {
       options: Object.values(AlertTypes),
       control: { type: "select" },
-      defaultValue: AlertTypes.Info,
     },
   },
 } as Meta<CandyAlertProps & CandyAlertControls>;

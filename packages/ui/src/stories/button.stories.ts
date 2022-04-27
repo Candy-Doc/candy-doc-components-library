@@ -10,17 +10,17 @@ export default {
   component: "candy-button",
   args: {
     label: "Click me",
+    size: ButtonSizes.md,
+    type: ButtonTypes.Primary,
   },
   argTypes: {
     size: {
       options: Object.values(ButtonSizes),
       control: { type: "select" },
-      defaultValue: ButtonSizes.md,
     },
     type: {
       options: Object.values(ButtonTypes),
       control: { type: "select" },
-      defaultValue: ButtonTypes.Primary,
     },
   },
 } as Meta<CandyButtonProps>;
