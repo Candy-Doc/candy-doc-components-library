@@ -24,7 +24,6 @@ export class CandyButton extends LitElement {
   type: ButtonTypes = ButtonTypes.Primary;
 
   render() {
-    console.log(this.size);
     const buttonSizeClasses = buttonSize[this.size];
     const buttonTypeClasses = buttonType[this.type];
     const classes = `${buttonSizeClasses} ${buttonTypeClasses}`;

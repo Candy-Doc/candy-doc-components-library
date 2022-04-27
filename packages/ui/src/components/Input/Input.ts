@@ -8,7 +8,6 @@ export type CandyInputProps = {
   label: string;
   placeholder: string;
   shortCut: string;
-  onChange: () => (newValue: string, event: MouseEvent) => void;
 };
 
 @customElement("candy-input")
