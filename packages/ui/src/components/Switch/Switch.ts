@@ -14,9 +14,6 @@ export class CandySwitch extends LitElement {
   @property({ type: Boolean })
   activated = false;
 
-  @property({ type: Function })
-  clickHandler: (newStatus: boolean, event: MouseEvent) => void = () => {};
-
   render() {
     const bgColor = this.activated ? "bg-blue-600" : "bg-gray-200";
     const switchPosition = this.activated ? "translate-x-5" : "translate-x-0";
@@ -24,7 +21,6 @@ export class CandySwitch extends LitElement {
       type="button"
       class=${"relative inline-flex flex-shrink-0 h-6 w-11 border-2 border-transparent rounded-full cursor-pointer transition-colors ease-in-out duration-200 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500 " +
       bgColor}
-      @click=${(e: MouseEvent) => this.clickHandler(!this.activated, e)}
       role="switch"
       aria-checked=${this.activated ? "true" : "false"}
     >
