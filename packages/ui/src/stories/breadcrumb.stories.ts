@@ -8,7 +8,7 @@ export default {
   title: "Breadcrumb",
   component: "candy-breadcrumb",
   args: {
-    items: ["Home", "Page 1"],
+    items: ["Home", "Page", "Subpage"],
   },
 } as Meta<CandyBreadcrumbProps>;
 
