@@ -8,7 +8,7 @@ export default {
   title: "Input",
   component: "candy-input",
   args: {
-    value: "C'est l'oeuf ou la poule ?",
+    value: "This is a research",
     label: "Quick search",
     placeholder: "Search",
     shortCut: "⌘B",

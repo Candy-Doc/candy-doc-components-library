@@ -10,22 +10,45 @@ export default {
   component: "candy-button",
   args: {
     label: "Click me",
-    size: ButtonSizes.md,
-    type: ButtonTypes.Primary,
-  },
-  argTypes: {
-    size: {
-      options: Object.values(ButtonSizes),
-      control: { type: "select" },
-    },
-    type: {
-      options: Object.values(ButtonTypes),
-      control: { type: "select" },
-    },
   },
 } as Meta<CandyButtonProps>;
 
 const Template: Story<CandyButtonProps> = (args) =>
-  html`<candy-button label=${args.label} size=${args.size} type=${args.type}></candy-button>`;
+  html`<div>
+    <div>
+      <candy-button
+        label=${args.label}
+        size=${ButtonSizes.sm}
+        type=${ButtonTypes.Primary}
+      ></candy-button>
+      <candy-button
+        label=${args.label}
+        size=${ButtonSizes.md}
+        type=${ButtonTypes.Primary}
+      ></candy-button>
+      <candy-button
+        label=${args.label}
+        size=${ButtonSizes.xl}
+        type=${ButtonTypes.Primary}
+      ></candy-button>
+    </div>
+    <div>
+      <candy-button
+        label=${args.label}
+        size=${ButtonSizes.sm}
+        type=${ButtonTypes.Secondary}
+      ></candy-button>
+      <candy-button
+        label=${args.label}
+        size=${ButtonSizes.md}
+        type=${ButtonTypes.Secondary}
+      ></candy-button>
+      <candy-button
+        label=${args.label}
+        size=${ButtonSizes.xl}
+        type=${ButtonTypes.Secondary}
+      ></candy-button>
+    </div>
+  </div>`;
 
 export const Button = Template.bind({});

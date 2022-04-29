@@ -8,19 +8,14 @@ import { SpinnerSizes } from "../components/Spinner/spinners";
 export default {
   title: "Spinner",
   component: "candy-spinner",
-  args: {
-    size: SpinnerSizes.md,
-  },
-  argTypes: {
-    size: {
-      options: Object.values(SpinnerSizes),
-      control: { type: "select" },
-    },
-  },
 } as Meta<CandySpinnerProps>;
 
-const Template: Story<CandySpinner> = (args) => {
-  return html` <candy-spinner size=${args.size}></candy-spinner>`;
+const Template: Story<CandySpinner> = () => {
+  return html`<div>
+    <candy-spinner size=${SpinnerSizes.sm}></candy-spinner>
+    <candy-spinner size=${SpinnerSizes.md}></candy-spinner>
+    <candy-spinner size=${SpinnerSizes.xl}></candy-spinner>
+  </div>`;
 };
 
 export const Spinner = Template.bind({});

@@ -14,19 +14,22 @@ export default {
   component: "candy-alert",
   args: {
     text: "I'm the text inside the alert",
-    type: AlertTypes.Info,
-  },
-  argTypes: {
-    type: {
-      options: Object.values(AlertTypes),
-      control: { type: "select" },
-    },
   },
 } as Meta<CandyAlertProps & CandyAlertControls>;
 
 const Template: Story<CandyAlertProps & CandyAlertControls> = (args) =>
-  html`<candy-alert alertType=${args.type}>
-    <span slot="content">${args.text}</span>
-  </candy-alert>`;
+  html`
+    <div>
+      <candy-alert alertType=${AlertTypes.Info}>
+        <span slot="content">${args.text}</span>
+      </candy-alert>
+      <candy-alert alertType=${AlertTypes.Warn}>
+        <span slot="content">${args.text}</span>
+      </candy-alert>
+      <candy-alert alertType=${AlertTypes.Error}>
+        <span slot="content">${args.text}</span>
+      </candy-alert>
+    </div>
+  `;
 
 export const Alert = Template.bind({});
