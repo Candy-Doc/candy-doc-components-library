@@ -13,6 +13,6 @@ export default {
 } as Meta<CandySwitchProps>;
 
 const Template: Story<CandySwitchProps> = (args) =>
-  html`<candy-switch ?activated=${args.activated} />`;
+  html`<candy-switch ?activated=${args.activated}></candy-switch>`;
 
 export const Switch = Template.bind({});

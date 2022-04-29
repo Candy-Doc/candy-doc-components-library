@@ -12,7 +12,7 @@ export type CandyAlertProps = {
 export class CandyAlert extends LitElement {
   static styles = [styles];
 
-  @property({ type: AlertTypes })
+  @property({ type: String })
   alertType = AlertTypes.Info;
 
   render() {
@@ -33,6 +33,6 @@ export class CandyAlert extends LitElement {
 
 declare global {
   interface HTMLElementTagNameMap {
-    "candy-sidebar": CandyAlert;
+    "candy-alert": CandyAlert;
   }
 }

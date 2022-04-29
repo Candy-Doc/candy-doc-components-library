@@ -3,5 +3,5 @@ module.exports = {
   theme: {
     extends: {},
   },
-  plugins: [],
+  plugins: [require("@tailwindcss/forms"), require("@tailwindcss/typography")],
 };

@@ -67,7 +67,7 @@ styleFiles.forEach((filePath) => {
     .process(styleOutput, { from: filePath })
     .then((result) => {
       // This line allow Pseudo-Classes, Pseudo-Element and media queries in tailwind to work
-      const css = result.css.replace(/\\/g, "\\\\");
+      const css = result.css.replace(/\\/g, "\\\\").replace(/`/g, "\\`");
 
       const cssToTSContents = `
         import { css } from 'lit';
@@ -77,7 +77,8 @@ styleFiles.forEach((filePath) => {
       // write the final file back to its location next to the
       // original .css/.scss file
       fs.writeFileSync(styleTSFilePath, cssToTSContents);
+      console.log("\x1b[1m(CandyDoc)\x1b[0m\x1b[2m", styleTSFilePath, "\x1b[0mhas been written.");
     });
 });
 
-console.log("(CandyDoc) Lit tailwind CSS generated.");
+console.log("\x1b[1m(CandyDoc)\x1b[0m", "\x1b[34m\x1b[4mLit tailwind CSS generation\x1b[0m");
