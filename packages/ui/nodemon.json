@@ -1,6 +1,0 @@
-{
-  "watch": ["src/components"],
-  "ext": "ts,css",
-  "ignore": ["src/components/**/*.css.ts"],
-  "exec": "npm run build-style"
-}
