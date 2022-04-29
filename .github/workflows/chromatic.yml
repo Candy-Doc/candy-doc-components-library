@@ -11,26 +11,26 @@ jobs:
     outputs:
       storybookUrl: ${{ steps.chromatic-publish.outputs.storybookUrl }}
     steps:
-    - uses: actions/checkout@v3
-      with:
-        fetch-depth: 0
-    - name: Install dependencies
-      run: yarn
-    - name: Publish to Chromatic
-      id: chromatic-publish
-      uses: chromaui/action@v1
-      with:
-        buildScriptName: build
-        projectToken: ${{ secrets.CHROMATIC_TOKEN }}
+      - uses: actions/checkout@v3
+        with:
+          fetch-depth: 0
+      - name: Install dependencies
+        run: yarn
+      - name: Publish to Chromatic
+        id: chromatic-publish
+        uses: chromaui/action@v1
+        with:
+          buildScriptName: build
+          projectToken: ${{ secrets.CHROMATIC_TOKEN }}
 
   comment-on-pr:
     runs-on: ubuntu-latest
     needs: chromatic-deployment
     steps:
-    - uses: mshick/add-pr-comment@v1
-      with:
-        message: |
-          **View your Storybook at** ${{needs.chromatic-deployment.outputs.storybookUrl}} !
-        repo-token: ${{ secrets.GITHUB_TOKEN }}
-        repo-token-user-login: github-actions[bot]
-        allow-repeats: false
+      - uses: mshick/add-pr-comment@v1
+        with:
+          message: |
+            **View your Storybook at** ${{needs.chromatic-deployment.outputs.storybookUrl}} !
+          repo-token: ${{ secrets.GITHUB_TOKEN }}
+          repo-token-user-login: github-actions[bot]
+          allow-repeats: false
