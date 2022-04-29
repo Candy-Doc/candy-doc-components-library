@@ -13,8 +13,8 @@
     ]
 </script>
 
-<main>
-  <candy-sidebar>
+<main class="grid grid-cols-3">
+  <candy-sidebar class="col-span-1">
     {#each sidebarElements as sidebarElement}
        <candy-sidebar-element 
         label={sidebarElement.label}
@@ -26,6 +26,24 @@
        </candy-sidebar-element>
     {/each}
   </candy-sidebar>
+  <div class="col-span-2">
+    <div class="prose">
+      <h1>Heading 1</h1>
+      <h2>Heading 2</h2>
+      <h3>Heading 3</h3>
+      <h4>Heading 4</h4>
+  
+      <p class="lead">
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Commodi corporis quae deleniti
+        magnam tempore reprehenderit excepturi at perspiciatis quas cumque?
+      </p>
+
+      <p>
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Commodi corporis quae deleniti
+        magnam tempore reprehenderit excepturi at perspiciatis quas cumque?
+      </p>
+    </div>
+  </div>
 </main>
 
 <style>
