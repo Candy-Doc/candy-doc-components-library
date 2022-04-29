@@ -17,8 +17,7 @@
     "format": "prettier  --check .",
     "format-fix": "prettier --write .",
     "lint": "eslint --ext .cjs,.js,.ts,.json .",
-    "lint-fix": "eslint --fix --ext .cjs,.js,.ts,.json .",
-    "chromatic": "npx chromatic --project-token=b02bf0035956"
+    "lint-fix": "eslint --fix --ext .cjs,.js,.ts,.json ."
   },
   "devDependencies": {
     "@fortawesome/fontawesome-free": "^6.1.1",
