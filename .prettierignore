@@ -1,1 +1,4 @@
 node_modules
+dist
+**/*.css.ts
+storybook-static
