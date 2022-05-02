@@ -1,6 +1,6 @@
 {
     "branches": [
-      "fix/semantic-trigger"
+      "main"
     ],
     "plugins": [
       [
@@ -21,7 +21,6 @@
           "config": "conventional-changelog-gitmoji-config"
         }
       ],
-      ["@semantic-release/npm"],
       [
         "@semantic-release/git",
         {
@@ -30,6 +29,9 @@
           ],
           "message": ":bookmark: chore(release): ${nextRelease.gitTag} \n\n${nextRelease.notes}"
         }
+      ],
+      [
+        "@semantic-release/npm"
       ]
     ],
     "extends": [
