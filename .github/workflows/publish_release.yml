@@ -14,7 +14,7 @@ on:
         default: No breaking changes.
   push:
     branches:
-    - fix/semantic-trigger
+    - main
 
 jobs:
   prepare-major:
