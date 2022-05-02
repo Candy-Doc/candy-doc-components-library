@@ -1,6 +1,6 @@
 {
     "branches": [
-      "main"
+      "fix/semantic-trigger"
     ],
     "plugins": [
       [
