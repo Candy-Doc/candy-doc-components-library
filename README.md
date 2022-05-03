@@ -1,10 +1,7 @@
 <h1 align="center">
-  <img src="./assets/CD_horizontal.svg">
+  <img src="./assets/CD_horizontal.svg" width="350" height="100" alt="CandyDoc logo"/>
   <p>Components library</p>
 </h1>
-
-<!--
-TO ADD WHEN NPM PACKAGE IS PUBLISHED
 
 <p align="center">
   <a href="https://www.npmjs.com/package/@candy-doc/ui">
@@ -14,7 +11,6 @@ TO ADD WHEN NPM PACKAGE IS PUBLISHED
     <img src="https://flat.badgen.net/npm/dt/@candy-doc/ui" alt="npm downloads">
   </a>
 </p>
--->
 
 A Lit-Element library made to generate Candy-Doc dashboard
 
@@ -45,7 +41,7 @@ TO ADD WHEN CONTRIBUTING.md FILE EXISTS
 Thanks goes to these wonderful people ([emoji key](https://allcontributors.org/docs/en/emoji-key)):
 -->
 
-Fullstack interns of Ippon Technologies Lille 🧑‍💼
+Interns of Ippon Technologies Lille 🧑‍💼
 
 ## Licence 📄
 
