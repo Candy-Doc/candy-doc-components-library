@@ -3,7 +3,7 @@ name: Publish a new release
 on:
   push:
     branches:
-    - main
+    - fix/semantic-trigger
 
 jobs:
   release:

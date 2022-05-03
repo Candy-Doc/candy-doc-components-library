@@ -1,7 +1,11 @@
 {
   "name": "@candy-doc/ui",
   "version": "1.0.0",
-  "files": [
+  "private": false,
+  "publishConfig": {
+    "access": "public"
+  },
+    "files": [
     "src/components/**/*.ts",
     "src/assets",
     "tailwind.config.js"

@@ -1,6 +1,6 @@
 {
     "branches": [
-      "main"
+      "fix/semantic-trigger"
     ],
     "plugins": [
       [
@@ -31,7 +31,10 @@
         }
       ],
       [
-        "@semantic-release/npm"
+        "@semantic-release/npm",
+        {
+          "npmPublish": true
+        }
       ]
     ],
     "extends": [
