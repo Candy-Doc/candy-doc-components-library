@@ -21,7 +21,6 @@
           "config": "conventional-changelog-gitmoji-config"
         }
       ],
-      ["@semantic-release/npm"],
       [
         "@semantic-release/git",
         {
@@ -29,6 +28,12 @@
             "CHANGELOG.md","package.json"
           ],
           "message": ":bookmark: chore(release): ${nextRelease.gitTag} \n\n${nextRelease.notes}"
+        }
+      ],
+      [
+        "@semantic-release/npm",
+        {
+          "npmPublish": true
         }
       ]
     ],
