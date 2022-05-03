@@ -14,7 +14,8 @@ export type CandyInputProps = {
 export class CandyInput extends LitElement {
   static styles = [styles];
 
-  @property({ type: String }) value = "";
+  @property({ type: String })
+  value = "";
 
   @property({ type: String })
   label = "Quick Search";
