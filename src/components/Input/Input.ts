@@ -14,8 +14,7 @@ export type CandyInputProps = {
 export class CandyInput extends LitElement {
   static styles = [styles];
 
-  @property({ type: String })
-  value = "";
+  @property({ type: String }) value = "";
 
   @property({ type: String })
   label = "Quick Search";
@@ -35,7 +34,10 @@ export class CandyInput extends LitElement {
           name="search"
           id="search"
           placeholder=${this.placeholder}
-          value=${this.value}
+          .value=${this.value}
+          @input=${(e: Event) => {
+            this.value = (e.target as HTMLInputElement).value;
+          }}
           class="shadow-sm focus:ring-blue-500 focus:border-blue-500 block w-full pr-12 sm:text-sm border-gray-300 rounded-md"
         />
         ${this.shortCut &&
