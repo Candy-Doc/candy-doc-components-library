@@ -5,7 +5,7 @@
   "publishConfig": {
     "access": "public"
   },
-    "files": [
+  "files": [
     "src/components/**/*.ts",
     "src/assets",
     "tailwind.config.js"
