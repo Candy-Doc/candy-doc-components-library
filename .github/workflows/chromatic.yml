@@ -4,13 +4,13 @@ on:
   pull_request:
     types: [opened, reopened, synchronize]
     paths:
-    - '*.jsx?'
-    - '*.tsx?'
-    - '*.mdx'
-    - '*.json'
-    - '*.html?'
-    - '*.s?css'
-    - '*.svg'
+    - '**/*.jsx?'
+    - '**/*.tsx?'
+    - '**/*.mdx'
+    - '**/*.json'
+    - '**/*.html?'
+    - '**/*.s?css'
+    - '**/*.svg'
 
 jobs:
   chromatic-deployment:
