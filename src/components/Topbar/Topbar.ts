@@ -11,7 +11,7 @@ export class CandyTopbar extends LitElement {
 
   render() {
     return html`
-      <header class="bg-white shadow-sm">
+      <header class="border-b border-gray-200">
         <div class="max-w-7xl p-2 mx-auto">
           <div class="flex flex-row items-center justify-between">
             <div class="w-1/4">

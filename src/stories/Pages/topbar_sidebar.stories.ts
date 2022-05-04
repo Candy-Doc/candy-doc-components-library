@@ -25,21 +25,29 @@ const elements = [
 ];
 
 export default {
-  title: "Topbar and sidebar",
+  title: "Pages",
 };
 
 const Template: Story = () =>
   html`
-    <candy-sidebar>
-      ${elements.map(
-        ({ label, active, icon }) =>
-          html`
-            <candy-sidebar-element label=${label} ?active=${active}>
-              <fa-icon slot="icon" class=${icon} size="2em"></fa-icon>
-            </candy-sidebar-element>
-          `
-      )}
-    </candy-sidebar>
+    <div>
+      <candy-topbar> </candy-topbar>
+    </div>
+    <div class="grid grid-cols-4">
+      <div class="h-full">
+        <candy-sidebar class="h-full">
+          ${elements.map(
+            ({ label, active, icon }) =>
+              html`
+                <candy-sidebar-element label=${label} ?active=${active}>
+                  <fa-icon slot="icon" class=${icon} size="2em"></fa-icon>
+                </candy-sidebar-element>
+              `
+          )}
+        </candy-sidebar>
+      </div>
+      <div class="col-span-3 text-center">Content</div>
+    </div>
   `;
 
 export const Topbar_and_sidebar = Template.bind({});
