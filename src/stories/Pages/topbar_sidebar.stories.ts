@@ -34,8 +34,8 @@ const Template: Story = () =>
       <candy-topbar> </candy-topbar>
     </div>
     <div class="grid grid-cols-4">
-      <div class="h-full">
-        <candy-sidebar class="h-full">
+      <div>
+        <candy-sidebar>
           ${elements.map(
             ({ label, active, icon }) =>
               html`
