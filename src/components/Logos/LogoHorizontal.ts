@@ -1,12 +1,15 @@
 import { html, LitElement } from "lit";
 import { customElement } from "lit/decorators.js";
+import styles from "./logoHorizontal.css";
 
 import LogoHorizontal from "../../assets/logos/logo_horizontal.svg";
 
 @customElement("candy-logo-horizontal")
 export class CandyLogoHorizontal extends LitElement {
+  static styles = [styles];
+
   render() {
-    return html`<img src=${LogoHorizontal} alt="Candy-Doc" /> `;
+    return html`<img class="h-full" src=${LogoHorizontal} alt="Candy-Doc" /> `;
   }
 }
 

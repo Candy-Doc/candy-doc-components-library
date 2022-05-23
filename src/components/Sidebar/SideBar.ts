@@ -9,17 +9,13 @@ export class CandySidebar extends LitElement {
   static styles = [styles];
 
   render() {
-    return html`<div>
-      <div class="flex md:w-64 md:flex-col md:fixed md:inset-y-0">
-        <div class="flex flex-col flex-grow border-r border-gray-200 pt-5 bg-white overflow-y-auto">
-          <div class="flex-1 flex flex-col">
-            <nav class="flex-1 px-2 pb-4 space-y-1">
-              <slot></slot>
-            </nav>
-          </div>
-        </div>
+    return html`
+      <div class="flex h-full border-r border-gray-200 pt-5 bg-white overflow-y-auto">
+        <nav class="flex-1 px-2 pb-4 space-y-1">
+          <slot></slot>
+        </nav>
       </div>
-    </div>`;
+    `;
   }
 }
 

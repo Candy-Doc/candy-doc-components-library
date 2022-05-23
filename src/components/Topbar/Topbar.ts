@@ -11,12 +11,12 @@ export class CandyTopbar extends LitElement {
 
   render() {
     return html`
-      <header class="bg-white shadow-sm">
-        <div class="max-w-7xl p-2 mx-auto">
+      <header class="bg-white border-b border-gray-200 flex-1">
+        <div class="p-2 mx-auto">
           <div class="flex flex-row items-center justify-between">
-            <div class="w-1/4">
-              <a class="flex" href="/">
-                <candy-logo-horizontal class="flex-1"></candy-logo-horizontal>
+            <div class="w-1/6">
+              <a href="/">
+                <candy-logo-horizontal></candy-logo-horizontal>
               </a>
             </div>
             <div class="w-1/4">
