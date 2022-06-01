@@ -44,4 +44,4 @@ Join our [Discord](https://discord.gg/CxwdeKjtcT) to start communicating with ev
 
 - Ippon Technologies Lille 🧑‍💼
 
-Thanks goes to these wonderful people ❤️ 
+Thanks goes to these wonderful people ❤️
