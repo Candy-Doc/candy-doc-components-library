@@ -1,6 +1,6 @@
 import { html, LitElement } from "lit";
 import { customElement, property } from "lit/decorators.js";
-import styles from "./element.css.js";
+import styles from "./Element.css.js";
 
 export type CandySidebarElementProps = {
   label: string;

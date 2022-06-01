@@ -1,7 +1,7 @@
 import { html, LitElement } from "lit";
 import { customElement, property } from "lit/decorators.js";
 
-import styles from "./button.css.js";
+import styles from "./Button.css.js";
 import { buttonSize, ButtonSizes, buttonType, ButtonTypes } from "./Buttons";
 
 export type CandyButtonProps = {

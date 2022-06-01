@@ -1,8 +1,8 @@
 import { Story } from "@storybook/web-components";
 import { html } from "lit";
 
-import "../components/Divider/divider";
-import { CandyDivider } from "../components/Divider/divider";
+import "../components/Divider/Divider";
+import { CandyDivider } from "../components/Divider/Divider";
 
 export default {
   title: "Divider",

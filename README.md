@@ -30,7 +30,6 @@ A Lit-Element library made to generate Candy-Doc dashboard
 
 - [Stay tuned 👀](#stay-tuned-)
 - [Contributors ✨](#contributors-)
-- [Licence 📄](#licence-)
 
 <!-- END doctoc generated TOC please keep comment here to allow auto update -->
 

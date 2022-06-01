@@ -1,6 +1,6 @@
 import { html, LitElement } from "lit";
 import { customElement } from "lit/decorators.js";
-import styles from "./divider.css.js";
+import styles from "./Divider.css.js";
 
 @customElement("candy-divider")
 export class CandyDivider extends LitElement {

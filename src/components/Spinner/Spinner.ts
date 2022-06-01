@@ -1,7 +1,7 @@
 import { html, LitElement } from "lit";
 import { customElement, property } from "lit/decorators.js";
-import styles from "./spinner.css.js";
-import { spinnerSize, SpinnerSizes } from "./spinners";
+import styles from "./Spinner.css.js";
+import { spinnerSize, SpinnerSizes } from "./Spinners";
 
 export type CandySpinnerProps = {
   size: SpinnerSizes;

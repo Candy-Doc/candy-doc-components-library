@@ -1,7 +1,7 @@
 import { html, LitElement } from "lit";
 import { customElement, property } from "lit/decorators.js";
 
-import styles from "./alert.css.js";
+import styles from "./Alert.css.js";
 import { alerts, AlertTypes } from "./Alerts.js";
 
 export type CandyAlertProps = {
