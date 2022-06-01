@@ -1,6 +1,6 @@
 import { html, LitElement } from "lit";
 import { customElement } from "lit/decorators.js";
-import styles from "./logoHorizontal.css";
+import styles from "./LogoHorizontal.css.js";
 
 import LogoHorizontal from "../../assets/logos/logo_horizontal.svg";
 

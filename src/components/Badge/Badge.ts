@@ -1,6 +1,6 @@
 import { html, LitElement } from "lit";
 import { customElement, property } from "lit/decorators.js";
-import styles from "./badge.css.js";
+import styles from "./Badge.css.js";
 
 export type CandyBadgeProps = {
   label: string;

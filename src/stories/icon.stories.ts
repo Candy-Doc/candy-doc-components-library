@@ -1,8 +1,8 @@
 import { Story, Meta } from "@storybook/web-components";
 import { html } from "lit";
 
-import "../components/Icon/icon";
-import { CandyBadgeProps } from "../components/Badge/badge";
+import "../components/Icon/Icon";
+import { CandyBadgeProps } from "../components/Badge/Badge";
 
 export default {
   title: "Icon",

@@ -3,7 +3,7 @@ import { customElement } from "lit/decorators.js";
 
 import "../Logos/LogoHorizontal";
 import "../Input/Input";
-import styles from "./topbar.css.js";
+import styles from "./Topbar.css.js";
 
 @customElement("candy-topbar")
 export class CandyTopbar extends LitElement {

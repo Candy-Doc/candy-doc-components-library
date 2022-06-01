@@ -1,9 +1,9 @@
 import { Story, Meta } from "@storybook/web-components";
 import { html } from "lit";
 
-import "../components/Spinner/spinner";
-import { CandySpinner, CandySpinnerProps } from "../components/Spinner/spinner";
-import { SpinnerSizes } from "../components/Spinner/spinners";
+import "../components/Spinner/Spinner";
+import { CandySpinner, CandySpinnerProps } from "../components/Spinner/Spinner";
+import { SpinnerSizes } from "../components/Spinner/Spinners";
 
 export default {
   title: "Spinner",

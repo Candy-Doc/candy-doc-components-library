@@ -1,6 +1,6 @@
 import { html, LitElement } from "lit";
 import { customElement, property } from "lit/decorators.js";
-import styles from "./icon.css.js";
+import styles from "./Icon.css.js";
 import { iconSize, IconSizes } from "./Icons.js";
 
 @customElement("candy-icon")

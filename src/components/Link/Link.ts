@@ -1,7 +1,7 @@
 import { html, LitElement } from "lit";
 import { customElement, property } from "lit/decorators.js";
 
-import styles from "./link.css.js";
+import styles from "./Link.css.js";
 
 export type CandyLinkProps = {
   label: string;

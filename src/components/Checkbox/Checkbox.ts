@@ -1,7 +1,7 @@
 import { html, LitElement } from "lit";
 import { customElement, property } from "lit/decorators.js";
 
-import styles from "./checkbox.css.js";
+import styles from "./Checkbox.css.js";
 
 export type CandyCheckboxProps = {
   checked: boolean;

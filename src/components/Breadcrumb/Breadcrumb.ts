@@ -1,6 +1,6 @@
 import { html, LitElement } from "lit";
 import { customElement, property } from "lit/decorators.js";
-import styles from "./breadcrumb.css.js";
+import styles from "./Breadcrumb.css.js";
 
 export type CandyBreadcrumbProps = {
   items: string[];

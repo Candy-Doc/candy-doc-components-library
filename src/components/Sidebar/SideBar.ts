@@ -2,7 +2,7 @@ import { html, LitElement } from "lit";
 import { customElement } from "lit/decorators.js";
 
 import "../Logos/LogoHorizontal";
-import styles from "./sidebar.css.js";
+import styles from "./SideBar.css.js";
 
 @customElement("candy-sidebar")
 export class CandySidebar extends LitElement {

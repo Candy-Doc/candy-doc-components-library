@@ -1,7 +1,7 @@
 import { html, LitElement } from "lit";
 import { customElement, property } from "lit/decorators.js";
 
-import styles from "./switch.css.js";
+import styles from "./Switch.css.js";
 
 export type CandySwitchProps = {
   activated: boolean;

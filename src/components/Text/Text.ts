@@ -1,7 +1,7 @@
 import { html, LitElement } from "lit";
 import { customElement, property } from "lit/decorators.js";
 
-import styles from "./text.css.js";
+import styles from "./Text.css.js";
 
 export type CandyTextProps = {
   text: string;

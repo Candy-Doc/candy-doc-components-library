@@ -1,8 +1,8 @@
 import { Story, Meta } from "@storybook/web-components";
 import { html } from "lit";
 
-import "../components/Breadcrumb/breadcrumb";
-import { CandyBreadcrumbProps } from "../components/Breadcrumb/breadcrumb";
+import "../components/Breadcrumb/Breadcrumb";
+import { CandyBreadcrumbProps } from "../components/Breadcrumb/Breadcrumb";
 
 export default {
   title: "Breadcrumb",
