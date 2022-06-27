@@ -8,12 +8,13 @@ export class CandyGraph extends LitElement {
   static styles = [styles];
 
   @property({ type: String })
-  candyData = "{}";
+  domain: string | undefined;
 
   firstUpdated() {
+    if (!this.domain) return;
     const svg = this.shadowRoot.querySelector("#candy-graph");
     if (svg) {
-      new Graph(`[{"simpleName": "Library"}]`, svg);
+      new Graph(this.domain, svg);
     }
   }
 

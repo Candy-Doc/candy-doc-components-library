@@ -8,8 +8,49 @@ export default {
   component: "candy-graph",
 };
 
-const Template: Story = () => {
-  return html`<candy-graph></candy-graph>`;
+export const JustABoundedContext: Story = () => {
+  return html`<candy-graph domain=${justABoundedContext}></candy-graph>`;
 };
 
-export const Graph = Template.bind({});
+export const TwoBoundedContext: Story = () => {
+  return html`<candy-graph domain=${twoBoundedContext}></candy-graph>`;
+};
+
+const justABoundedContext = JSON.stringify([
+  {
+    simpleName: "Library",
+    canonicalName: "fr.ipponlille.library.package-info",
+    description: "Library of books",
+    packageName: "fr.ipponlille.library",
+    coreConcepts: [],
+    domainCommands: [],
+    valueObjects: [],
+    aggregates: [],
+    domainEvents: [],
+  },
+]);
+
+const twoBoundedContext = JSON.stringify([
+  {
+    simpleName: "Library",
+    canonicalName: "fr.ipponlille.library.package-info",
+    description: "Library of books",
+    packageName: "fr.ipponlille.library",
+    coreConcepts: [],
+    domainCommands: [],
+    valueObjects: [],
+    aggregates: [],
+    domainEvents: [],
+  },
+  {
+    simpleName: "Library",
+    canonicalName: "fr.ipponlille.library.package-info",
+    description: "Library of books",
+    packageName: "fr.ipponlille.library",
+    coreConcepts: [],
+    domainCommands: [],
+    valueObjects: [],
+    aggregates: [],
+    domainEvents: [],
+  },
+]);
