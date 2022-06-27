@@ -48,8 +48,8 @@ componentPaths.forEach((componentPath) => {
     // the original file path
     .process(styleOutput, { from: undefined })
     .then((result) => {
-      // This line allow Pseudo-Classes, Pseudo-Element and media queries in tailwind to work
-      const css = result.css.replace(/\\/g, "\\\\").replace(/`/g, "\\`");
+      // This line allow Pseudo-Classes, Pseudo-Element and media queries in tailwind to work. We are also replacing color-adjust because autoprefixer is not working with it (removes a redondant warning).
+      const css = result.css.replace(/\\/g, "\\\\").replace(/`/g, "\\`").replace("{color-adjust", "{print-color-adjust");
 
       const cssToTSContent = `
         import { css } from 'lit';

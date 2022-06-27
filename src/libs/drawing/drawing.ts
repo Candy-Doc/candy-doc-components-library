@@ -1,3 +1,5 @@
+import Node from "./node";
+
 export type ShapeProps = {
   color?: string;
   opacity?: number;
@@ -17,6 +19,6 @@ export interface RectProps extends ShapeProps {
 }
 
 export default interface DrawingLibrary {
-  appendCircle(props: CircleProps): void;
-  appendRect(props: RectProps): void;
+  transformJSONintoNodes(json: any): Node[];
+  drawGraph(nodes: Node[]): void;
 }

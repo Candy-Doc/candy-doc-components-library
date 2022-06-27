@@ -9,24 +9,8 @@ class Graph {
   constructor(candyData: string, svg: Element, width?: number, height?: number) {
     this.drawer = new D3(svg, width, height);
     this.candyData = JSON.parse(candyData);
-    this.draw();
-  }
-
-  drawBoundedContext() {
-    this.candyData.forEach(() => {
-      this.drawer.appendCircle({
-        x: 100,
-        y: 100,
-      });
-      this.drawer.appendRect({
-        x: 100,
-        y: 100,
-      });
-    });
-  }
-
-  draw() {
-    this.drawBoundedContext();
+    const nodes = this.drawer.transformJSONintoNodes(this.candyData);
+    this.drawer.drawGraph(nodes);
   }
 }
 
