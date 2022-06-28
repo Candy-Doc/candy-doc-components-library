@@ -33,7 +33,7 @@ class D3 implements DrawingLibrary {
       .select(SVG)
       .attr("width", width)
       .attr("height", height)
-      .attr("viewBox", [-width / 2, -height / 2, width, height]);
+      .attr("viewBox", [-width / 4, -height / 4, width / 2, height / 2]);
   }
 
   private initD3Force(nodes: Node[], links: Link[]) {
