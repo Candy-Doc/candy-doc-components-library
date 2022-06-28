@@ -4,6 +4,7 @@ import { ConceptType } from "../node";
 import type Node from "../node";
 import type Link from "../link";
 import { LinkType } from "../link";
+import CandyData from "../../graph/candyData";
 
 type SVGProps = {
   SVG: Element;
@@ -16,31 +17,15 @@ const color = d3.scaleOrdinal(d3.schemeTableau10);
 class D3 implements DrawingLibrary {
   svg: d3.Selection<Element, unknown, null, undefined>;
   simulation: d3.Simulation<d3.SimulationNodeDatum, undefined>;
-  node: d3.Selection<d3.BaseType, unknown, SVGGElement, unknown>;
-  link: d3.Selection<d3.BaseType, unknown, SVGGElement, unknown>;
 
-  constructor(
-    SVGProps: SVGProps,
-    nodes = [{ id: 1 }, { id: 2 }],
-    links = [{ source: 1, target: 2 }]
-  ) {
+  constructor(SVGProps: SVGProps, domain: CandyData) {
+    const { nodes, links } = this.extractNodesAndLinks(domain);
     this.svg = this.initSVG(SVGProps);
-    this.simulation = this.initD3Force();
-    this.node = this.initNode();
-    this.link = this.initLink();
-
-    this.simulation.nodes(nodes);
-    this.simulation.force("link").links(links);
-
-    this.node = this.node
-      .data(nodes, (d) => d.id)
-      .join((enter) =>
-        enter
-          .append("circle")
-          .attr("r", 18)
-          .attr("fill", (d) => color(d.id))
-      );
-    this.link = this.link.data(links, (d) => `${d.source.id}\t${d.target.id}`).join("line");
+    this.simulation = this.initD3Force(nodes, links);
+    this.drawGraph(nodes, links);
+    const handleZoom = (e: any) => this.svg.attr("transform", e.transform);
+    const zoom = d3.zoom().on("zoom", handleZoom);
+    this.svg.call(zoom);
   }
 
   private initSVG({ SVG, width = 400, height = 400 }: SVGProps) {
@@ -51,34 +36,51 @@ class D3 implements DrawingLibrary {
       .attr("viewBox", [-width / 2, -height / 2, width, height]);
   }
 
-  private initD3Force() {
+  private initD3Force(nodes: Node[], links: Link[]) {
     return d3
       .forceSimulation()
+      .force("charge", d3.forceManyBody())
+      .force(
+        "center",
+        d3.forceCenter(Number(this.svg.style("width")) / 2, Number(this.svg.style("height")) / 2)
+      )
+      .nodes(nodes)
       .force(
         "link",
         d3
           .forceLink()
-          .id(function (d) {
-            return d.id;
-          })
+          .links(links)
+          .id((d) => d.canonicalName)
           .distance(200)
-      )
-      .force("charge", d3.forceManyBody())
-      .force("center", d3.forceCenter())
-      .on("tick", () => this.ticked());
+      );
   }
 
-  private initNode() {
-    return this.svg
-      .append("g")
-      .attr("stroke", "#fff")
-      .attr("stroke-width", 1.5)
-      .attr("fill", "lime")
-      .selectAll("circle");
+  private drawNodes(nodes: Node[]) {
+    this.svg
+      .selectAll("circle")
+      .data(nodes)
+      .join("circle")
+      .attr("r", 5)
+      .attr("cx", (d) => d.x)
+      .attr("cy", (d) => d.y)
+      .attr("fill", (d) => color(d.group.toString()));
   }
 
-  private initLink() {
-    return this.svg.append("g").attr("stroke", "#000").attr("stroke-width", 1.5).selectAll("line");
+  private drawLinks(links: Link[]) {
+    this.svg
+      .selectAll("links")
+      .data(links)
+      .join("line")
+      .attr("x1", (d) => d.source.x)
+      .attr("y1", (d) => d.source.y)
+      .attr("x2", (d) => d.target.x)
+      .attr("y2", (d) => d.target.y)
+      .attr("stroke", (d) => color(d.group.toString()));
+  }
+
+  public drawGraph(nodes: Node[], links: Link[]): void {
+    this.drawLinks(links);
+    this.drawNodes(nodes);
   }
 
   public extractNodesAndLinks(json: any): { nodes: Node[]; links: Link[] } {
@@ -171,63 +173,6 @@ class D3 implements DrawingLibrary {
       groupNumber++;
     }
     return { nodes, links };
-  }
-
-  private ticked() {
-    this.node.attr("cx", (d) => d.x).attr("cy", (d) => d.y);
-
-    this.link
-      .attr("x1", (d) => d.source.x)
-      .attr("y1", (d) => d.source.y)
-      .attr("x2", (d) => d.target.x)
-      .attr("y2", (d) => d.target.y);
-  }
-
-  public drawGraph(nodes: Node[], links: Link[]): void {
-    const simulation = d3
-      .forceSimulation()
-      .force("charge", d3.forceManyBody())
-      .force(
-        "center",
-        d3.forceCenter(Number(this.svg.style("width")) / 2, Number(this.svg.style("height")) / 2)
-      )
-      .nodes(nodes)
-      .force(
-        "link",
-        d3
-          .forceLink()
-          .links(links)
-          .id((d) => d.canonicalName)
-          .distance(200)
-      )
-      .force("x", d3.forceX())
-      .force("y", d3.forceY());
-
-    const handleZoom = (e: any) => this.svg.attr("transform", e.transform);
-
-    const zoom = d3.zoom().on("zoom", handleZoom);
-    this.svg.call(zoom);
-
-    const color = d3.scaleOrdinal(d3.schemeTableau10);
-
-    this.svg
-      .selectAll("links")
-      .data(links)
-      .join("line")
-      .attr("x1", (d) => d.source.x)
-      .attr("y1", (d) => d.source.y)
-      .attr("x2", (d) => d.target.x)
-      .attr("y2", (d) => d.target.y)
-      .attr("stroke", (d) => color(d.group.toString()));
-
-    this.svg
-      .selectAll("circle")
-      .data(nodes)
-      .join("circle")
-      .attr("r", 5)
-      .attr("cx", (d) => d.x)
-      .attr("cy", (d) => d.y)
-      .attr("fill", (d) => color(d.group.toString()));
   }
 }
 
