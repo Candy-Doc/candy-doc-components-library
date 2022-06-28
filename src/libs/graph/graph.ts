@@ -9,21 +9,9 @@ class Graph {
   constructor(candyData: string, svg: Element, width?: number, height?: number) {
     this.drawer = new D3({ SVG: svg, width, height });
     this.candyData = JSON.parse(candyData);
-    // this.draw();
+    const { nodes, links } = this.drawer.extractNodesAndLinks(this.candyData);
+    this.drawer.drawGraph(nodes, links);
   }
-
-  /*   drawBoundedContext() {
-    this.candyData.forEach((_, i) => {
-      this.drawer.appendCircle({
-        x: 100,
-        y: 100,
-      });
-    });
-  }
-
-  draw() {
-    this.drawBoundedContext();
-  } */
 }
 
 export default Graph;

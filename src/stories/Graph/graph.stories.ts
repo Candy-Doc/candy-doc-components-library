@@ -8,49 +8,78 @@ export default {
   component: "candy-graph",
 };
 
-export const JustABoundedContext: Story = () => {
-  return html`<candy-graph domain=${justABoundedContext}></candy-graph>`;
+export const BoundedContextAndSharedKernel: Story = () => {
+  return html`<candy-graph domain=${boundedContextAndSharedKernel}></candy-graph>`;
 };
 
-export const TwoBoundedContext: Story = () => {
-  return html`<candy-graph domain=${twoBoundedContext}></candy-graph>`;
-};
-
-const justABoundedContext = JSON.stringify([
-  {
-    simpleName: "Library",
-    canonicalName: "fr.ipponlille.library.package-info",
-    description: "Library of books",
-    packageName: "fr.ipponlille.library",
-    coreConcepts: [],
-    domainCommands: [],
-    valueObjects: [],
-    aggregates: [],
-    domainEvents: [],
-  },
-]);
-
-const twoBoundedContext = JSON.stringify([
-  {
-    simpleName: "Library",
-    canonicalName: "fr.ipponlille.library.package-info",
-    description: "Library of books",
-    packageName: "fr.ipponlille.library",
-    coreConcepts: [],
-    domainCommands: [],
-    valueObjects: [],
-    aggregates: [],
-    domainEvents: [],
-  },
-  {
-    simpleName: "Library",
-    canonicalName: "fr.ipponlille.library.package-info",
-    description: "Library of books",
-    packageName: "fr.ipponlille.library",
-    coreConcepts: [],
-    domainCommands: [],
-    valueObjects: [],
-    aggregates: [],
-    domainEvents: [],
-  },
-]);
+const boundedContextAndSharedKernel = JSON.stringify({
+  boundedContexts: [
+    {
+      simpleName: "Library",
+      canonicalName: "fr.ipponlille.library.package-info",
+      description: "Library of books",
+      packageName: "fr.ipponlille.library",
+      aggregates: [
+        {
+          description: "A readable book",
+          simpleName: "Book",
+          canonicalName: "fr.ipponlille.library.Book",
+          type: "AGGREGATE",
+          interactsWith: [
+            {
+              simpleName: "EAN13",
+              canonicalName: "fr.ipponlille.library.EAN13",
+            },
+            {
+              simpleName: "Price",
+              canonicalName: "fr.ipponlille.library.Price",
+            },
+          ],
+          errors: [],
+        },
+      ],
+      domainEvents: [],
+      valueObjects: [
+        {
+          description: "Price of a book, in € and $",
+          simpleName: "Price",
+          canonicalName: "fr.ipponlille.library.Price",
+          type: "VALUE_OBJECT",
+          interactsWith: [
+            {
+              simpleName: "Book",
+              canonicalName: "fr.ipponlille.library.Book",
+            },
+          ],
+          errors: [],
+        },
+        {
+          description: "Code of the book, composed of 13 numbers",
+          simpleName: "EAN13",
+          canonicalName: "fr.ipponlille.library.EAN13",
+          type: "VALUE_OBJECT",
+          interactsWith: [
+            {
+              simpleName: "Book",
+              canonicalName: "fr.ipponlille.library.Book",
+            },
+          ],
+          errors: [],
+        },
+      ],
+      domainCommands: [],
+      coreConcepts: [],
+    },
+  ],
+  sharedKernels: [
+    {
+      simpleName: "Shared kernel",
+      canonicalName: "fr.ipponlille.shared_kernel.package-info",
+      description: "Common objects used in multiple bounded contexts",
+      packageName: "fr.ipponlille.shared_kernel",
+      relations: ["fr.ipponlille.library.package-info"],
+      coreConcepts: [],
+      valueObjects: [],
+    },
+  ],
+});

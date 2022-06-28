@@ -1,13 +1,20 @@
-export type BoundedContext = {
+export type DomainContext = {
   simpleName: string;
   canonicalName: string;
   description: string;
   packageName: string;
   coreConcepts: Concept[];
+  valueObjects: Concept[];
+};
+
+export type BoundedContext = DomainContext & {
   domainCommands: Concept[];
   domainEvents: Concept[];
   aggregates: Concept[];
-  valueObject: Concept[];
+};
+
+export type SharedKernel = DomainContext & {
+  relations: string[];
 };
 
 export type Concept = {
@@ -22,6 +29,6 @@ export type Concept = {
   errors: string[];
 };
 
-type CandyData = BoundedContext[];
+type CandyData = BoundedContext[] & SharedKernel[];
 
 export default CandyData;

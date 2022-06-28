@@ -1,3 +1,6 @@
+import Link from "./link";
+import Node from "./node";
+
 export type ShapeProps = {
   color?: string;
   opacity?: number;
@@ -17,6 +20,6 @@ export interface RectProps extends ShapeProps {
 }
 
 export default interface DrawingLibrary {
-  appendCircle(props: CircleProps): void;
-  appendRect(props: RectProps): void;
+  extractNodesAndLinks(json: any): { nodes: Node[]; links: Link[] };
+  drawGraph(nodes: Node[], links: Link[]): void;
 }
