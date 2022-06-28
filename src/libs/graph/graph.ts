@@ -7,18 +7,14 @@ class Graph {
   candyData: CandyData;
 
   constructor(candyData: string, svg: Element, width?: number, height?: number) {
-    this.drawer = new D3(svg, width, height);
+    this.drawer = new D3({ SVG: svg, width, height });
     this.candyData = JSON.parse(candyData);
-    this.draw();
+    // this.draw();
   }
 
-  drawBoundedContext() {
-    this.candyData.forEach(() => {
+  /*   drawBoundedContext() {
+    this.candyData.forEach((_, i) => {
       this.drawer.appendCircle({
-        x: 100,
-        y: 100,
-      });
-      this.drawer.appendRect({
         x: 100,
         y: 100,
       });
@@ -27,7 +23,7 @@ class Graph {
 
   draw() {
     this.drawBoundedContext();
-  }
+  } */
 }
 
 export default Graph;
