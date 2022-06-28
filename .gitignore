@@ -25,3 +25,6 @@ dist-ssr
 *.css.ts
 types
 storybook-static
+
+# Auto-generated style for Storybook
+.storybook/tailwind.css
