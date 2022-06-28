@@ -13,4 +13,5 @@ export default interface Node {
   canonicalName: string;
   group: number;
   type: ConceptType;
+  interactsWith: Node[];
 }

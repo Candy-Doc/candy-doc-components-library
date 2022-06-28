@@ -77,7 +77,7 @@ const boundedContextAndSharedKernel = JSON.stringify({
       canonicalName: "fr.ipponlille.shared_kernel.package-info",
       description: "Common objects used in multiple bounded contexts",
       packageName: "fr.ipponlille.shared_kernel",
-      relations: "fr.ipponlille.library.package-info",
+      relations: ["fr.ipponlille.library.package-info"],
       coreConcepts: [],
       valueObjects: [],
     },

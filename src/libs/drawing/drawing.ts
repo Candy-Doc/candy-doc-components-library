@@ -1,3 +1,4 @@
+import Link from "./link";
 import Node from "./node";
 
 export type ShapeProps = {
@@ -19,6 +20,6 @@ export interface RectProps extends ShapeProps {
 }
 
 export default interface DrawingLibrary {
-  transformJSONintoNodes(json: any): Node[];
-  drawGraph(nodes: Node[]): void;
+  extractNodesAndLinks(json: any): { nodes: Node[]; links: Link[] };
+  drawGraph(nodes: Node[], links: Link[]): void;
 }

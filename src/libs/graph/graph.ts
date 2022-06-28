@@ -9,8 +9,8 @@ class Graph {
   constructor(candyData: string, svg: Element, width?: number, height?: number) {
     this.drawer = new D3(svg, width, height);
     this.candyData = JSON.parse(candyData);
-    const nodes = this.drawer.transformJSONintoNodes(this.candyData);
-    this.drawer.drawGraph(nodes);
+    const { nodes, links } = this.drawer.extractNodesAndLinks(this.candyData);
+    this.drawer.drawGraph(nodes, links);
   }
 }
 
