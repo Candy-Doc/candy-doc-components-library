@@ -5,6 +5,7 @@
     "declaration": true,
     "emitDeclarationOnly": true,
     "outDir": "./types",
+    "rootDir": "./src",
     "strict": true,
     "noUnusedLocals": true,
     "noUnusedParameters": true,
@@ -17,5 +18,5 @@
     "useDefineForClassFields": false
   },
   "include": ["src/**/*.ts"],
-  "references": [{ "path": "./tsconfig.node.json" }]
+  "exclude": []
 }
