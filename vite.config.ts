@@ -9,18 +9,18 @@ export default defineConfig({
   build: {
     lib: {
       entry: "src/my-element.ts",
-      formats: ["es"],
+      formats: ["es"]
     },
     rollupOptions: {
-      external: /^lit/,
-    },
+      external: /^lit/
+    }
   },
   plugins: [
     UnoCSS({
       mode: "shadow-dom",
       presets: [presetUno(), presetWind()],
-      inspector: false,
+      inspector: true
     }),
     ViteInspector(),
-  ],
+  ]
 });

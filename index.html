@@ -4,14 +4,14 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Vite + Lit App</title>
-    <script type="module" src="./src/my-element.ts"></script>
     <script type="module" src="./src/components/candy-main.ts"></script>
-    <script type="module" src="./src/components/alert-element.ts"></script>
+    <script type="module" src="./src/components/Alert/Alert.ts"></script>
   </head>
   <body>
     <candy-main>
-      <my-element></my-element>
-      <alert-element></alert-element>
+      <candy-alert alertType="warn">
+        <span slot="content">This is an alert !</span>
+      </candy-alert>
     </candy-main>
   </body>
 </html>

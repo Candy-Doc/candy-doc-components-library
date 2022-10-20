@@ -9,7 +9,7 @@ export class CandyMain extends LitElement {
 
   render() {
     return html`
-      <main class="font-sans p-8 m-8 bg-yellow-500">
+      <main class="font-sans p-8 m-8">
         <h1>Main element</h1>
         <slot></slot>
       </main>
