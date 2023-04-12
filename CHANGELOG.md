@@ -1,3 +1,8 @@
+# [v1.5.0](https://github.com/Candy-Doc/candy-doc-components-library/compare/v1.4.0...v1.5.0) (2023-04-12)
+
+## ✨ New minor Features
+- [`80f0684`](https://github.com/Candy-Doc/candy-doc-components-library/commit/80f0684)  feat(unocss): Use unocss to generate style (#35) (Issues: [`#35`](https://github.com/Candy-Doc/candy-doc-components-library/issues/35))
+
 # [v1.4.0](https://github.com/Candy-Doc/candy-doc-components-library/compare/v1.3.0...v1.4.0) (2022-06-01)
 
 ## ✨ New minor Features
