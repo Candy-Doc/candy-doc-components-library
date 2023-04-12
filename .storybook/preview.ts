@@ -1,6 +1,3 @@
-import "@fortawesome/fontawesome-free/css/all.css";
-import "./tailwind.css";
-
 export const parameters = {
   actions: { argTypesRegex: "^on[A-Z].*" },
   controls: {
@@ -9,4 +6,4 @@ export const parameters = {
       date: /Date$/,
     },
   },
-};
+}
