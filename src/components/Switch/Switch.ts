@@ -1,16 +1,14 @@
-import { html, LitElement } from "lit";
+import { html } from "lit";
 import { customElement, property } from "lit/decorators.js";
 
-import styles from "./Switch.css.js";
+import { TailwindElement } from "../shared/tailwind.element.js";
 
 export type CandySwitchProps = {
   activated: boolean;
 };
 
 @customElement("candy-switch")
-export class CandySwitch extends LitElement {
-  static styles = [styles];
-
+export class CandySwitch extends TailwindElement {
   @property({ type: Boolean })
   activated = false;
 

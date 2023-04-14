@@ -1,7 +1,6 @@
-import { html, LitElement } from "lit";
+import { html } from "lit";
 import { customElement, property } from "lit/decorators.js";
-
-import styles from "./Link.css.js";
+import { TailwindElement } from "../shared/tailwind.element";
 
 export type CandyLinkProps = {
   label: string;
@@ -9,9 +8,7 @@ export type CandyLinkProps = {
 };
 
 @customElement("candy-link")
-export class CandyLink extends LitElement {
-  static styles = [styles];
-
+export class CandyLink extends TailwindElement {
   @property({ type: String })
   label = "click me";
 

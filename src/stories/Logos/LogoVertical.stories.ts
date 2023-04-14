@@ -3,7 +3,7 @@ import { html } from "lit";
 import "../../components/Logos/LogoVertical";
 
 export default {
-  title: "Logos",
+  title: "Components/Logos",
   component: "candy-logo-vertical",
 };
 

@@ -1,7 +1,6 @@
-import { html, LitElement } from "lit";
+import { html } from "lit";
 import { customElement, property } from "lit/decorators.js";
-
-import styles from "./Input.css.js";
+import { TailwindElement } from "../shared/tailwind.element";
 
 export type CandyInputProps = {
   value: string;
@@ -11,9 +10,7 @@ export type CandyInputProps = {
 };
 
 @customElement("candy-input")
-export class CandyInput extends LitElement {
-  static styles = [styles];
-
+export class CandyInput extends TailwindElement {
   @property({ type: String })
   value = "";
 

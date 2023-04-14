@@ -7,6 +7,8 @@ export enum ButtonSizes {
 export enum ButtonTypes {
   Primary = "Primary",
   Secondary = "Secondary",
+  Danger = "Danger",
+  Warn = "Warn",
 }
 
 export const buttonSize: { [key in ButtonSizes]: string } = {
@@ -18,4 +20,6 @@ export const buttonSize: { [key in ButtonSizes]: string } = {
 export const buttonType: { [key in ButtonTypes]: string } = {
   Primary: "text-white bg-blue-600 hover:bg-blue-700",
   Secondary: "text-blue-700 bg-blue-100 hover:bg-blue-200",
+  Danger: "text-white bg-red-500 hover:bg-red-600",
+  Warn: "bg-yellow-300 hover:bg-yellow-400",
 };

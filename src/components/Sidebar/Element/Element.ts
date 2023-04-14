@@ -1,6 +1,6 @@
-import { html, LitElement } from "lit";
+import { html } from "lit";
 import { customElement, property } from "lit/decorators.js";
-import styles from "./Element.css.js";
+import { TailwindElement } from "../../shared/tailwind.element.js";
 
 export type CandySidebarElementProps = {
   label: string;
@@ -9,9 +9,7 @@ export type CandySidebarElementProps = {
 };
 
 @customElement("candy-sidebar-element")
-export class CandySidebarElement extends LitElement {
-  static styles = [styles];
-
+export class CandySidebarElement extends TailwindElement {
   @property({ type: String })
   label = "Home";
 

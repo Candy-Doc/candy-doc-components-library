@@ -6,10 +6,37 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Vite + Lit App</title>
     <script type="module" src="/src/my-element.ts"></script>
+    <script type="module" src="src/components/Alert"></script>
+    <script type="module" src="src/components/Button"></script>
+    <script type="module" src="src/components/Badge"></script>
+    <script type="module" src="src/components/Breadcrumb"></script>
+    <script type="module" src="src/components/Divider"></script>
   </head>
   <body>
-    <my-element>
-      <p>This is child content</p>
-    </my-element>
+    <div class="p-5">
+      <div>
+        <candy-alert alertType="warn">
+          <span slot="content">This is an alert !</span>
+        </candy-alert>
+      </div>
+      <div>
+        <candy-button size="xl" label="Click me"></candy-button>
+      </div>
+      <div>
+        <candy-badge label="Yes"></candy-badge>
+      </div>
+      <div>
+        <candy-divider></candy-divider>
+      </div>
+      <div>
+        <candy-breadcrumb></candy-breadcrumb>
+      </div>
+    </div>
   </body>
 </html>
+
+<style>
+  div >  * {
+    padding: .5rem 0;
+  }
+</style>

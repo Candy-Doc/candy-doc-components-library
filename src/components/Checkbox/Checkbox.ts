@@ -1,7 +1,6 @@
-import { html, LitElement } from "lit";
+import { html } from "lit";
 import { customElement, property } from "lit/decorators.js";
-
-import styles from "./Checkbox.css.js";
+import { TailwindElement } from "../shared/tailwind.element";
 
 export type CandyCheckboxProps = {
   checked: boolean;
@@ -10,9 +9,7 @@ export type CandyCheckboxProps = {
 };
 
 @customElement("candy-checkbox")
-export class CandyCheckbox extends LitElement {
-  static styles = [styles];
-
+export class CandyCheckbox extends TailwindElement {
   @property({ type: Boolean })
   checked = false;
 
@@ -23,7 +20,7 @@ export class CandyCheckbox extends LitElement {
   description = "";
 
   render() {
-    return html`<div class="relative flex items-start">
+    return html`<div class="relative flex items-start" part="checkbox">
       <div class="flex items-center h-5">
         <input
           id="comments"

@@ -1,16 +1,14 @@
-import { html, LitElement } from "lit";
+import { html } from "lit";
 import { customElement, property } from "lit/decorators.js";
-import styles from "./Spinner.css.js";
 import { spinnerSize, SpinnerSizes } from "./Spinners";
+import { TailwindElement } from "../shared/tailwind.element";
 
 export type CandySpinnerProps = {
   size: SpinnerSizes;
 };
 
 @customElement("candy-spinner")
-export class CandySpinner extends LitElement {
-  static styles = [styles];
-
+export class CandySpinner extends TailwindElement {
   @property({ type: String })
   size: SpinnerSizes = SpinnerSizes.md;
 
@@ -41,6 +39,6 @@ export class CandySpinner extends LitElement {
 
 declare global {
   interface HTMLElementTagNameMap {
-    "candy-divider": CandySpinner;
+    "candy-spinner": CandySpinner;
   }
 }

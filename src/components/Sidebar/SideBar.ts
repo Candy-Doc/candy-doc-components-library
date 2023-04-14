@@ -1,13 +1,11 @@
-import { html, LitElement } from "lit";
+import { html } from "lit";
 import { customElement } from "lit/decorators.js";
 
+import { TailwindElement } from "../shared/tailwind.element";
 import "../Logos/LogoHorizontal";
-import styles from "./SideBar.css.js";
 
 @customElement("candy-sidebar")
-export class CandySidebar extends LitElement {
-  static styles = [styles];
-
+export class CandySidebar extends TailwindElement {
   render() {
     return html`
       <div class="flex h-full border-r border-gray-200 pt-5 bg-white overflow-y-auto">

@@ -1,15 +1,13 @@
-import { html, LitElement } from "lit";
+import { html } from "lit";
 import { customElement, property } from "lit/decorators.js";
-import styles from "./Breadcrumb.css.js";
+import { TailwindElement } from "../shared/tailwind.element";
 
 export type CandyBreadcrumbProps = {
   items: string[];
 };
 
 @customElement("candy-breadcrumb")
-export class CandyBreadcrumb extends LitElement {
-  static styles = [styles];
-
+export class CandyBreadcrumb extends TailwindElement {
   @property({ type: Array(String) })
   items = ["Home", "Page 1", "Subpage 1"];
 
@@ -39,7 +37,7 @@ export class CandyBreadcrumb extends LitElement {
       return result;
     });
     return html`
-      <nav aria-label="Breadcrumb">
+      <nav aria-label="Breadcrumb" part="breadcrumb">
         <ol role="list" class="flex items-center space-x-1 text-sm text-gray-500">
           ${htmlItems}
         </ol>
