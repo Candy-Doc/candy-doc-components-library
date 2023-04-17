@@ -11,6 +11,7 @@ const renderInput = (args: CandyInputProps) => html`<candy-input
   .label=${args.label}
   .placeholder=${args.placeholder}
   .shortCut=${args.shortCut}
+  .onChange=${args.onChange}
 >
 </candy-input>`;
 
@@ -20,11 +21,16 @@ export default {
   render: renderInput,
 } as Meta<CandyInputProps>;
 
+const handleInput = (newValue: string) => {
+  console.log("new value: " + newValue);
+};
+
 export const Input: Story = {
   args: {
     value: "This is a research",
     label: "Quick search",
     placeholder: "Search",
     shortCut: "⌘B",
+    onChange: handleInput,
   },
 };

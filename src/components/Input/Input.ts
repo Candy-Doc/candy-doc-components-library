@@ -7,6 +7,7 @@ export type CandyInputProps = {
   label: string;
   placeholder: string;
   shortCut: string;
+  onChange: (value: string) => void;
 };
 
 @customElement("candy-input")
@@ -23,6 +24,18 @@ export class CandyInput extends TailwindElement {
   @property({ type: String })
   shortCut = "⌘K";
 
+  @property({ type: Function })
+  onChange?: (value: string) => void;
+
+  handleInput = (e: Event) => {
+    this.value = (e.target as HTMLInputElement).value;
+    if (typeof this.onChange !== "function") {
+      console.log("onChange props is not a function");
+    } else if (this.onChange) {
+      this.onChange(this.value);
+    }
+  };
+
   render() {
     return html`<div>
       <label for="search" class="block text-sm font-medium text-gray-700">${this.label}</label>
@@ -33,9 +46,7 @@ export class CandyInput extends TailwindElement {
           id="search"
           placeholder=${this.placeholder}
           .value=${this.value}
-          @input=${(e: Event) => {
-            this.value = (e.target as HTMLInputElement).value;
-          }}
+          @input=${this.handleInput}
           class="shadow-sm focus:ring-blue-500 focus:border-blue-500 block w-full pr-12 sm:text-sm border-gray-300 rounded-md"
         />
         ${this.shortCut &&

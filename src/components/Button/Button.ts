@@ -8,6 +8,7 @@ export type CandyButtonProps = {
   label: string;
   size: ButtonSizes;
   type: ButtonTypes;
+  onClick?: () => void;
 };
 
 @customElement("candy-button")
@@ -21,6 +22,19 @@ export class CandyButton extends TailwindElement {
   @property({ type: String })
   type: ButtonTypes = ButtonTypes.Primary;
 
+  @property({ type: Function })
+  onClick?: () => void = () => void 0;
+
+  private handleClick = (e: Event) => {
+    e.preventDefault();
+    e.stopPropagation();
+    if (typeof this.onClick !== "function") {
+      console.log("onClick props is not a function");
+    } else if (this.onClick) {
+      this.onClick();
+    }
+  };
+
   render() {
     const buttonSizeClasses = buttonSize[this.size];
     const buttonTypeClasses = buttonType[this.type];
@@ -30,6 +44,7 @@ export class CandyButton extends TailwindElement {
       type="button"
       class=${"inline-flex items-center border border-transparent font-medium shadow-sm focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500 " +
       classes}
+      @click=${this.handleClick}
     >
       ${this.label}
     </button>`;

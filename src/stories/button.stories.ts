@@ -7,7 +7,12 @@ import "../components/Button";
 type Story = StoryObj<CandyButtonProps>;
 
 const renderButton = (args: CandyButtonProps) =>
-  html`<candy-button label=${args.label} size=${args.size} type=${args.type}></candy-button>`;
+  html`<candy-button
+    label=${args.label}
+    size=${args.size}
+    type=${args.type}
+    .onClick=${args.onClick}
+  ></candy-button>`;
 
 export default {
   title: "Components/Buttons",
@@ -25,10 +30,15 @@ export default {
   render: renderButton,
 } as Meta<CandyButtonProps>;
 
+const clickCallback = () => {
+  console.log("Button clicked");
+};
+
 export const Buttons: Story = {
   args: {
     label: "Click me!",
     type: ButtonTypes.Primary,
     size: ButtonSizes.md,
+    onClick: clickCallback,
   },
 };
