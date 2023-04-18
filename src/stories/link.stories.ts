@@ -14,6 +14,30 @@ export default {
   title: "Components/Link",
   component: "candy-link",
   render: renderLink,
+  argTypes: {
+    label: {
+      description: "Text holding the link",
+      table: {
+        type: {
+          summary: "string",
+        },
+        defaultValue: {
+          summary: "Click me",
+        },
+      },
+    },
+    url: {
+      description: "Url",
+      table: {
+        type: {
+          summary: "string",
+        },
+        defaultValue: {
+          summary: "https://candy-doc.com",
+        },
+      },
+    },
+  },
 } as Meta<CandyLinkProps>;
 
 export const Link: Story = {

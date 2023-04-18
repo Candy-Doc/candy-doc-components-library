@@ -13,6 +13,19 @@ export default {
   title: "Components/Prose",
   component: "candy-text",
   render: renderProse,
+  argTypes: {
+    text: {
+      description: "Children text displayed in the container",
+      table: {
+        type: {
+          summary: "string",
+        },
+        defaultValue: {
+          summary: "",
+        },
+      },
+    },
+  },
 } as Meta<CandyTextProps>;
 
 export const Prose: Story = {

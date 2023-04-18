@@ -27,7 +27,6 @@ export class CandyButton extends TailwindElement {
 
   private handleClick = (e: Event) => {
     e.preventDefault();
-    e.stopPropagation();
     if (typeof this.onClick !== "function") {
       console.log("onClick props is not a function");
     } else if (this.onClick) {

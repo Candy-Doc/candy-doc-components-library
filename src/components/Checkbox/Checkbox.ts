@@ -15,7 +15,7 @@ export class CandyCheckbox extends TailwindElement {
   checked = false;
 
   @property({ type: String })
-  label = "";
+  label = "Checkbox";
 
   @property({ type: String })
   description = "";
@@ -23,7 +23,7 @@ export class CandyCheckbox extends TailwindElement {
   @property({ type: Function })
   onChange?: (e?: boolean) => void;
 
-  toto = (e: Event) => {
+  handleClick = (e: Event) => {
     const target = e.target as HTMLInputElement;
     this.checked = target?.checked;
     if (typeof this.onChange !== "function") {
@@ -43,7 +43,7 @@ export class CandyCheckbox extends TailwindElement {
           type="checkbox"
           class="focus:ring-blue-500 h-4 w-4 text-blue-600 border-gray-300 rounded"
           ?checked=${this.checked}
-          @click=${this.toto}
+          @click=${this.handleClick}
         />
       </div>
       <div class="ml-3 text-sm">

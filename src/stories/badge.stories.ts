@@ -12,6 +12,19 @@ const renderBadge = (args: CandyBadgeProps) =>
 export default {
   title: "Components/Badge",
   component: "candy-badge",
+  argTypes: {
+    label: {
+      description: "Text displayed inside the badge",
+      table: {
+        type: {
+          summary: "string",
+        },
+        defaultValue: {
+          summary: "Badge",
+        },
+      },
+    },
+  },
   render: renderBadge,
 } as Meta<CandyBadgeProps>;
 

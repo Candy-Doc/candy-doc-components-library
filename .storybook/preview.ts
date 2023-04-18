@@ -1,7 +1,7 @@
 import "@fortawesome/fontawesome-free/css/all.css";
 
-export const parameters = {
-  actions: { argTypesRegex: "^on[A-Z].*" },
+const preview = {
+  parameters: { argTypesRegex: "^on[A-Z].*" },
   controls: {
     matchers: {
       color: /(background|color)$/i,
@@ -9,3 +9,5 @@ export const parameters = {
     },
   },
 };
+
+export default preview;

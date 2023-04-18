@@ -12,6 +12,20 @@ const renderBreadcrumb = (args: CandyBreadcrumbProps) =>
 export default {
   title: "Components/Breadcrumb",
   component: "candy-breadcrumb",
+  argTypes: {
+    items: {
+      name: ".items",
+      description: "List of page's title",
+      table: {
+        type: {
+          summary: "string[]",
+        },
+        defaultValue: {
+          summary: ["Home", "Page 1", "Subpage 1"],
+        },
+      },
+    },
+  },
   render: renderBreadcrumb,
 } as Meta<CandyBreadcrumbProps>;
 

@@ -15,8 +15,17 @@ export default {
   component: "candy-spinner",
   argTypes: {
     size: {
+      description: "Size of the spinner",
       options: [SpinnerSizes.sm, SpinnerSizes.md, SpinnerSizes.xl],
       control: { type: "radio" },
+      table: {
+        type: {
+          summary: "string",
+        },
+        defaultValue: {
+          summary: "md",
+        },
+      },
     },
   },
   render: renderSpinner,

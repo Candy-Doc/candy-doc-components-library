@@ -1,4 +1,4 @@
-import { StoryObj } from "@storybook/web-components";
+import { StoryObj, Meta } from "@storybook/web-components";
 import { html } from "lit";
 
 import "../../components/Sidebar";
@@ -26,8 +26,22 @@ const renderSideBar = (args: CandySideBarControl) => html`<candy-sidebar>
 export default {
   title: "Components/Sidebar",
   component: "candy-sidebar",
+  argTypes: {
+    elements: {
+      description:
+        "List of sidebar elements information attributed in <candy-sidebar-element> items",
+      table: {
+        type: {
+          summary: "object[]",
+        },
+        defaultValue: {
+          summary: "[]",
+        },
+      },
+    },
+  },
   render: renderSideBar,
-};
+} as Meta<CandySideBarControl>;
 
 export const Sidebar: Story = {
   args: {
@@ -36,16 +50,6 @@ export const Sidebar: Story = {
       { label: "Objects", active: false, icon: "fa-solid fa-cubes" },
       {
         label: "Bounded context 1",
-        active: false,
-        icon: "fa-regular fa-object-group",
-      },
-      {
-        label: "Bounded context 2",
-        active: false,
-        icon: "fa-regular fa-object-group",
-      },
-      {
-        label: "Bounded context 3",
         active: false,
         icon: "fa-regular fa-object-group",
       },

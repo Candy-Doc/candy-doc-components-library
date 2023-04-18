@@ -15,8 +15,17 @@ export default {
   component: "candy-alert",
   argTypes: {
     type: {
+      description: `Define the type of the alert`,
       options: [AlertTypes.Info, AlertTypes.Warn, AlertTypes.Error],
       control: { type: "radio" },
+      table: {
+        type: {
+          summary: "string",
+        },
+        defaultValue: {
+          summary: AlertTypes.Info,
+        },
+      },
     },
   },
   render: renderAlert,

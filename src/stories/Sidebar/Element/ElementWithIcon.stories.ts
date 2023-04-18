@@ -1,38 +1,74 @@
 import { StoryObj, Meta } from "@storybook/web-components";
 import { html } from "lit";
-import { within, userEvent } from "@storybook/testing-library";
 
 import { CandySidebarElementProps } from "../../../components/Sidebar/Element";
 import "../../../components/Sidebar/Element";
 
-type Story = StoryObj<CandySidebarElementProps & CandySidebarElementControls>;
+type Story = StoryObj<CandySidebarElementProps>;
 
-type CandySidebarElementControls = {
-  icon: string;
-};
-
-const renderIconElement = (
-  args: CandySidebarElementProps & CandySidebarElementControls
-) => html`<candy-sidebar-element
-  title="element"
+const renderIconElement = (args: CandySidebarElementProps) => html`<candy-sidebar-element
   label=${args.label}
   ?active=${args.active}
   ?disabled=${args.disabled}
+  icon=${args.icon}
 >
   <fa-icon slot="icon" class=${args.icon} size="2em"></fa-icon>
 </candy-sidebar-element>`;
 
 export default {
-  title: "Components/Sidebar/Element",
+  title: "Components/Sidebar/ElementWithIcon",
   component: "candy-sidebar-element",
-  args: {
-    label: "Candy-Doc",
-    active: false,
-    disabled: false,
-    icon: "fa-solid fa-candy-cane",
+  argTypes: {
+    label: {
+      description: "Label of the element",
+      table: {
+        type: {
+          summary: "string",
+        },
+        defaultValue: {
+          summary: "Home",
+        },
+      },
+    },
+    active: {
+      name: "?active",
+      description: "Is the item the selected one",
+      table: {
+        type: {
+          summary: "boolean",
+        },
+        defaultValue: {
+          summary: "False",
+        },
+      },
+    },
+    disabled: {
+      name: "?disabled",
+      description: "Is the item disabled",
+      table: {
+        type: {
+          summary: "boolean",
+        },
+        defaultValue: {
+          summary: "False",
+        },
+      },
+    },
+    icon: {
+      description:
+        "Fontawesome icon classess <br/> Icon not directly included in the candy-element you have to manually wrap it inside <candy-sidebar-element> using slot='icon' attribute on the fa-icon",
+      table: {
+        type: {
+          summary: "string",
+        },
+        defaultValue: {
+          summary: "",
+        },
+      },
+    },
   },
   render: renderIconElement,
-} as Meta<CandySidebarElementProps & CandySidebarElementControls>;
+} as Meta<CandySidebarElementProps>;
 
 export const ElementWithIcon: Story = {
   args: {
@@ -41,9 +77,4 @@ export const ElementWithIcon: Story = {
     disabled: false,
     icon: "fa-solid fa-candy-cane",
   },
-};
-
-ElementWithIcon.play = async ({ canvasElement }) => {
-  const element = within(canvasElement).getByTitle("element");
-  await userEvent.click(element);
 };

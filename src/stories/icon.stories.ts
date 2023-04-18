@@ -17,8 +17,18 @@ export default {
   component: "candy-icon",
   argTypes: {
     size: {
+      description:
+        "Size of the <br/> Icon not directly included in the candy-element you have to manually wrap it inside <candy-sidebar-element> using slot='icon' attribute on the fa-icon",
       options: [IconSizes.sm, IconSizes.md, IconSizes.xl],
       control: { type: "radio" },
+      table: {
+        type: {
+          summary: "string",
+        },
+        defaultValue: {
+          summary: "md",
+        },
+      },
     },
   },
   render: renderIcon,
