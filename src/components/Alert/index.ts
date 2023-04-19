@@ -1,3 +1,3 @@
 import "./Alert";
-export type { CandyAlertProps as CandyAlertProps } from "./Alert";
+export type { CandyAlertProps } from "./Alert";
 export { AlertTypes } from "./Alerts";
