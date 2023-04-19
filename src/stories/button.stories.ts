@@ -36,27 +36,27 @@ export default {
     },
     type: {
       description: "Define the color scheme of the button",
-      options: [ButtonTypes.Primary, ButtonTypes.Secondary, ButtonTypes.Warn, ButtonTypes.Danger],
+      options: Object.values(ButtonTypes),
       control: { type: "radio" },
       table: {
         type: {
           summary: "string",
         },
         defaultValue: {
-          summary: ["Primary"],
+          summary: ButtonTypes.Primary,
         },
       },
     },
     size: {
       description: "Define the size of the button",
-      options: [ButtonSizes.sm, ButtonSizes.md, ButtonSizes.xl],
+      options: Object.values(ButtonSizes),
       control: { type: "radio" },
       table: {
         type: {
           summary: "string",
         },
         defaultValue: {
-          summary: ["md"],
+          summary: ButtonSizes.md,
         },
       },
     },
@@ -68,7 +68,7 @@ export default {
           summary: "function",
         },
         defaultValue: {
-          summary: ["() => void"],
+          summary: "() => void",
         },
       },
     },

@@ -16,7 +16,7 @@ export default {
   argTypes: {
     type: {
       description: `Define the type of the alert`,
-      options: [AlertTypes.Info, AlertTypes.Warn, AlertTypes.Error],
+      options: Object.values(AlertTypes),
       control: { type: "radio" },
       table: {
         type: {
