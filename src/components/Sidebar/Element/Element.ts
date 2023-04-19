@@ -6,7 +6,6 @@ export type CandySidebarElementProps = {
   label: string;
   active: boolean;
   disabled: boolean;
-  icon: string;
 };
 
 @customElement("candy-sidebar-element")
@@ -19,9 +18,6 @@ export class CandySidebarElement extends TailwindElement {
 
   @property({ type: Boolean })
   disabled = false;
-
-  @property({ type: String })
-  icon?: "";
 
   render() {
     const styleClass = this.active
