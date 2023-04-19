@@ -1,2 +1,2 @@
 import "./Text";
-export type { CandyTextProps as CandyTextProps } from "./Text";
+export type { CandyTextProps } from "./Text";

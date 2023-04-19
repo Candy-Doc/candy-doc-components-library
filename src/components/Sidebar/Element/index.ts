@@ -1,2 +1,2 @@
 import "./Element";
-export type { CandySidebarElementProps as CandySidebarElementProps } from "./Element";
+export type { CandySidebarElementProps } from "./Element";

@@ -1,2 +1,2 @@
 import "./Switch";
-export type { CandySwitchProps as CandySwitchProps } from "./Switch";
+export type { CandySwitchProps } from "./Switch";

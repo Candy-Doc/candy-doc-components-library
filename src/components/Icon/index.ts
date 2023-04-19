@@ -1,3 +1,3 @@
 import "./Icon";
-export type { CandyIconProps as CandyIconProps } from "./Icon";
-export { IconSizes as IconSizes } from "./Icons";
+export type { CandyIconProps } from "./Icon";
+export { IconSizes } from "./Icons";

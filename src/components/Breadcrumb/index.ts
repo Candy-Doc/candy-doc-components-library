@@ -1,2 +1,2 @@
 import "./Breadcrumb";
-export type { CandyBreadcrumbProps as CandyBreadcrumbProps } from "./Breadcrumb";
+export type { CandyBreadcrumbProps } from "./Breadcrumb";
