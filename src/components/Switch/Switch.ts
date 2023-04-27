@@ -5,25 +5,12 @@ import { TailwindElement } from "../shared/tailwind.element.js";
 
 export type CandySwitchProps = {
   activated: boolean;
-  onChange: (value: boolean) => void;
 };
 
 @customElement("candy-switch")
 export class CandySwitch extends TailwindElement {
   @property({ type: Boolean })
   activated = false;
-
-  @property({ type: Function })
-  onChange?: (e?: boolean) => void;
-
-  handleClick = () => {
-    this.activated = !this.activated;
-    if (typeof this.onChange !== "function") {
-      console.log("onChange props is not a function");
-    } else if (this.onChange) {
-      this.onChange(this.activated);
-    }
-  };
 
   render() {
     const bgColor = this.activated ? "bg-blue-600" : "bg-gray-200";
@@ -34,7 +21,6 @@ export class CandySwitch extends TailwindElement {
       bgColor}
       role="switch"
       aria-checked=${this.activated ? "true" : "false"}
-      @click=${this.handleClick}
     >
       <span class="sr-only">Use setting</span>
       <span

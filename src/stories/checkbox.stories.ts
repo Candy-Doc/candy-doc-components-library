@@ -11,7 +11,6 @@ const renderCheckbox = (args: CandyCheckboxProps) =>
     ?checked=${args.checked}
     label=${args.label}
     description=${args.description}
-    .onChange=${args.onChange}
   ></candy-checkbox>`;
 
 export default {
@@ -51,32 +50,14 @@ export default {
         },
       },
     },
-    onChange: {
-      name: ".onChange",
-      description:
-        "Callback function triggered when the checkbox is clicked.<br/> New boolean value is given as parameter of the callback function",
-      table: {
-        type: {
-          summary: "function",
-        },
-        defaultValue: {
-          summary: "() => void",
-        },
-      },
-    },
   },
   render: renderCheckbox,
 } as Meta<CandyCheckboxProps>;
-
-const onChange = (value?: boolean) => {
-  console.log("new value: ", value);
-};
 
 export const Checkbox: Story = {
   args: {
     checked: false,
     label: "Checkbox",
     description: "This is a description",
-    onChange: onChange,
   },
 };

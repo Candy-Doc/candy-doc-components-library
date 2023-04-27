@@ -6,17 +6,8 @@ import "../components/Button";
 
 type Story = StoryObj<CandyButtonProps>;
 
-const clickCallback = () => {
-  console.log("Button clicked");
-};
-
 const renderButton = (args: CandyButtonProps) =>
-  html`<candy-button
-    label=${args.label}
-    size=${args.size}
-    type=${args.type}
-    .onClick=${args.onClick}
-  ></candy-button>`;
+  html`<candy-button label=${args.label} size=${args.size} type=${args.type}></candy-button>`;
 
 export default {
   title: "Components/Buttons",
@@ -60,18 +51,6 @@ export default {
         },
       },
     },
-    onClick: {
-      name: ".onClick",
-      description: "Callback function triggered when the button is clicked",
-      table: {
-        type: {
-          summary: "function",
-        },
-        defaultValue: {
-          summary: "() => void",
-        },
-      },
-    },
   },
   render: renderButton,
 } as Meta<CandyButtonProps>;
@@ -81,6 +60,5 @@ export const Buttons: Story = {
     label: "Button",
     type: ButtonTypes.Primary,
     size: ButtonSizes.md,
-    onClick: clickCallback,
   },
 };

@@ -14,7 +14,6 @@
     "storybook": "storybook dev -p 6006",
     "storybook-doc": "storybook dev --doc -p 6006",
     "dev": "vite",
-    "prebuild": "npm run build-style",
     "build": "build-storybook",
     "format": "prettier --check .",
     "format-fix": "prettier --write .",
