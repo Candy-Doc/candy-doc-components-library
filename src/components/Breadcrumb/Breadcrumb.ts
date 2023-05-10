@@ -1,13 +1,15 @@
-import { html } from "lit";
+import { LitElement, html } from "lit";
 import { customElement, property } from "lit/decorators.js";
-import { TailwindElement } from "../shared/tailwind.element";
+import BreadcrumbStyle from "./BreadcrumbStyle";
 
 export type CandyBreadcrumbProps = {
-  items: string[];
+  items: Array<string>;
 };
 
 @customElement("candy-breadcrumb")
-export class CandyBreadcrumb extends TailwindElement {
+export class CandyBreadcrumb extends LitElement {
+  static styles = BreadcrumbStyle;
+
   @property({ type: Array(String) })
   items = ["Home", "Page 1", "Subpage 1"];
 
@@ -15,14 +17,14 @@ export class CandyBreadcrumb extends TailwindElement {
     const htmlItems = this.items.map((item, i, row) => {
       const result = [
         html`<li>
-          <a class="block transition-colors hover:text-gray-700" href="/">${item}</a>
+          <a href="/">${item}</a>
         </li> `,
       ];
       if (i + 1 !== row.length) {
         result.push(html` <li>
           <svg
             xmlns="http://www.w3.org/2000/svg"
-            class="w-4 h-4"
+            class="icon"
             viewBox="0 0 20 20"
             fill="currentColor"
           >
@@ -36,9 +38,10 @@ export class CandyBreadcrumb extends TailwindElement {
       }
       return result;
     });
+
     return html`
-      <nav aria-label="Breadcrumb" part="breadcrumb">
-        <ol role="list" class="flex items-center space-x-1 text-sm text-gray-500">
+      <nav class="breadcrumb-container" aria-label="Breadcrumb" part="breadcrumb">
+        <ol role="list">
           ${htmlItems}
         </ol>
       </nav>

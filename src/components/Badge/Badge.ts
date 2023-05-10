@@ -1,25 +1,20 @@
-import { html } from "lit";
+import { LitElement, html } from "lit";
 import { customElement, property } from "lit/decorators.js";
-import { TailwindElement } from "../shared/tailwind.element.js";
+import BadgeStyle from "./BadgeStyle";
 
 export type CandyBadgeProps = {
   label: string;
 };
 
 @customElement("candy-badge")
-export class CandyBadge extends TailwindElement {
+export class CandyBadge extends LitElement {
+  static styles = BadgeStyle;
+
   @property({ type: String })
   label = "Badge";
 
   render() {
-    return html`
-      <span
-        class="rounded-full px-2 py-1 text-xs uppercase font-medium text-white bg-blue-600"
-        part="badge"
-      >
-        ${this.label}
-      </span>
-    `;
+    return html` <span class="badge-container" part="badge"> ${this.label} </span> `;
   }
 }
 

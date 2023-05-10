@@ -1,13 +1,12 @@
-import { html } from "lit";
+import { LitElement, html } from "lit";
 import { customElement, property } from "lit/decorators.js";
-import { TailwindElement } from "../shared/tailwind.element";
 
 export type CandyTextProps = {
   text: string;
 };
 
 @customElement("candy-text")
-export class CandyText extends TailwindElement {
+export class CandyText extends LitElement {
   @property({ type: String })
   childText = "";
 

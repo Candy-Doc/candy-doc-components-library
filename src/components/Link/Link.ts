@@ -1,6 +1,6 @@
-import { html } from "lit";
+import { LitElement, html } from "lit";
 import { customElement, property } from "lit/decorators.js";
-import { TailwindElement } from "../shared/tailwind.element";
+import LinkStyle from "./LinkStyle";
 
 export type CandyLinkProps = {
   label: string;
@@ -8,7 +8,9 @@ export type CandyLinkProps = {
 };
 
 @customElement("candy-link")
-export class CandyLink extends TailwindElement {
+export class CandyLink extends LitElement {
+  static styles = LinkStyle;
+
   @property({ type: String })
   label = "click me";
 
@@ -19,7 +21,7 @@ export class CandyLink extends TailwindElement {
   target = "_blank";
 
   render() {
-    return html`<a class="font-medium underline" href=${this.url} target=${this.target}
+    return html`<a class="link-container" href=${this.url} target=${this.target}
       >${this.label}</a
     > `;
   }

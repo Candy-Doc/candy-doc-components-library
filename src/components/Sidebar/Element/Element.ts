@@ -1,6 +1,6 @@
-import { html } from "lit";
+import { LitElement, html } from "lit";
 import { customElement, property } from "lit/decorators.js";
-import { TailwindElement } from "../../shared/tailwind.element.js";
+import ElementStyle from "./ElementStyle";
 
 export type CandySidebarElementProps = {
   label: string;
@@ -9,7 +9,9 @@ export type CandySidebarElementProps = {
 };
 
 @customElement("candy-sidebar-element")
-export class CandySidebarElement extends TailwindElement {
+export class CandySidebarElement extends LitElement {
+  static styles = ElementStyle;
+
   @property({ type: String })
   label = "Home";
 
@@ -21,16 +23,11 @@ export class CandySidebarElement extends TailwindElement {
 
   render() {
     const styleClass = this.active
-      ? "bg-gray-100 text-blue-600"
+      ? "bg-gray text-blue"
       : "text-black hover:bg-gray-50 hover:text-gray-900";
     return html`
-      <button
-        href="#"
-        class="${"w-full mb-1 rounded-md py-2 px-2 flex items-center text-base font-medium disabled:bg-slate-50 disabled:text-slate-500 disabled:border-slate-200 disabled:shadow-none " +
-        styleClass}"
-        ?disabled="${this.disabled}"
-      >
-        <div class="mr-4"><slot name="icon"></slot></div>
+      <button href="#" class="${"element-container " + styleClass}" ?disabled="${this.disabled}">
+        <div class="icon-container"><slot name="icon"></slot></div>
         ${this.label}
       </button>
     `;

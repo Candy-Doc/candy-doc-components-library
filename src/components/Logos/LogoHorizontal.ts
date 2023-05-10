@@ -1,11 +1,16 @@
-import { html } from "lit";
+import { LitElement, css, html } from "lit";
 import { customElement } from "lit/decorators.js";
 
 import LogoHorizontal from "../../assets/logos/logo_horizontal.svg";
-import { TailwindElement } from "../shared/tailwind.element";
 
 @customElement("candy-logo-horizontal")
-export class CandyLogoHorizontal extends TailwindElement {
+export class CandyLogoHorizontal extends LitElement {
+  static styles = css`
+    .h-full {
+      height: 100%;
+    }
+  `;
+
   render() {
     return html`<img class="h-full" src=${LogoHorizontal} alt="Candy-Doc" /> `;
   }

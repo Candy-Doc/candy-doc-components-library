@@ -1,11 +1,13 @@
-import { html } from "lit";
+import { LitElement, html } from "lit";
 import { customElement } from "lit/decorators.js";
-import { TailwindElement } from "../shared/tailwind.element";
+import DividerStyle from "./DividerStyle";
 
 @customElement("candy-divider")
-export class CandyDivider extends TailwindElement {
+export class CandyDivider extends LitElement {
+  static styles = DividerStyle;
+
   render() {
-    return html` <div class="p-2"><div class="flex border-t"></div></div> `;
+    return html` <div class="divider-container"><div></div></div> `;
   }
 }
 

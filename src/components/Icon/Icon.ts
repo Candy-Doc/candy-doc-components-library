@@ -1,14 +1,16 @@
-import { html } from "lit";
+import { LitElement, html } from "lit";
 import { customElement, property } from "lit/decorators.js";
 import { iconSize, IconSizes } from "./Icons.js";
-import { TailwindElement } from "../shared/tailwind.element.js";
+import IconStyle from "./IconStyle.js";
 
 export type CandyIconProps = {
   size: IconSizes;
 };
 
 @customElement("candy-icon")
-export class CandyBadge extends TailwindElement {
+export class CandyBadge extends LitElement {
+  static styles = IconStyle;
+
   @property({ type: String })
   size: IconSizes = IconSizes.sm;
 

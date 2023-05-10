@@ -8,10 +8,10 @@ import "../components/Divider";
 type Story = StoryObj;
 
 const renderDivider = () => html` <p
-    style="text-align: center; background-color: rgb(240,240,240); border-radius: 6px;"
+    style="text-align: center; background-color: rgb(240,240,240); border-radius: 6px; margin: 0;"
   >Above</p>
   <candy-divider></candy-divider>
-<p style="text-align: center; background-color: rgb(240,240,240); border-radius: 6px;">Below</p>`;
+<p style="text-align: center; background-color: rgb(240,240,240); border-radius: 6px; margin: 0;">Below</p>`;
 
 export default {
   title: "Components/Divider",

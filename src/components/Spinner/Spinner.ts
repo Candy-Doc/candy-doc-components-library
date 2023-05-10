@@ -1,24 +1,26 @@
-import { html } from "lit";
+import { LitElement, html } from "lit";
 import { customElement, property } from "lit/decorators.js";
 import { spinnerSize, SpinnerSizes } from "./Spinners";
-import { TailwindElement } from "../shared/tailwind.element";
+import SpinnerStyle from "./SpinnerStyle";
 
 export type CandySpinnerProps = {
   size: SpinnerSizes;
 };
 
 @customElement("candy-spinner")
-export class CandySpinner extends TailwindElement {
+export class CandySpinner extends LitElement {
+  static styles = SpinnerStyle;
+
   @property({ type: String })
   size: SpinnerSizes = SpinnerSizes.md;
 
   render() {
     const spinnerClass = spinnerSize[this.size];
     return html`
-      <div>
+      <div class="spinner-container">
         <svg
           role="status"
-          class=${"mr-2 text-gray-200 animate-spin fill-blue-600 " + spinnerClass}
+          class=${spinnerClass}
           viewBox="0 0 100 101"
           fill="none"
           xmlns="http://www.w3.org/2000/svg"
