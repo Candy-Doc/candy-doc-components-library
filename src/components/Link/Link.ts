@@ -1,7 +1,6 @@
-import { html, LitElement } from "lit";
+import { LitElement, html } from "lit";
 import { customElement, property } from "lit/decorators.js";
-
-import styles from "./Link.css.js";
+import LinkStyle from "./LinkStyle";
 
 export type CandyLinkProps = {
   label: string;
@@ -10,7 +9,7 @@ export type CandyLinkProps = {
 
 @customElement("candy-link")
 export class CandyLink extends LitElement {
-  static styles = [styles];
+  static styles = LinkStyle;
 
   @property({ type: String })
   label = "click me";
@@ -22,7 +21,7 @@ export class CandyLink extends LitElement {
   target = "_blank";
 
   render() {
-    return html`<a class="font-medium underline" href=${this.url} target=${this.target}
+    return html`<a class="link-container" href=${this.url} target=${this.target}
       >${this.label}</a
     > `;
   }

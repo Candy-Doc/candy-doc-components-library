@@ -1,26 +1,41 @@
-import { Story, Meta } from "@storybook/web-components";
+import { StoryObj, Meta } from "@storybook/web-components";
 import { html } from "lit";
 
-import "../components/Icon/Icon";
-import { CandyBadgeProps } from "../components/Badge/Badge";
+import { IconSizes, CandyIconProps } from "../components/Icon";
+import "../components/Icon";
+
+type Story = StoryObj<CandyIconProps>;
+
+const renderIcon = (args: CandyIconProps) => html`<div>
+  <candy-icon size=${args.size}>
+    <fa-icon slot="icon" class="fa-solid fa-candy-cane"></fa-icon>
+  </candy-icon>
+</div> `;
 
 export default {
-  title: "Icon",
+  title: "Components/Icon",
   component: "candy-icon",
-} as Meta<CandyBadgeProps>;
+  argTypes: {
+    size: {
+      description:
+        "Size of the <br/> Icon not directly included in the candy-element you have to manually wrap it inside <candy-sidebar-element> using slot='icon' attribute on the fa-icon",
+      options: Object.values(IconSizes),
+      control: { type: "radio" },
+      table: {
+        type: {
+          summary: "string",
+        },
+        defaultValue: {
+          summary: IconSizes.md,
+        },
+      },
+    },
+  },
+  render: renderIcon,
+} as Meta<CandyIconProps>;
 
-const Template: Story<CandyBadgeProps> = () => {
-  return html`<div>
-    <candy-icon size="sm">
-      <fa-icon slot="icon" class="fa-solid fa-candy-cane"></fa-icon
-    ></candy-icon>
-    <candy-icon size="md">
-      <fa-icon slot="icon" class="fa-solid fa-candy-cane"></fa-icon
-    ></candy-icon>
-    <candy-icon size="xl">
-      <fa-icon slot="icon" class="fa-solid fa-candy-cane"></fa-icon
-    ></candy-icon>
-  </div> `;
+export const Icon: Story = {
+  args: {
+    size: IconSizes.md,
+  },
 };
-
-export const Icon = Template.bind({});

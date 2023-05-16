@@ -1,21 +1,38 @@
-import { Story, Meta } from "@storybook/web-components";
+import { StoryObj, Meta } from "@storybook/web-components";
 import { html } from "lit";
 
-import "../components/Spinner/Spinner";
-import { CandySpinner, CandySpinnerProps } from "../components/Spinner/Spinner";
-import { SpinnerSizes } from "../components/Spinner/Spinners";
+import { CandySpinnerProps, SpinnerSizes } from "../components/Spinner";
+import "../components/Spinner";
+
+type Story = StoryObj<CandySpinnerProps>;
+
+const renderSpinner = (args: CandySpinnerProps) => html`<div>
+  <candy-spinner size=${args.size}></candy-spinner>
+</div>`;
 
 export default {
-  title: "Spinner",
+  title: "Components/Spinner",
   component: "candy-spinner",
+  argTypes: {
+    size: {
+      description: "Size of the spinner",
+      options: Object.values(SpinnerSizes),
+      control: { type: "radio" },
+      table: {
+        type: {
+          summary: "string",
+        },
+        defaultValue: {
+          summary: SpinnerSizes.md,
+        },
+      },
+    },
+  },
+  render: renderSpinner,
 } as Meta<CandySpinnerProps>;
 
-const Template: Story<CandySpinner> = () => {
-  return html`<div>
-    <candy-spinner size=${SpinnerSizes.sm}></candy-spinner>
-    <candy-spinner size=${SpinnerSizes.md}></candy-spinner>
-    <candy-spinner size=${SpinnerSizes.xl}></candy-spinner>
-  </div>`;
+export const Spinner: Story = {
+  args: {
+    size: SpinnerSizes.md,
+  },
 };
-
-export const Spinner = Template.bind({});

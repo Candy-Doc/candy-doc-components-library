@@ -1,42 +1,58 @@
+import { StoryObj, Meta } from "@storybook/web-components";
 import { html } from "lit";
-import { Story } from "@storybook/web-components";
 
-import "../../components/Sidebar/SideBar";
-import "../../components/Sidebar/Element/Element";
+import "../../components/Sidebar";
+import "../../components/Sidebar/Element";
 
-const elements = [
-  { label: "Overview", active: true, icon: "fa-solid fa-binoculars" },
-  { label: "Objects", active: false, icon: "fa-solid fa-cubes" },
-  {
-    label: "Bounded context 1",
-    active: false,
-    icon: "fa-regular fa-object-group",
-  },
-  {
-    label: "Bounded context 2",
-    active: false,
-    icon: "fa-regular fa-object-group",
-  },
-  {
-    label: "Bounded context 3",
-    active: false,
-    icon: "fa-regular fa-object-group",
-  },
-];
+type Story = StoryObj<CandySideBarControl>;
 
-export default {
-  title: "Sidebar",
-  component: "candy-sidebar",
+type CandySideBarControl = {
+  elements: Array<{
+    label: string;
+    active: boolean;
+    icon: string;
+  }>;
 };
 
-const Template: Story = () =>
-  html`<candy-sidebar>
-    ${elements.map(
-      ({ label, active, icon }) =>
-        html`<candy-sidebar-element label=${label} ?active=${active}>
-          <fa-icon slot="icon" class=${icon} size="2em"></fa-icon>
-        </candy-sidebar-element>`
-    )}
-  </candy-sidebar>`;
+const renderSideBar = (args: CandySideBarControl) => html`<candy-sidebar>
+  ${args.elements.map(
+    ({ label, active, icon }) =>
+      html`<candy-sidebar-element label=${label} ?active=${active}>
+        <fa-icon slot="icon" class=${icon} size="2em"></fa-icon>
+      </candy-sidebar-element>`
+  )}
+</candy-sidebar>`;
 
-export const Sidebar = Template.bind({});
+export default {
+  title: "Components/Sidebar",
+  component: "candy-sidebar",
+  argTypes: {
+    elements: {
+      description:
+        "List of sidebar elements information attributed in <candy-sidebar-element> items",
+      table: {
+        type: {
+          summary: "object[]",
+        },
+        defaultValue: {
+          summary: "[]",
+        },
+      },
+    },
+  },
+  render: renderSideBar,
+} as Meta<CandySideBarControl>;
+
+export const Sidebar: Story = {
+  args: {
+    elements: [
+      { label: "Overview", active: true, icon: "fa-solid fa-binoculars" },
+      { label: "Objects", active: false, icon: "fa-solid fa-cubes" },
+      {
+        label: "Bounded context 1",
+        active: false,
+        icon: "fa-regular fa-object-group",
+      },
+    ],
+  },
+};

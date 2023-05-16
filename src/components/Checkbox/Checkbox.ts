@@ -1,7 +1,6 @@
-import { html, LitElement } from "lit";
+import { LitElement, html } from "lit";
 import { customElement, property } from "lit/decorators.js";
-
-import styles from "./Checkbox.css.js";
+import CheckboxStyle from "./CheckboxStyle";
 
 export type CandyCheckboxProps = {
   checked: boolean;
@@ -11,32 +10,31 @@ export type CandyCheckboxProps = {
 
 @customElement("candy-checkbox")
 export class CandyCheckbox extends LitElement {
-  static styles = [styles];
+  static styles = CheckboxStyle;
 
   @property({ type: Boolean })
   checked = false;
 
   @property({ type: String })
-  label = "";
+  label = "Checkbox";
 
   @property({ type: String })
   description = "";
 
   render() {
-    return html`<div class="relative flex items-start">
-      <div class="flex items-center h-5">
+    return html`<div class="checkbox-container" part="checkbox">
+      <div class="checkbox">
         <input
           id="comments"
-          aria-describedby="comments-description"
+          aria-deszcribedby="comments-description"
           name="comments"
           type="checkbox"
-          class="focus:ring-blue-500 h-4 w-4 text-blue-600 border-gray-300 rounded"
           ?checked=${this.checked}
         />
       </div>
-      <div class="ml-3 text-sm">
-        <label for="comments" class="font-medium text-gray-700">${this.label}</label>
-        <p id="comments-description" class="text-gray-500">${this.description}</p>
+      <div class="label-container">
+        <label for="comments">${this.label}</label>
+        <p id="comments-description">${this.description}</p>
       </div>
     </div>`;
   }

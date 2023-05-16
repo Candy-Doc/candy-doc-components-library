@@ -1,8 +1,8 @@
 import { html, LitElement } from "lit";
 import { customElement, property } from "lit/decorators.js";
 
-import styles from "./Button.css.js";
 import { buttonSize, ButtonSizes, buttonType, ButtonTypes } from "./Buttons";
+import ButtonStyle from "./ButtonStyle";
 
 export type CandyButtonProps = {
   label: string;
@@ -12,7 +12,7 @@ export type CandyButtonProps = {
 
 @customElement("candy-button")
 export class CandyButton extends LitElement {
-  static styles = [styles];
+  static styles = ButtonStyle;
 
   @property({ type: String })
   label = "Click me";
@@ -27,11 +27,7 @@ export class CandyButton extends LitElement {
     const buttonSizeClasses = buttonSize[this.size];
     const buttonTypeClasses = buttonType[this.type];
     const classes = `${buttonSizeClasses} ${buttonTypeClasses}`;
-    return html`<button
-      type="button"
-      class=${"inline-flex items-center border border-transparent font-medium shadow-sm focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500 " +
-      classes}
-    >
+    return html`<button part="button" type="button" class=${"button-container " + classes}>
       ${this.label}
     </button>`;
   }

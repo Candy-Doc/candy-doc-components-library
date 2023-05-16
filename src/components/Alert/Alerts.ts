@@ -7,21 +7,15 @@ export enum AlertTypes {
 }
 
 export type Alert = {
-  borderColor: string;
-  backgroundColor: string;
-  iconColor: string;
-  textColor: string;
+  type: string;
   icon: TemplateResult<1>;
 };
 
 export const alerts: { [key in AlertTypes]: Alert } = {
   info: {
-    borderColor: "border-blue-400",
-    backgroundColor: "bg-blue-50",
-    iconColor: "text-blue-400",
-    textColor: "text-blue-700",
+    type: "info",
     icon: html`<svg
-      class="h-5 w-5 text-blue-400"
+      class="alert-icon"
       xmlns="http://www.w3.org/2000/svg"
       viewBox="0 0 20 20"
       fill="currentColor"
@@ -35,12 +29,9 @@ export const alerts: { [key in AlertTypes]: Alert } = {
     </svg>`,
   },
   warn: {
-    borderColor: "border-yellow-400",
-    backgroundColor: "bg-yellow-50",
-    iconColor: "text-yellow-400",
-    textColor: "text-yellow-700",
+    type: "warn",
     icon: html`<svg
-      class="h-5 w-5 "
+      class="alert-icon"
       xmlns="http://www.w3.org/2000/svg"
       viewBox="0 0 20 20"
       fill="currentColor"
@@ -54,12 +45,9 @@ export const alerts: { [key in AlertTypes]: Alert } = {
     </svg>`,
   },
   error: {
-    borderColor: "border-red-400",
-    backgroundColor: "bg-red-50",
-    iconColor: "text-red-400",
-    textColor: "text-red-700",
+    type: "error",
     icon: html`<svg
-      class="h-5 w-5 text-red-400"
+      class="alert-icon"
       xmlns="http://www.w3.org/2000/svg"
       viewBox="0 0 20 20"
       fill="currentColor"

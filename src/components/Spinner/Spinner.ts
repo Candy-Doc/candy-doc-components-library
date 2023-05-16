@@ -1,7 +1,7 @@
-import { html, LitElement } from "lit";
+import { LitElement, html } from "lit";
 import { customElement, property } from "lit/decorators.js";
-import styles from "./Spinner.css.js";
 import { spinnerSize, SpinnerSizes } from "./Spinners";
+import SpinnerStyle from "./SpinnerStyle";
 
 export type CandySpinnerProps = {
   size: SpinnerSizes;
@@ -9,7 +9,7 @@ export type CandySpinnerProps = {
 
 @customElement("candy-spinner")
 export class CandySpinner extends LitElement {
-  static styles = [styles];
+  static styles = SpinnerStyle;
 
   @property({ type: String })
   size: SpinnerSizes = SpinnerSizes.md;
@@ -17,10 +17,10 @@ export class CandySpinner extends LitElement {
   render() {
     const spinnerClass = spinnerSize[this.size];
     return html`
-      <div>
+      <div class="spinner-container">
         <svg
           role="status"
-          class=${"mr-2 text-gray-200 animate-spin fill-blue-600 " + spinnerClass}
+          class=${spinnerClass}
           viewBox="0 0 100 101"
           fill="none"
           xmlns="http://www.w3.org/2000/svg"
@@ -41,6 +41,6 @@ export class CandySpinner extends LitElement {
 
 declare global {
   interface HTMLElementTagNameMap {
-    "candy-divider": CandySpinner;
+    "candy-spinner": CandySpinner;
   }
 }

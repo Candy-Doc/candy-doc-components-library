@@ -1,7 +1,5 @@
-import { html, LitElement } from "lit";
+import { LitElement, html } from "lit";
 import { customElement, property } from "lit/decorators.js";
-
-import styles from "./Text.css.js";
 
 export type CandyTextProps = {
   text: string;
@@ -9,8 +7,6 @@ export type CandyTextProps = {
 
 @customElement("candy-text")
 export class CandyText extends LitElement {
-  static styles = [styles];
-
   @property({ type: String })
   childText = "";
 

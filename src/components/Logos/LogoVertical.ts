@@ -1,4 +1,4 @@
-import { html, LitElement } from "lit";
+import { LitElement, html } from "lit";
 import { customElement } from "lit/decorators.js";
 
 import LogoVertical from "../../assets/logos/logo_vertical.svg";

@@ -1,18 +1,35 @@
-import { Story, Meta } from "@storybook/web-components";
+import { StoryObj, Meta } from "@storybook/web-components";
 import { html } from "lit";
 
-import { CandySwitchProps } from "../components/Switch/Switch";
-import "../components/Switch/Switch";
+import { CandySwitchProps } from "../components/Switch";
+import "../components/Switch";
+
+type Story = StoryObj<CandySwitchProps>;
+
+const renderSwitch = (args: CandySwitchProps) =>
+  html`<candy-switch ?activated=${args.activated}></candy-switch>`;
 
 export default {
-  title: "Switch",
+  title: "Components/Switch",
   component: "candy-switch",
-  args: {
-    activated: false,
+  render: renderSwitch,
+  argTypes: {
+    activated: {
+      description: "Boolean value of the switch",
+      table: {
+        type: {
+          summary: "boolean",
+        },
+        defaultValue: {
+          summary: "False",
+        },
+      },
+    },
   },
 } as Meta<CandySwitchProps>;
 
-const Template: Story<CandySwitchProps> = (args) =>
-  html`<candy-switch ?activated=${args.activated}></candy-switch>`;
-
-export const Switch = Template.bind({});
+export const Switch: Story = {
+  args: {
+    activated: false,
+  },
+};

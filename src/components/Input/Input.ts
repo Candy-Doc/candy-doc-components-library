@@ -1,10 +1,8 @@
-import { html, LitElement } from "lit";
+import { LitElement, html } from "lit";
 import { customElement, property } from "lit/decorators.js";
-
-import styles from "./Input.css.js";
+import InputStyle from "./InputStyle";
 
 export type CandyInputProps = {
-  value: string;
   label: string;
   placeholder: string;
   shortCut: string;
@@ -12,10 +10,7 @@ export type CandyInputProps = {
 
 @customElement("candy-input")
 export class CandyInput extends LitElement {
-  static styles = [styles];
-
-  @property({ type: String })
-  value = "";
+  static styles = InputStyle;
 
   @property({ type: String })
   label = "Quick Search";
@@ -27,27 +22,19 @@ export class CandyInput extends LitElement {
   shortCut = "⌘K";
 
   render() {
-    return html`<div>
-      <label for="search" class="block text-sm font-medium text-gray-700">${this.label}</label>
-      <div class="mt-1 relative flex items-center">
+    return html`<div class="input-container">
+      <label for="search">${this.label}</label>
+      <div class="input-box">
         <input
           type="text"
           name="search"
           id="search"
           placeholder=${this.placeholder}
-          .value=${this.value}
-          @input=${(e: Event) => {
-            this.value = (e.target as HTMLInputElement).value;
-          }}
-          class="shadow-sm focus:ring-blue-500 focus:border-blue-500 block w-full pr-12 sm:text-sm border-gray-300 rounded-md"
+          class="focus:ring-blue-500 sm:text-sm"
         />
         ${this.shortCut &&
-        html`<div class="absolute inset-y-0 right-0 flex py-1.5 pr-1.5">
-          <kbd
-            class="inline-flex items-center border border-gray-200 rounded px-2 text-sm font-sans font-medium text-gray-500"
-          >
-            ${this.shortCut}
-          </kbd>
+        html`<div class="shortcut-box">
+          <kbd>${this.shortCut}</kbd>
         </div>`}
       </div>
     </div>`;

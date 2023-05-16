@@ -1,13 +1,14 @@
+import { StoryObj } from "@storybook/web-components";
 import { html } from "lit";
-import { Story } from "@storybook/web-components";
 
 import "../components/Topbar/Topbar";
 
+const renderTopBar = () => html`<candy-topbar> </candy-topbar>`;
+
 export default {
-  title: "Topbar",
+  title: "Components/Topbar",
   component: "candy-topbar",
+  redner: renderTopBar,
 };
 
-const Template: Story = () => html`<candy-topbar> </candy-topbar>`;
-
-export const Topbar = Template.bind({});
+export const Topbar: StoryObj = {};

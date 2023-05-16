@@ -1,35 +1,38 @@
-import { Story, Meta } from "@storybook/web-components";
+import { Meta, StoryObj } from "@storybook/web-components";
 import { html } from "lit";
 
-import "../components/Alert/Alert";
-import { CandyAlertProps } from "../components/Alert/Alert";
-import { AlertTypes } from "../components/Alert/Alerts";
+import { CandyAlertProps, AlertTypes } from "../components/Alert";
+import "../components/Alert";
 
-type CandyAlertControls = {
-  text: string;
-};
+type Story = StoryObj<CandyAlertProps>;
+
+const renderAlert = (args: CandyAlertProps) => html`<candy-alert alertType=${args.type}>
+  <span slot="content">I'm the text inside an info alert</span>
+</candy-alert>`;
 
 export default {
-  title: "Alert",
+  title: "Components/Alerts",
   component: "candy-alert",
-  args: {
-    text: "I'm the text inside the alert",
+  argTypes: {
+    type: {
+      description: `Define the type of the alert`,
+      options: Object.values(AlertTypes),
+      control: { type: "radio" },
+      table: {
+        type: {
+          summary: "string",
+        },
+        defaultValue: {
+          summary: AlertTypes.Info,
+        },
+      },
+    },
   },
-} as Meta<CandyAlertProps & CandyAlertControls>;
+  render: renderAlert,
+} as Meta<CandyAlertProps>;
 
-const Template: Story<CandyAlertProps & CandyAlertControls> = (args) =>
-  html`
-    <div>
-      <candy-alert alertType=${AlertTypes.Info}>
-        <span slot="content">${args.text}</span>
-      </candy-alert>
-      <candy-alert alertType=${AlertTypes.Warn}>
-        <span slot="content">${args.text}</span>
-      </candy-alert>
-      <candy-alert alertType=${AlertTypes.Error}>
-        <span slot="content">${args.text}</span>
-      </candy-alert>
-    </div>
-  `;
-
-export const Alert = Template.bind({});
+export const Alerts: Story = {
+  args: {
+    type: AlertTypes.Info,
+  },
+};
