@@ -1,10 +1,12 @@
 {
   "name": "@candy-doc/ui",
-  "version": "1.0.1",
+  "version": "1.5.0",
   "private": false,
   "publishConfig": {
     "access": "public"
   },
+  "main": "dist/my-element.es.js",
+  "types": "types/my-element.d.ts",
   "files": [
     "src/components/**/*.ts",
     "src/assets/logos"
@@ -39,7 +41,6 @@
     "babel-loader": "^9.1.2",
     "chromatic": "^6.5.4",
     "eslint": "^8.12.0",
-    "eslint-config-prettier": "^8.5.0",
     "eslint-plugin-lit": "^1.6.1",
     "eslint-plugin-prettier": "^4.0.0",
     "eslint-plugin-storybook": "^0.5.11",
