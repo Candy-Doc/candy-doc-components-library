@@ -1,3 +1,8 @@
+# [v1.6.0](https://github.com/Candy-Doc/candy-doc-components-library/compare/v1.5.0...v1.6.0) (2023-05-16)
+
+## ♻ Code refactored
+- [`295980e`](https://github.com/Candy-Doc/candy-doc-components-library/commit/295980e)  refactor: remove build-style.js and tailwind &amp; update storybook to v7.0 (#43) (Issues: [`#43`](https://github.com/Candy-Doc/candy-doc-components-library/issues/43) [`#43`](https://github.com/Candy-Doc/candy-doc-components-library/issues/43) [`#43`](https://github.com/Candy-Doc/candy-doc-components-library/issues/43) [`#43`](https://github.com/Candy-Doc/candy-doc-components-library/issues/43) [`#43`](https://github.com/Candy-Doc/candy-doc-components-library/issues/43))
+
 # [v1.5.0](https://github.com/Candy-Doc/candy-doc-components-library/compare/v1.4.0...v1.5.0) (2023-04-12)
 
 ## ✨ New minor Features
