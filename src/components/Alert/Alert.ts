@@ -10,7 +10,7 @@ export type CandyAlertProps = {
 
 @customElement("candy-alert")
 export class CandyAlert extends LitElement {
-  static styles = [AlertStyle];
+  static styles = AlertStyle;
 
   @property({ type: String })
   alertType = AlertTypes.Info;

@@ -7,7 +7,7 @@
   },
   "files": [
     "src/components/**/*.ts",
-    "src/assets"
+    "src/assets/logos"
   ],
   "scripts": {
     "storybook": "storybook dev -p 6006",
