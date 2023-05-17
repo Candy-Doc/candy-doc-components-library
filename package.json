@@ -15,12 +15,11 @@
     "storybook": "storybook dev -p 6006",
     "storybook-doc": "storybook dev --doc -p 6006",
     "dev": "vite",
-    "build": "build-storybook",
+    "build": "storybook build",
     "format": "prettier --check .",
     "format-fix": "prettier --write .",
     "lint": "eslint --ext .cjs,.js,.ts,.json .",
-    "lint-fix": "eslint --fix --ext .cjs,.js,.ts,.json .",
-    "build-storybook": "storybook build"
+    "lint-fix": "eslint --fix --ext .cjs,.js,.ts,.json ."
   },
   "devDependencies": {
     "@fortawesome/fontawesome-free": "^6.1.1",
