@@ -3,7 +3,6 @@ import { css } from "lit";
 export default css`
   .topbar-container {
     background-color: #fff;
-    border-bottom: 1px solid rgb(229 231 235);
     flex: 1 1 0%;
     padding: 0.5rem;
     margin-left: auto;
@@ -12,13 +11,35 @@ export default css`
     flex-direction: row;
     align-items: center;
     justify-content: space-between;
+    min-height: 3rem;
   }
 
   .logo {
-    width: calc(100% / 6);
+    width: 10rem;
   }
 
   .navbar {
-    width: calc(100% / 4);
+    width: 100%;
+    display: flex;
+    justify-content: end;
+    overflow: hidden;
+  }
+
+  ul {
+    list-style-type: none;
+    display: flex;
+  }
+
+  ::slotted(*) {
+    padding-left: 2rem;
+    display: flex;
+    align-content: center;
+    justify-content: center;
+  }
+
+  @media (min-width: 768px) {
+    ::slotted(*) {
+      padding-left: 5rem;
+    }
   }
 `;

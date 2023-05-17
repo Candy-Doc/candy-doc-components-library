@@ -1,9 +1,9 @@
 import { LitElement, html } from "lit";
 import { customElement } from "lit/decorators.js";
 
+import TopbarStyle from "./TopbarStyle";
 import "../Logos/LogoHorizontal";
 import "../Input/Input";
-import TopbarStyle from "./TopbarStyle";
 
 @customElement("candy-topbar")
 export class CandyTopbar extends LitElement {
@@ -18,7 +18,9 @@ export class CandyTopbar extends LitElement {
           </a>
         </div>
         <div class="navbar">
-          <candy-input label=""></candy-input>
+          <ul>
+            <slot></slot>
+          </ul>
         </div>
       </header>
     `;

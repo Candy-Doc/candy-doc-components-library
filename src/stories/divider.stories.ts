@@ -1,5 +1,3 @@
-// deslint disabled in order to ensure a good html documentation display
-/* eslint-disable prettier/prettier */
 import { StoryObj } from "@storybook/web-components";
 import { html } from "lit";
 
