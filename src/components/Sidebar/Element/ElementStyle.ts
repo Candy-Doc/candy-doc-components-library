@@ -26,7 +26,7 @@ export default css`
     box-shadow: 0 0 #0000;
   }
 
-  .icon-container {
+  .icon-container ::slotted(*) {
     margin-right: 1rem;
   }
 
