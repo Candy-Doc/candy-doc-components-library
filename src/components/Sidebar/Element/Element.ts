@@ -21,14 +21,22 @@ export class CandySidebarElement extends LitElement {
   @property({ type: Boolean })
   disabled = false;
 
+  @property({ type: Boolean })
+  collapsed = false;
+
   render() {
     const styleClass = this.active
       ? "bg-gray text-blue"
-      : "text-black hover:bg-gray-50 hover:text-gray-900";
+      : "text-black";
+
     return html`
-      <button href="#" class="${"element-container " + styleClass}" ?disabled="${this.disabled}">
-        <div class="icon-container"><slot name="icon"></slot></div>
-        ${this.label}
+      <button
+        href="#"
+        class="${"element-container " + styleClass} ${!this.collapsed ? "element-container-extended" : null}"
+        ?disabled="${this.disabled}"
+      >
+        <slot name="icon"></slot>
+        <p>${!this.collapsed ? this.label : null}</p>
       </button>
     `;
   }

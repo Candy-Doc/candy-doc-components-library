@@ -2,7 +2,6 @@ import { css } from "lit";
 
 export default css`
   .element-container {
-    width: 100%;
     margin-bottom: 0.25rem;
     border-radius: 0.375rem;
     padding: 0.5rem;
@@ -13,6 +12,12 @@ export default css`
     font-weight: 500;
     background: transparent;
     border: none;
+    height: 2rem;
+    width: 2rem;
+  }
+
+  .element-container-extended {
+    width: 100%;
   }
 
   .element-container:hover {
@@ -27,11 +32,9 @@ export default css`
     box-shadow: 0 0 #0000;
   }
 
-  .icon-container {
-    margin-right: .5rem;
-    display: flex;
-    align-items: center;
-    justify-content: center;
+  p {
+    all: unset;
+    margin-left: 0.5rem;
   }
 
   .end-icons {
@@ -62,6 +65,7 @@ export default css`
   .text-blue .chevron:after, .text-blue .chevron:before {
     background: rgb(37 99 235);
   }
+
   .text-black {
     color: rgb(0 0 0);
   }
