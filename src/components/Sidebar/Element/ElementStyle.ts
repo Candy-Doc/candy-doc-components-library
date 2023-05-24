@@ -2,7 +2,6 @@ import { css } from "lit";
 
 export default css`
   .element-container {
-    width: 100%;
     margin-bottom: 0.25rem;
     border-radius: 0.375rem;
     padding: 0.5rem;
@@ -13,6 +12,12 @@ export default css`
     font-weight: 500;
     background: transparent;
     border: none;
+    width: 2rem;
+    height: 2rem;
+  }
+
+  .element-container-extended {
+    width: 100%;
   }
 
   .element-container:hover {
@@ -26,10 +31,6 @@ export default css`
     box-shadow: 0 0 #0000;
   }
 
-  .icon-container ::slotted(*) {
-    margin-right: 1rem;
-  }
-
   .text-blue {
     color: rgb(37 99 235);
   }
@@ -40,5 +41,10 @@ export default css`
 
   .bg-gray {
     background-color: rgb(243 244 246) !important;
+  }
+
+  p {
+    all: unset;
+    margin-left: 0.5rem;
   }
 `;

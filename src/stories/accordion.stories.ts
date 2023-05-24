@@ -7,7 +7,10 @@ import "../components/Alert";
 
 type Story = StoryObj<CandyAccordionProps>;
 
-const renderAccordion = (args: CandyAccordionProps) => html`<candy-accordion label=${"Section 1"} ?active=${args.active}>
+const renderAccordion = (args: CandyAccordionProps) => html`<candy-accordion
+  label=${"Section 1"}
+  ?active=${args.active}
+  ?disabled=${args.disabled}>
   <candy-alert>
     <span slot="content">I'm the text inside an info alert</span>
   </candy-alert>
@@ -18,8 +21,32 @@ export default {
   component: "candy-accordion",
   render: renderAccordion,
   argTypes: {
-    activated: {
-      description: "Boolean value of the switch",
+    label: {
+      description: "Label of the element",
+      table: {
+        type: {
+          summary: "string",
+        },
+        defaultValue: {
+          summary: "Home",
+        },
+      },
+    },
+    active: {
+      name: "?active",
+      description: "Expand the accordion",
+      table: {
+        type: {
+          summary: "boolean",
+        },
+        defaultValue: {
+          summary: "False",
+        },
+      },
+    },
+    disabled: {
+      name: "?disabled",
+      description: "Is the item disabled",
       table: {
         type: {
           summary: "boolean",

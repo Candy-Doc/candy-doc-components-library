@@ -9,7 +9,8 @@
   "types": "types/my-element.d.ts",
   "files": [
     "src/components/**/*.ts",
-    "src/assets/logos"
+    "src/assets/logos",
+    "src/assets/icons"
   ],
   "scripts": {
     "storybook": "storybook dev -p 6006",
