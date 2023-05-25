@@ -19,9 +19,7 @@ export class CandyTopbarElement extends LitElement {
         <div class="title">
           ${this.label}
         </div>
-        <div class="icon-container">
-          <slot name="icon"></slot>
-        </div>
+        <slot name="icon"></slot>
       </li>
     `;
   }

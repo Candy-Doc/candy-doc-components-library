@@ -12,7 +12,7 @@ export class CandyLogoHorizontal extends LitElement {
   `;
 
   render() {
-    return html`<img class="h-full" src=${LogoHorizontal} alt="Candy-Doc" /> `;
+    return html`<img part="logo-horizontal" class="h-full" src=${LogoHorizontal} alt="Candy-Doc-Horizontal" /> `;
   }
 }
 

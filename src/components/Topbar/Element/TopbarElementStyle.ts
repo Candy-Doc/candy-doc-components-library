@@ -30,14 +30,11 @@ export default css`
     width: 100%;
   }
 
-  .icon-container {
-    margin-left: .5rem;
-    font-size: 1.5rem;
-    transition: .2s;
-  }
-
   ::slotted(*) {
     text-decoration: none;
     color: inherit;
+    margin-left: .5rem;
+    font-size: 1.5rem;
+    transition: .2s;
   }
 `;
