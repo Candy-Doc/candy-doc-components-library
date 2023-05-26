@@ -2,6 +2,7 @@ import { css } from "lit";
 
 export default css`
   .element-container {
+    width: 100%;
     margin-bottom: 0.25rem;
     border-radius: 0.375rem;
     padding: 0.5rem;
@@ -12,50 +13,19 @@ export default css`
     font-weight: 500;
     background: transparent;
     border: none;
-    height: 2rem;
-    width: 2rem;
-  }
-
-  .element-container-extended {
-    width: 100%;
   }
 
   .element-container:hover {
-    background-color: rgb(249 250 251);
     cursor: pointer;
   }
 
-  button:disabled {
-    background-color: rgb(248 250 252);
-    color: rgb(100 116 139);
-    border-color: rgb(226 232 240);
-    box-shadow: 0 0 #0000;
+  .title-container {
+    padding-bottom: 1rem;
   }
 
   p {
     all: unset;
     margin-left: 0.5rem;
-  }
-
-  .end-icons {
-    display: flex;
-    justify-content: end;
-    flex-grow: 1;
-  }
-
-  .options-container {
-    display:flex;
-    gap: 1rem;
-    padding: 0 1rem;
-  }
-
-  .options-container > ::slotted(*) {
-    transition: 0.1s ease-in-out;
-  }
-
-  .options-container > ::slotted(*:hover) {
-    transform: scale(1.1);
-    transition: 0.2s ease-in-out;
   }
 
   .text-blue {
@@ -66,16 +36,12 @@ export default css`
     background: rgb(37 99 235);
   }
 
-  .text-black {
-    color: rgb(0 0 0);
+  .text-gray {
+    color: rgb(70 70 70);
   }
 
-  .bg-gray {
-    background-color: rgb(243 244 246) !important;
-  }
-
-  .accordion-childrens {
-    margin-left: 1.25rem;
+  .title-childrens {
+    margin-left: calc(0.5rem + 14px);
   }
 
   .chevron {
@@ -94,7 +60,7 @@ export default css`
     left: 0;
     height: 100%;
     width: 50%;
-    background: black;
+    background: rgb(70 70 70);
     -webkit-transform: skew(0, 35deg);
     -moz-transform: skew(0, 35deg);
     -ms-transform: skew(0, 35deg);
@@ -109,7 +75,7 @@ export default css`
     left: 50%;
     height: 100%;
     width: 50%;
-    background: black;
+    background: rgb(70 70 70);
     -webkit-transform: skew(0, -35deg);
     -moz-transform: skew(0, -35deg);
     -ms-transform: skew(0, -35deg);
