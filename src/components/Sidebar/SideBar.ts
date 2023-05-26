@@ -35,7 +35,7 @@ export class CandySidebar extends LitElement {
       <div class="sidebar-container ${this.collapsed ? "sidebar-mini " : null}" part="sidebar">
         <section>
           <div class="icon-container">
-            <img src=${expandArrow} />
+            <img src=${expandArrow} alt="expand-icon"/>
           </div>
           <slot></slot>
         </section>

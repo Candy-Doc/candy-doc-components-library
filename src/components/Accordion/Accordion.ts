@@ -1,6 +1,6 @@
 import { LitElement, html } from "lit";
 import { customElement, property } from "lit/decorators.js";
-import ElementStyle from "./AccordionStyle";
+import AccordionStyle from "./AccordionStyle";
 
 export type CandyAccordionProps = {
   label: string;
@@ -10,7 +10,7 @@ export type CandyAccordionProps = {
 
 @customElement("candy-accordion")
 export class CandyAccordion extends LitElement {
-  static styles = ElementStyle;
+  static styles = AccordionStyle;
 
   @property({ type: String })
   label = "Home";
@@ -33,10 +33,10 @@ export class CandyAccordion extends LitElement {
       <div class="accordion-childrens">
         <slot></slot>
       </div>
-    `: html``;
+    `: null;
 
     return html`
-      <section part="accordion">
+      <div part="accordion">
         <button
           href="#"
           class="${"element-container " + styleClass} ${!this.collapsed ? "element-container-extended" : null}"
@@ -53,7 +53,7 @@ export class CandyAccordion extends LitElement {
           `: null}
         </button>
         ${!this.collapsed ? content : null}
-      </section>
+      </div>
     `;
   }
 }

@@ -1,4 +1,4 @@
-  import { StoryObj, Meta } from "@storybook/web-components";
+import { StoryObj, Meta } from "@storybook/web-components";
 import { TemplateResult, html } from "lit";
 
 import type { CandySidebarProps } from "../../components/Sidebar";
@@ -20,50 +20,41 @@ type CandySideBarControl = {
   elements: Array<CandySideBarElement>;
 };
 
-const renderOptionsIcons = (optionsIcons: Array<string>) => optionsIcons.map((icon: string) => html`
-  <fa-icon slot="options" class=${icon}></fa-icon>`);
+const renderOptionsIcons = (optionsIcons: Array<string>) => {
+  return optionsIcons.map((icon: string) => html`
+    <fa-icon slot="options" class=${icon}></fa-icon>`
+)};
 
-const renderAccordion = (element: CandySideBarElement) => html`
-  <candy-accordion label=${element.label} ?active=${element.active}>
+const renderAccordion = (element: CandySideBarElement) => {
+  return html`<candy-accordion label=${element.label} ?active=${element.active}>
     <fa-icon slot="icon" class=${element.icon}></fa-icon>
     ${element.childrens.map(
-      (element: CandySideBarElement) => renderSidebarElements(element)
+      (child: CandySideBarElement) => renderSidebarElements(child)
     )}
     ${element.optionsIcons ? renderOptionsIcons(element.optionsIcons) : null}
   </candy-accordion>`;
+};
 
-const renderSimpleElement = (element: CandySideBarElement) => html`
-  <candy-sidebar-element label=${element.label} ?active=${element.active}>
+const renderSimpleElement = (element: CandySideBarElement) => {
+  return html`<candy-sidebar-element label=${element.label} ?active=${element.active}>
     ${element.icon ? html`<fa-icon slot = "icon" class=${element.icon}></fa-icon>` : null}
   </candy-sidebar-element>`;
+};
 
-const renderSidebarElements = (element: CandySideBarElement): TemplateResult =>
-  element.childrens.length > 0 ? renderAccordion(element) : renderSimpleElement(element);
+const renderSidebarElements = (element: CandySideBarElement): TemplateResult => {
+  return element.childrens.length > 0 ? renderAccordion(element) : renderSimpleElement(element);
+};
 
-const renderSideBar = (args: CandySidebarProps  & CandySideBarControl) => html`
-<candy-sidebar ?collapsed=${args.collapsed}>
-  ${args.elements.map(
-    (element: CandySideBarElement) => renderSidebarElements(element)
-  )}
-</candy-sidebar>`;
+const renderSideBar = (args: CandySidebarProps  & CandySideBarControl) => {
+  return html`<candy-sidebar ?collapsed=${args.collapsed}>
+    ${args.elements.map((element: CandySideBarElement) => renderSidebarElements(element))}
+</candy-sidebar>`
+};
 
 export default {
   title: "Components/Sidebar",
   component: "candy-sidebar",
-  description: "toto",
   argTypes: {
-    elements: {
-      description:
-        "List of sidebar elements information attributed in <candy-sidebar-element> items",
-      table: {
-        type: {
-          summary: "object[]",
-        },
-        defaultValue: {
-          summary: "[]",
-        },
-      },
-    },
     collapsed: {
       name: "?collapsed",
       description: "Collapse the sidebar to make it smaller. Only the icons of main sections are shown",
@@ -75,6 +66,18 @@ export default {
           summary: false,
         },
       }
+    },
+    elements: {
+      description:
+        "List of sidebar elements information. /!\\ This argument is to build the items and is not passed inside the sidebar.",
+      table: {
+        type: {
+          summary: "object[]",
+        },
+        defaultValue: {
+          summary: "[]",
+        },
+      },
     },
   },
   render: renderSideBar,
