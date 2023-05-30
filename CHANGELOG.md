@@ -1,3 +1,8 @@
+# [v1.7.0](https://github.com/Candy-Doc/candy-doc-components-library/compare/v1.6.0...v1.7.0) (2023-05-30)
+
+## ♻ Code refactored
+- [`d3ecb4b`](https://github.com/Candy-Doc/candy-doc-components-library/commit/d3ecb4b)  refactor: rework topbar design (#45) (Issues: [`#45`](https://github.com/Candy-Doc/candy-doc-components-library/issues/45))
+
 # [v1.6.0](https://github.com/Candy-Doc/candy-doc-components-library/compare/v1.5.0...v1.6.0) (2023-05-16)
 
 ## ♻ Code refactored
