@@ -10,36 +10,43 @@ export default css`
     display: flex;
     flex-direction: row;
     align-items: center;
-    justify-content: space-between;
     min-height: 3rem;
   }
 
   .logo {
     width: 10rem;
+    min-width: 10rem;
+  }
+
+  .logo-reduced {
+    width: 2.5rem;
+    min-width: 2.5rem;
   }
 
   .navbar {
-    width: 100%;
+    flex-grow: 1;
     display: flex;
-    justify-content: end;
-    overflow: hidden;
+    justify-content: flex-end;
   }
 
   ul {
     list-style-type: none;
     display: flex;
+    column-gap: 2rem;
+    padding: 0.5rem;
+    margin: 0;
+    flex-wrap: wrap;
   }
 
   ::slotted(*) {
-    padding-left: 2rem;
     display: flex;
     align-content: center;
     justify-content: center;
   }
 
   @media (min-width: 768px) {
-    ::slotted(*) {
-      padding-left: 5rem;
+    ul {
+      column-gap: 5rem;
     }
   }
 `;

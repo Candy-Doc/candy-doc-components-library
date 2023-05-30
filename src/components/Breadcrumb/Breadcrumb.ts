@@ -40,11 +40,11 @@ export class CandyBreadcrumb extends LitElement {
     });
 
     return html`
-      <nav class="breadcrumb-container" aria-label="Breadcrumb" part="breadcrumb">
+      <div class="breadcrumb-container" aria-label="Breadcrumb" part="breadcrumb">
         <ol role="list">
           ${htmlItems}
         </ol>
-      </nav>
+      </div>
     `;
   }
 }

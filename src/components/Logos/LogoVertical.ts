@@ -10,7 +10,7 @@ export class CandyLogoVertical extends LitElement {
   }
 
   render() {
-    return html`<img src=${LogoVertical} alt="Candy-Doc" /> `;
+    return html`<img part="logo-vertical" src=${LogoVertical} alt="Candy-Doc-Vertical" /> `;
   }
 }
 
