@@ -2,7 +2,7 @@ import { css } from "lit";
 
 export default css`
   .topbar-container {
-    background-color: #fff;
+    background-color: transparent;
     flex: 1 1 0%;
     padding: 0.5rem;
     margin-left: auto;

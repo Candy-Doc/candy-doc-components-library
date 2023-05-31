@@ -17,7 +17,7 @@ export class CandyBadge extends LitElement {
   render() {
     const iconClasses = iconSize[this.size];
     return html`
-      <div class=${iconClasses}>
+      <div class=${iconClasses} part="icon">
         <slot name="icon"></slot>
       </div>
     `;

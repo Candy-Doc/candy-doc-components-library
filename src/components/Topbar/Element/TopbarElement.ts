@@ -15,7 +15,7 @@ export class CandyTopbarElement extends LitElement {
 
   render() {
     return html`
-      <li>
+      <li part="topbar-element">
         <div class="title">
           ${this.label}
         </div>

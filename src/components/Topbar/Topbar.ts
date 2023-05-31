@@ -35,7 +35,7 @@ export class CandyTopbar extends LitElement {
 
   render() {
     return html`
-      <header class="topbar-container">
+      <header class="topbar-container" part="topbar">
         <div class="${this.mobile ? "logo-reduced" : "logo"}">
           <a href="/">
             ${this.mobile ?
