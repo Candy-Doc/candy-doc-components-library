@@ -11,6 +11,9 @@
     <script type="module" src="src/components/Breadcrumb"></script>
     <script type="module" src="src/components/Divider"></script>
     <script type="module" src="src/components/checkbox"></script>
+    <script type="module" src="src/components/Sidebar"></script>
+    <script type="module" src="src/components/Sidebar/DropdownElement"></script>
+    <script type="module" src="src/components/Sidebar/Element"></script>
   </head>
   <body>
     <div class="p-5">
@@ -32,6 +35,22 @@
         <candy-breadcrumb></candy-breadcrumb>
       </div>
       <candy-checkbox checked="checked" label="check" description="description"></candy-checkbox>
+    </div>
+    <div>
+      <candy-sidebar>
+        <candy-sidebar-dropdown-element label="Test" active="">
+          <fa-icon slot="icon" class="fa-regular fa-object-group" size="2em"></fa-icon>
+          <candy-sidebar-element label="elem 1">
+            <fa-icon slot="icon" class="fa-regular fa-object-group" size="2em"></fa-icon>
+          </candy-sidebar-element>
+          <candy-sidebar-element label="elem 2">
+            <fa-icon slot="icon" class="fa-regular fa-object-group" size="2em"></fa-icon>
+          </candy-sidebar-element>
+        </candy-sidebar-dropdown-element>
+        <candy-sidebar-element>
+          <fa-icon slot="icon" class="fa-regular fa-object-group" size="2em"></fa-icon>
+        </candy-sidebar-element>
+      </candy-sidebar>
     </div>
   </body>
 </html>
