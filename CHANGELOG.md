@@ -1,3 +1,8 @@
+# [v1.8.0](https://github.com/Candy-Doc/candy-doc-components-library/compare/v1.7.0...v1.8.0) (2023-05-31)
+
+## ♻ Code refactored
+- [`4df0783`](https://github.com/Candy-Doc/candy-doc-components-library/commit/4df0783)  refactor: rework sidebar design (#48) (Issues: [`#48`](https://github.com/Candy-Doc/candy-doc-components-library/issues/48))
+
 # [v1.7.0](https://github.com/Candy-Doc/candy-doc-components-library/compare/v1.6.0...v1.7.0) (2023-05-30)
 
 ## ♻ Code refactored
