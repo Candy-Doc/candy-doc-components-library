@@ -1,3 +1,8 @@
+# [v1.8.1](https://github.com/Candy-Doc/candy-doc-components-library/compare/v1.8.0...v1.8.1) (2023-05-31)
+
+## 🐛 Bug Fixes
+- [`5baf0c5`](https://github.com/Candy-Doc/candy-doc-components-library/commit/5baf0c5)  fix: add missing &#x27;part&#x27; html attribute on several components (#49) (Issues: [`#49`](https://github.com/Candy-Doc/candy-doc-components-library/issues/49))
+
 # [v1.8.0](https://github.com/Candy-Doc/candy-doc-components-library/compare/v1.7.0...v1.8.0) (2023-05-31)
 
 ## ♻ Code refactored
