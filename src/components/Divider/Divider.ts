@@ -7,7 +7,7 @@ export class CandyDivider extends LitElement {
   static styles = DividerStyle;
 
   render() {
-    return html` <div class="divider-container"><div></div></div> `;
+    return html`<div part="divider" class="divider-container"><div></div></div> `;
   }
 }
 

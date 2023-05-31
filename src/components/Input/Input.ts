@@ -22,7 +22,7 @@ export class CandyInput extends LitElement {
   shortCut = "⌘K";
 
   render() {
-    return html`<div class="input-container">
+    return html`<div class="input-container" part="input">
       <label for="search">${this.label}</label>
       <div class="input-box">
         <input

@@ -16,7 +16,7 @@ export class CandyText extends LitElement {
   }
 
   render() {
-    return html` <div class="prose">${this.returnString()}</div> `;
+    return html`<div part="prose" class="prose">${this.returnString()}</div> `;
   }
 }
 

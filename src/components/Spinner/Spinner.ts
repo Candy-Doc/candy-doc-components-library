@@ -17,7 +17,7 @@ export class CandySpinner extends LitElement {
   render() {
     const spinnerClass = spinnerSize[this.size];
     return html`
-      <div class="spinner-container">
+      <div class="spinner-container" part="spinner">
         <svg
           role="status"
           class=${spinnerClass}

@@ -17,6 +17,7 @@ export class CandySwitch extends LitElement {
     const bgColor = this.activated ? "blue" : "gray";
     const switchPosition = this.activated ? "translate-x-5" : "translate-x-0";
     return html`<button
+      part="switch"
       type="button"
       class=${"switch " + bgColor}
       role="switch"

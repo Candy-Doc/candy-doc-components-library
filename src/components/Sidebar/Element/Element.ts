@@ -31,6 +31,7 @@ export class CandySidebarElement extends LitElement {
 
     return html`
       <button
+        part="sidebar-element"
         href="#"
         class="${"element-container " + styleClass} ${!this.collapsed ? "element-container-extended" : null}"
         ?disabled="${this.disabled}"

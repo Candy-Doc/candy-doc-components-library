@@ -21,7 +21,7 @@ export class CandyLink extends LitElement {
   target = "_blank";
 
   render() {
-    return html`<a class="link-container" href=${this.url} target=${this.target}
+    return html`<a class="link-container" href=${this.url} target=${this.target} part="link"
       >${this.label}</a
     > `;
   }
