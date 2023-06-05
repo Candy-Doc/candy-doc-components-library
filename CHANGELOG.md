@@ -1,3 +1,8 @@
+# [v1.8.2](https://github.com/Candy-Doc/candy-doc-components-library/compare/v1.8.1...v1.8.2) (2023-06-05)
+
+## 🐛 Bug Fixes
+- [`9dff007`](https://github.com/Candy-Doc/candy-doc-components-library/commit/9dff007)  fix: sidebar collapse trigger (#52) (Issues: [`#52`](https://github.com/Candy-Doc/candy-doc-components-library/issues/52))
+
 # [v1.8.1](https://github.com/Candy-Doc/candy-doc-components-library/compare/v1.8.0...v1.8.1) (2023-05-31)
 
 ## 🐛 Bug Fixes
