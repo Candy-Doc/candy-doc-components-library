@@ -46,7 +46,8 @@ const renderSidebarElements = (element: CandySideBarElement): TemplateResult => 
 };
 
 const renderSideBar = (args: CandySidebarProps  & CandySideBarControl) => {
-  return html`<candy-sidebar ?collapsed=${args.collapsed}>
+  console.log(args.canCollapse);
+  return html`<candy-sidebar ?canCollapse=${args.canCollapse}>
     ${args.elements.map((element: CandySideBarElement) => renderSidebarElements(element))}
 </candy-sidebar>`
 };
@@ -55,15 +56,15 @@ export default {
   title: "Components/Sidebar",
   component: "candy-sidebar",
   argTypes: {
-    collapsed: {
-      name: "?collapsed",
-      description: "Collapse the sidebar to make it smaller. Only the icons of main sections are shown",
+    canCollapse: {
+      name: "?canCollapse",
+      description: "Show collapse icon",
       table: {
         type: {
           summary:"Boolean",
         },
         defaultValue: {
-          summary: false,
+          summary: true,
         },
       }
     },
@@ -85,7 +86,7 @@ export default {
 
 export const Sidebar: Story = {
   args: {
-    collapsed: false,
+    canCollapse: true,
     elements: [
       { label: "Patterns", active: true, icon: "fa-solid fa-binoculars", optionsIcons: ["fa-solid fa-location-crosshairs", "fa-regular fa-eye"], childrens: [
         { label: "Book", active: true, icon: "fa-solid fa-binoculars", optionsIcons: ["fa-regular fa-eye"], childrens: [

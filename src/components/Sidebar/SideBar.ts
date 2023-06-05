@@ -1,19 +1,22 @@
 import { LitElement, PropertyValues, html } from "lit";
-import { customElement, property } from "lit/decorators.js";
+import { customElement, state, property } from "lit/decorators.js";
 
-import expandArrow from "../../assets/icons/collapse-icon.svg";
+import expandIcon from "../../assets/icons/collapse-icon.svg";
 import SidebarStyle from "./SidebarStyle";
 
 export type CandySidebarProps = {
-  collapsed: boolean;
+  canCollapse: boolean;
 };
 
 @customElement("candy-sidebar")
 export class CandySidebar extends LitElement {
   static styles = SidebarStyle;
 
-  @property({ type: Boolean })
+  @state()
   collapsed = false;
+
+  @property({ type: Boolean })
+  canCollapse = true;
 
   protected updated(_changedProperties: PropertyValues | Map<PropertyKey, unknown>): void {
     if (_changedProperties.has("collapsed")) {
@@ -30,13 +33,18 @@ export class CandySidebar extends LitElement {
     }
   }
 
+  private handleCollapse() : void {
+    this.collapsed = !this.collapsed;
+  }
+
   render() {
     return html`
       <div class="sidebar-container ${this.collapsed ? "sidebar-mini " : null}" part="sidebar">
         <section>
-          <div class="icon-container">
-            <img src=${expandArrow} alt="expand-icon"/>
-          </div>
+          ${this.canCollapse ? html`          
+            <div class="icon-container">
+              <img src=${expandIcon} alt="expand-icon" @click="${this.handleCollapse}"/>
+            </div>` : null}
           <slot></slot>
         </section>
       </div>
