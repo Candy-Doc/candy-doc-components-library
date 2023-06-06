@@ -2,3 +2,5 @@ node_modules
 dist
 **/*.css.ts
 storybook-static
+.github/**
+CHANGELOG.md

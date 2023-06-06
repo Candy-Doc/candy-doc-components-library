@@ -25,15 +25,15 @@ export class CandySidebarElement extends LitElement {
   collapsed = false;
 
   render() {
-    const styleClass = this.active
-      ? "bg-gray text-blue"
-      : "text-black";
+    const styleClass = this.active ? "bg-gray text-blue" : "text-black";
 
     return html`
       <button
         part="sidebar-element"
         href="#"
-        class="${"element-container " + styleClass} ${!this.collapsed ? "element-container-extended" : null}"
+        class="${"element-container " + styleClass} ${!this.collapsed
+          ? "element-container-extended"
+          : null}"
         ?disabled="${this.disabled}"
       >
         <slot name="icon"></slot>

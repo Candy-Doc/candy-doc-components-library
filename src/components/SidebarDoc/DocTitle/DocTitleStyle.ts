@@ -32,7 +32,8 @@ export default css`
     color: rgb(37 99 235);
   }
 
-  .text-blue .chevron:after, .text-blue .chevron:before {
+  .text-blue .chevron:after,
+  .text-blue .chevron:before {
     background: rgb(37 99 235);
   }
 
@@ -51,11 +52,11 @@ export default css`
     width: 12px;
     top: -1px;
     transform: rotate(-90deg);
-    transition: .2s ease-in-out;
+    transition: 0.2s ease-in-out;
   }
 
   .chevron:before {
-    content: '';
+    content: "";
     position: absolute;
     left: 0;
     height: 100%;
@@ -70,7 +71,7 @@ export default css`
   }
 
   .chevron:after {
-    content: '';
+    content: "";
     position: absolute;
     left: 50%;
     height: 100%;
@@ -86,6 +87,6 @@ export default css`
 
   .rotate {
     transform: rotate(0deg);
-    transition: .2s ease-in-out;
+    transition: 0.2s ease-in-out;
   }
 `;

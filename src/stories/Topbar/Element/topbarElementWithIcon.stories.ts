@@ -6,10 +6,11 @@ import "../../../components/Topbar/Element";
 
 type Story = StoryObj<CandyTopbarElementProps>;
 
-const renderTopBarElement = (args: CandyTopbarElementProps) => html`<candy-topbar-element label=${args.label}>
+const renderTopBarElement = (args: CandyTopbarElementProps) => html`<candy-topbar-element
+  label=${args.label}
+>
   <fa-icon slot="icon" class="fa-brands fa-github"></fa-icon>
-</candy-topbar-element>
-`;
+</candy-topbar-element> `;
 
 export default {
   title: "Components/Topbar/ElementWithIcon",
@@ -27,11 +28,11 @@ export default {
         },
       },
     },
-  }
+  },
 } as Meta<CandyTopbarElementProps>;
 
 export const TopbarElement: Story = {
   args: {
-    label: "Github"
-  }
+    label: "Github",
+  },
 };

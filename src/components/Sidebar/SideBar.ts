@@ -22,18 +22,18 @@ export class CandySidebar extends LitElement {
     if (_changedProperties.has("collapsed")) {
       const slots = this.shadowRoot?.querySelector("slot")?.assignedElements();
       if (slots) {
-        slots.forEach(slot => {
+        slots.forEach((slot) => {
           if (this.collapsed) {
             slot.setAttribute("collapsed", "");
           } else {
             slot.removeAttribute("collapsed");
           }
-        })
+        });
       }
     }
   }
 
-  private handleCollapse() : void {
+  private handleCollapse(): void {
     this.collapsed = !this.collapsed;
   }
 
@@ -41,10 +41,11 @@ export class CandySidebar extends LitElement {
     return html`
       <div class="sidebar-container ${this.collapsed ? "sidebar-mini " : null}" part="sidebar">
         <section>
-          ${this.canCollapse ? html`          
-            <div class="icon-container">
-              <img src=${expandIcon} alt="expand-icon" @click="${this.handleCollapse}"/>
-            </div>` : null}
+          ${this.canCollapse
+            ? html` <div class="icon-container">
+                <img src=${expandIcon} alt="expand-icon" @click="${this.handleCollapse}" />
+              </div>`
+            : null}
           <slot></slot>
         </section>
       </div>

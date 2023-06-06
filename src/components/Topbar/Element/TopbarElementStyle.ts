@@ -9,21 +9,21 @@ export default css`
   }
 
   .title {
-    transition: .3s;
+    transition: 0.3s;
   }
 
   li:hover {
-    color: #3572EB;
+    color: #3572eb;
     cursor: pointer;
   }
 
   .title::after {
-    content: '';
+    content: "";
     display: block;
     width: 0;
     height: 1px;
-    background: #3572EB;
-    transition: .2s;
+    background: #3572eb;
+    transition: 0.2s;
   }
 
   li:hover > .title::after {
@@ -33,8 +33,8 @@ export default css`
   ::slotted(*) {
     text-decoration: none;
     color: inherit;
-    margin-left: .5rem;
+    margin-left: 0.5rem;
     font-size: 1.5rem;
-    transition: .2s;
+    transition: 0.2s;
   }
 `;

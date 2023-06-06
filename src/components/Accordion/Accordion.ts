@@ -25,32 +25,35 @@ export class CandyAccordion extends LitElement {
   collapsed = false;
 
   render() {
-    const styleClass = this.active
-      ? "text-blue"
-      : "text-black";
+    const styleClass = this.active ? "text-blue" : "text-black";
 
-    const content = this.active ? html`
-      <div class="accordion-childrens">
-        <slot></slot>
-      </div>
-    `: null;
+    const content = this.active
+      ? html`
+          <div class="accordion-childrens">
+            <slot></slot>
+          </div>
+        `
+      : null;
 
     return html`
       <div part="accordion">
         <button
           href="#"
-          class="${"element-container " + styleClass} ${!this.collapsed ? "element-container-extended" : null}"
+          class="${"element-container " + styleClass} ${!this.collapsed
+            ? "element-container-extended"
+            : null}"
           ?disabled="${this.disabled}"
         >
           <slot name="icon"></slot>
           <p>${!this.collapsed ? this.label : null}</p>
-          ${!this.collapsed ? html`<div class="end-icons">
-            <div class="options-container">
-              <slot name="options"></slot>
-            </div>
-          </div>
-          <div class=${`chevron ${this.active ? "rotate" : ""}`}></div>
-          `: null}
+          ${!this.collapsed
+            ? html`<div class="end-icons">
+                  <div class="options-container">
+                    <slot name="options"></slot>
+                  </div>
+                </div>
+                <div class=${`chevron ${this.active ? "rotate" : ""}`}></div> `
+            : null}
         </button>
         ${!this.collapsed ? content : null}
       </div>

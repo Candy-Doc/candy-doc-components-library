@@ -10,7 +10,8 @@ type Story = StoryObj<CandyAccordionProps>;
 const renderAccordion = (args: CandyAccordionProps) => html`<candy-accordion
   label=${"Section 1"}
   ?active=${args.active}
-  ?disabled=${args.disabled}>
+  ?disabled=${args.disabled}
+>
   <candy-alert>
     <span slot="content">I'm the text inside an info alert</span>
   </candy-alert>

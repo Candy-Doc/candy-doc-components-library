@@ -6,8 +6,9 @@ import "../../../components/Topbar/Element";
 
 type Story = StoryObj<CandyTopbarElementProps>;
 
-const renderTopBarElement = (args: CandyTopbarElementProps) => html`
-  <candy-topbar-element label=${args.label}></candy-topbar-element>`;
+const renderTopBarElement = (args: CandyTopbarElementProps) => html` <candy-topbar-element
+  label=${args.label}
+></candy-topbar-element>`;
 
 export default {
   title: "Components/Topbar/Element",
@@ -25,11 +26,11 @@ export default {
         },
       },
     },
-  }
+  },
 } as Meta<CandyTopbarElementProps>;
 
 export const TopbarElement: Story = {
   args: {
-    label: "toto"
-  }
+    label: "toto",
+  },
 };

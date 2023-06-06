@@ -11,7 +11,7 @@ type CandySideBarDocElement = {
   label: string;
   active: boolean;
   childrens?: Array<CandySideBarDocElement>;
-}
+};
 
 type CandySideBarDocControl = {
   elements: Array<CandySideBarDocElement>;
@@ -29,13 +29,15 @@ const renderSimpleElement = (element: CandySideBarDocElement) => {
 };
 
 const renderSidebarElements = (element: CandySideBarDocElement): TemplateResult => {
-  return element.childrens && element.childrens.length > 0 ? renderTitle(element) : renderSimpleElement(element);
+  return element.childrens && element.childrens.length > 0
+    ? renderTitle(element)
+    : renderSimpleElement(element);
 };
 
 const renderSideBar = (args: CandySideBarDocControl) => {
   return html`<candy-sidebar>
     ${args.elements.map((item) => renderSidebarElements(item))}
-</candy-sidebar>`
+  </candy-sidebar>`;
 };
 
 export default {
@@ -61,15 +63,22 @@ export default {
 export const DocSidebar: Story = {
   args: {
     elements: [
-      { label: "Introduction", active: true, childrens: [
-        { label: "Getting started", active: true },
-        { label: "What is DDD", active: false }
-      ] },
-      { label: "Candy Board", active: true, childrens: [
+      {
+        label: "Introduction",
+        active: true,
+        childrens: [
+          { label: "Getting started", active: true },
+          { label: "What is DDD", active: false },
+        ],
+      },
+      {
+        label: "Candy Board",
+        active: true,
+        childrens: [
           { label: "Why is this the best project ever", active: false },
           { label: "Why is the last topic false", active: true },
-          { label: "What should I believe between good or bad", active: false }
-        ]
+          { label: "What should I believe between good or bad", active: false },
+        ],
       },
     ],
   },

@@ -11,9 +11,7 @@ const renderTopBar = () => html`<candy-topbar>
     <fa-icon slot="icon" class="fa-brands fa-github"></fa-icon>
   </candy-topbar-element>
   <candy-topbar-element>
-    <a slot="icon" href="https://google.com">
-      <fa-icon class="fa-brands fa-github">
-      </fa-icon></a>
+    <a slot="icon" href="https://google.com"> <fa-icon class="fa-brands fa-github"> </fa-icon></a>
   </candy-topbar-element>
 </candy-topbar>`;
 
@@ -21,6 +19,6 @@ export default {
   title: "Components/Topbar",
   component: "candy-topbar",
   render: renderTopBar,
-}
+};
 
 export const Topbar: StoryObj = {};

@@ -17,5 +17,5 @@
     "forceConsistentCasingInFileNames": true,
     "useDefineForClassFields": false
   },
-  "include": ["src/**/*.ts"],
+  "include": ["src/**/*.ts"]
 }

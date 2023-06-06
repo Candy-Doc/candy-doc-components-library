@@ -1,7 +1,7 @@
 import { LitElement, html } from "lit";
 import { customElement, property } from "lit/decorators.js";
 import ElementStyle from "./DocElementStyle";
-import candyIcon from "../../../assets/icons/candy-icon.svg"
+import candyIcon from "../../../assets/icons/candy-icon.svg";
 
 export type CandySidebarDocElementProps = {
   label: string;
@@ -22,25 +22,19 @@ export class CandySidebarDocElement extends LitElement {
   candyIcon = true;
 
   render() {
-    const styleClass = this.active
-      ? "text-blue"
-      : "text-gray";
+    const styleClass = this.active ? "text-blue" : "text-gray";
 
     return html`
-      <button
-        href="#"
-        class="${"element-container " + styleClass}"
-        part="doc-element"
-      >
-        ${this.active ?
-          this.candyIcon ? html`
-            <div class="icon-container">
-              <img src=${candyIcon} alt="candy-icon"/>
-            </div>` : html`
-            <div class= "icon-container" >
-              <img src=${candyIcon} alt="candy-icon" />
-            </div>`
-          : null }
+      <button href="#" class="${"element-container " + styleClass}" part="doc-element">
+        ${this.active
+          ? this.candyIcon
+            ? html` <div class="icon-container">
+                <img src=${candyIcon} alt="candy-icon" />
+              </div>`
+            : html` <div class="icon-container">
+                <img src=${candyIcon} alt="candy-icon" />
+              </div>`
+          : null}
         <p>${this.label}</p>
       </button>
     `;
