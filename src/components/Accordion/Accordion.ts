@@ -24,9 +24,18 @@ export class CandyAccordion extends LitElement {
   @property({ type: Boolean })
   collapsed = false;
 
+  handleClick = () => {
+    this.active = !this.active;
+    const event = new CustomEvent("onChange", {
+      bubbles: false,
+      composed: true,
+      detail: { value: this.active },
+    });
+    this.dispatchEvent(event);
+  }
+
   render() {
     const styleClass = this.active ? "text-blue" : "text-black";
-
     const content = this.active
       ? html`
           <div class="accordion-childrens">
@@ -38,22 +47,24 @@ export class CandyAccordion extends LitElement {
     return html`
       <div part="accordion">
         <button
+          role="button"
           href="#"
           class="${"element-container " + styleClass} ${!this.collapsed
-            ? "element-container-extended"
-            : null}"
+        ? "element-container-extended"
+        : null}"
           ?disabled="${this.disabled}"
+          @click=${this.handleClick}
         >
           <slot name="icon"></slot>
           <p>${!this.collapsed ? this.label : null}</p>
           ${!this.collapsed
-            ? html`<div class="end-icons">
+        ? html`<div class="end-icons">
                   <div class="options-container">
                     <slot name="options"></slot>
                   </div>
                 </div>
                 <div class=${`chevron ${this.active ? "rotate" : ""}`}></div> `
-            : null}
+        : null}
         </button>
         ${!this.collapsed ? content : null}
       </div>
