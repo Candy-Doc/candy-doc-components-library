@@ -3,6 +3,7 @@ import { html } from "lit";
 
 import { CandySidebarElementProps } from "../../../components/Sidebar/Element";
 import "../../../components/Sidebar/Element";
+import { meta } from "./ElementWithIconMeta";
 
 type Story = StoryObj<CandySidebarElementProps>;
 
@@ -17,45 +18,8 @@ const renderIconElement = (args: CandySidebarElementProps) => html`<candy-sideba
 </candy-sidebar-element>`;
 
 export default {
+  ...meta,
   title: "Components/Sidebar/ElementWithIcon",
-  component: "candy-sidebar-element",
-  argTypes: {
-    label: {
-      description: "Label of the element",
-      table: {
-        type: {
-          summary: "string",
-        },
-        defaultValue: {
-          summary: "Home",
-        },
-      },
-    },
-    active: {
-      name: "?active",
-      description: "Is the item the selected one",
-      table: {
-        type: {
-          summary: "boolean",
-        },
-        defaultValue: {
-          summary: "False",
-        },
-      },
-    },
-    disabled: {
-      name: "?disabled",
-      description: "Is the item disabled",
-      table: {
-        type: {
-          summary: "boolean",
-        },
-        defaultValue: {
-          summary: "False",
-        },
-      },
-    },
-  },
   render: renderIconElement,
 } as Meta<CandySidebarElementProps>;
 

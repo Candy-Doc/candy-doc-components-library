@@ -1,8 +1,8 @@
 import { StoryObj, Meta } from "@storybook/web-components";
 import { html } from "lit";
 
-import { CandyTextProps } from "../components/Text";
-import "../components/Text";
+import { CandyTextProps } from "../../components/Text";
+import "../../components/Text";
 
 type Story = StoryObj<CandyTextProps>;
 

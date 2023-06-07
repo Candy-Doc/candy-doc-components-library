@@ -4,18 +4,9 @@ import { TemplateResult, html } from "lit";
 import "../../components/SidebarDoc";
 import "../../components/SidebarDoc/DocElement";
 import "../../components/SidebarDoc/DocTitle";
+import { meta, type CandySideBarDocControl, type CandySideBarDocElement } from "./DocSidebarMeta";
 
 type Story = StoryObj<CandySideBarDocControl>;
-
-type CandySideBarDocElement = {
-  label: string;
-  active: boolean;
-  childrens?: Array<CandySideBarDocElement>;
-};
-
-type CandySideBarDocControl = {
-  elements: Array<CandySideBarDocElement>;
-};
 
 const renderTitle = (element: CandySideBarDocElement) => {
   return html`<candy-sidebar-doc-title label=${element.label} ?active=${element.active}>
@@ -41,22 +32,8 @@ const renderSideBar = (args: CandySideBarDocControl) => {
 };
 
 export default {
+  ...meta,
   title: "Components/SidebarDoc",
-  component: "candy-sidebar-doc",
-  argTypes: {
-    elements: {
-      description:
-        "List of sidebar elements information. /!\\ This argument is to build the items and is not passed inside the sidebar.",
-      table: {
-        type: {
-          summary: "object[]",
-        },
-        defaultValue: {
-          summary: "[]",
-        },
-      },
-    },
-  },
   render: renderSideBar,
 } as Meta<CandySideBarDocControl>;
 

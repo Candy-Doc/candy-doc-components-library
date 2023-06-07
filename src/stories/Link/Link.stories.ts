@@ -1,8 +1,8 @@
 import { StoryObj, Meta } from "@storybook/web-components";
 import { html } from "lit";
 
-import { CandyLinkProps } from "../components/Link";
-import "../components/Link";
+import { CandyLinkProps } from "../../components/Link";
+import "../../components/Link";
 
 type Story = StoryObj<CandyLinkProps>;
 

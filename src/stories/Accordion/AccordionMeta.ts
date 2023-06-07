@@ -1,7 +1,5 @@
-import { Meta } from "@storybook/web-components";
-import { CandyAccordionProps } from "../../components/Accordion";
-
 export const meta = {
+  component: "candy-accordion",
   argTypes: {
     label: {
       description: "Label of the element",
@@ -39,4 +37,4 @@ export const meta = {
       },
     },
   },
-} as Meta<CandyAccordionProps>;
+};

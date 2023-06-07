@@ -13,7 +13,7 @@ export type CandyInputProps = {
 export class CandyInput extends LitElement {
   static styles = InputStyle;
 
-  @query('input')
+  @query("input")
   protected _input!: HTMLInputElement;
   protected _value = "";
 

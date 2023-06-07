@@ -3,6 +3,7 @@ import { html } from "lit";
 
 import { CandySidebarDocElementProps } from "../../../components/SidebarDoc/DocElement";
 import "../../../components/SidebarDoc/DocElement";
+import { meta } from "../DocSidebarMeta";
 
 type Story = StoryObj<CandySidebarDocElementProps>;
 
@@ -12,34 +13,9 @@ const renderElement = (args: CandySidebarDocElementProps) => html`<candy-sidebar
 ></candy-sidebar-doc-element>`;
 
 export default {
+  ...meta,
   title: "Components/SidebarDoc/DocElement",
-  component: "candy-sidebar-doc-element",
   render: renderElement,
-  argTypes: {
-    label: {
-      description: "Label of the element",
-      table: {
-        type: {
-          summary: "string",
-        },
-        defaultValue: {
-          summary: "Home",
-        },
-      },
-    },
-    active: {
-      name: "?active",
-      description: "Is the item the selected one",
-      table: {
-        type: {
-          summary: "boolean",
-        },
-        defaultValue: {
-          summary: "False",
-        },
-      },
-    },
-  },
 } as Meta<CandySidebarDocElementProps>;
 
 export const Element: Story = {

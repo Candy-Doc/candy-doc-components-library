@@ -1,16 +1,6 @@
-import { Meta, StoryObj } from "@storybook/web-components";
-import { html } from "lit";
+import { ButtonTypes, ButtonSizes } from "../../components/Button";
 
-import { CandyButtonProps, ButtonSizes, ButtonTypes } from "../components/Button";
-import "../components/Button";
-
-type Story = StoryObj<CandyButtonProps>;
-
-const renderButton = (args: CandyButtonProps) =>
-  html`<candy-button label=${args.label} size=${args.size} type=${args.type}></candy-button>`;
-
-export default {
-  title: "Components/Buttons",
+export const meta = {
   component: "candy-button",
   argTypes: {
     label: {
@@ -51,14 +41,5 @@ export default {
         },
       },
     },
-  },
-  render: renderButton,
-} as Meta<CandyButtonProps>;
-
-export const Buttons: Story = {
-  args: {
-    label: "Button",
-    type: ButtonTypes.Primary,
-    size: ButtonSizes.md,
   },
 };

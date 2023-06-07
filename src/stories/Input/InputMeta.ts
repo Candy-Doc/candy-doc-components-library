@@ -1,8 +1,4 @@
-import { Meta } from "@storybook/web-components";
-import { CandyInputProps } from "../../components/Input";
-
 export const meta = {
-  title: "Components/Input",
   component: "candy-input",
   argTypes: {
     label: {
@@ -48,6 +44,6 @@ export const meta = {
           summary: "",
         },
       },
-    }
+    },
   },
-} as Meta<CandyInputProps>;
+};

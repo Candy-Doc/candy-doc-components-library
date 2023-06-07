@@ -26,8 +26,8 @@ const renderSidebarElements = (element: CandySideBarElement): TemplateResult => 
   return element.childrens.length > 0 ? renderAccordion(element) : renderSimpleElement(element);
 };
 
-export const renderSideBar = (args: CandySidebarProps & CandySideBarControl)=> {
+export const renderSideBar = (args: CandySidebarProps & CandySideBarControl) => {
   return html`<candy-sidebar ?canCollapse=${args.canCollapse} @onCollapse=${args.onCollapse}>
     ${args.elements.map((element: CandySideBarElement) => renderSidebarElements(element))}
-</candy-sidebar>`;
+  </candy-sidebar>`;
 };

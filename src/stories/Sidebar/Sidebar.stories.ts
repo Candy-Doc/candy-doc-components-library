@@ -1,7 +1,7 @@
 import { StoryObj } from "@storybook/web-components";
-import { userEvent } from '@storybook/testing-library';
+import { userEvent } from "@storybook/testing-library";
 import { getByShadowAltText, getByShadowRole } from "shadow-dom-testing-library";
-import { expect } from '@storybook/jest';
+import { expect } from "@storybook/jest";
 
 import type { CandySidebarProps } from "../../components/Sidebar";
 import type { CandySideBarControl } from "./SidebarMeta";
@@ -21,7 +21,7 @@ export default {
 export const Sidebar: Story = {
   args: {
     canCollapse: true,
-    onCollapse: (e: CustomEvent) => isCollapse = e.detail.value,
+    onCollapse: (e: CustomEvent) => (isCollapse = e.detail.value),
     elements: [
       {
         label: "Patterns",

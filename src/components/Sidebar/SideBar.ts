@@ -1,5 +1,5 @@
 import { LitElement, PropertyValues, html } from "lit";
-import { customElement, state, property, } from "lit/decorators.js";
+import { customElement, state, property } from "lit/decorators.js";
 
 import expandIcon from "../../assets/icons/collapse-icon.svg";
 import SidebarStyle from "./SidebarStyle";
@@ -33,19 +33,32 @@ export class CandySidebar extends LitElement {
 
   private handleCollapse(): void {
     this.collapsed = !this.collapsed;
-    const event = new CustomEvent('onCollapse', { bubbles: false, composed: true, detail: { value: this.collapsed } });
+    const event = new CustomEvent("onCollapse", {
+      bubbles: false,
+      composed: true,
+      detail: { value: this.collapsed },
+    });
     this.dispatchEvent(event);
   }
 
   render() {
     return html`
-      <section class="sidebar-container ${this.collapsed ? "sidebar-mini " : null}" part="sidebar" role="complementary">
+      <section
+        class="sidebar-container ${this.collapsed ? "sidebar-mini " : null}"
+        part="sidebar"
+        role="complementary"
+      >
         <div>
           ${this.canCollapse
-        ? html` <div class="icon-container">
-                <img src=${expandIcon} alt="collapse-icon" @click="${this.handleCollapse}" role="button" />
+            ? html` <div class="icon-container">
+                <img
+                  src=${expandIcon}
+                  alt="collapse-icon"
+                  @click="${this.handleCollapse}"
+                  role="button"
+                />
               </div>`
-        : null}
+            : null}
           <slot></slot>
         </div>
       </section>

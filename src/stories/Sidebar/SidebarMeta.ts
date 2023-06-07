@@ -15,7 +15,7 @@ export type CandySideBarElement = {
 
 export type CandySideBarControl = {
   elements: Array<CandySideBarElement>;
-  isCollapse: boolean,
+  isCollapse: boolean;
 };
 
 export const meta: Meta<CandySidebarProps & CandySideBarControl> = {
@@ -53,9 +53,9 @@ export const meta: Meta<CandySidebarProps & CandySideBarControl> = {
           summary: "Function",
         },
         defaultValue: {
-          summary: "(e: CustomEvent) => void"
-        }
-      }
-    }
+          summary: "(e: CustomEvent) => void",
+        },
+      },
+    },
   },
 };
