@@ -8,14 +8,14 @@ export default css`
     padding-top: 1rem;
     background-color: transparent;
     border-radius: 10px;
-    overflow-y: auto;
+    width: 100%;
   }
 
   .sidebar-mini {
     width: 3rem;
   }
 
-  section {
+  section > :first-child {
     flex: 1 1 0%;
     padding: 0 0.5rem 1rem 0.5rem;
   }

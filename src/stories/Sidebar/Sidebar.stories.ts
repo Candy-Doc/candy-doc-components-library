@@ -1,91 +1,27 @@
-import { StoryObj, Meta } from "@storybook/web-components";
-import { TemplateResult, html } from "lit";
+import { StoryObj } from "@storybook/web-components";
+import { userEvent } from '@storybook/testing-library';
+import { getByShadowAltText, getByShadowRole } from "shadow-dom-testing-library";
+import { expect } from '@storybook/jest';
 
 import type { CandySidebarProps } from "../../components/Sidebar";
-import "../../components/Sidebar";
-import "../../components/Sidebar/Element";
-import "../../components/Accordion";
+import type { CandySideBarControl } from "./SidebarMeta";
+import { meta } from "./SidebarMeta";
+import { renderSideBar } from "./RenderSidebar";
 
 type Story = StoryObj<CandySidebarProps & CandySideBarControl>;
 
-type CandySideBarElement = {
-  label: string;
-  active: boolean;
-  icon?: string;
-  optionsIcons?: Array<string>;
-  childrens: Array<CandySideBarElement>;
-};
-
-type CandySideBarControl = {
-  elements: Array<CandySideBarElement>;
-};
-
-const renderOptionsIcons = (optionsIcons: Array<string>) => {
-  return optionsIcons.map(
-    (icon: string) => html` <fa-icon slot="options" class=${icon}></fa-icon>`
-  );
-};
-
-const renderAccordion = (element: CandySideBarElement) => {
-  return html`<candy-accordion label=${element.label} ?active=${element.active}>
-    <fa-icon slot="icon" class=${element.icon}></fa-icon>
-    ${element.childrens.map((child: CandySideBarElement) => renderSidebarElements(child))}
-    ${element.optionsIcons ? renderOptionsIcons(element.optionsIcons) : null}
-  </candy-accordion>`;
-};
-
-const renderSimpleElement = (element: CandySideBarElement) => {
-  return html`<candy-sidebar-element label=${element.label} ?active=${element.active}>
-    ${element.icon ? html`<fa-icon slot="icon" class=${element.icon}></fa-icon>` : null}
-  </candy-sidebar-element>`;
-};
-
-const renderSidebarElements = (element: CandySideBarElement): TemplateResult => {
-  return element.childrens.length > 0 ? renderAccordion(element) : renderSimpleElement(element);
-};
-
-const renderSideBar = (args: CandySidebarProps & CandySideBarControl) => {
-  console.log(args.canCollapse);
-  return html`<candy-sidebar ?canCollapse=${args.canCollapse}>
-    ${args.elements.map((element: CandySideBarElement) => renderSidebarElements(element))}
-  </candy-sidebar>`;
-};
+let isCollapse = false;
 
 export default {
+  ...meta,
   title: "Components/Sidebar",
-  component: "candy-sidebar",
-  argTypes: {
-    canCollapse: {
-      name: "?canCollapse",
-      description: "Show collapse icon",
-      table: {
-        type: {
-          summary: "Boolean",
-        },
-        defaultValue: {
-          summary: true,
-        },
-      },
-    },
-    elements: {
-      description:
-        "List of sidebar elements information. /!\\ This argument is to build the items and is not passed inside the sidebar.",
-      table: {
-        type: {
-          summary: "object[]",
-        },
-        defaultValue: {
-          summary: "[]",
-        },
-      },
-    },
-  },
   render: renderSideBar,
-} as Meta<CandySidebarProps & CandySideBarControl>;
+};
 
 export const Sidebar: Story = {
   args: {
     canCollapse: true,
+    onCollapse: (e: CustomEvent) => isCollapse = e.detail.value,
     elements: [
       {
         label: "Patterns",
@@ -121,5 +57,20 @@ export const Sidebar: Story = {
         childrens: [],
       },
     ],
+  },
+  play: async ({ canvasElement, step }) => {
+    const collapseIcon = getByShadowAltText(canvasElement, "collapse-icon");
+    const sidebarElem = getByShadowRole(canvasElement, "complementary");
+
+    await step("Collsape the sidebar", async () => {
+      await userEvent.click(collapseIcon);
+      await expect(sidebarElem.classList.contains("sidebar-mini")).toBeTruthy();
+      await expect(isCollapse).toBeTruthy();
+    });
+    await step("Open the sidebar", async () => {
+      await userEvent.click(collapseIcon);
+      await expect(sidebarElem.classList.contains("sidebar-mini")).not.toBeTruthy();
+      await expect(isCollapse).toBeFalsy();
+    });
   },
 };
