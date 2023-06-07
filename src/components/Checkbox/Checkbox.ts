@@ -21,15 +21,25 @@ export class CandyCheckbox extends LitElement {
   @property({ type: String })
   description = "";
 
+  handleChange = ({ target }: Event) => {
+    const event = new CustomEvent("onChange", {
+      bubbles: false,
+      composed: true,
+      detail: { value: (target as HTMLInputElement).checked },
+    });
+    this.dispatchEvent(event);
+  }
+
   render() {
     return html`<div class="checkbox-container" part="checkbox">
       <div class="checkbox">
         <input
           id="comments"
-          aria-deszcribedby="comments-description"
+          aria-describedby="comments-description"
           name="comments"
           type="checkbox"
           ?checked=${this.checked}
+          @click=${this.handleChange}
         />
       </div>
       <div class="label-container">
