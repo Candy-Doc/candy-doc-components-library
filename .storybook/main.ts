@@ -7,7 +7,7 @@ const config: StorybookConfig = {
       name: "@storybook/addon-essentials",
       options: {
         actions: false,
-      }
+      },
     },
     "@storybook/addon-links",
     "@storybook/addon-interactions",
@@ -20,6 +20,6 @@ const config: StorybookConfig = {
   docs: {
     autodocs: true,
   },
-  staticDirs: ['../public'],
+  staticDirs: ["../public"],
 };
 export default config;

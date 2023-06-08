@@ -41,7 +41,7 @@ export class CandyCheckbox extends LitElement {
       detail: { value: (target as HTMLInputElement).checked },
     });
     this.dispatchEvent(event);
-  }
+  };
 
   render() {
     return html`<div class="checkbox-container" part="checkbox">

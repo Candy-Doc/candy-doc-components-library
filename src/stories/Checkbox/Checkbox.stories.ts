@@ -17,7 +17,7 @@ const renderCheckbox = (args: CandyCheckboxProps) =>
     ?checked=${args.checked}
     label=${args.label}
     description=${args.description}
-    @onChange=${({ detail }: CustomEvent) => checked = detail.value}
+    @onChange=${({ detail }: CustomEvent) => (checked = detail.value)}
   ></candy-checkbox>`;
 
 export default {

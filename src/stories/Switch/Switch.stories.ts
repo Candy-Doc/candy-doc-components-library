@@ -13,7 +13,10 @@ type Story = StoryObj<CandySwitchProps>;
 let isActive = false;
 
 const renderSwitch = (args: CandySwitchProps) =>
-  html`<candy-switch ?activated=${args.activated} @onChange=${({ detail }: CustomEvent) => isActive = detail.value}></candy-switch>`;
+  html`<candy-switch
+    ?activated=${args.activated}
+    @onChange=${({ detail }: CustomEvent) => (isActive = detail.value)}
+  ></candy-switch>`;
 
 export default {
   ...meta,
