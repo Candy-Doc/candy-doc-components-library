@@ -22,6 +22,7 @@ export default css`
 
   .element-container:hover {
     background-color: rgb(249 250 251);
+    cursor: pointer;
   }
 
   button:disabled {
