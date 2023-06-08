@@ -32,16 +32,17 @@ export const Checkbox: Story = {
     label: "Checkbox",
     description: "This is a description",
   },
-  play: async ({ canvasElement, step }) => {
+  play: async ({ args, canvasElement, step }) => {
     const checkbox = getByShadowLabelText(canvasElement, "Checkbox");
+    const initialCheckboxState = args.checked;
 
     await step("Check", async () => {
       await userEvent.click(checkbox);
-      await expect(checked).toBeTruthy();
+      await expect(checked).toEqual(!initialCheckboxState);
     });
     await step("Uncheck", async () => {
       await userEvent.click(checkbox);
-      await expect(checked).toBeFalsy();
+      await expect(checked).toEqual(initialCheckboxState);
       checkbox.blur();
     });
   },

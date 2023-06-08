@@ -17,7 +17,7 @@ const renderAccordion = (args: CandyAccordionProps) => html`<candy-accordion
   label=${"Section 1"}
   ?active=${args.active}
   ?disabled=${args.disabled}
-  @onChange=${({ detail }: CustomEvent) => isActive = detail.value}
+  @onChange=${({ detail }: CustomEvent) => { console.log(detail.value); isActive = detail.value}}
 >
   <candy-alert>
     <span slot="content">I'm the text inside an info alert</span>
@@ -36,16 +36,17 @@ export const Accordion: Story = {
     active: false,
     disabled: false,
   },
-  play: async ({ canvasElement, step }) => {
+  play: async ({ args, canvasElement, step}) => {
     const accordion = getByShadowRole(canvasElement, "button");
+    const initialAcccordionState = args.active;
 
     await step("Open accordion", async () => {
       await userEvent.click(accordion);
-      await expect(isActive).toBeTruthy();
+      await expect(isActive).toEqual(!initialAcccordionState)
     });
     await step("Close accordion", async () => {
       await userEvent.click(accordion);
-      await expect(isActive).toBeFalsy();
+      await expect(isActive).toEqual(initialAcccordionState);
     });
   },
 };
