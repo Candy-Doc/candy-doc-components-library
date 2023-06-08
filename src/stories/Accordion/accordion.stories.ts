@@ -1,13 +1,13 @@
 import { StoryObj, Meta } from "@storybook/web-components";
-import { html } from "lit";
-
-import { CandyAccordionProps } from "../../components/Accordion";
-import "../../components/Accordion";
-import "../../components/Alert";
-import { meta } from "./AccordionMeta";
 import { userEvent } from "@storybook/testing-library";
 import { getByShadowRole } from "shadow-dom-testing-library";
 import { expect } from "@storybook/jest";
+import { html } from "lit";
+
+import { CandyAccordionProps } from "../../components/Accordion";
+import { meta } from "./AccordionMeta";
+import "../../components/Accordion";
+import "../../components/Alert";
 
 type Story = StoryObj<CandyAccordionProps>;
 

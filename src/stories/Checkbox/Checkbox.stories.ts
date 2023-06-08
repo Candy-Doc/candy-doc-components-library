@@ -1,12 +1,12 @@
 import { StoryObj, Meta } from "@storybook/web-components";
+import { expect } from "@storybook/jest";
+import { userEvent } from "@storybook/testing-library";
+import { getByShadowLabelText } from "shadow-dom-testing-library";
 import { html } from "lit";
 
 import { CandyCheckboxProps } from "../../components/Checkbox";
-import "../../components/Checkbox";
 import { meta } from "./CheckboxMeta";
-import { userEvent } from "@storybook/testing-library";
-import { getByShadowLabelText } from "shadow-dom-testing-library";
-import { expect } from "@storybook/jest";
+import "../../components/Checkbox";
 
 type Story = StoryObj<CandyCheckboxProps>;
 
