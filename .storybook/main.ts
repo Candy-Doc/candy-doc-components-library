@@ -4,9 +4,14 @@ const config: StorybookConfig = {
   stories: ["../src/**/*.mdx", "../src/**/*.stories.@(js|jsx|ts|tsx)"],
   addons: [
     "@storybook/addon-links",
-    "@storybook/addon-essentials",
     "@storybook/addon-a11y",
     "@storybook/addon-interactions",
+    {
+      name: "@storybook/addon-essentials",
+      options: {
+        actions: false,
+      }
+    }
   ],
   framework: {
     name: "@storybook/web-components-vite",

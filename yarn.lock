@@ -1449,7 +1449,7 @@
     lodash "^4.17.21"
     react-resize-detector "^7.1.2"
 
-"@storybook/addon-actions@7.0.12", "@storybook/addon-actions@^7.0.4":
+"@storybook/addon-actions@7.0.12":
   version "7.0.12"
   resolved "https://registry.npmjs.org/@storybook/addon-actions/-/addon-actions-7.0.12.tgz"
   integrity sha512-f07Mc3qwcG9heGsuUUTIJbWF2nw/Ite3mvyIZY2VbgwhMUMVHj4knY4fh/LojwcUmmmc7CNZu3sJN/wIqpaHCQ==
