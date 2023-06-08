@@ -3,15 +3,15 @@ import type { StorybookConfig } from "@storybook/web-components-vite";
 const config: StorybookConfig = {
   stories: ["../src/**/*.mdx", "../src/**/*.stories.@(js|jsx|ts|tsx)"],
   addons: [
-    "@storybook/addon-links",
-    "@storybook/addon-a11y",
-    "@storybook/addon-interactions",
     {
       name: "@storybook/addon-essentials",
       options: {
         actions: false,
       }
-    }
+    },
+    "@storybook/addon-links",
+    "@storybook/addon-interactions",
+    "@storybook/addon-a11y",
   ],
   framework: {
     name: "@storybook/web-components-vite",
@@ -20,5 +20,6 @@ const config: StorybookConfig = {
   docs: {
     autodocs: true,
   },
+  staticDirs: ['../public'],
 };
 export default config;
