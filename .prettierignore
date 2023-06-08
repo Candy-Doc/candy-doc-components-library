@@ -4,3 +4,4 @@ dist
 storybook-static
 .github/**
 CHANGELOG.md
+.pre-commit-config.yaml

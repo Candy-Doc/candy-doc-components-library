@@ -4,7 +4,7 @@ import { html } from "lit";
 import { CandySidebarDocTitleProps } from "../../../components/SidebarDoc/DocTitle";
 import "../../../components/SidebarDoc/DocElement";
 import "../../../components/SidebarDoc/DocTitle";
-import { meta } from "../DocSidebarMeta";
+import { meta } from "./DocSidebarTitleMeta";
 
 type Story = StoryObj<CandySidebarDocTitleProps>;
 

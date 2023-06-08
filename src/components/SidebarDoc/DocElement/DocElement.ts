@@ -1,11 +1,12 @@
 import { LitElement, html } from "lit";
 import { customElement, property } from "lit/decorators.js";
 import ElementStyle from "./DocElementStyle";
-import candyIcon from "../../../assets/icons/candy-icon.svg";
+import Icon from "../../../assets/icons/candy-icon.svg";
 
 export type CandySidebarDocElementProps = {
   label: string;
   active: boolean;
+  candyIcon: boolean;
 };
 
 @customElement("candy-sidebar-doc-element")
@@ -29,10 +30,10 @@ export class CandySidebarDocElement extends LitElement {
         ${this.active
           ? this.candyIcon
             ? html` <div class="icon-container">
-                <img src=${candyIcon} alt="candy-icon" />
+                <img src=${Icon} alt="candy-icon" />
               </div>`
             : html` <div class="icon-container">
-                <img src=${candyIcon} alt="candy-icon" />
+                <img src=${Icon} alt="candy-icon" />
               </div>`
           : null}
         <p>${this.label}</p>

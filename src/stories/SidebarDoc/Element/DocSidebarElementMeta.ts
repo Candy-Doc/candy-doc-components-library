@@ -13,7 +13,7 @@ export const meta = {
       },
     },
     active: {
-      name: "?active",
+      name: "active",
       description: "Is the item the selected one",
       table: {
         type: {
@@ -21,6 +21,18 @@ export const meta = {
         },
         defaultValue: {
           summary: "False",
+        },
+      },
+    },
+    candyIcon: {
+      name: "candyIcon",
+      description: "Show the icon of selected element as a candy",
+      table: {
+        type: {
+          summary: "boolean",
+        },
+        defaultValue: {
+          summary: "True",
         },
       },
     },

@@ -13,13 +13,7 @@ export class CandyLogoMark extends LitElement {
   `;
 
   render() {
-    return html`<img
-      style="{{}}"
-      part="logo-mark"
-      class="toto"
-      src=${LogoMark}
-      alt="Candy-Doc-Mark"
-    />`;
+    return html`<img part="logo-mark" class="toto" src=${LogoMark} alt="Candy-Doc-Mark" />`;
   }
 }
 

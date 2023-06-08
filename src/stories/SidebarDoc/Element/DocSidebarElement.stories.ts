@@ -3,13 +3,14 @@ import { html } from "lit";
 
 import { CandySidebarDocElementProps } from "../../../components/SidebarDoc/DocElement";
 import "../../../components/SidebarDoc/DocElement";
-import { meta } from "../DocSidebarMeta";
+import { meta } from "./DocSidebarElementMeta";
 
 type Story = StoryObj<CandySidebarDocElementProps>;
 
 const renderElement = (args: CandySidebarDocElementProps) => html`<candy-sidebar-doc-element
   label=${args.label}
   ?active=${args.active}
+  ?candyIcon=${args.candyIcon}
 ></candy-sidebar-doc-element>`;
 
 export default {
@@ -22,5 +23,6 @@ export const Element: Story = {
   args: {
     label: "Candy-Doc",
     active: false,
+    candyIcon: true,
   },
 };
