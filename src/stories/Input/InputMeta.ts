@@ -4,6 +4,7 @@ export const meta = {
     label: {
       description: "Title of the input",
       table: {
+        category: "props",
         type: {
           summary: "string",
         },
@@ -15,6 +16,7 @@ export const meta = {
     placeholder: {
       description: "Placeholder of the input",
       table: {
+        category: "props",
         type: {
           summary: "string",
         },
@@ -26,6 +28,7 @@ export const meta = {
     shortCut: {
       description: "Shortcut string to focus on the input",
       table: {
+        category: "props",
         type: {
           summary: "string",
         },
@@ -37,11 +40,23 @@ export const meta = {
     value: {
       description: "Input value",
       table: {
+        category: "props",
         type: {
           summary: "string",
         },
         defaultValue: {
           summary: "",
+        },
+      },
+    },
+    input: {
+      name: "input",
+      description:
+        "Event fired when typing inside the input. Access the value by `event.target.value`",
+      table: {
+        category: "events",
+        type: {
+          summary: "Function",
         },
       },
     },

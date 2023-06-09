@@ -8,11 +8,25 @@ export const meta = {
       options: Object.values(AlertTypes),
       control: { type: "radio" },
       table: {
+        category: "props",
         type: {
           summary: "string",
         },
         defaultValue: {
           summary: AlertTypes.Info,
+        },
+      },
+    },
+    contentSlot: {
+      name: "content",
+      description: "Set the alert content",
+      table: {
+        category: "slots",
+        type: {
+          summary: "HTMLElement",
+        },
+        defaultValue: {
+          summary: "content",
         },
       },
     },

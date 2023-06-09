@@ -4,6 +4,7 @@ export const meta = {
     label: {
       description: "Text displayed inside the badge",
       table: {
+        category: "props",
         type: {
           summary: "string",
         },

@@ -3,7 +3,7 @@ import { html } from "lit";
 
 import { CandySidebarElementProps } from "../../../components/Sidebar/Element";
 import "../../../components/Sidebar/Element";
-import { meta } from "./ElementWithIconMeta";
+import { meta } from "./ElementMeta";
 
 type Story = StoryObj<CandySidebarElementProps>;
 
@@ -13,6 +13,7 @@ const renderIconElement = (args: CandySidebarElementProps) => html`<candy-sideba
   label=${args.label}
   ?active=${args.active}
   ?disabled=${args.disabled}
+  ?collapsed=${args.collapsed}
 >
   <fa-icon slot="icon" class=${icon} size="2em"></fa-icon>
 </candy-sidebar-element>`;
@@ -28,5 +29,6 @@ export const ElementWithIcon: Story = {
     label: "Candy-Doc",
     active: false,
     disabled: false,
+    collapsed: false,
   },
 };

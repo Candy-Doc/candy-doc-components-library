@@ -1,6 +1,7 @@
 import { Meta, StoryObj } from "@storybook/web-components";
 import { html } from "lit";
 
+import { meta } from "./TopbarElementMeta";
 import type { CandyTopbarElementProps } from "../../../components/Topbar/Element";
 import "../../../components/Topbar/Element";
 
@@ -11,22 +12,9 @@ const renderTopBarElement = (args: CandyTopbarElementProps) => html` <candy-topb
 ></candy-topbar-element>`;
 
 export default {
+  ...meta,
   title: "Components/Topbar/Element",
-  component: "candy-topbar-element",
   render: renderTopBarElement,
-  argTypes: {
-    label: {
-      description: "Title of the navbar item",
-      table: {
-        type: {
-          summary: "string",
-        },
-        defaultValue: {
-          summary: "''",
-        },
-      },
-    },
-  },
 } as Meta<CandyTopbarElementProps>;
 
 export const TopbarElement: Story = {

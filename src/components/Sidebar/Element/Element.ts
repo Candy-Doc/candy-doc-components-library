@@ -6,6 +6,7 @@ export type CandySidebarElementProps = {
   label: string;
   active: boolean;
   disabled: boolean;
+  collapsed: boolean;
 };
 
 @customElement("candy-sidebar-element")
@@ -13,7 +14,7 @@ export class CandySidebarElement extends LitElement {
   static styles = ElementStyle;
 
   @property({ type: String })
-  label = "Home";
+  label = "";
 
   @property({ type: Boolean })
   active = false;

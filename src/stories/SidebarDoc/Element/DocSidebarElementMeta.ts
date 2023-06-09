@@ -3,6 +3,7 @@ export const meta = {
   argTypes: {
     label: {
       description: "Label of the element",
+      category: "props",
       table: {
         type: {
           summary: "string",
@@ -16,6 +17,7 @@ export const meta = {
       name: "active",
       description: "Is the item the selected one",
       table: {
+        category: "props",
         type: {
           summary: "boolean",
         },
@@ -28,6 +30,7 @@ export const meta = {
       name: "candyIcon",
       description: "Show the icon of selected element as a candy",
       table: {
+        category: "props",
         type: {
           summary: "boolean",
         },

@@ -8,6 +8,7 @@ export const meta = {
       options: Object.values(SpinnerSizes),
       control: { type: "radio" },
       table: {
+        category: "props",
         type: {
           summary: "string",
         },

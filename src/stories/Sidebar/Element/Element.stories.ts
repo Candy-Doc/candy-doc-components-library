@@ -11,6 +11,7 @@ const renderElement = (args: CandySidebarElementProps) => html`<candy-sidebar-el
   label=${args.label}
   ?active=${args.active}
   ?disabled=${args.disabled}
+  ?collapsed=${args.collapsed}
 ></candy-sidebar-element>`;
 
 export default {
@@ -24,5 +25,6 @@ export const Element: Story = {
     label: "Candy-Doc",
     active: false,
     disabled: false,
+    collapsed: false,
   },
 };
