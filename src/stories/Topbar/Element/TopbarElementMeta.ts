@@ -1,3 +1,7 @@
+export type TopbarElementControl = {
+  hasIcon: boolean;
+};
+
 export const meta = {
   component: "candy-topbar-element",
   argTypes: {
@@ -24,6 +28,11 @@ export const meta = {
         defaultValue: {
           summary: "icon",
         },
+      },
+    },
+    hasIcon: {
+      table: {
+        disable: true,
       },
     },
   },

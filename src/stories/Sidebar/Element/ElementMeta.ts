@@ -1,3 +1,7 @@
+export type CandyElementControl = {
+  hasIcon: boolean;
+};
+
 export const meta = {
   component: "candy-sidebar-element",
   argTypes: {
@@ -62,6 +66,11 @@ export const meta = {
         defaultValue: {
           summary: "icon",
         },
+      },
+    },
+    hasIcon: {
+      table: {
+        disable: true,
       },
     },
   },

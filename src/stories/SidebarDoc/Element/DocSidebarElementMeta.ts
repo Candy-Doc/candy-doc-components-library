@@ -3,13 +3,13 @@ export const meta = {
   argTypes: {
     label: {
       description: "Label of the element",
-      category: "props",
       table: {
+        category: "props",
         type: {
           summary: "string",
         },
         defaultValue: {
-          summary: "Home",
+          summary: "",
         },
       },
     },

@@ -34,7 +34,7 @@ const renderAccordion = (args: CandyAccordionProps & AccordionControl) => html`<
   ?disabled=${args.disabled}
   @onChange=${({ detail }: CustomEvent) => (isActive = detail.value)}
 >
-  ${args.hasIcon ? html`<fa-icon slot="icon" class="fa-solid fa-candy-cane"></fa-icon>` : null }
+  ${args.hasIcon ? html`<fa-icon slot="icon" class="fa-solid fa-candy-cane"></fa-icon>` : null}
   <candy-alert>
     <span slot="content"> I'm the text inside an info alert</span>
   </candy-alert>
@@ -55,7 +55,6 @@ export const Accordion: Story = {
   },
   play: playFunction,
 };
-
 
 export const AccordionWithIcon: Story = {
   args: {
