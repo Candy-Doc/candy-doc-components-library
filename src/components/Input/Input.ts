@@ -32,10 +32,12 @@ export class CandyInput extends LitElement {
   }
   set value(value) {
     this._value = value;
-    if (this._input) {
+    if (this.checkInput()) {
       this._input.value = value;
     }
   }
+
+  checkInput = () => this._input;
 
   handleChange = ({ target }: Event) => {
     this.value = (target as HTMLButtonElement).value;

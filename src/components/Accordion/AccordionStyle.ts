@@ -123,4 +123,8 @@ export default css`
     transform: rotate(0deg);
     transition: 0.2s ease-in-out;
   }
+
+  .hidden {
+    display: none;
+  }
 `;
