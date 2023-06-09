@@ -4,6 +4,7 @@ import { html } from "lit";
 import { CandySidebarDocTitleProps } from "../../../components/SidebarDoc/DocTitle";
 import "../../../components/SidebarDoc/DocElement";
 import "../../../components/SidebarDoc/DocTitle";
+import { meta } from "./DocSidebarTitleMeta";
 
 type Story = StoryObj<CandySidebarDocTitleProps>;
 
@@ -15,34 +16,9 @@ const renderElement = (args: CandySidebarDocTitleProps) => html`<candy-sidebar-d
 </candy-sidebar-doc-title>`;
 
 export default {
+  ...meta,
   title: "Components/SidebarDoc/DocTitle",
-  component: "candy-sidebar-doc-title",
   render: renderElement,
-  argTypes: {
-    label: {
-      description: "Label of the element",
-      table: {
-        type: {
-          summary: "string",
-        },
-        defaultValue: {
-          summary: "Home",
-        },
-      },
-    },
-    active: {
-      name: "?active",
-      description: "Is the item the selected one",
-      table: {
-        type: {
-          summary: "boolean",
-        },
-        defaultValue: {
-          summary: "False",
-        },
-      },
-    },
-  },
 } as Meta<CandySidebarDocTitleProps>;
 
 export const Title: Story = {

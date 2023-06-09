@@ -6,6 +6,7 @@ import SidebarStyle from "./SidebarStyle";
 
 export type CandySidebarProps = {
   canCollapse: boolean;
+  onCollapse: (e: CustomEvent) => void;
 };
 
 @customElement("candy-sidebar")
@@ -20,34 +21,47 @@ export class CandySidebar extends LitElement {
 
   protected updated(_changedProperties: PropertyValues | Map<PropertyKey, unknown>): void {
     if (_changedProperties.has("collapsed")) {
-      const slots = this.shadowRoot?.querySelector("slot")?.assignedElements();
-      if (slots) {
-        slots.forEach(slot => {
-          if (this.collapsed) {
-            slot.setAttribute("collapsed", "");
-          } else {
-            slot.removeAttribute("collapsed");
-          }
-        })
-      }
+      Array.from(this.children).forEach((slot) => {
+        if (this.collapsed) {
+          slot.setAttribute("collapsed", "");
+        } else {
+          slot.removeAttribute("collapsed");
+        }
+      });
     }
   }
 
-  private handleCollapse() : void {
+  private handleCollapse(): void {
     this.collapsed = !this.collapsed;
+    const event = new CustomEvent("onCollapse", {
+      bubbles: false,
+      composed: true,
+      detail: { value: this.collapsed },
+    });
+    this.dispatchEvent(event);
   }
 
   render() {
     return html`
-      <div class="sidebar-container ${this.collapsed ? "sidebar-mini " : null}" part="sidebar">
-        <section>
-          ${this.canCollapse ? html`          
-            <div class="icon-container">
-              <img src=${expandIcon} alt="expand-icon" @click="${this.handleCollapse}"/>
-            </div>` : null}
+      <section
+        class="sidebar-container ${this.collapsed ? "sidebar-mini " : null}"
+        part="sidebar"
+        role="complementary"
+      >
+        <div>
+          ${this.canCollapse
+            ? html` <div class="icon-container">
+                <img
+                  src=${expandIcon}
+                  alt="collapse-icon"
+                  @click="${this.handleCollapse}"
+                  role="button"
+                />
+              </div>`
+            : null}
           <slot></slot>
-        </section>
-      </div>
+        </div>
+      </section>
     `;
   }
 }

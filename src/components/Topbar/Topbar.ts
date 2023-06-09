@@ -20,10 +20,9 @@ export class CandyTopbar extends LitElement {
   }
 
   disconnectedCallback() {
-    window.removeEventListener('resize', this.resize);
+    window.removeEventListener("resize", this.resize);
     super.disconnectedCallback();
   }
-
 
   resize = () => {
     if (window.innerWidth < 768) {
@@ -31,18 +30,16 @@ export class CandyTopbar extends LitElement {
     } else {
       this.mobile = false;
     }
-  }
+  };
 
   render() {
     return html`
       <header class="topbar-container" part="topbar">
         <div class="${this.mobile ? "logo-reduced" : "logo"}">
           <a href="/">
-            ${this.mobile ?
-              html`<candy-logo-mark></candy-logo-mark>`
-              :
-              html`<candy-logo-horizontal></candy-logo-horizontal>`
-            }
+            ${this.mobile
+              ? html`<candy-logo-mark></candy-logo-mark>`
+              : html`<candy-logo-horizontal></candy-logo-horizontal>`}
           </a>
         </div>
         <nav class="navbar">

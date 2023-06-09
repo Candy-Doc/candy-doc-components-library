@@ -18,22 +18,19 @@ export class CandySidebarDocTitle extends LitElement {
   active = false;
 
   render() {
-    const styleClass = this.active
-      ? "text-blue"
-      : "text-gray";
+    const styleClass = this.active ? "text-blue" : "text-gray";
 
-    const content = this.active ? html`
-      <div class="title-childrens">
-        <slot></slot>
-      </div>
-    `: null;
+    const content = this.active
+      ? html`
+          <div class="title-childrens">
+            <slot></slot>
+          </div>
+        `
+      : null;
 
     return html`
       <div class="title-container" part="doc-title">
-        <button
-          href="#"
-          class="${"element-container " + styleClass}"
-        >
+        <button href="#" class="${"element-container " + styleClass}">
           <div class=${`chevron ${this.active ? "rotate" : ""}`}></div>
           <p>${this.label}</p>
         </button>

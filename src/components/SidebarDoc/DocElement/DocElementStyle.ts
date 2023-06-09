@@ -37,7 +37,7 @@ export default css`
   }
 
   .text-gray {
-    color: #6D6D6D
+    color: #6d6d6d;
   }
 
   p {

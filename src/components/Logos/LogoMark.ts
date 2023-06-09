@@ -9,11 +9,11 @@ export class CandyLogoMark extends LitElement {
     img {
       width: 100%;
       height: 100%;
-    };
+    }
   `;
 
   render() {
-    return html`<img style={{}} part="logo-mark" class="toto" src=${LogoMark} alt="Candy-Doc-Mark" />`;
+    return html`<img part="logo-mark" class="toto" src=${LogoMark} alt="Candy-Doc-Mark" />`;
   }
 }
 

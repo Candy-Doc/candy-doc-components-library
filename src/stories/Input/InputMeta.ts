@@ -1,22 +1,5 @@
-import { StoryObj, Meta } from "@storybook/web-components";
-import { html } from "lit";
-
-import { CandyInputProps } from "../components/Input";
-import "../components/Input";
-
-type Story = StoryObj<CandyInputProps>;
-
-const renderInput = (args: CandyInputProps) => html`<candy-input
-  label=${args.label}
-  placeholder=${args.placeholder}
-  shortCut=${args.shortCut}
->
-</candy-input>`;
-
-export default {
-  title: "Components/Input",
+export const meta = {
   component: "candy-input",
-  render: renderInput,
   argTypes: {
     label: {
       description: "Title of the input",
@@ -51,13 +34,16 @@ export default {
         },
       },
     },
-  },
-} as Meta<CandyInputProps>;
-
-export const Input: Story = {
-  args: {
-    label: "Quick search",
-    placeholder: "Search",
-    shortCut: "⌘B",
+    value: {
+      description: "Input value",
+      table: {
+        type: {
+          summary: "string",
+        },
+        defaultValue: {
+          summary: "",
+        },
+      },
+    },
   },
 };

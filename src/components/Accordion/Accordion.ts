@@ -24,35 +24,47 @@ export class CandyAccordion extends LitElement {
   @property({ type: Boolean })
   collapsed = false;
 
-  render() {
-    const styleClass = this.active
-      ? "text-blue"
-      : "text-black";
+  handleClick = () => {
+    this.active = !this.active;
+    const event = new CustomEvent("onChange", {
+      bubbles: false,
+      composed: true,
+      detail: { value: this.active },
+    });
+    this.dispatchEvent(event);
+  };
 
-    const content = this.active ? html`
-      <div class="accordion-childrens">
-        <slot></slot>
-      </div>
-    `: null;
+  render() {
+    const styleClass = this.active ? "text-blue" : "text-black";
+    const slotContent = html`
+        <div class="accordion-childrens ${this.collapsed && !this.active ? "hidden" : null}">
+          <slot></slot>
+        </div>
+      `
 
     return html`
       <div part="accordion">
         <button
+          role="button"
           href="#"
-          class="${"element-container " + styleClass} ${!this.collapsed ? "element-container-extended" : null}"
+          class="${"element-container " + styleClass} ${!this.collapsed
+        ? "element-container-extended"
+        : null}"
           ?disabled="${this.disabled}"
+          @click=${this.handleClick}
         >
           <slot name="icon"></slot>
           <p>${!this.collapsed ? this.label : null}</p>
-          ${!this.collapsed ? html`<div class="end-icons">
-            <div class="options-container">
-              <slot name="options"></slot>
-            </div>
-          </div>
-          <div class=${`chevron ${this.active ? "rotate" : ""}`}></div>
-          `: null}
+          ${!this.collapsed
+        ? html`<div class="end-icons">
+                  <div class="options-container">
+                    <slot name="options"></slot>
+                  </div>
+                </div>
+                <div class=${`chevron ${this.active ? "rotate" : ""}`}></div> `
+        : null}
         </button>
-        ${!this.collapsed ? content : null}
+        ${slotContent}
       </div>
     `;
   }

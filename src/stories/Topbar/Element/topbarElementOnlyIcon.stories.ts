@@ -7,8 +7,7 @@ const renderTopBarElement = () => html`<candy-topbar-element>
   <a slot="icon" href="https://google.com">
     <fa-icon class="fa-brands fa-github"></fa-icon>
   </a>
-</candy-topbar-element>
-`;
+</candy-topbar-element> `;
 
 export default {
   title: "Components/Topbar/ElementOnlyIcon",
@@ -26,7 +25,7 @@ export default {
         },
       },
     },
-  }
+  },
 };
 
 export const TopbarElement: StoryObj = {};
