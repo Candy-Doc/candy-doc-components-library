@@ -1,3 +1,7 @@
+export type AccordionControl = {
+  hasIcon: boolean;
+};
+
 export const meta = {
   component: "candy-accordion",
   argTypes: {
@@ -84,6 +88,11 @@ export const meta = {
         type: {
           summary: "HTMLElement",
         },
+      },
+    },
+    hasIcon: {
+      table: {
+        disable: true,
       },
     },
   },
