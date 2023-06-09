@@ -1,3 +1,8 @@
+# [v1.9.0](https://github.com/Candy-Doc/candy-doc-components-library/compare/v1.8.2...v1.9.0) (2023-06-09)
+
+## ✨ New minor Features
+- [`a4382af`](https://github.com/Candy-Doc/candy-doc-components-library/commit/a4382af)  feat(components): improve storybook interactions and testing  (#53) (Issues: [`#53`](https://github.com/Candy-Doc/candy-doc-components-library/issues/53))
+
 # [v1.8.2](https://github.com/Candy-Doc/candy-doc-components-library/compare/v1.8.1...v1.8.2) (2023-06-05)
 
 ## 🐛 Bug Fixes
