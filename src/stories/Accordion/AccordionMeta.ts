@@ -5,6 +5,13 @@ export type AccordionControl = {
 
 export const meta = {
   component: "candy-accordion",
+  parameters: {
+    docs: {
+      description: {
+        component: "CSS part selector: **accordion**"
+      },
+    },
+  },
   argTypes: {
     label: {
       description: "Label of the element",

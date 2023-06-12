@@ -2,6 +2,13 @@ import { AlertTypes } from "../../components/Alert";
 
 export const meta = {
   component: "candy-alert",
+  parameters: {
+    docs: {
+      description: {
+        component: "CSS part selector: **alert**"
+      },
+    },
+  },
   argTypes: {
     type: {
       description: `Define the type of the alert`,

@@ -20,6 +20,13 @@ export type CandySideBarControl = {
 
 export const meta: Meta<CandySidebarProps & CandySideBarControl> = {
   component: "candy-sidebar",
+  parameters: {
+    docs: {
+      description: {
+        component: "CSS part selector: **sidebar**"
+      },
+    },
+  },
   argTypes: {
     canCollapse: {
       name: "canCollapse",

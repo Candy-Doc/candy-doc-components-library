@@ -2,6 +2,13 @@ import { SpinnerSizes } from "../../components/Spinner";
 
 export const meta = {
   component: "candy-spinner",
+  parameters: {
+    docs: {
+      description: {
+        component: "CSS part selector: **spinner**"
+      },
+    },
+  },
   argTypes: {
     size: {
       description: "Size of the spinner",

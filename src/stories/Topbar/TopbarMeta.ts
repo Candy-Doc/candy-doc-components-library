@@ -1,5 +1,12 @@
 export const meta = {
   component: "candy-topbar",
+  parameters: {
+    docs: {
+      description: {
+        component: "CSS part selector: **topbar**"
+      },
+    },
+  },
   argTypes: {
     defaultSlot: {
       name: "default",

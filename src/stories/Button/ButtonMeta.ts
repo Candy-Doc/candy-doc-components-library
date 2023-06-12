@@ -2,6 +2,13 @@ import { ButtonTypes, ButtonSizes } from "../../components/Button";
 
 export const meta = {
   component: "candy-button",
+  parameters: {
+    docs: {
+      description: {
+        component: "CSS part selector: **button**"
+      },
+    },
+  },
   argTypes: {
     label: {
       description: "Text displayed on the button",

@@ -1,5 +1,12 @@
 export const meta = {
   component: "candy-breadcrumb",
+  parameters: {
+    docs: {
+      description: {
+        component: "CSS part selector: **breadcrumb**"
+      },
+    },
+  },
   argTypes: {
     items: {
       name: "items",

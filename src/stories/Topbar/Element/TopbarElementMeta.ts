@@ -4,6 +4,13 @@ export type TopbarElementControl = {
 
 export const meta = {
   component: "candy-topbar-element",
+  parameters: {
+    docs: {
+      description: {
+        component: "CSS part selector: **topbar-element**"
+      },
+    },
+  },
   argTypes: {
     label: {
       description: "Title of the navbar item",

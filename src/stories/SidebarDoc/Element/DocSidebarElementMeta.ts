@@ -1,5 +1,12 @@
 export const meta = {
   component: "candy-sidebar-doc-element",
+  parameters: {
+    docs: {
+      description: {
+        component: "CSS part selector: **doc-element**"
+      },
+    },
+  },
   argTypes: {
     label: {
       description: "Label of the element",

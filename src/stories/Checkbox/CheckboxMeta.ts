@@ -1,5 +1,12 @@
 export const meta = {
   component: "candy-checkbox",
+  parameters: {
+    docs: {
+      description: {
+        component: "CSS part selector: **checkbox**"
+      },
+    },
+  },
   argTypes: {
     checked: {
       description: "State of the checkbox",

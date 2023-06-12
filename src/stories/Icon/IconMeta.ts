@@ -2,6 +2,13 @@ import { IconSizes } from "../../components/Icon";
 
 export const meta = {
   component: "candy-icon",
+  parameters: {
+    docs: {
+      description: {
+        component: "CSS part selector: **icon**"
+      },
+    },
+  },
   argTypes: {
     size: {
       description:

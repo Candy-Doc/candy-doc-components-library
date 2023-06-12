@@ -10,6 +10,13 @@ export type CandySideBarDocControl = {
 
 export const meta = {
   component: "candy-sidebar-doc",
+  parameters: {
+    docs: {
+      description: {
+        component: "CSS part selector: **doc-sidebar**",
+      },
+    },
+  },
   argTypes: {
     elements: {
       table: {

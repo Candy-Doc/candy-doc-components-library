@@ -1,5 +1,12 @@
 export const meta = {
   component: "candy-switch",
+  parameters: {
+    docs: {
+      description: {
+        component: "CSS part selector: **switch**"
+      },
+    },
+  },
   argTypes: {
     activated: {
       description: "Boolean value of the switch",

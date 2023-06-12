@@ -4,6 +4,13 @@ export type CandyElementControl = {
 
 export const meta = {
   component: "candy-sidebar-element",
+  parameters: {
+    docs: {
+      description: {
+        component: "CSS part selector: **sidebar-element**"
+      },
+    },
+  },
   argTypes: {
     label: {
       description: "Label of the element",

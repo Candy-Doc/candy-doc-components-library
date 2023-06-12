@@ -1,5 +1,12 @@
 export const meta = {
   component: "candy-input",
+  parameters: {
+    docs: {
+      description: {
+        component: "CSS part selector: **input**"
+      },
+    },
+  },
   argTypes: {
     label: {
       description: "Title of the input",
