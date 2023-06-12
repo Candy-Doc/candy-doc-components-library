@@ -1,5 +1,6 @@
 export type AccordionControl = {
   hasIcon: boolean;
+  hasOptions: boolean;
 };
 
 export const meta = {

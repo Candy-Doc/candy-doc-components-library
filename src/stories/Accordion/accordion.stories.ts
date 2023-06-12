@@ -29,12 +29,16 @@ const playFunction = async ({ args, canvasElement, step }: any) => {
 };
 
 const renderAccordion = (args: CandyAccordionProps & AccordionControl) => html`<candy-accordion
-  label=${"Section 1"}
+  label=${args.label}
   ?active=${args.active}
   ?disabled=${args.disabled}
   @onChange=${({ detail }: CustomEvent) => (isActive = detail.value)}
 >
   ${args.hasIcon ? html`<fa-icon slot="icon" class="fa-solid fa-candy-cane"></fa-icon>` : null}
+  ${args.hasOptions
+    ? html`<fa-icon slot="options" class="fa-solid fa-location-crosshairs"></fa-icon
+        ><fa-icon slot="options" class="fa-regular fa-eye"></fa-icon>`
+    : null}
   <candy-alert>
     <span slot="content"> I'm the text inside an info alert</span>
   </candy-alert>
@@ -48,20 +52,33 @@ export default {
 
 export const Accordion: Story = {
   args: {
-    label: "Candy-Doc",
+    label: "Basic accordion",
     active: false,
     disabled: false,
     hasIcon: false,
+    hasOptions: false,
   },
   play: playFunction,
 };
 
 export const AccordionWithIcon: Story = {
   args: {
-    label: "Candy-Doc",
+    label: "Accordion with icon",
     active: false,
     disabled: false,
     hasIcon: true,
+    hasOptions: false,
+  },
+  play: playFunction,
+};
+
+export const AccordionWithOptions: Story = {
+  args: {
+    label: "Accordion with options",
+    active: false,
+    disabled: false,
+    hasIcon: true,
+    hasOptions: true,
   },
   play: playFunction,
 };

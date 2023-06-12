@@ -3,9 +3,7 @@ import type { CandySideBarControl, CandySideBarElement } from "./SidebarMeta";
 import type { CandySidebarProps } from "../../components/Sidebar";
 
 const renderOptionsIcons = (optionsIcons: Array<string>) => {
-  return optionsIcons.map(
-    (icon: string) => html` <fa-icon slot="options" class=${icon}></fa-icon>`
-  );
+  return optionsIcons.map((icon: string) => html`<fa-icon slot="options" class=${icon}></fa-icon>`);
 };
 
 const renderAccordion = (element: CandySideBarElement) => {
