@@ -2,6 +2,13 @@ import { IconSizes } from "../../components/Icon";
 
 export const meta = {
   component: "candy-icon",
+  parameters: {
+    docs: {
+      description: {
+        component: "CSS part selector: **icon**",
+      },
+    },
+  },
   argTypes: {
     size: {
       description:
@@ -9,11 +16,26 @@ export const meta = {
       options: Object.values(IconSizes),
       control: { type: "radio" },
       table: {
+        category: "props",
         type: {
           summary: "string",
         },
         defaultValue: {
           summary: IconSizes.md,
+        },
+      },
+    },
+    slotIcon: {
+      name: "icon",
+      description: "Slot for the icon",
+      control: { type: "radio" },
+      table: {
+        category: "slots",
+        type: {
+          summary: "HTMLElement",
+        },
+        defaultValue: {
+          summary: "icon",
         },
       },
     },

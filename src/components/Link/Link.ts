@@ -5,6 +5,7 @@ import LinkStyle from "./LinkStyle";
 export type CandyLinkProps = {
   label: string;
   url: string;
+  target: string;
 };
 
 @customElement("candy-link")

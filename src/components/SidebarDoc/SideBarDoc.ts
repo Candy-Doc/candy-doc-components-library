@@ -9,7 +9,7 @@ export class CandySidebarDoc extends LitElement {
 
   render() {
     return html`
-      <div class="sidebar-doc-container" part="sidebar-doc">
+      <div class="sidebar-doc-container" part="doc-sidebar">
         <section>
           <slot></slot>
         </section>

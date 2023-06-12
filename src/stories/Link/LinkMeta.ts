@@ -1,48 +1,46 @@
 export const meta = {
-  component: "candy-sidebar-doc-element",
+  component: "candy-link",
   parameters: {
     docs: {
       description: {
-        component: "CSS part selector: **doc-element**",
+        component: "CSS part selector: **link**",
       },
     },
   },
   argTypes: {
     label: {
-      description: "Label of the element",
+      description: "Text holding the link",
       table: {
         category: "props",
         type: {
           summary: "string",
         },
         defaultValue: {
-          summary: "",
+          summary: "Click me",
         },
       },
     },
-    active: {
-      name: "active",
-      description: "Is the item the selected one",
+    url: {
+      description: "Url",
       table: {
         category: "props",
         type: {
-          summary: "boolean",
+          summary: "string",
         },
         defaultValue: {
-          summary: "False",
+          summary: "https://candy-doc.com",
         },
       },
     },
-    candyIcon: {
-      name: "candyIcon",
-      description: "Show the icon of selected element as a candy",
+    target: {
+      description: "Target of the `<a>` element",
       table: {
         category: "props",
         type: {
-          summary: "boolean",
+          summary: "string",
         },
         defaultValue: {
-          summary: "True",
+          summary: "_blank",
         },
       },
     },

@@ -20,11 +20,19 @@ export type CandySideBarControl = {
 
 export const meta: Meta<CandySidebarProps & CandySideBarControl> = {
   component: "candy-sidebar",
+  parameters: {
+    docs: {
+      description: {
+        component: "CSS part selector: **sidebar**",
+      },
+    },
+  },
   argTypes: {
     canCollapse: {
-      name: "?canCollapse",
+      name: "canCollapse",
       description: "Show collapse icon",
       table: {
+        category: "props",
         type: {
           summary: "Boolean",
         },
@@ -33,27 +41,28 @@ export const meta: Meta<CandySidebarProps & CandySideBarControl> = {
         },
       },
     },
-    elements: {
-      description:
-        "List of sidebar elements information. /!\\ This argument is to build the items and is not passed inside the sidebar.",
-      table: {
-        type: {
-          summary: "object[]",
-        },
-        defaultValue: {
-          summary: "[]",
-        },
-      },
-    },
     onCollapse: {
       description:
         "Event occured when the sidebar is being collapsed. Access the value by <strong><i>event.detail.value</i></strong>",
       table: {
+        category: "events",
         type: {
           summary: "Function",
         },
-        defaultValue: {
-          summary: "(e: CustomEvent) => void",
+      },
+    },
+    elements: {
+      table: {
+        disable: true,
+      },
+    },
+    defaultSlot: {
+      name: "default",
+      description: "Default slot containing children of the component",
+      table: {
+        category: "slots",
+        type: {
+          summary: "HTMLElement",
         },
       },
     },

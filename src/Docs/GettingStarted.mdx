@@ -1,0 +1,115 @@
+import { Meta, Title } from "@storybook/blocks";
+import "../components/Button";
+import "../components/Link";
+
+<Meta title="Introduction/Getting started" />
+
+<style>
+  {`
+    .flex {
+      padding: 0.5rem 0;
+      display: flex;
+      justify-content: center;
+      gap: 15px;
+    }
+
+    candy-button::part(button) {
+      min-width: 10rem;
+      min-height: 2.5rem;
+    }
+  `}
+</style>
+
+<div align="center">
+  <picture>
+    <img
+      alt="CandyDoc"
+      width="150"
+      src="https://user-images.githubusercontent.com/22562938/170954304-420d51b3-f499-4201-945a-df2dd105e8f6.png"
+    />
+  </picture>
+  # Candy-doc-component-library
+</div>
+
+<p align="center">
+  <a href="https://www.npmjs.com/package/@candy-doc/ui" alt="NPM package" target="_blank">
+    <img src="https://flat.badgen.net/npm/v/@candy-doc/ui" alt="NPM release" />
+  </a>
+  <a href="https://www.npmjs.com/package/@candy-doc/ui" target="_blank">
+    <img src="https://flat.badgen.net/npm/dt/@candy-doc/ui" alt="NPM downloads" />
+  </a>
+  <a
+    href="https://github.com/Candy-Doc/candy-doc-components-library/blob/main/LICENSE"
+    alt="License"
+    target="_blank"
+  >
+    <img src="https://flat.badgen.net/badge/license/GPL3/blue" alt="License" />
+  </a>
+</p>
+
+<h3>Welcome to the open-source candy-doc design system.</h3>
+<h3>Based on Lit-element to create simple and reusable web components.</h3>
+
+<div class="flex">
+  <div>
+    <a href="https://github.com/Candy-Doc/candy-doc-components-library">
+      <candy-button class="flex" label="@candy-doc/ui"></candy-button>
+    </a>
+  </div>
+  <div>
+    <a href="https://github.com/Candy-Doc" class="content-center">
+      <candy-button class="flex" label="@candy-doc" type="Secondary"></candy-button>
+    </a>
+  </div>
+</div>
+
+<br />
+<br />
+
+## Getting started
+
+To install `@candy-doc/ui` in your project, run the following command
+
+**using npm:**
+
+```bash
+npm install --save @candy-doc/ui
+```
+
+**using yarn:**
+
+```bash
+yarn add --dev @candy-doc/ui
+```
+
+## Usage
+
+Once you have installed the package, you can access the components using the `import` instruction such as:
+
+```js
+import "@candy-doc/ui/src/components/Button";
+```
+
+Once imported, use the component as HTML tag:
+
+```js
+<candy-button label="Click me" size="md"></candy-button>
+```
+
+Which will result to this rendering:
+
+> <candy-button label="Click me" size="md"></candy-button>
+
+## Custom style
+
+Because of the Shadow DOM, styles of the web components are external.<br/>
+If you wish to override any component style, each of them has its own [part](https://developer.mozilla.org/fr/docs/Web/CSS/::part) attribute (cf. component's doc page).
+
+Following button example, button's part value is `button`. Here is how you can override your button:
+
+```css
+candy-button::part(button) {
+  width: 6rem;
+  height: 2rem;
+}
+```

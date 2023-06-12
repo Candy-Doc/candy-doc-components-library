@@ -15,6 +15,13 @@ const renderDivider = () => html` <p style=${style}>Above</p>
 export default {
   title: "Components/Divider",
   component: "candy-divider",
+  parameters: {
+    docs: {
+      description: {
+        component: "CSS part selector: **divider**",
+      },
+    },
+  },
   render: renderDivider,
 };
 

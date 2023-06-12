@@ -2,10 +2,18 @@ import { ButtonTypes, ButtonSizes } from "../../components/Button";
 
 export const meta = {
   component: "candy-button",
+  parameters: {
+    docs: {
+      description: {
+        component: "CSS part selector: **button**",
+      },
+    },
+  },
   argTypes: {
     label: {
       description: "Text displayed on the button",
       table: {
+        category: "props",
         type: {
           summary: "string",
         },
@@ -20,6 +28,7 @@ export const meta = {
       options: Object.values(ButtonTypes),
       control: { type: "radio" },
       table: {
+        category: "props",
         type: {
           summary: "string",
         },
@@ -33,6 +42,7 @@ export const meta = {
       options: Object.values(ButtonSizes),
       control: { type: "radio" },
       table: {
+        category: "props",
         type: {
           summary: "string",
         },

@@ -10,16 +10,26 @@ export type CandySideBarDocControl = {
 
 export const meta = {
   component: "candy-sidebar-doc",
+  parameters: {
+    docs: {
+      description: {
+        component: "CSS part selector: **doc-sidebar**",
+      },
+    },
+  },
   argTypes: {
     elements: {
-      description:
-        "List of sidebar elements information. /!\\ This argument is to build the items and is not passed inside the sidebar.",
       table: {
+        disable: true,
+      },
+    },
+    defaultSlot: {
+      name: "default",
+      description: "Default slot containing children of the component",
+      table: {
+        category: "slots",
         type: {
-          summary: "object[]",
-        },
-        defaultValue: {
-          summary: "[]",
+          summary: "HTMLElement",
         },
       },
     },

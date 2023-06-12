@@ -14,7 +14,7 @@ export class CandySidebarDocElement extends LitElement {
   static styles = ElementStyle;
 
   @property({ type: String })
-  label = "Home";
+  label = "";
 
   @property({ type: Boolean })
   active = false;

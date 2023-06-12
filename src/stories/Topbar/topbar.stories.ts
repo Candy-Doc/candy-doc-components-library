@@ -1,6 +1,7 @@
 import { StoryObj } from "@storybook/web-components";
 import { html } from "lit";
 
+import { meta } from "./TopbarMeta";
 import "../../components/Topbar/Topbar";
 import "../../components/Topbar/Element";
 
@@ -16,8 +17,8 @@ const renderTopBar = () => html`<candy-topbar>
 </candy-topbar>`;
 
 export default {
+  ...meta,
   title: "Components/Topbar",
-  component: "candy-topbar",
   render: renderTopBar,
 };
 
