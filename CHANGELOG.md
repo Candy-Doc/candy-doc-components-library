@@ -1,3 +1,8 @@
+# [v1.10.1](https://github.com/Candy-Doc/candy-doc-components-library/compare/v1.10.0...v1.10.1) (2023-06-12)
+
+## 🐛 Bug Fixes
+- [`727b585`](https://github.com/Candy-Doc/candy-doc-components-library/commit/727b585)  style: add missing cursor pointer css on hover (#54) (Issues: [`#54`](https://github.com/Candy-Doc/candy-doc-components-library/issues/54))
+
 # [v1.10.0](https://github.com/Candy-Doc/candy-doc-components-library/compare/v1.9.0...v1.10.0) (2023-06-12)
 
 ## ✨ New minor Features
