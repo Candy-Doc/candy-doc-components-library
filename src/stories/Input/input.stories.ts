@@ -3,7 +3,7 @@ import { html } from "lit";
 
 import { CandyInputProps } from "../../components/Input";
 import { meta } from "./InputMeta";
-import { playFunction } from "./input.test";
+import { playFunction } from "./Input.test";
 import "../../components/Input";
 
 type Story = StoryObj<CandyInputProps>;
