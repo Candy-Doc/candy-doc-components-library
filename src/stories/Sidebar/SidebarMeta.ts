@@ -23,7 +23,7 @@ export const meta: Meta<CandySidebarProps & CandySideBarControl> = {
   parameters: {
     docs: {
       description: {
-        component: "CSS part selector: **sidebar**"
+        component: "CSS part selector: **sidebar**",
       },
     },
   },

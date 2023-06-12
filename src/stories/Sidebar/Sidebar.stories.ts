@@ -1,16 +1,14 @@
 import { StoryObj } from "@storybook/web-components";
-import { userEvent } from "@storybook/testing-library";
-import { getByShadowAltText, getByShadowRole } from "shadow-dom-testing-library";
-import { expect } from "@storybook/jest";
 
 import type { CandySidebarProps } from "../../components/Sidebar";
 import type { CandySideBarControl } from "./SidebarMeta";
 import { meta } from "./SidebarMeta";
 import { renderSideBar } from "./RenderSidebar";
+import { playFunction } from "./Sidebar.test";
 
 type Story = StoryObj<CandySidebarProps & CandySideBarControl>;
 
-let isCollapse = false;
+const isCollapse = { value: false };
 
 export default {
   ...meta,
@@ -21,7 +19,7 @@ export default {
 export const Sidebar: Story = {
   args: {
     canCollapse: true,
-    onCollapse: (e: CustomEvent) => (isCollapse = e.detail.value),
+    onCollapse: (e: CustomEvent) => (isCollapse.value = e.detail.value),
     elements: [
       {
         label: "Patterns",
@@ -58,19 +56,5 @@ export const Sidebar: Story = {
       },
     ],
   },
-  play: async ({ canvasElement, step }) => {
-    const collapseIcon = getByShadowAltText(canvasElement, "collapse-icon");
-    const sidebarElem = getByShadowRole(canvasElement, "complementary");
-
-    await step("Collsape the sidebar", async () => {
-      await userEvent.click(collapseIcon);
-      await expect(sidebarElem.classList.contains("sidebar-mini")).toBeTruthy();
-      await expect(isCollapse).toBeTruthy();
-    });
-    await step("Open the sidebar", async () => {
-      await userEvent.click(collapseIcon);
-      await expect(sidebarElem.classList.contains("sidebar-mini")).not.toBeTruthy();
-      await expect(isCollapse).toBeFalsy();
-    });
-  },
+  play: async ({ canvasElement, step }) => playFunction({ canvasElement, step }, isCollapse),
 };

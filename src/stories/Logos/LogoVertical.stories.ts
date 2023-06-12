@@ -8,7 +8,7 @@ export default {
   parameters: {
     docs: {
       description: {
-        component: "CSS part selector: **logo-vertical**"
+        component: "CSS part selector: **logo-vertical**",
       },
     },
   },

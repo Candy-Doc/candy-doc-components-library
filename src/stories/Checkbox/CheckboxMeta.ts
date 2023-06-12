@@ -3,7 +3,7 @@ export const meta = {
   parameters: {
     docs: {
       description: {
-        component: "CSS part selector: **checkbox**"
+        component: "CSS part selector: **checkbox**",
       },
     },
   },

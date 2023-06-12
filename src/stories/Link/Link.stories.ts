@@ -15,7 +15,6 @@ const renderLink = (args: CandyLinkProps) => html`<p>
 export default {
   ...meta,
   title: "Components/Link",
-  component: "candy-link",
   render: renderLink,
 } as Meta<CandyLinkProps>;
 

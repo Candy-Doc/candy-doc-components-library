@@ -25,7 +25,7 @@ export class CandySidebarDocTitle extends LitElement {
       detail: { value: this.active },
     });
     this.dispatchEvent(event);
-  }
+  };
 
   render() {
     const styleClass = this.active ? "text-blue" : "text-gray";

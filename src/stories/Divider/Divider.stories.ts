@@ -18,7 +18,7 @@ export default {
   parameters: {
     docs: {
       description: {
-        component: "CSS part selector: **divider**"
+        component: "CSS part selector: **divider**",
       },
     },
   },

@@ -8,7 +8,7 @@ export default {
   parameters: {
     docs: {
       description: {
-        component: "CSS part selector: **logo-mark**"
+        component: "CSS part selector: **logo-mark**",
       },
     },
   },

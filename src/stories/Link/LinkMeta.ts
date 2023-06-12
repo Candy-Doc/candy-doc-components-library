@@ -1,8 +1,9 @@
 export const meta = {
+  component: "candy-link",
   parameters: {
     docs: {
       description: {
-        component: "CSS part selector: **link**"
+        component: "CSS part selector: **link**",
       },
     },
   },
