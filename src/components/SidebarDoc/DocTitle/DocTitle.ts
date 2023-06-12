@@ -17,6 +17,16 @@ export class CandySidebarDocTitle extends LitElement {
   @property({ type: Boolean })
   active = false;
 
+  handleClick = () => {
+    this.active = !this.active;
+    const event = new CustomEvent("onChange", {
+      bubbles: false,
+      composed: true,
+      detail: { value: this.active },
+    });
+    this.dispatchEvent(event);
+  }
+
   render() {
     const styleClass = this.active ? "text-blue" : "text-gray";
 
@@ -30,7 +40,7 @@ export class CandySidebarDocTitle extends LitElement {
 
     return html`
       <div class="title-container" part="doc-title">
-        <button href="#" class="${"element-container " + styleClass}">
+        <button href="#" class="${"element-container " + styleClass}" @click=${this.handleClick}>
           <div class=${`chevron ${this.active ? "rotate" : ""}`}></div>
           <p>${this.label}</p>
         </button>
