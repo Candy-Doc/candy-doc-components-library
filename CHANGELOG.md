@@ -1,3 +1,8 @@
+# [v1.10.0](https://github.com/Candy-Doc/candy-doc-components-library/compare/v1.9.0...v1.10.0) (2023-06-12)
+
+## ✨ New minor Features
+- [`583f66b`](https://github.com/Candy-Doc/candy-doc-components-library/commit/583f66b)  feat(storybook): Enhance stories documentation (#55) (Issues: [`#55`](https://github.com/Candy-Doc/candy-doc-components-library/issues/55))
+
 # [v1.9.0](https://github.com/Candy-Doc/candy-doc-components-library/compare/v1.8.2...v1.9.0) (2023-06-09)
 
 ## ✨ New minor Features
