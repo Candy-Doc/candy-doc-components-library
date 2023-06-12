@@ -9,6 +9,10 @@ export default css`
     font-family: inherit;
   }
 
+  .button-container:hover {
+    cursor: pointer;
+  }
+
   .primary {
     color: white;
     background-color: rgb(37 99 235);

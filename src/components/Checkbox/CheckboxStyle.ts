@@ -61,6 +61,10 @@ export default css`
     line-height: 1.25rem;
   }
 
+  label:hover {
+    cursor: pointer;
+  }
+
   .label-container label {
     color: rgb(55 65 81);
     font-weight: 500;
