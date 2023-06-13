@@ -10,6 +10,8 @@ export default css`
     display: flex;
     gap: 0.50rem;
     align-items: center;
+    justify-content: center;
+    min-height: 2.5rem;
   }
 
   .button-container:hover {
