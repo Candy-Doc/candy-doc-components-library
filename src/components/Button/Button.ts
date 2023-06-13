@@ -28,6 +28,7 @@ export class CandyButton extends LitElement {
     const buttonTypeClasses = buttonType[this.type];
     const classes = `${buttonSizeClasses} ${buttonTypeClasses}`;
     return html`<button part="button" type="button" class=${"button-container " + classes}>
+      <slot name="icon"></slot>
       ${this.label}
     </button>`;
   }

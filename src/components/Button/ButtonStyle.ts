@@ -2,11 +2,14 @@ import { css } from "lit";
 
 export default css`
   .button-container {
-    border: color: transparent;
+    border-color: transparent;
     font-weight: 500;
     text-decoration: none;
     border-style: none;
     font-family: inherit;
+    display: flex;
+    gap: 0.50rem;
+    align-items: center;
   }
 
   .button-container:hover {
@@ -68,5 +71,11 @@ export default css`
     font-size: 1rem;
     line-height: 1.5rem;
     padding: 0.75rem 1.5rem;
+  }
+
+  ::slotted(*) {
+    text-decoration: none;
+    color: inherit;
+    transition: 0.2s;
   }
 `;
