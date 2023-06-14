@@ -103,5 +103,10 @@ export const meta = {
         disable: true,
       },
     },
+    hasOptions: {
+      table: {
+        disable: true,
+      },
+    },
   },
 };

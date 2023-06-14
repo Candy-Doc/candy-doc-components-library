@@ -1,5 +1,6 @@
 export type CandyElementControl = {
   hasIcon: boolean;
+  hasOptions: boolean;
 };
 
 export const meta = {
@@ -75,7 +76,25 @@ export const meta = {
         },
       },
     },
+    optionsSlot: {
+      name: "options",
+      description: "Slot for the element's options icon",
+      table: {
+        category: "slots",
+        type: {
+          summary: "HTMLElement",
+        },
+        defaultValue: {
+          summary: "options",
+        },
+      },
+    },
     hasIcon: {
+      table: {
+        disable: true,
+      },
+    },
+    hasOptions: {
       table: {
         disable: true,
       },
