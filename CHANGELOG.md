@@ -1,3 +1,8 @@
+# [v1.12.0](https://github.com/Candy-Doc/candy-doc-components-library/compare/v1.11.0...v1.12.0) (2023-06-14)
+
+## ✨ New minor Features
+- [`bcc565f`](https://github.com/Candy-Doc/candy-doc-components-library/commit/bcc565f)  feat: add sidebar element&#x27;s options icons (#59) (Issues: [`#59`](https://github.com/Candy-Doc/candy-doc-components-library/issues/59))
+
 # [v1.11.0](https://github.com/Candy-Doc/candy-doc-components-library/compare/v1.10.1...v1.11.0) (2023-06-14)
 
 ## 💄 UI and style files added or updated
