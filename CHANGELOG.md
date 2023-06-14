@@ -1,3 +1,8 @@
+# [v1.11.0](https://github.com/Candy-Doc/candy-doc-components-library/compare/v1.10.1...v1.11.0) (2023-06-14)
+
+## 💄 UI and style files added or updated
+- [`cb8ed08`](https://github.com/Candy-Doc/candy-doc-components-library/commit/cb8ed08)  style: Add icon slot in button component (#58) (Issues: [`#58`](https://github.com/Candy-Doc/candy-doc-components-library/issues/58))
+
 # [v1.10.1](https://github.com/Candy-Doc/candy-doc-components-library/compare/v1.10.0...v1.10.1) (2023-06-12)
 
 ## 🐛 Bug Fixes
