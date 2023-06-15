@@ -20,7 +20,7 @@ const renderElement = (
   ${args.hasIcon ? html`<fa-icon slot="icon" class=${icon} size="2em"></fa-icon>` : null}
   ${args.hasOptions
     ? html`<fa-icon slot="options" class="fa-solid fa-location-crosshairs"></fa-icon
-      ><fa-icon slot="options" class="fa-regular fa-eye"></fa-icon>`
+        ><fa-icon slot="options" class="fa-regular fa-eye"></fa-icon>`
     : null}
 </candy-sidebar-element>`;
 
