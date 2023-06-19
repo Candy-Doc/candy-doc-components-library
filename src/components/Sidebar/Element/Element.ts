@@ -46,8 +46,9 @@ export class CandySidebarElement extends LitElement {
           ? "element-container-extended"
           : null}"
         ?disabled="${this.disabled}"
+        @click="${this.handleClick}"
       >
-        <slot name="icon" @click="${this.handleClick}"></slot>
+        <slot name="icon"></slot>
         <p>${!this.collapsed ? this.label : null}</p>
         <div class="end-icons">
           <div class="options-container">
