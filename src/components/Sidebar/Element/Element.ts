@@ -50,11 +50,13 @@ export class CandySidebarElement extends LitElement {
       >
         <slot name="icon"></slot>
         <p>${!this.collapsed ? this.label : null}</p>
-        <div class="end-icons">
-          <div class="options-container">
-            <slot name="options"></slot>
-          </div>
-        </div>
+        ${!this.collapsed
+          ? html`<div class="end-icons">
+              <div class="options-container">
+                <slot name="options"></slot>
+              </div>
+            </div>`
+          : null}
       </button>
     `;
   }
