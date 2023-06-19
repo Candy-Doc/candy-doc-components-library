@@ -20,7 +20,7 @@ const renderSimpleElement = (element: CandySideBarElement) => {
   </candy-sidebar-element>`;
 };
 
-const renderSidebarElements = (element: CandySideBarElement): TemplateResult => {
+export const renderSidebarElements = (element: CandySideBarElement): TemplateResult => {
   return element.childrens.length > 0 ? renderAccordion(element) : renderSimpleElement(element);
 };
 
