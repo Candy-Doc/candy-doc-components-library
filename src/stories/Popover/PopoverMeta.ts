@@ -54,7 +54,8 @@ export const meta = {
       },
     },
     isParentVisible: {
-      description: "State of the parent container. Allow popover to hide while being active if a container is being hidden",
+      description:
+        "State of the parent container. Allow popover to hide while being active if a container is being hidden",
       table: {
         category: "props",
         type: {

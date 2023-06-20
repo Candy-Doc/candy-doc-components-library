@@ -38,12 +38,15 @@ export class CandyPopover extends LitElement {
   }
 
   disconnectedCallback() {
-    window.removeEventListener('resize', this.setPosition);
+    window.removeEventListener("resize", this.setPosition);
     super.disconnectedCallback();
   }
 
   protected updated(changedProperties: PropertyValues | Map<PropertyKey, unknown>): void {
-    if (changedProperties.has("side") || (changedProperties.has("isActive") && changedProperties.get("isActive") === true)) {
+    if (
+      changedProperties.has("side") ||
+      (changedProperties.has("isActive") && changedProperties.get("isActive") === true)
+    ) {
       this.setPosition();
     }
   }
@@ -54,7 +57,10 @@ export class CandyPopover extends LitElement {
       if (!targetElement) {
         return;
       }
-      const offset = this.getOffset({ elemHeight: targetElement.offsetHeight, elemWidth: targetElement.offsetWidth });
+      const offset = this.getOffset({
+        elemHeight: targetElement.offsetHeight,
+        elemWidth: targetElement.offsetWidth,
+      });
       const targetRect = {
         left: targetElement.offsetLeft,
         top: targetElement.offsetTop,
@@ -62,9 +68,9 @@ export class CandyPopover extends LitElement {
       this.componentRef.style.left = `${targetRect.left + offset.left}px`;
       this.componentRef.style.top = `${targetRect.top + offset.top}px`;
     }
-  }
+  };
 
-  getOffset = ({ elemHeight, elemWidth }: { elemHeight: number, elemWidth: number }) => {
+  getOffset = ({ elemHeight, elemWidth }: { elemHeight: number; elemWidth: number }) => {
     const offset = {
       top: 0,
       left: 0,

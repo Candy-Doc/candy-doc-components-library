@@ -11,12 +11,14 @@ export const renderPopover = (args: CandyPopoverProps) => html`<div style="width
         id="anchor"
       ></fa-icon>
     </candy-sidebar-element>
-    <candy-popover .isActive=${args.isActive} target="anchor" side=${args.side} .isParentVisible=${args.isParentVisible}>
+    <candy-popover
+      .isActive=${args.isActive}
+      target="anchor"
+      side=${args.side}
+      .isParentVisible=${args.isParentVisible}
+    >
       <div style="display: flex; align-items: center; height: 100%; justify-content: center">
-        <fa-icon
-          class="fa-solid fa-location-crosshairs"
-          size="2em"
-        ></fa-icon>
+        <fa-icon class="fa-solid fa-location-crosshairs" size="2em"></fa-icon>
       </div>
     </candy-popover>
   </candy-sidebar>
