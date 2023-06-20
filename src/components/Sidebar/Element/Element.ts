@@ -25,6 +25,16 @@ export class CandySidebarElement extends LitElement {
   @property({ type: Boolean })
   collapsed = false;
 
+  private handleClick(): void {
+    if (this.collapsed) {
+      const reopen = new CustomEvent("onReopen", {
+        bubbles: true,
+        composed: true,
+      });
+      this.dispatchEvent(reopen);
+    }
+  }
+
   render() {
     const styleClass = this.active ? "bg-gray text-blue" : "text-black";
 
@@ -36,14 +46,17 @@ export class CandySidebarElement extends LitElement {
           ? "element-container-extended"
           : null}"
         ?disabled="${this.disabled}"
+        @click="${this.handleClick}"
       >
         <slot name="icon"></slot>
         <p>${!this.collapsed ? this.label : null}</p>
-        <div class="end-icons">
-          <div class="options-container">
-            <slot name="options"></slot>
-          </div>
-        </div>
+        ${!this.collapsed
+          ? html`<div class="end-icons">
+              <div class="options-container">
+                <slot name="options"></slot>
+              </div>
+            </div>`
+          : null}
       </button>
     `;
   }

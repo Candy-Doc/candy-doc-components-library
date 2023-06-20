@@ -2,7 +2,7 @@ import { ButtonTypes, ButtonSizes } from "../../components/Button";
 
 export type ButtonControl = {
   hasIcon: boolean;
-}
+};
 
 export const meta = {
   component: "candy-button",
@@ -71,7 +71,7 @@ export const meta = {
     hasIcon: {
       table: {
         disable: true,
-      }
-    }
+      },
+    },
   },
 };

@@ -9,9 +9,7 @@ type Story = StoryObj<CandyButtonProps & ButtonControl>;
 
 const renderButton = (args: CandyButtonProps & ButtonControl) =>
   html`<candy-button label=${args.label} size=${args.size} type=${args.type}>
-    ${args.hasIcon
-      ? html`<fa-icon slot="icon" class="fa-solid fa-house"></fa-icon>` 
-      : null}
+    ${args.hasIcon ? html`<fa-icon slot="icon" class="fa-solid fa-house"></fa-icon>` : null}
   </candy-button>`;
 
 export default {

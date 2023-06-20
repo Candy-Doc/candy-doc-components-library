@@ -26,12 +26,20 @@ export class CandyAccordion extends LitElement {
 
   handleClick = () => {
     this.active = !this.active;
+
     const event = new CustomEvent("onChange", {
       bubbles: false,
       composed: true,
       detail: { value: this.active },
     });
     this.dispatchEvent(event);
+    if (this.collapsed) {
+      const reopen = new CustomEvent("onReopen", {
+        bubbles: true,
+        composed: true,
+      });
+      this.dispatchEvent(reopen);
+    }
   };
 
   render() {
@@ -51,7 +59,7 @@ export class CandyAccordion extends LitElement {
             ? "element-container-extended"
             : null}"
           ?disabled="${this.disabled}"
-          @click=${this.handleClick}
+          @click="${this.handleClick}"
         >
           <slot name="icon"></slot>
           <p>${!this.collapsed ? this.label : null}</p>
