@@ -21,7 +21,7 @@ export class CandyPopover extends LitElement {
   componentRef!: HTMLElement;
 
   @property({ type: Boolean })
-  isActive = true;
+  isActive = false;
 
   @property({ type: Boolean })
   isParentVisible = true;

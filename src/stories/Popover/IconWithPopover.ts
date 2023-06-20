@@ -5,7 +5,7 @@ export const iconWithPopover = (args: CandyPopoverProps) => html`<div style="wid
   <candy-icon size="md">
     <fa-icon slot="icon" class="fa-solid fa-candy-cane" id="anchor-third"></fa-icon>
   </candy-icon>
-  <candy-popover .isActive=${args.isActive} target="anchor-third">
+  <candy-popover .isActive=${args.isActive} side=${args.side} target="anchor-third">
     <div style="display: flex; align-items: center; height: 100%; justify-content: center">
       <fa-icon
         class="fa-solid fa-location-crosshairs"

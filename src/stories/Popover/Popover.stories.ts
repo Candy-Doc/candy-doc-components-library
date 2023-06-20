@@ -1,4 +1,5 @@
 import { StoryObj, Meta } from "@storybook/web-components";
+
 import { CandyPopoverProps, PopoverSide } from "../../components/Popover";
 import { meta } from "./PopoverMeta";
 import { renderPopover } from "./renderPopover";
@@ -21,28 +22,8 @@ export default {
 export const Popover: Story = {
   args: {
     isActive: true,
-    side: PopoverSide.Right
-  },
-};
-
-export const PopoverBottom: Story = {
-  args: {
-    isActive: true,
-    side: PopoverSide.Bottom
-  },
-};
-
-export const PopoverLeft: Story = {
-  args: {
-    isActive: true,
-    side: PopoverSide.Left
-  },
-};
-
-export const PopoverTop: Story = {
-  args: {
-    isActive: true,
-    side: PopoverSide.Top
+    side: PopoverSide.Right,
+    isParentVisible: true,
   },
 };
 

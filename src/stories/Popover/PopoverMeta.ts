@@ -20,7 +20,7 @@ export const meta = {
       table: {
         category: "props",
         type: {
-          summary: PopoverSide,
+          summary: "string",
         },
         defaultValue: {
           summary: PopoverSide.Right,

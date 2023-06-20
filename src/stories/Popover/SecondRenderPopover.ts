@@ -4,7 +4,7 @@ import { CandyPopoverProps } from "../../components/Popover";
 export const secondRenderPopover = (args: CandyPopoverProps) => html`<div style="width: 50%">
   <candy-sidebar>
     <candy-accordion ?active=${args.isParentVisible}>
-      <candy-sidebar-element label="Salut">
+      <candy-sidebar-element label="Element">
         <fa-icon
           slot="options"
           class="fa-solid fa-location-crosshairs"
