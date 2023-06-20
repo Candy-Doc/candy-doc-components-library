@@ -1,3 +1,8 @@
+# [v1.12.1](https://github.com/Candy-Doc/candy-doc-components-library/compare/v1.12.0...v1.12.1) (2023-06-20)
+
+## 🐛 Bug Fixes
+- [`18f4d10`](https://github.com/Candy-Doc/candy-doc-components-library/commit/18f4d10)  fix: reopen sidebar when clicking children (#61) (Issues: [`#61`](https://github.com/Candy-Doc/candy-doc-components-library/issues/61))
+
 # [v1.12.0](https://github.com/Candy-Doc/candy-doc-components-library/compare/v1.11.0...v1.12.0) (2023-06-14)
 
 ## ✨ New minor Features
