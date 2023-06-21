@@ -1,12 +1,12 @@
-import {ButtonSizes} from "../../components/Button";
-import {FloatingButtonsPosition} from "../../components/FloatingButton/FloatingButtons";
+import { ButtonSizes } from "../../components/Button";
+import { FloatingButtonsPosition } from "../../components/FloatingButton/FloatingButtons";
 
 export const meta = {
   component: "candy-floating-button",
   parameters: {
     docs: {
       description: {
-        component: "CSS part selector: **floating-button**"
+        component: "CSS part selector: **floating-button**",
       },
     },
   },
@@ -35,7 +35,7 @@ export const meta = {
           summary: "#2563EBFF",
         },
       },
-      control: { type: "color", presetColors: ['#2563EBFF'] },
+      control: { type: "color", presetColors: ["#2563EBFF"] },
     },
     size: {
       description: "Define the size of the button",
@@ -81,7 +81,7 @@ export const meta = {
     hasIcon: {
       table: {
         disable: true,
-      }
-    }
+      },
+    },
   },
 };

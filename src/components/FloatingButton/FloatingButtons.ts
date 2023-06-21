@@ -5,9 +5,9 @@ export enum FloatingButtonsPosition {
   bl = "bl",
 }
 
-export const floatingButtonPosition: { [position in FloatingButtonsPosition]: string} = {
-  tl : "top left",
-  tr : "top right",
-  br : "bottom right",
-  bl : "bottom left",
-}
+export const floatingButtonPosition: { [position in FloatingButtonsPosition]: string } = {
+  tl: "top left",
+  tr: "top right",
+  br: "bottom right",
+  bl: "bottom left",
+};

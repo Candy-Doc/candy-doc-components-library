@@ -8,16 +8,16 @@ export default css`
     position: absolute;
     display: flex;
     flex-direction: column;
-    gap: 0.50rem;
+    gap: 0.5rem;
     align-items: center;
     justify-content: center;
     min-height: 2.5rem;
   }
-  
+
   .button:hover {
     cursor: pointer;
   }
-  
+
   .button {
     color: white;
     border: none;
@@ -34,7 +34,7 @@ export default css`
     border-radius: 50%;
     font-size: 0.875rem;
     line-height: 1.25rem;
-    padding: .625rem 1rem;
+    padding: 0.625rem 1rem;
   }
 
   .xl {
@@ -43,19 +43,19 @@ export default css`
     line-height: 1.5rem;
     padding: 1rem 1.5rem;
   }
-  
+
   .top {
     top: 3.5rem;
   }
-  
+
   .bottom {
     bottom: 3.5rem;
   }
-  
+
   .left {
     left: 3.5rem;
   }
-  
+
   .right {
     right: 3.5rem;
   }
