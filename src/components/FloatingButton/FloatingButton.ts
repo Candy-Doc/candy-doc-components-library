@@ -1,14 +1,14 @@
 import {customElement, property} from "lit/decorators.js";
 import {html, LitElement} from "lit";
-import {ButtonSizes, ButtonTypes} from "../Button";
-import {buttonSize, buttonType} from "../Button/Buttons";
+import {ButtonSizes} from "../Button";
+import {buttonSize} from "../Button/Buttons";
 import FloatingButtonStyle from "./FloatingButtonStyle";
 import {floatingButtonPosition, FloatingButtonsPosition} from "./FloatingButtons";
 
 export type CandyFloatingButtonProps = {
   label: string;
   size: ButtonSizes;
-  type: ButtonTypes;
+  color: string;
   position: FloatingButtonsPosition;
 }
 
@@ -23,17 +23,16 @@ export class CandyFloatingButton extends LitElement {
   size: ButtonSizes = ButtonSizes.md;
 
   @property({ type: String })
-  type: ButtonTypes = ButtonTypes.Primary;
+  color: string = "#a5e194"
 
   @property({type: String})
   position: FloatingButtonsPosition = FloatingButtonsPosition.br;
 
   render() {
     const buttonSizeClasses = buttonSize[this.size];
-    const buttonTypeClasses = buttonType[this.type];
     const floatingButtonPositionClasses = floatingButtonPosition[this.position];
-    const classes = `${buttonSizeClasses} ${buttonTypeClasses} ${floatingButtonPositionClasses}`;
-    return html`<button part="floating-button" type="button" class=${"button-container " + classes}>
+    const classes = `${buttonSizeClasses} ${floatingButtonPositionClasses}`;
+    return html`<button part="floating-button" style="background-color: ${this.color}" type="button" class=${"button-container " + classes}>
       <slot name="icon"></slot>
       ${this.label}
     </button>`;

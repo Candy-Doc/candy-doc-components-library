@@ -13,7 +13,7 @@ const renderButton = (args: CandyFloatingButtonProps & FloatingButtonControl) =>
 html`
   <div style="height: 120px; overflow-y: scroll">
     <div style="height: 1000px; background-image: linear-gradient(to bottom, #7BC6CC, #BE93C5)">
-      <candy-floating-button label=${args.label ? args.label : null} size=${args.size} type=${args.type} position=${args.position}>
+      <candy-floating-button label=${args.label ? args.label : null} size=${args.size} color=${args.color} position=${args.position}>
         ${args.hasIcon
             ? html`<fa-icon slot="icon" class="fa-solid fa-arrow-up"></fa-icon>`
             : null}
@@ -31,7 +31,7 @@ export default {
 export const FloatingButton: Story = {
   args: {
     size: ButtonSizes.md,
-    type: ButtonTypes.Primary,
+    color: "#f0f",
     position: FloatingButtonsPosition.br,
     hasIcon: true
   }
@@ -40,8 +40,8 @@ export const FloatingButton: Story = {
 export const FloatingButtonWithText: Story = {
   args: {
     label: "Click on me",
+    color: "#f0f",
     size: ButtonSizes.md,
-    type: ButtonTypes.Primary,
     position: FloatingButtonsPosition.br,
     hasIcon: true
   }
@@ -51,7 +51,7 @@ export const FloatingButtonWithTextOnly: Story = {
   args: {
     label: "Click on me",
     size: ButtonSizes.md,
-    type: ButtonTypes.Primary,
+    color: "#f0f",
     position: FloatingButtonsPosition.br,
     hasIcon: false
   }

@@ -27,19 +27,18 @@ export const meta = {
       },
       control: { type: "text" },
     },
-    type: {
+    color: {
       description: "Define the color scheme of the button",
-      options: Object.values(ButtonTypes),
-      control: { type: "radio" },
       table: {
         category: "props",
         type: {
           summary: "string",
         },
         defaultValue: {
-          summary: ButtonTypes.Primary,
+          summary: "Button",
         },
       },
+      control: { type: "text" },
     },
     size: {
       description: "Define the size of the button",
