@@ -1,8 +1,8 @@
 import { customElement, property } from "lit/decorators.js";
-import { html, LitElement } from "lit";
+import { html, LitElement, css, unsafeCSS } from "lit";
 import { ButtonSizes } from "../Button";
 import { buttonSize } from "../Button/Buttons";
-import FloatingButtonStyle from "./FloatingButtonStyle";
+import FloatingButtonStyle from "./FloatingButtonStyle.css?inline";
 import { floatingButtonPosition, FloatingButtonsPosition } from "./FloatingButtons";
 
 export type CandyFloatingButtonProps = {
@@ -14,7 +14,9 @@ export type CandyFloatingButtonProps = {
 
 @customElement("candy-floating-button")
 export class CandyFloatingButton extends LitElement {
-  static styles = FloatingButtonStyle;
+  static styles = css`
+    ${unsafeCSS(FloatingButtonStyle)}
+  `;
 
   @property({ type: String })
   label = "Click on it";
