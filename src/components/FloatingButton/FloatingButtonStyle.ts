@@ -63,6 +63,5 @@ export default css`
   ::slotted(*) {
     text-decoration: none;
     color: inherit;
-    transition: 0.2s;
   }
 `;
