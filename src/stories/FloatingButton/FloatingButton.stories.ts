@@ -14,17 +14,19 @@ const scrollTop = (event: PointerEvent) => {
   const parent = target.parentNode?.parentNode as HTMLElement;
   parent?.scrollTo({
     top: 0,
-    behavior: 'smooth'
+    behavior: "smooth",
   });
-}
-
+};
 
 const renderButton = (args: CandyFloatingButtonProps) =>
   html`
     <div style="height: 120px; overflow-y: scroll">
-      <div id="divParent" style="height: 1000px; background-image: linear-gradient(to bottom, #ddd, #aaa)">
+      <div
+        id="divParent"
+        style="height: 1000px; background-image: linear-gradient(to bottom, #ddd, #aaa)"
+      >
         <candy-floating-button
-            @click = ${scrollTop}
+          @click=${scrollTop}
           label=${args.label ? args.label : null}
           size=${args.size}
           color=${args.color}
@@ -52,7 +54,7 @@ export const FloatingButton: Story = {
 
 export const FloatingButtonWithText: Story = {
   args: {
-    label: "Click on me",
+    label: "Click on it",
     color: "#2563EBFF",
     size: ButtonSizes.md,
     position: FloatingButtonsPosition.br,

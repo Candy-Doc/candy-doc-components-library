@@ -19,29 +19,27 @@ export default css`
   }
 
   .button {
+    border-radius: 50%;
     color: white;
     border: none;
   }
 
   .sm {
-    border-radius: 50%;
     font-size: 0.75rem;
     line-height: 1rem;
     padding: 0.375rem 0.625rem;
   }
 
   .md {
-    border-radius: 50%;
-    font-size: 0.875rem;
+    font-size: 1.25rem;
     line-height: 1.25rem;
-    padding: 0.625rem 1rem;
+    padding: 0.75rem 1rem;
   }
 
   .xl {
-    border-radius: 50%;
-    font-size: 1rem;
+    font-size: 2rem;
     line-height: 1.5rem;
-    padding: 1rem 1.5rem;
+    padding: 1.15rem 1.5rem;
   }
 
   .top {
@@ -63,5 +61,6 @@ export default css`
   ::slotted(*) {
     text-decoration: none;
     color: inherit;
+    width: 100%;
   }
 `;
