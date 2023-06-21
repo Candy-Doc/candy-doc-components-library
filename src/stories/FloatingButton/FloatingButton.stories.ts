@@ -9,11 +9,22 @@ import { meta } from "./FloatingButtonMeta";
 
 type Story = StoryObj<CandyFloatingButtonProps>;
 
+const scrollTop = (event: PointerEvent) => {
+  const target = event.target as HTMLElement;
+  const parent = target.parentNode?.parentNode as HTMLElement;
+  parent?.scrollTo({
+    top: 0,
+    behavior: 'smooth'
+  });
+}
+
+
 const renderButton = (args: CandyFloatingButtonProps) =>
   html`
     <div style="height: 120px; overflow-y: scroll">
-      <div style="height: 1000px; background-image: linear-gradient(to bottom, #ddd, #aaa)">
+      <div id="divParent" style="height: 1000px; background-image: linear-gradient(to bottom, #ddd, #aaa)">
         <candy-floating-button
+            @click = ${scrollTop}
           label=${args.label ? args.label : null}
           size=${args.size}
           color=${args.color}
