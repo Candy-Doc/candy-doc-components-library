@@ -1,6 +1,6 @@
 import {Meta, StoryObj} from "@storybook/web-components";
-
 import {html} from "lit";
+
 import "../../components/FloatingButton"
 import {CandyFloatingButtonProps} from "../../components/FloatingButton/FloatingButton";
 import {ButtonSizes} from "../../components/Button";
