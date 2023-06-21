@@ -1,0 +1,68 @@
+.element-container {
+  margin-bottom: 0.25rem;
+  border-radius: 0.375rem;
+  padding: 0.5rem;
+  display: flex;
+  align-items: center;
+  font-size: 1rem;
+  line-height: 1.5rem;
+  font-weight: 500;
+  background: transparent;
+  border: none;
+  width: 2rem;
+  height: 2rem;
+}
+
+.element-container-extended {
+  width: 100%;
+}
+
+.element-container:hover {
+  background-color: rgb(249 250 251);
+  cursor: pointer;
+}
+
+button:disabled {
+  background-color: rgb(248 250 252);
+  color: rgb(100 116 139);
+  border-color: rgb(226 232 240);
+  box-shadow: 0 0 #0000;
+}
+
+.text-blue {
+  color: rgb(37 99 235);
+}
+
+.text-black {
+  color: rgb(0 0 0);
+}
+
+.bg-gray {
+  background-color: rgb(243 244 246) !important;
+}
+
+p {
+  all: unset;
+  margin-left: 0.5rem;
+}
+
+.end-icons {
+  display: flex;
+  justify-content: end;
+  flex-grow: 1;
+}
+
+.options-container {
+  display: flex;
+  gap: 1rem;
+  padding: 0 1rem;
+}
+
+.options-container > ::slotted(*) {
+  transition: 0.1s ease-in-out;
+}
+
+.options-container > ::slotted(*:hover) {
+  transform: scale(1.1);
+  transition: 0.2s ease-in-out;
+}

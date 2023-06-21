@@ -1,8 +1,8 @@
-import { html, LitElement } from "lit";
+import { html, LitElement, unsafeCSS } from "lit";
 import { customElement, property } from "lit/decorators.js";
 
 import { buttonSize, ButtonSizes, buttonType, ButtonTypes } from "./Buttons";
-import ButtonStyle from "./ButtonStyle";
+import ButtonStyle from "./Button.css" assert { type: "css" };
 
 export type CandyButtonProps = {
   label: string;
@@ -12,7 +12,7 @@ export type CandyButtonProps = {
 
 @customElement("candy-button")
 export class CandyButton extends LitElement {
-  static styles = ButtonStyle;
+  static styles = unsafeCSS(ButtonStyle);
 
   @property({ type: String })
   label = "Click me";

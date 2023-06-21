@@ -1,6 +1,6 @@
-import { LitElement, html } from "lit";
+import { LitElement, html, unsafeCSS } from "lit";
 import { customElement, property } from "lit/decorators.js";
-import AccordionStyle from "./AccordionStyle";
+import AccordionStyle from "./Accordion.css" assert { type: "css" };
 
 export type CandyAccordionProps = {
   label: string;
@@ -10,7 +10,7 @@ export type CandyAccordionProps = {
 
 @customElement("candy-accordion")
 export class CandyAccordion extends LitElement {
-  static styles = AccordionStyle;
+  static styles = unsafeCSS(AccordionStyle);
 
   @property({ type: String })
   label = "Home";

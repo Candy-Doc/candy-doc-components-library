@@ -1,6 +1,7 @@
-import { LitElement, html } from "lit";
+import { LitElement, html, unsafeCSS } from "lit";
 import { customElement, property } from "lit/decorators.js";
-import TitletStyle from "./DocTitleStyle";
+
+import TitleStyle from "./DocTitle.css" assert { type: "css" };
 
 export type CandySidebarDocTitleProps = {
   label: string;
@@ -9,7 +10,7 @@ export type CandySidebarDocTitleProps = {
 
 @customElement("candy-sidebar-doc-title")
 export class CandySidebarDocTitle extends LitElement {
-  static styles = TitletStyle;
+  static styles = unsafeCSS(TitleStyle);
 
   @property({ type: String })
   label = "Home";

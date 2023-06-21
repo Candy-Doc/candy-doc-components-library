@@ -1,11 +1,11 @@
-import { LitElement, html } from "lit";
+import { LitElement, html, unsafeCSS } from "lit";
 import { customElement } from "lit/decorators.js";
 
-import SidebarStyle from "./SidebarDocStyle";
+import SidebarStyle from "./SideBarDoc.css" assert { type: "css" };
 
 @customElement("candy-sidebar-doc")
 export class CandySidebarDoc extends LitElement {
-  static styles = SidebarStyle;
+  static styles = unsafeCSS(SidebarStyle);
 
   render() {
     return html`

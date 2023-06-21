@@ -1,6 +1,6 @@
-import { LitElement, html } from "lit";
+import { LitElement, html, unsafeCSS } from "lit";
 import { customElement, property } from "lit/decorators.js";
-import SwitchStyle from "./SwitchStyle";
+import SwitchStyle from "./Switch.css" assert { type: "css" };
 
 export type CandySwitchProps = {
   activated: boolean;
@@ -8,7 +8,7 @@ export type CandySwitchProps = {
 
 @customElement("candy-switch")
 export class CandySwitch extends LitElement {
-  static styles = SwitchStyle;
+  static styles = unsafeCSS(SwitchStyle);
 
   @property({ type: Boolean })
   activated = false;

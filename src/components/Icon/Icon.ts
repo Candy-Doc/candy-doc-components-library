@@ -1,7 +1,7 @@
-import { LitElement, html } from "lit";
+import { LitElement, html, unsafeCSS } from "lit";
 import { customElement, property } from "lit/decorators.js";
 import { iconSize, IconSizes } from "./Icons.js";
-import IconStyle from "./IconStyle.js";
+import IconStyle from "./Icon.css" assert { type: "css" };
 
 export type CandyIconProps = {
   size: IconSizes;
@@ -9,7 +9,7 @@ export type CandyIconProps = {
 
 @customElement("candy-icon")
 export class CandyBadge extends LitElement {
-  static styles = IconStyle;
+  static styles = unsafeCSS(IconStyle);
 
   @property({ type: String })
   size: IconSizes = IconSizes.sm;

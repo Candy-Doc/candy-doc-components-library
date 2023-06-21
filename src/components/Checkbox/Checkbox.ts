@@ -1,6 +1,6 @@
-import { LitElement, html } from "lit";
+import { LitElement, html, unsafeCSS } from "lit";
 import { customElement, property, query } from "lit/decorators.js";
-import CheckboxStyle from "./CheckboxStyle";
+import CheckboxStyle from "./Checkbox.css" assert { type: "css" };
 
 export type CandyCheckboxProps = {
   checked: boolean;
@@ -10,7 +10,7 @@ export type CandyCheckboxProps = {
 
 @customElement("candy-checkbox")
 export class CandyCheckbox extends LitElement {
-  static styles = CheckboxStyle;
+  static styles = unsafeCSS(CheckboxStyle);
 
   @query("input")
   protected _input!: HTMLInputElement;

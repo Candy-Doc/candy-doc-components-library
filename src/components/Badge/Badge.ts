@@ -1,6 +1,6 @@
-import { LitElement, html } from "lit";
+import { LitElement, html, unsafeCSS } from "lit";
 import { customElement, property } from "lit/decorators.js";
-import BadgeStyle from "./BadgeStyle";
+import BadgeStyle from "./Badge.css" assert { type: "css" };
 
 export type CandyBadgeProps = {
   label: string;
@@ -8,7 +8,7 @@ export type CandyBadgeProps = {
 
 @customElement("candy-badge")
 export class CandyBadge extends LitElement {
-  static styles = BadgeStyle;
+  static styles = unsafeCSS(BadgeStyle);
 
   @property({ type: String })
   label = "Badge";

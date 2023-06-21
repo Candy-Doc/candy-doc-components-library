@@ -1,7 +1,7 @@
-import { LitElement, html } from "lit";
+import { LitElement, html, unsafeCSS } from "lit";
 import { customElement, property } from "lit/decorators.js";
 import { spinnerSize, SpinnerSizes } from "./Spinners";
-import SpinnerStyle from "./SpinnerStyle";
+import SpinnerStyle from "./Spinner.css" assert { type: "css" };
 
 export type CandySpinnerProps = {
   size: SpinnerSizes;
@@ -9,7 +9,7 @@ export type CandySpinnerProps = {
 
 @customElement("candy-spinner")
 export class CandySpinner extends LitElement {
-  static styles = SpinnerStyle;
+  static styles = unsafeCSS(SpinnerStyle);
 
   @property({ type: String })
   size: SpinnerSizes = SpinnerSizes.md;

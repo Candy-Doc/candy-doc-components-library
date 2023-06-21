@@ -1,6 +1,6 @@
-import { LitElement, html } from "lit";
+import { LitElement, html, unsafeCSS } from "lit";
 import { customElement, property } from "lit/decorators.js";
-import LinkStyle from "./LinkStyle";
+import LinkStyle from "./Link.css" assert { type: "css" };
 
 export type CandyLinkProps = {
   label: string;
@@ -10,7 +10,7 @@ export type CandyLinkProps = {
 
 @customElement("candy-link")
 export class CandyLink extends LitElement {
-  static styles = LinkStyle;
+  static styles = unsafeCSS(LinkStyle);
 
   @property({ type: String })
   label = "click me";
