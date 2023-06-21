@@ -1,9 +1,6 @@
-import {ButtonSizes, ButtonTypes} from "../../components/Button";
+import {ButtonSizes} from "../../components/Button";
 import {FloatingButtonsPosition} from "../../components/FloatingButton/FloatingButtons";
 
-export type FloatingButtonControl = {
-  hasIcon: boolean;
-}
 export const meta = {
   component: "candy-floating-button",
   parameters: {
@@ -35,10 +32,10 @@ export const meta = {
           summary: "string",
         },
         defaultValue: {
-          summary: "Button",
+          summary: "#2563EBFF",
         },
       },
-      control: { type: "text" },
+      control: { type: "color", presetColors: ['#2563EBFF'] },
     },
     size: {
       description: "Define the size of the button",

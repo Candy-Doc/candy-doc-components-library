@@ -17,13 +17,13 @@ export class CandyFloatingButton extends LitElement {
   static styles = FloatingButtonStyle;
 
   @property({type: String})
-  label = "Click me if you dare";
+  label = "Click on it";
 
   @property({type: String})
   size: ButtonSizes = ButtonSizes.md;
 
   @property({ type: String })
-  color: string = "#a5e194"
+  color: string = "#2563EBFF"
 
   @property({type: String})
   position: FloatingButtonsPosition = FloatingButtonsPosition.br;
@@ -31,11 +31,18 @@ export class CandyFloatingButton extends LitElement {
   render() {
     const buttonSizeClasses = buttonSize[this.size];
     const floatingButtonPositionClasses = floatingButtonPosition[this.position];
-    const classes = `${buttonSizeClasses} ${floatingButtonPositionClasses}`;
-    return html`<button part="floating-button" style="background-color: ${this.color}" type="button" class=${"button-container " + classes}>
-      <slot name="icon"></slot>
-      ${this.label}
-    </button>`;
+    // const classes = `${buttonSizeClasses} ${floatingButtonPositionClasses}`;
+    // return html`<button part="floating-button" style="background-color: ${this.color}" type="button" class=${"button-container " + classes}>
+    //   <slot name="icon"></slot>
+    //   ${this.label}
+    // </button>`;
+    return html `
+      <div class=${"button-container " + floatingButtonPositionClasses}>
+        <button part="floating-button" style="background-color: ${this.color}" type="button" class=${"button " + buttonSizeClasses}>
+          <slot name="icon"></slot>
+        </button>
+        ${this.label}
+      </div>`;
   }
 }
 
