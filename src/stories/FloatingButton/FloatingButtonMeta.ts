@@ -1,5 +1,8 @@
 import { ButtonSizes } from "../../components/Button";
-import { FloatingButtonsPosition } from "../../components/FloatingButton/FloatingButtons";
+import {
+  FloatingButtonAnchor,
+  FloatingButtonsPosition,
+} from "../../components/FloatingButton/FloatingButtons";
 
 export const meta = {
   component: "candy-floating-button",
@@ -62,6 +65,20 @@ export const meta = {
         },
         defaultValue: {
           summary: FloatingButtonsPosition.br,
+        },
+      },
+    },
+    anchor: {
+      description: "Define if the floating button is fixed to the window or to its parent div",
+      options: Object.values(FloatingButtonAnchor),
+      control: { type: "radio" },
+      table: {
+        category: "props",
+        type: {
+          summary: "string",
+        },
+        defaultValue: {
+          summary: FloatingButtonAnchor.parent,
         },
       },
     },

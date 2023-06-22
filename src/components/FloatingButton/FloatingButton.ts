@@ -1,15 +1,21 @@
 import { customElement, property } from "lit/decorators.js";
-import { html, LitElement, css, unsafeCSS } from "lit";
+import { css, html, LitElement, unsafeCSS } from "lit";
 import { ButtonSizes } from "../Button";
 import { buttonSize } from "../Button/Buttons";
 import FloatingButtonStyle from "./FloatingButtonStyle.css?inline";
-import { floatingButtonPosition, FloatingButtonsPosition } from "./FloatingButtons";
+import {
+  floatingButtonAnchor,
+  FloatingButtonAnchor,
+  floatingButtonPosition,
+  FloatingButtonsPosition,
+} from "./FloatingButtons";
 
 export type CandyFloatingButtonProps = {
   label: string;
   size: ButtonSizes;
   color: string;
   position: FloatingButtonsPosition;
+  anchor: FloatingButtonAnchor;
 };
 
 @customElement("candy-floating-button")
@@ -19,7 +25,7 @@ export class CandyFloatingButton extends LitElement {
   `;
 
   @property({ type: String })
-  label = "Click on it";
+  label = "";
 
   @property({ type: String })
   size: ButtonSizes = ButtonSizes.md;
@@ -30,10 +36,16 @@ export class CandyFloatingButton extends LitElement {
   @property({ type: String })
   position: FloatingButtonsPosition = FloatingButtonsPosition.br;
 
+  @property({ type: String })
+  anchor: FloatingButtonAnchor = FloatingButtonAnchor.window;
+
   render() {
     const buttonSizeClasses = buttonSize[this.size];
     const floatingButtonPositionClasses = floatingButtonPosition[this.position];
-    return html` <div class=${"button-container " + floatingButtonPositionClasses}>
+    const floatingButtonAnchorClass = floatingButtonAnchor[this.anchor];
+    return html` <div
+      class=${"button-container " + floatingButtonPositionClasses + " " + floatingButtonAnchorClass}
+    >
       <button
         part="floating-button"
         style="background-color: ${this.color}"
