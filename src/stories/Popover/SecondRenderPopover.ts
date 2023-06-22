@@ -1,7 +1,9 @@
 import { html } from "lit";
-import { CandyPopoverProps } from "../../components/Popover";
 
-export const secondRenderPopover = (args: CandyPopoverProps) => html`<div style="width: 50%">
+import { CandyPopoverProps } from "../../components/Popover";
+import { iconContainerClass, storyWidthClass } from "./iconContainerClass";
+
+export const secondRenderPopover = (args: CandyPopoverProps) => html`<div style=${storyWidthClass}>
   <candy-sidebar>
     <candy-accordion ?active=${args.isParentVisible}>
       <candy-sidebar-element label="Element">
@@ -16,9 +18,9 @@ export const secondRenderPopover = (args: CandyPopoverProps) => html`<div style=
         .isActive=${args.isActive}
         side=${args.side}
         .isParentVisible=${args.isParentVisible}
-        target="anchor-bis"
+        targetId="anchor-bis"
       >
-        <div style="display: flex; align-items: center; height: 100%; justify-content: center">
+        <div style=${iconContainerClass}>
           <fa-icon class="fa-solid fa-location-crosshairs" size="2em"></fa-icon>
         </div>
       </candy-popover>

@@ -46,9 +46,9 @@ export const IconWithPopover: Story = {
 
 export const HiddenTarget: Story = {
   args: {
-    isActive: false,
+    isActive: true,
     side: PopoverSide.Right,
-    isParentVisible: true,
+    isParentVisible: false,
   },
   render: (args: CandyPopoverProps) => popoverOnHiddenTarget(args),
 };

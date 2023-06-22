@@ -8,7 +8,7 @@ export type CandyPopoverProps = {
   side: PopoverSide;
   isParentVisible: boolean;
   isActive: boolean;
-  target: string;
+  targetId: string;
 };
 
 @customElement("candy-popover")
@@ -30,7 +30,7 @@ export class CandyPopover extends LitElement {
   side = PopoverSide.Right;
 
   @property({ type: String })
-  target = undefined;
+  targetId = undefined;
 
   connectedCallback() {
     super.connectedCallback();
@@ -52,8 +52,8 @@ export class CandyPopover extends LitElement {
   }
 
   setPosition = () => {
-    if (this.target) {
-      const targetElement = document.getElementById(this.target);
+    if (this.targetId) {
+      const targetElement = document.getElementById(this.targetId);
       if (!targetElement) {
         return;
       }

@@ -29,12 +29,12 @@ export const meta = {
       options: Object.values(PopoverSide),
       control: { type: "radio" },
     },
-    target: {
-      description: "Target which the component will anchor to",
+    targetId: {
+      description: "Id of the target which the component will anchor to",
       table: {
         category: "props",
         type: {
-          summary: "HTMLElement",
+          summary: "string",
         },
         defaultValue: {
           summary: "undefined",
