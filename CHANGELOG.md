@@ -1,3 +1,8 @@
+# [v1.13.0](https://github.com/Candy-Doc/candy-doc-components-library/compare/v1.12.1...v1.13.0) (2023-06-22)
+
+## ✨ New minor Features
+- [`a903cff`](https://github.com/Candy-Doc/candy-doc-components-library/commit/a903cff)  feat(floating button): add a floating button (#63) (Issues: [`#63`](https://github.com/Candy-Doc/candy-doc-components-library/issues/63))
+
 # [v1.12.1](https://github.com/Candy-Doc/candy-doc-components-library/compare/v1.12.0...v1.12.1) (2023-06-20)
 
 ## 🐛 Bug Fixes
