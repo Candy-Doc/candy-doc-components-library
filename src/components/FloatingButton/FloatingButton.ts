@@ -6,7 +6,7 @@ import FloatingButtonStyle from "./FloatingButtonStyle.css?inline";
 import {
   floatingButtonAnchor,
   FloatingButtonAnchor,
-  floatingButtonPosition,
+  floatingButtonPositionMap,
   FloatingButtonsPosition,
 } from "./FloatingButtons";
 
@@ -15,6 +15,8 @@ export type CandyFloatingButtonProps = {
   size: ButtonSizes;
   color: string;
   position: FloatingButtonsPosition;
+  xPadding: number;
+  yPadding: number;
   anchor: FloatingButtonAnchor;
 };
 
@@ -39,12 +41,20 @@ export class CandyFloatingButton extends LitElement {
   @property({ type: String })
   anchor: FloatingButtonAnchor = FloatingButtonAnchor.window;
 
+  @property({ type: Number })
+  xPadding: number = 20;
+
+  @property({ type: Number })
+  yPadding: number = 20;
+
   render() {
     const buttonSizeClasses = buttonSize[this.size];
-    const floatingButtonPositionClasses = floatingButtonPosition[this.position];
+    const floatingButtonPositionClasses = floatingButtonPositionMap[this.position];
     const floatingButtonAnchorClass = floatingButtonAnchor[this.anchor];
     return html` <div
-      class=${"button-container " + floatingButtonPositionClasses + " " + floatingButtonAnchorClass}
+      style=${floatingButtonPositionClasses(this.xPadding, this.yPadding)}
+      part="floating-container"
+      class=${"button-container " + floatingButtonAnchorClass}
     >
       <button
         part="floating-button"

@@ -42,6 +42,8 @@ const renderButton = (args: CandyFloatingButtonProps) =>
             color=${args.color}
             position=${args.position}
             anchor=${args.anchor}
+            xPadding=${args.xPadding}
+            yPadding=${args.yPadding}
           >
             <fa-icon slot="icon" class="fa-solid fa-arrow-up"></fa-icon>
           </candy-floating-button>

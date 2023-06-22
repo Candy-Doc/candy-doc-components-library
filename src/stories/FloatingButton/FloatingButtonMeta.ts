@@ -9,7 +9,7 @@ export const meta = {
   parameters: {
     docs: {
       description: {
-        component: "CSS part selector: **floating-button**",
+        component: "CSS part selector: **floating-button**\n",
       },
     },
   },
@@ -26,6 +26,32 @@ export const meta = {
         },
       },
       control: { type: "text" },
+    },
+    xPadding: {
+      description: "Define the x position from the viewport side",
+      control: { type: "range", min: 0, max: 100 },
+      table: {
+        category: "props",
+        type: {
+          summary: "number",
+        },
+        defaultValue: {
+          summary: 20,
+        },
+      },
+    },
+    yPadding: {
+      description: "Define the y position from the viewport side",
+      control: { type: "range", min: 0, max: 100 },
+      table: {
+        category: "props",
+        type: {
+          summary: "number",
+        },
+        defaultValue: {
+          summary: 20,
+        },
+      },
     },
     color: {
       description: "Define the color scheme of the button",
