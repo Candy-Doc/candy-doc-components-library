@@ -73,6 +73,8 @@ export const FloatingButtonWithText: Story = {
     size: ButtonSizes.md,
     position: FloatingButtonsPosition.bl,
     anchor: FloatingButtonAnchor.parent,
+    xPadding: 40,
+    yPadding: 40,
   },
 };
 export const FloatingButtonWithWindowAnchor: Story = {
@@ -81,5 +83,7 @@ export const FloatingButtonWithWindowAnchor: Story = {
     size: ButtonSizes.md,
     position: FloatingButtonsPosition.br,
     anchor: FloatingButtonAnchor.window,
+    xPadding: 40,
+    yPadding: 40,
   },
 };
