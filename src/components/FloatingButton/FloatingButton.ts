@@ -42,10 +42,10 @@ export class CandyFloatingButton extends LitElement {
   anchor: FloatingButtonAnchor = FloatingButtonAnchor.window;
 
   @property({ type: Number })
-  xPadding: number = 20;
+  xPadding = 20;
 
   @property({ type: Number })
-  yPadding: number = 20;
+  yPadding = 20;
 
   render() {
     const buttonSizeClasses = buttonSize[this.size];
