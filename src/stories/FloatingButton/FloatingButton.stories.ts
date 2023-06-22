@@ -30,21 +30,22 @@ const scrollTopWindow = () => {
 
 const renderButton = (args: CandyFloatingButtonProps) =>
   html`
-    <div style="height: 120px; overflow-y: scroll">
-      <div
-        id="divParent"
-        style="height: 1000px; background-image: linear-gradient(to bottom, #ddd, #aaa)"
-      >
-        <candy-floating-button
-          @click=${args.anchor === FloatingButtonAnchor.window ? scrollTopWindow : scrollTopParent}
-          label=${args.label ? args.label : null}
-          size=${args.size}
-          color=${args.color}
-          position=${args.position}
-          anchor=${args.anchor}
-        >
-          <fa-icon slot="icon" class="fa-solid fa-arrow-up"></fa-icon>
-        </candy-floating-button>
+    <div style="position: relative">
+      <div style="height: 150px; overflow-y: scroll;display: block">
+        <div style="height: 1000px; background-image: linear-gradient(to bottom, #ddd, #aaa); ">
+          <candy-floating-button
+            @click=${args.anchor === FloatingButtonAnchor.window
+              ? scrollTopWindow
+              : scrollTopParent}
+            label=${args.label ? args.label : null}
+            size=${args.size}
+            color=${args.color}
+            position=${args.position}
+            anchor=${args.anchor}
+          >
+            <fa-icon slot="icon" class="fa-solid fa-arrow-up"></fa-icon>
+          </candy-floating-button>
+        </div>
       </div>
     </div>
   `;
