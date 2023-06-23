@@ -1,6 +1,6 @@
-import { LitElement, html, unsafeCSS } from "lit";
+import { LitElement, html, unsafeCSS, css } from "lit";
 import { customElement, property, query } from "lit/decorators.js";
-import InputStyle from "./Input.css" assert { type: "css" };
+import InputStyle from "./Input.css?inline";
 
 export type CandyInputProps = {
   label: string;
@@ -11,7 +11,9 @@ export type CandyInputProps = {
 
 @customElement("candy-input")
 export class CandyInput extends LitElement {
-  static styles = unsafeCSS(InputStyle);
+  static styles = css`
+    ${unsafeCSS(InputStyle)}
+  `;
 
   @query("input")
   protected _input!: HTMLInputElement;

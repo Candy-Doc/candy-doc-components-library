@@ -1,8 +1,8 @@
-import { LitElement, PropertyValues, html, unsafeCSS } from "lit";
+import { LitElement, PropertyValues, html, unsafeCSS, css } from "lit";
 import { customElement, state, property } from "lit/decorators.js";
 
 import expandIcon from "../../assets/icons/collapse-icon.svg";
-import SidebarStyle from "./SideBar.css" assert { type: "css" };
+import SidebarStyle from "./SideBar.css?inline";
 
 export type CandySidebarProps = {
   canCollapse: boolean;
@@ -11,7 +11,9 @@ export type CandySidebarProps = {
 
 @customElement("candy-sidebar")
 export class CandySidebar extends LitElement {
-  static styles = unsafeCSS(SidebarStyle);
+  static styles = css`
+    ${unsafeCSS(SidebarStyle)}
+  `;
 
   @state()
   collapsed = false;

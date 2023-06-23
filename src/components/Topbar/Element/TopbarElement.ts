@@ -1,6 +1,6 @@
 import { LitElement, html, unsafeCSS } from "lit";
 import { customElement, property } from "lit/decorators.js";
-import TopbarElementStyle from "./TopbarElement.css" assert { type: "css" };
+import TopbarElementStyle from "./TopbarElement.css?inline";
 
 export type CandyTopbarElementProps = {
   label: string;

@@ -1,14 +1,16 @@
-import { LitElement, html, unsafeCSS } from "lit";
+import { LitElement, html, unsafeCSS, css } from "lit";
 import { customElement, state } from "lit/decorators.js";
 
-import TopbarStyle from "./Topbar.css" assert { type: "css" };
+import TopbarStyle from "./Topbar.css?inline";
 import "../Logos/LogoMark";
 import "../Logos/LogoHorizontal";
 import "../Input/Input";
 
 @customElement("candy-topbar")
 export class CandyTopbar extends LitElement {
-  static styles = unsafeCSS(TopbarStyle);
+  static styles = css`
+    ${unsafeCSS(TopbarStyle)}
+  `;
 
   @state()
   mobile = false;

@@ -1,6 +1,6 @@
-import { LitElement, html, unsafeCSS } from "lit";
+import { LitElement, html, unsafeCSS, css } from "lit";
 import { customElement, property } from "lit/decorators.js";
-import ElementStyle from "./Element.css" assert { type: "css" };
+import ElementStyle from "./Element.css?inline";
 
 export type CandySidebarElementProps = {
   label: string;
@@ -11,7 +11,9 @@ export type CandySidebarElementProps = {
 
 @customElement("candy-sidebar-element")
 export class CandySidebarElement extends LitElement {
-  static styles = unsafeCSS(ElementStyle);
+  static styles = css`
+    ${unsafeCSS(ElementStyle)}
+  `;
 
   @property({ type: String })
   label = "";

@@ -1,7 +1,7 @@
-import { LitElement, html, unsafeCSS } from "lit";
+import { LitElement, html, unsafeCSS, css } from "lit";
 import { customElement, property } from "lit/decorators.js";
 
-import ElementStyle from "./DocElement.css" assert { type: "css" };
+import ElementStyle from "./DocElement.css?inline";
 import Icon from "../../../assets/icons/candy-icon.svg";
 
 export type CandySidebarDocElementProps = {
@@ -12,7 +12,9 @@ export type CandySidebarDocElementProps = {
 
 @customElement("candy-sidebar-doc-element")
 export class CandySidebarDocElement extends LitElement {
-  static styles = unsafeCSS(ElementStyle);
+  static styles = css`
+    ${unsafeCSS(ElementStyle)}
+  `;
 
   @property({ type: String })
   label = "";

@@ -1,8 +1,8 @@
-import { html, LitElement, unsafeCSS } from "lit";
+import { css, html, LitElement, unsafeCSS } from "lit";
 import { customElement, property } from "lit/decorators.js";
 
 import { alerts, AlertTypes } from "./Alerts.js";
-import AlertStyle from "./Alert.css" assert { type: "css" };
+import AlertStyle from "./Alert.css?inline";
 
 export type CandyAlertProps = {
   type: string;
@@ -11,7 +11,9 @@ export type CandyAlertProps = {
 @customElement("candy-alert")
 export class CandyAlert extends LitElement {
   // static styles = AlertStyle;
-  static styles = unsafeCSS(AlertStyle);
+  static styles = css`
+    ${unsafeCSS(AlertStyle)}
+  `;
 
   @property({ type: String })
   alertType = AlertTypes.Info;

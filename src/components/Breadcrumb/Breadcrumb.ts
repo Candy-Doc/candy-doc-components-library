@@ -1,6 +1,6 @@
-import { LitElement, html, unsafeCSS } from "lit";
+import { LitElement, html, unsafeCSS, css } from "lit";
 import { customElement, property } from "lit/decorators.js";
-import BreadcrumbStyle from "./Breadcrumb.css" assert { type: "css" };
+import BreadcrumbStyle from "./Breadcrumb.css?inline";
 
 export type CandyBreadcrumbProps = {
   items: Array<string>;
@@ -8,7 +8,8 @@ export type CandyBreadcrumbProps = {
 
 @customElement("candy-breadcrumb")
 export class CandyBreadcrumb extends LitElement {
-  static styles = unsafeCSS(BreadcrumbStyle);
+  static styles = css`${unsafeCSS(BreadcrumbStyle)} ̀
+  }`;
 
   @property({ type: Array(String) })
   items = ["Home", "Page 1", "Subpage 1"];
