@@ -66,7 +66,9 @@ export class CandyFloatingButton extends LitElement {
       >
         <slot name="icon"></slot>
       </button>
-      <label for="floating-button" part="floating-label" class=${labelSizeClasses}>${this.label}</label>
+      <label for="floating-button" part="floating-label" class=${labelSizeClasses}
+        >${this.label}</label
+      >
     </div>`;
   }
 }

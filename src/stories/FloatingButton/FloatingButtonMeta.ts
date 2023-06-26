@@ -1,15 +1,13 @@
 import { ButtonSizes } from "../../components/Button";
-import {
-  FloatingButtonAnchor,
-  FloatingButtonsPosition,
-} from "../../components/FloatingButton/FloatingButtons";
+import { FloatingButtonAnchor, FloatingButtonsPosition } from "../../components/FloatingButton";
 
 export const meta = {
   component: "candy-floating-button",
   parameters: {
     docs: {
       description: {
-        component: "CSS part selector: \n- **floating-container**\n- **floating-button**\n- **floating-label**\n",
+        component:
+          "CSS part selector: \n- **floating-container**\n- **floating-button**\n- **floating-label**\n",
       },
     },
   },
