@@ -49,7 +49,7 @@ export class CandyFloatingButton extends LitElement {
 
   render() {
     const buttonSizeClasses = buttonSize[this.size];
-    const labelSizeClasses = "text-" + buttonSizeClasses;
+    const labelSizeClasses = `text-${buttonSizeClasses}`;
     const floatingButtonPositionClasses = floatingButtonPositionMap[this.position];
     const floatingButtonAnchorClass = floatingButtonAnchor[this.anchor];
     return html` <div
