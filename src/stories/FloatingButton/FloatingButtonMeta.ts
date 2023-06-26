@@ -9,7 +9,7 @@ export const meta = {
   parameters: {
     docs: {
       description: {
-        component: "CSS part selector: **floating-button**\n",
+        component: "CSS part selector: \n- **floating-container**\n- **floating-button**\n",
       },
     },
   },
