@@ -1,3 +1,8 @@
+# [v1.13.1](https://github.com/Candy-Doc/candy-doc-components-library/compare/v1.13.0...v1.13.1) (2023-06-26)
+
+## 🐛 Bug Fixes
+- [`e92ad7c`](https://github.com/Candy-Doc/candy-doc-components-library/commit/e92ad7c)  fix(floating button): fix style (#66) (Issues: [`#66`](https://github.com/Candy-Doc/candy-doc-components-library/issues/66))
+
 # [v1.13.0](https://github.com/Candy-Doc/candy-doc-components-library/compare/v1.12.1...v1.13.0) (2023-06-22)
 
 ## ✨ New minor Features
