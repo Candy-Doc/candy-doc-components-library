@@ -1,7 +1,7 @@
 import { html } from "lit";
 
-import { CandyPopoverProps } from "../../components/Popover";
-import { iconContainerClass, storyWidthClass } from "./iconContainerClass";
+import { CandyPopoverProps } from "../../../components/Popover";
+import { iconContainerClass, storyWidthClass } from "../iconContainerClass";
 
 export const renderPopover = (args: CandyPopoverProps) => html`<div style=${storyWidthClass}>
   <candy-sidebar>

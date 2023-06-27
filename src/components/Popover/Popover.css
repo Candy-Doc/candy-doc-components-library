@@ -6,7 +6,7 @@
   height: 50px;
 }
 
-.content {
+.popover-content {
   box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
   position: relative;
   background-color: white;
@@ -15,11 +15,11 @@
   padding: 0 0.75rem;
 }
 
-.hide-popover {
+.popover-hide {
   visibility: hidden;
 }
 
-.arrow {
+.popover-arrow {
   width: 16px;
   height: 16px;
   transform: rotate(45deg);
@@ -28,22 +28,22 @@
   background-color: white;
 }
 
-.right {
+.popover-right {
   left: -8px;
   top: calc(50% - 8px);
 }
 
-.left {
+.popover-left {
   right: -8px;
   top: calc(50% - 8px);
 }
 
-.top {
+.popover-top {
   left: calc(50% - 8px);
   bottom: -8px;
 }
 
-.bottom {
+.popover-bottom {
   top: -8px;
   left: calc(50% - 8px);
 }

@@ -1,3 +1,3 @@
 import "./Popover";
 export { type CandyPopoverProps } from "./Popover";
-export { PopoverSide } from "./Popovers";
+export { PopoverSide } from "./Types";
