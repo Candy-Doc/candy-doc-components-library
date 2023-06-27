@@ -13,4 +13,23 @@ export const meta = {
       },
     },
   },
+  argTypes: {
+    elements: {
+      name: "elements",
+      description: "-",
+      table: {
+        category: "Controls",
+      },
+    },
+    defaultSlot: {
+      name: "default",
+      description: "Default slot containing children of the component",
+      table: {
+        category: "Slots",
+        type: {
+          summary: "HTMLElement",
+        },
+      },
+    },
+  },
 };
