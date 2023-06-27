@@ -2,10 +2,10 @@ import { StoryObj, Meta } from "@storybook/web-components";
 
 import { CandyPopoverProps, PopoverSide } from "../../components/Popover";
 import { meta } from "./PopoverMeta";
-import { renderPopover } from "./renderPopover";
-import { secondRenderPopover } from "./SecondRenderPopover";
-import { iconWithPopover } from "./IconWithPopover";
-import { popoverOnHiddenTarget } from "./PopoverOnHiddenTarget";
+import { renderPopover } from "./Stories/renderPopover";
+import { secondRenderPopover } from "./Stories/SecondRenderPopover";
+import { iconWithPopover } from "./Stories/IconWithPopover";
+import { popoverOnHiddenTarget } from "./Stories/PopoverOnHiddenTarget";
 import "../../components/Popover/";
 import "../../components/Sidebar";
 import "../../components/Sidebar/Element";
