@@ -15,6 +15,6 @@ export default {
 
 export const Breadcrumb: Story = {
   args: {
-    elements: [{ label: "Home" }, { label: "Page" }, { label: "Subpage", last: true }],
+    elements: [{ label: "Home" }, { label: "Page" }, { label: "Subpage", isLast: true }],
   },
 };

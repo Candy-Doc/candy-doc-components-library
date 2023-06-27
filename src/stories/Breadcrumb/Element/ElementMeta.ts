@@ -20,7 +20,7 @@ export const meta = {
         },
       },
     },
-    last: {
+    isLast: {
       description: "Is the element the last one in the breadcrumb?",
       table: {
         category: "props",

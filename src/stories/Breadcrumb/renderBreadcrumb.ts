@@ -9,6 +9,6 @@ export const renderBreadcrumb = (args: CandyBreadcrumbControl) => {
 };
 
 const renderBreadcrumbElement = (props: CandyBreadcrumbElementProps): TemplateResult => {
-  return html`<candy-breadcrumb-element label=${props.label} ?last=${props.last}>
+  return html`<candy-breadcrumb-element label=${props.label} ?isLast=${props.isLast}>
   </candy-breadcrumb-element>`;
 };

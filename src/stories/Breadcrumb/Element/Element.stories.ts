@@ -6,9 +6,10 @@ import "../../../components/Breadcrumb/Element";
 import { meta } from "./ElementMeta";
 
 type Story = StoryObj<CandyBreadcrumbElementProps>;
+
 const renderElement = (args: CandyBreadcrumbElementProps) => html`<candy-breadcrumb-element
   label=${args.label}
-  ?last=${args.last}
+  ?isLast=${args.isLast}
 >
 </candy-breadcrumb-element>`;
 
@@ -21,6 +22,6 @@ export default {
 export const Element: Story = {
   args: {
     label: "Home",
-    last: false,
+    isLast: false,
   },
 };

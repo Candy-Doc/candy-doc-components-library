@@ -5,24 +5,26 @@ import ElementStyle from "./BreadcrumbElement.css?inline";
 
 export type CandyBreadcrumbElementProps = {
   label: string;
-  last?: boolean;
+  isLast?: boolean;
 };
 
 @customElement("candy-breadcrumb-element")
 export class CandyBreadcrumbElement extends LitElement {
-  static styles = css`${unsafeCSS(ElementStyle)}`;
+  static styles = css`
+    ${unsafeCSS(ElementStyle)}
+  `;
 
   @property({ type: String })
   label = "";
 
   @property({ type: Boolean })
-  last = false;
+  isLast = false;
 
   render() {
     return html`
       <li part="breadcrumb-element">
         <a href="/">${this.label}</a>
-        ${!this.last
+        ${!this.isLast
           ? html` <span class="icon"
               ><svg
                 xmlns="http://www.w3.org/2000/svg"
