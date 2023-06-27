@@ -21,18 +21,33 @@
 
 A Lit-Element library made to generate Candy-Doc dashboard
 
-- :package: Simple web components
-- :fire: Written in TypeScript
+<img style="width: 80%; margin-left: 10%; margin-top: 20px" src="assets/storybook.png" alt="Candy-board sample">
+
+
+- 📦 Simple web components
+- 🔥 Written in TypeScript
 
 <!-- START doctoc generated TOC please keep comment here to allow auto update -->
 <!-- DON'T EDIT THIS SECTION, INSTEAD RE-RUN doctoc TO UPDATE -->
 
-## Table of Contents
-
+- [Installation 🚀](#installation-)
 - [Stay tuned 👀](#stay-tuned-)
 - [Contributors ✨](#contributors-)
 
 <!-- END doctoc generated TOC please keep comment here to allow auto update -->
+
+## Installation 🚀
+
+Installation is really simple and fast. It only takes 2 steps.
+- First install dependencies with yarn
+```bash
+yarn install
+```
+- Then launch the project
+```bash
+yarn storybook
+```
+It'll automatically open storybook into your default browser.
 
 ## Stay tuned 👀
 
