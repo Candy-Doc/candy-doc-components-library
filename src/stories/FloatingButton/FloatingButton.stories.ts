@@ -2,12 +2,9 @@ import { Meta, StoryObj } from "@storybook/web-components";
 import { html } from "lit";
 
 import "../../components/FloatingButton";
-import { CandyFloatingButtonProps } from "../../components/FloatingButton/FloatingButton";
+import { CandyFloatingButtonProps } from "../../components/FloatingButton";
 import { ButtonSizes } from "../../components/Button";
-import {
-  FloatingButtonAnchor,
-  FloatingButtonsPosition,
-} from "../../components/FloatingButton/FloatingButtons";
+import { FloatingButtonAnchor, FloatingButtonsPosition } from "../../components/FloatingButton";
 import { meta } from "./FloatingButtonMeta";
 
 type Story = StoryObj<CandyFloatingButtonProps>;

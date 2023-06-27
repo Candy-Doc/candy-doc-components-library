@@ -49,6 +49,7 @@ export class CandyFloatingButton extends LitElement {
 
   render() {
     const buttonSizeClasses = buttonSize[this.size];
+    const labelSizeClasses = `text-${buttonSizeClasses}`;
     const floatingButtonPositionClasses = floatingButtonPositionMap[this.position];
     const floatingButtonAnchorClass = floatingButtonAnchor[this.anchor];
     return html` <div
@@ -58,13 +59,16 @@ export class CandyFloatingButton extends LitElement {
     >
       <button
         part="floating-button"
+        name="floating-button"
         style="background-color: ${this.color}"
         type="button"
         class=${"button " + buttonSizeClasses}
       >
         <slot name="icon"></slot>
       </button>
-      ${this.label}
+      <label for="floating-button" part="floating-label" class=${labelSizeClasses}
+        >${this.label}</label
+      >
     </div>`;
   }
 }
