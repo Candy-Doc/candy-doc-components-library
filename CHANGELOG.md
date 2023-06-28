@@ -1,3 +1,8 @@
+# [v1.13.2](https://github.com/Candy-Doc/candy-doc-components-library/compare/v1.13.1...v1.13.2) (2023-06-28)
+
+## 🐛 Bug Fixes
+- [`4b01978`](https://github.com/Candy-Doc/candy-doc-components-library/commit/4b01978)  fix: css file to ts (#68) (Issues: [`#68`](https://github.com/Candy-Doc/candy-doc-components-library/issues/68))
+
 # [v1.13.1](https://github.com/Candy-Doc/candy-doc-components-library/compare/v1.13.0...v1.13.1) (2023-06-26)
 
 ## 🐛 Bug Fixes
