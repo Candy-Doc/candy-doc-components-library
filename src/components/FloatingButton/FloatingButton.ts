@@ -2,7 +2,7 @@ import { customElement, property } from "lit/decorators.js";
 import { css, html, LitElement, unsafeCSS } from "lit";
 import { ButtonSizes } from "../Button";
 import { buttonSize } from "../Button/Buttons";
-import FloatingButtonStyle from "./FloatingButtonStyle?inline";
+import FloatingButtonStyle from "./FloatingButtonStyle";
 import {
   floatingButtonAnchor,
   FloatingButtonAnchor,
