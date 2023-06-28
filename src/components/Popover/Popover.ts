@@ -1,8 +1,8 @@
-import { LitElement, PropertyValues, css, html, unsafeCSS } from "lit";
+import { LitElement, PropertyValues, html } from "lit";
 import { customElement, property, query } from "lit/decorators.js";
 
 import { PopoverSide } from "./Types";
-import PopoverStyle from "./Popover.css?inline";
+import PopoverStyle from "./PopoverStyle";
 
 export type CandyPopoverProps = {
   side: PopoverSide;
@@ -13,9 +13,7 @@ export type CandyPopoverProps = {
 
 @customElement("candy-popover")
 export class CandyPopover extends LitElement {
-  static styles = css`
-    ${unsafeCSS(PopoverStyle)}
-  `;
+  static styles = PopoverStyle;
 
   @query("#popover")
   componentRef!: HTMLElement;
