@@ -1,9 +1,8 @@
 import { html } from "lit";
 
 import { CandyPopoverProps } from "../../../components/Popover";
-import { iconContainerClass, storyWidthClass } from "../iconContainerClass";
 
-export const renderPopover = (args: CandyPopoverProps) => html`<div style=${storyWidthClass}>
+export const elementWithPopoverInSidebar = (args: CandyPopoverProps) => html`<div class="popover-container half-width">
   <candy-sidebar>
     <candy-sidebar-element label="Element">
       <fa-icon
@@ -19,7 +18,7 @@ export const renderPopover = (args: CandyPopoverProps) => html`<div style=${stor
       side=${args.side}
       .isParentVisible=${args.isParentVisible}
     >
-      <div style=${iconContainerClass}>
+      <div class="icon-container">
         <fa-icon class="fa-solid fa-location-crosshairs" size="2em"></fa-icon>
       </div>
     </candy-popover>

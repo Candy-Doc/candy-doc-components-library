@@ -24,11 +24,11 @@ export class CandyPopover extends LitElement {
   @property({ type: Boolean })
   isParentVisible = true;
 
-  @property({ type: PopoverSide })
+  @property({ type: String })
   side = PopoverSide.Right;
 
   @property({ type: String })
-  targetId = undefined;
+  targetId = "";
 
   connectedCallback() {
     super.connectedCallback();
@@ -92,7 +92,7 @@ export class CandyPopover extends LitElement {
   };
 
   render() {
-    const hidePopover = !(this.isActive && this.isParentVisible);
+    const hidePopover = !(this.isActive && this.isParentVisible) || !this.targetId;
 
     return html`
       <div

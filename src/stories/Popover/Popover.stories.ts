@@ -2,24 +2,24 @@ import { StoryObj, Meta } from "@storybook/web-components";
 
 import { CandyPopoverProps, PopoverSide } from "../../components/Popover";
 import { meta } from "./PopoverMeta";
-import { renderPopover } from "./Stories/renderPopover";
-import { secondRenderPopover } from "./Stories/SecondRenderPopover";
+import { elementWithPopoverInSidebar } from "./Stories/ElementWithPopoverInSidebar";
+import { elementWithPopoverInAnAccordeon } from "./Stories/ElementWithPopoverInAnAccordeon";
 import { iconWithPopover } from "./Stories/IconWithPopover";
-import { popoverOnHiddenTarget } from "./Stories/PopoverOnHiddenTarget";
 import "../../components/Popover/";
 import "../../components/Sidebar";
 import "../../components/Sidebar/Element";
 import "../../components/Accordion";
+import "./Stories/style.css"
 
 type Story = StoryObj<CandyPopoverProps>;
 
 export default {
   ...meta,
   title: "Components/Popover",
-  render: renderPopover,
+  render: elementWithPopoverInSidebar,
 } as Meta<CandyPopoverProps>;
 
-export const Popover: Story = {
+export const ElementWithPopoverInSidebar: Story = {
   args: {
     isActive: true,
     side: PopoverSide.Right,
@@ -27,13 +27,13 @@ export const Popover: Story = {
   },
 };
 
-export const PopoverSecondUseCase: Story = {
+export const ElementWithPopoverInAnAccordeon: Story = {
   args: {
     isActive: true,
     side: PopoverSide.Right,
     isParentVisible: true,
   },
-  render: (args: CandyPopoverProps) => secondRenderPopover(args),
+  render: (args: CandyPopoverProps) => elementWithPopoverInAnAccordeon(args),
 };
 
 export const IconWithPopover: Story = {
@@ -42,13 +42,4 @@ export const IconWithPopover: Story = {
     side: PopoverSide.Right,
   },
   render: (args: CandyPopoverProps) => iconWithPopover(args),
-};
-
-export const HiddenTarget: Story = {
-  args: {
-    isActive: true,
-    side: PopoverSide.Right,
-    isParentVisible: false,
-  },
-  render: (args: CandyPopoverProps) => popoverOnHiddenTarget(args),
 };

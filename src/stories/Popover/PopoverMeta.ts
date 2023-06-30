@@ -1,9 +1,4 @@
-import { CandySideBarElement } from "../Sidebar/SidebarMeta";
 import { PopoverSide } from "../../components/Popover";
-
-export type PopoverControl = {
-  elements: CandySideBarElement;
-};
 
 export const meta = {
   component: "candy-popover",
