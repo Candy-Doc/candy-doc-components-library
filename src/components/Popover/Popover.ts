@@ -1,7 +1,7 @@
 import { LitElement, PropertyValues, html } from "lit";
 import { customElement, property, query } from "lit/decorators.js";
 
-import { PopoverSide } from "./Types";
+import { PopoverSide } from "./types";
 import PopoverStyle from "./PopoverStyle";
 
 export type CandyPopoverProps = {
