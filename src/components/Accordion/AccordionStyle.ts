@@ -37,30 +37,6 @@ export default css`
     margin-left: 0.5rem;
   }
 
-  .end-icons {
-    display: flex;
-    justify-content: end;
-    flex-grow: 1;
-  }
-
-  .options-container {
-    display: flex;
-    justify-content: end;
-    align-items: center;
-    height: 100%;
-    gap: 1rem;
-    padding: 0 1rem;
-  }
-
-  .options-container > ::slotted(*) {
-    transition: 0.1s ease-in-out;
-  }
-
-  .options-container > ::slotted(*:hover) {
-    transform: scale(1.1);
-    transition: 0.2s ease-in-out;
-  }
-
   .text-blue {
     color: rgb(37 99 235);
   }
@@ -125,9 +101,5 @@ export default css`
   .rotate {
     transform: rotate(0deg);
     transition: 0.2s ease-in-out;
-  }
-
-  .hidden {
-    display: none;
   }
 `;
