@@ -9,7 +9,7 @@ const renderOptionsIcons = (optionsIcons: Array<string>) => {
 
 const renderAccordion = (element: CandySideBarElement) => {
   return html`<candy-accordion label=${element.label} ?active=${element.active}>
-    ${element.icon ? html`<fa-icon slot = "icon" class=${element.icon}></fa-icon>` : null}
+    ${element.icon ? html`<fa-icon slot="icon" class=${element.icon}></fa-icon>` : null}
     ${element.childrens.map((child: CandySideBarElement) => renderSidebarElements(child))}
     ${element.optionsIcons ? renderOptionsIcons(element.optionsIcons) : null}
   </candy-accordion>`;

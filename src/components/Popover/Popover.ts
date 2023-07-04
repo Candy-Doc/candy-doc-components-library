@@ -51,18 +51,17 @@ export class CandyPopover extends LitElement {
 
   findTargetInShadowRoot = (parentElement: HTMLElement) => {
     let targetElement = null;
-    const rootNode = (parentElement.getRootNode() as ShadowRoot);
+    const rootNode = parentElement.getRootNode() as ShadowRoot;
     targetElement = rootNode.querySelector(`#${this.targetId}`);
-    return targetElement instanceof HTMLElement
-      ? targetElement
-      : null;
+    return targetElement instanceof HTMLElement ? targetElement : null;
   };
 
   setPosition = () => {
     if (this.targetId) {
-      const targetElement = (this.isTargetInShadowRoot && this.parentElement)
-        ? this.findTargetInShadowRoot(this.parentElement)
-        : document.getElementById(this.targetId);
+      const targetElement =
+        this.isTargetInShadowRoot && this.parentElement
+          ? this.findTargetInShadowRoot(this.parentElement)
+          : document.getElementById(this.targetId);
       if (!targetElement) {
         return;
       }

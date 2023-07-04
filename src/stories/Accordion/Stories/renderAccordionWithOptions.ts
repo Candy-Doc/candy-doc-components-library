@@ -3,7 +3,10 @@ import { html } from "lit";
 import { CandyAccordionProps } from "../../../components/Accordion";
 import { AccordionControl } from "../AccordionMeta";
 
-export const renderAccordionWithOptions = (args: CandyAccordionProps & AccordionControl, isActive: { value: boolean }) => html`<candy-accordion
+export const renderAccordionWithOptions = (
+  args: CandyAccordionProps & AccordionControl,
+  isActive: { value: boolean }
+) => html`<candy-accordion
   label=${args.label}
   ?active=${args.active}
   ?disabled=${args.disabled}
