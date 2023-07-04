@@ -6,7 +6,7 @@ import PopoverInComponentHandlerStyle from "./PopoverInComponentHandlerStyle";
 export type PopoverInComponentHandlerProps = {
   optionPopoverSide: PopoverSide;
   minimizeOptions: boolean;
-}
+};
 
 export class PopoverInComponentHandler extends LitElement {
   static styles = PopoverInComponentHandlerStyle;

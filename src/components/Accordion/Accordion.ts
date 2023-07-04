@@ -1,7 +1,10 @@
 import { html } from "lit";
 import { customElement, property } from "lit/decorators.js";
 
-import { PopoverInComponentHandler, PopoverInComponentHandlerProps } from "../Shared/PopoverInComponentHandler";
+import {
+  PopoverInComponentHandler,
+  PopoverInComponentHandlerProps,
+} from "../Shared/PopoverInComponentHandler";
 import AccordionStyle from "./AccordionStyle";
 import VerticalMenuBlack from "../../assets/icons/vertical-menu-black.svg";
 import VerticalMenuBlue from "../../assets/icons/vertical-menu blue.svg";
@@ -91,8 +94,8 @@ export class CandyAccordion extends PopoverInComponentHandler {
           role="button"
           href="#"
           class="${"element-container " + textColor} ${!this.collapsed
-        ? "element-container-extended"
-        : null}"
+            ? "element-container-extended"
+            : null}"
           ?disabled="${this.disabled}"
           @click="${this.handleClick}"
         >

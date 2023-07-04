@@ -1,10 +1,13 @@
 import { html } from "lit";
 import { customElement, property } from "lit/decorators.js";
 
-import { PopoverInComponentHandler, PopoverInComponentHandlerProps } from "../../Shared/PopoverInComponentHandler";
+import {
+  PopoverInComponentHandler,
+  PopoverInComponentHandlerProps,
+} from "../../Shared/PopoverInComponentHandler";
 import ElementStyle from "./ElementStyle";
 import VerticalMenuBlue from "../../../assets/icons/vertical-menu blue.svg";
-import VerticalMenuBlack from "../../../assets/icons/vertical-menu-black.svg"
+import VerticalMenuBlack from "../../../assets/icons/vertical-menu-black.svg";
 import "../../Popover";
 
 export type CandySidebarElementProps = PopoverInComponentHandlerProps & {

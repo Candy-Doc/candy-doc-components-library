@@ -19,7 +19,7 @@ export const testOpenCloseAccordion = async (
   });
 };
 
-export const accordionWithOptionsTesting = async(
+export const accordionWithOptionsTesting = async (
   { args, canvasElement, step }: any,
   isActive: { value: boolean }
 ) => {
@@ -36,4 +36,4 @@ export const accordionWithOptionsTesting = async(
 
     await userEvent.click(popoverIconWrapper);
   });
-}
+};

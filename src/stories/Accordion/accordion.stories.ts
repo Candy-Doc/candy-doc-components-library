@@ -30,7 +30,8 @@ export const Accordion: Story = {
     hasIcon: false,
     minimizeOptions: true,
   },
-  play: ({ args, canvasElement, step }) => testOpenCloseAccordion({ args, canvasElement, step }, isActive),
+  play: ({ args, canvasElement, step }) =>
+    testOpenCloseAccordion({ args, canvasElement, step }, isActive),
 };
 
 export const AccordionWithIcon: Story = {
@@ -42,7 +43,8 @@ export const AccordionWithIcon: Story = {
     hasOptions: false,
     minimizeOptions: true,
   },
-  play: ({ args, canvasElement, step }) => testOpenCloseAccordion({ args, canvasElement, step }, isActive),
+  play: ({ args, canvasElement, step }) =>
+    testOpenCloseAccordion({ args, canvasElement, step }, isActive),
 };
 
 export const AccordionWithOption: Story = {
@@ -56,7 +58,8 @@ export const AccordionWithOption: Story = {
   },
   render: (args: CandyAccordionProps & AccordionControl) =>
     renderAccordionWithOption(args, isActive),
-  play: ({ args, canvasElement, step }) => testOpenCloseAccordion({ args, canvasElement, step }, isActive),
+  play: ({ args, canvasElement, step }) =>
+    testOpenCloseAccordion({ args, canvasElement, step }, isActive),
 };
 
 export const AccordionWithOptions: Story = {
@@ -71,5 +74,6 @@ export const AccordionWithOptions: Story = {
   },
   render: (args: CandyAccordionProps & AccordionControl) =>
     renderAccordionWithOptions(args, isActive),
-  play: ({ args, canvasElement, step }) => accordionWithOptionsTesting({ args, canvasElement, step }, isActive),
+  play: ({ args, canvasElement, step }) =>
+    accordionWithOptionsTesting({ args, canvasElement, step }, isActive),
 };
