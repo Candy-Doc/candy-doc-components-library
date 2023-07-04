@@ -50,9 +50,8 @@ export class CandyPopover extends LitElement {
   }
 
   findTargetInShadowRoot = (parentElement: HTMLElement) => {
-    let targetElement = null;
     const rootNode = parentElement.getRootNode() as ShadowRoot;
-    targetElement = rootNode.querySelector(`#${this.targetId}`);
+    const targetElement = rootNode.querySelector(`#${this.targetId}`);
     return targetElement instanceof HTMLElement ? targetElement : null;
   };
 
