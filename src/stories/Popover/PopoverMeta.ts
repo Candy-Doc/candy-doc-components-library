@@ -61,6 +61,19 @@ export const meta = {
         },
       },
     },
+    isTargetInShadowRoot: {
+      description:
+        "Meant to be defined when the popover is being used inside a ShadowRoot context. When true, the component will search for the targetId inside the parent's ShadowRoot if existing",
+      table: {
+        category: "props",
+        type: {
+          summary: "boolean",
+        },
+        defaultValue: {
+          summary: "false",
+        },
+      },
+    },
     defaultSlot: {
       name: "default",
       description: "Default slot containing children of the component",

@@ -30,6 +30,9 @@ export class CandyPopover extends LitElement {
   @property({ type: String })
   targetId = "";
 
+  @property({ type: Boolean })
+  isTargetInShadowRoot = false;
+
   connectedCallback() {
     super.connectedCallback();
     window.addEventListener("resize", this.setPosition);
@@ -46,9 +49,20 @@ export class CandyPopover extends LitElement {
     }
   }
 
+  findTargetInShadowRoot = (parentElement: HTMLElement) => {
+    let targetElement = null;
+    const rootNode = (parentElement.getRootNode() as ShadowRoot);
+    targetElement = rootNode.querySelector(`#${this.targetId}`);
+    return targetElement instanceof HTMLElement
+      ? targetElement
+      : null;
+  };
+
   setPosition = () => {
     if (this.targetId) {
-      const targetElement = document.getElementById(this.targetId);
+      const targetElement = (this.isTargetInShadowRoot && this.parentElement)
+        ? this.findTargetInShadowRoot(this.parentElement)
+        : document.getElementById(this.targetId);
       if (!targetElement) {
         return;
       }
@@ -57,7 +71,6 @@ export class CandyPopover extends LitElement {
         elemWidth: targetElement.offsetWidth,
       });
       const { offsetLeft, offsetTop } = targetElement;
-
       this.componentRef.style.left = `${offsetLeft + paddingOffset.left}px`;
       this.componentRef.style.top = `${offsetTop + paddingOffset.top}px`;
     }
@@ -99,6 +112,7 @@ export class CandyPopover extends LitElement {
         id="popover"
         class="popover-container ${hidePopover ? "popover-hide" : null}"
         part="popover"
+        data-testid="popover"
       >
         <div class="${`popover-arrow popover-${this.side}`}"></div>
         <div class="popover-content">

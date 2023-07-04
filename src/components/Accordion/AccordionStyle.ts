@@ -45,6 +45,9 @@ export default css`
 
   .options-container {
     display: flex;
+    justify-content: end;
+    align-items: center;
+    height: 100%;
     gap: 1rem;
     padding: 0 1rem;
   }

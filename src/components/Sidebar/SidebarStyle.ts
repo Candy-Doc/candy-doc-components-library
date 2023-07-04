@@ -5,7 +5,6 @@ export default css`
     display: flex;
     height: 100%;
     border-right: 1px rgb(229 231 235);
-    padding-top: 1rem;
     background-color: transparent;
     border-radius: 10px;
     width: 100%;

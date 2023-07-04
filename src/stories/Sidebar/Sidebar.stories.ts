@@ -3,8 +3,10 @@ import { StoryObj } from "@storybook/web-components";
 import type { CandySidebarProps } from "../../components/Sidebar";
 import type { CandySideBarControl } from "./SidebarMeta";
 import { meta } from "./SidebarMeta";
-import { renderSideBar } from "./RenderSidebar";
+import { renderSideBar } from "./Stories/RenderSidebar";
 import { playFunction } from "./Sidebar.test";
+import { renderSideBarWithContent } from "./Stories/SideBarUseCase";
+import { renderSidebarMinimizedOptionsIcons } from "./Stories/SidebarMinimizedOptionsIcons";
 
 type Story = StoryObj<CandySidebarProps & CandySideBarControl>;
 
@@ -56,5 +58,21 @@ export const Sidebar: Story = {
       },
     ],
   },
-  play: async ({ canvasElement, step }) => playFunction({ canvasElement, step }, isCollapse),
+  play: ({ canvasElement, step }) => playFunction({ canvasElement, step }, isCollapse),
+};
+
+export const SidebarUseCase: Story = {
+  args: {
+    ...Sidebar.args,
+  },
+  render: renderSideBarWithContent,
+  play: Sidebar.play,
+};
+
+export const MinimizedOptionsIcons: Story = {
+  args: {
+    ...Sidebar.args,
+  },
+  render: renderSidebarMinimizedOptionsIcons,
+  play: Sidebar.play,
 };

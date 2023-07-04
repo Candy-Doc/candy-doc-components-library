@@ -2,8 +2,10 @@ import { StoryObj, Meta } from "@storybook/web-components";
 import { html } from "lit";
 
 import { CandySidebarElementProps } from "../../../components/Sidebar/Element";
-import "../../../components/Sidebar/Element";
 import { CandyElementControl, meta } from "./ElementMeta";
+import { sidebarElementWithOptionsTesting } from "./Element.test";
+import "../../../components/Sidebar/Element";
+import { PopoverSide } from "../../../components/Popover";
 
 type Story = StoryObj<CandySidebarElementProps & CandyElementControl>;
 
@@ -16,6 +18,8 @@ const renderElement = (
   ?active=${args.active}
   ?disabled=${args.disabled}
   ?collapsed=${args.collapsed}
+  ?minimizeOptions=${args.minimizeOptions}
+  optionPopoverSide=${args.optionPopoverSide}
 >
   ${args.hasIcon ? html`<fa-icon slot="icon" class=${icon} size="2em"></fa-icon>` : null}
   ${args.hasOptions
@@ -59,5 +63,8 @@ export const ElementWithOptions: Story = {
     collapsed: false,
     hasIcon: true,
     hasOptions: true,
+    minimizeOptions: true,
+    optionPopoverSide: PopoverSide.Left,
   },
+  play: ({ canvasElement, step }) => sidebarElementWithOptionsTesting({ canvasElement, step }),
 };
