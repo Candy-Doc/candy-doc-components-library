@@ -4,7 +4,7 @@ import { PopoverSide } from "../Popover";
 import PopoverInComponentHandlerStyle from "./PopoverInComponentHandlerStyle";
 
 export type PopoverInComponentHandlerProps = {
-  optionPopoverSide: PopoverSide;
+  optionsPopoverSide: PopoverSide;
   minimizeOptions: boolean;
 };
 
@@ -15,7 +15,7 @@ export class PopoverInComponentHandler extends LitElement {
   protected isPopoverActive = false;
 
   @property({ type: String })
-  protected optionPopoverSide = PopoverSide.Top;
+  protected optionsPopoverSide = PopoverSide.Top;
 
   @property({ type: Boolean })
   protected minimizeOptions = false;

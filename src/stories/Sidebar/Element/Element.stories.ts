@@ -19,7 +19,7 @@ const renderElement = (
   ?disabled=${args.disabled}
   ?collapsed=${args.collapsed}
   ?minimizeOptions=${args.minimizeOptions}
-  optionPopoverSide=${args.optionPopoverSide}
+  optionsPopoverSide=${args.optionsPopoverSide}
 >
   ${args.hasIcon ? html`<fa-icon slot="icon" class=${icon} size="2em"></fa-icon>` : null}
   ${args.hasOptions
@@ -64,7 +64,7 @@ export const ElementWithOptions: Story = {
     hasIcon: true,
     hasOptions: true,
     minimizeOptions: true,
-    optionPopoverSide: PopoverSide.Left,
+    optionsPopoverSide: PopoverSide.Left,
   },
   play: ({ canvasElement, step }) => sidebarElementWithOptionsTesting({ canvasElement, step }),
 };

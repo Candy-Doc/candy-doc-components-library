@@ -78,7 +78,7 @@ export const meta = {
         },
       },
     },
-    optionPopoverSide: {
+    optionsPopoverSide: {
       description: "Side of the options' popover",
       table: {
         category: "props",
