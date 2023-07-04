@@ -72,7 +72,7 @@ export class CandyAccordion extends PopoverInComponentHandler {
             </div>
             <candy-popover
               ?isActive=${this.isPopoverActive}
-              side=${this.optionPopoverSide}
+              side=${this.optionsPopoverSide}
               targetId="vertical-icon"
               ?isTargetInShadowRoot=${true}
             >

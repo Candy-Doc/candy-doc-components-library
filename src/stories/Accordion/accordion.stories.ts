@@ -70,7 +70,7 @@ export const AccordionWithOptions: Story = {
     hasIcon: true,
     hasOptions: true,
     minimizeOptions: true,
-    optionPopoverSide: PopoverSide.Left,
+    optionsPopoverSide: PopoverSide.Left,
   },
   render: (args: CandyAccordionProps & AccordionControl) =>
     renderAccordionWithOptions(args, isActive),

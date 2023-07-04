@@ -61,7 +61,7 @@ export class CandySidebarElement extends PopoverInComponentHandler {
             </div>
             <candy-popover
               ?isActive=${this.isPopoverActive}
-              side=${this.optionPopoverSide}
+              side=${this.optionsPopoverSide}
               targetId="sidebar-element-vertical-icon"
               ?isTargetInShadowRoot=${true}
             >
