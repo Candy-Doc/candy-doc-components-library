@@ -1,11 +1,14 @@
-import { StoryObj, Meta } from "@storybook/web-components";
-import { html } from "lit";
+import { StoryObj } from "@storybook/web-components";
 
 import { CandyAccordionProps } from "../../components/Accordion";
 import { AccordionControl, meta } from "./AccordionMeta";
-import { playFunction } from "./Accordion.test";
+import { testOpenCloseAccordion, accordionWithOptionsTesting } from "./Accordion.test";
+import { renderAccordion } from "./Stories/renderAccordion";
+import { PopoverSide } from "../../components/Popover";
 import "../../components/Accordion";
 import "../../components/Alert";
+import { renderAccordionWithOption } from "./Stories/renderAccordionWithOption";
+import { renderAccordionWithOptions } from "./Stories/renderAccordionWithOptions";
 
 type Story = StoryObj<CandyAccordionProps & AccordionControl>;
 
@@ -13,27 +16,11 @@ const isActive = {
   value: false,
 };
 
-const renderAccordion = (args: CandyAccordionProps & AccordionControl) => html`<candy-accordion
-  label=${args.label}
-  ?active=${args.active}
-  ?disabled=${args.disabled}
-  @onChange=${({ detail }: CustomEvent) => (isActive.value = detail.value)}
->
-  ${args.hasIcon ? html`<fa-icon slot="icon" class="fa-solid fa-candy-cane"></fa-icon>` : null}
-  ${args.hasOptions
-    ? html`<fa-icon slot="options" class="fa-solid fa-location-crosshairs"></fa-icon
-        ><fa-icon slot="options" class="fa-regular fa-eye"></fa-icon>`
-    : null}
-  <candy-alert>
-    <span slot="content"> I'm the text inside an info alert</span>
-  </candy-alert>
-</candy-accordion>`;
-
 export default {
   ...meta,
   title: "Components/Accordion",
-  render: renderAccordion,
-} as Meta<CandyAccordionProps & AccordionControl>;
+  render: (args: CandyAccordionProps & AccordionControl) => renderAccordion(args, isActive),
+};
 
 export const Accordion: Story = {
   args: {
@@ -41,9 +28,9 @@ export const Accordion: Story = {
     active: false,
     disabled: false,
     hasIcon: false,
-    hasOptions: false,
+    minimizeOptions: true,
   },
-  play: ({ args, canvasElement, step }) => playFunction({ args, canvasElement, step }, isActive),
+  play: ({ args, canvasElement, step }) => testOpenCloseAccordion({ args, canvasElement, step }, isActive),
 };
 
 export const AccordionWithIcon: Story = {
@@ -53,8 +40,23 @@ export const AccordionWithIcon: Story = {
     disabled: false,
     hasIcon: true,
     hasOptions: false,
+    minimizeOptions: true,
   },
-  play: ({ args, canvasElement, step }) => playFunction({ args, canvasElement, step }, isActive),
+  play: ({ args, canvasElement, step }) => testOpenCloseAccordion({ args, canvasElement, step }, isActive),
+};
+
+export const AccordionWithOption: Story = {
+  args: {
+    label: "Accordion with option",
+    active: false,
+    disabled: false,
+    hasIcon: true,
+    hasOptions: true,
+    minimizeOptions: true,
+  },
+  render: (args: CandyAccordionProps & AccordionControl) =>
+    renderAccordionWithOption(args, isActive),
+  play: ({ args, canvasElement, step }) => testOpenCloseAccordion({ args, canvasElement, step }, isActive),
 };
 
 export const AccordionWithOptions: Story = {
@@ -64,6 +66,10 @@ export const AccordionWithOptions: Story = {
     disabled: false,
     hasIcon: true,
     hasOptions: true,
+    minimizeOptions: true,
+    optionPopoverSide: PopoverSide.Left,
   },
-  play: ({ args, canvasElement, step }) => playFunction({ args, canvasElement, step }, isActive),
+  render: (args: CandyAccordionProps & AccordionControl) =>
+    renderAccordionWithOptions(args, isActive),
+  play: ({ args, canvasElement, step }) => accordionWithOptionsTesting({ args, canvasElement, step }, isActive),
 };

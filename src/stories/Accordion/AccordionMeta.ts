@@ -1,9 +1,19 @@
+import { Meta } from "@storybook/web-components";
+
+import { CandyAccordionProps } from "../../components/Accordion";
+import { PopoverSide } from "../../components/Popover";
+
 export type AccordionControl = {
   hasIcon: boolean;
   hasOptions: boolean;
+  onChange: () => void;
+  disabled: boolean;
+  iconSlot: string;
+  optionsSlot: string;
+  defaultSlot: string;
 };
 
-export const meta = {
+export const meta: Meta<CandyAccordionProps & AccordionControl> = {
   component: "candy-accordion",
   parameters: {
     docs: {
@@ -35,7 +45,7 @@ export const meta = {
           summary: "boolean",
         },
         defaultValue: {
-          summary: "False",
+          summary: "false",
         },
       },
     },
@@ -48,9 +58,36 @@ export const meta = {
           summary: "boolean",
         },
         defaultValue: {
-          summary: "False",
+          summary: "false",
         },
       },
+    },
+    minimizeOptions: {
+      description:
+        "Replace the options slots by a menu icon and put the options content inside a popover",
+      table: {
+        category: "props",
+        type: {
+          summary: "boolean",
+        },
+        defaultValue: {
+          summary: "false",
+        },
+      },
+    },
+    optionPopoverSide: {
+      description: "Side of the options' popover",
+      table: {
+        category: "props",
+        type: {
+          summary: "string",
+        },
+        defaultValue: {
+          summary: PopoverSide.Right,
+        },
+      },
+      options: Object.values(PopoverSide),
+      control: { type: "radio" },
     },
     onChange: {
       name: "onChange",

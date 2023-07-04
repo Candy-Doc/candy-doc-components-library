@@ -1,6 +1,3 @@
-import { Meta } from "@storybook/web-components";
-
-import type { CandySidebarProps } from "../../components/Sidebar";
 import "../../components/Sidebar";
 import "../../components/Sidebar/Element";
 import "../../components/Accordion";
@@ -18,7 +15,7 @@ export type CandySideBarControl = {
   isCollapse: boolean;
 };
 
-export const meta: Meta<CandySidebarProps & CandySideBarControl> = {
+export const meta = {
   component: "candy-sidebar",
   parameters: {
     docs: {
