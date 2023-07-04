@@ -2,6 +2,7 @@ import { html } from "lit";
 
 import { CandySidebarProps } from "../../../components/Sidebar";
 import { CandySideBarControl } from "../SidebarMeta";
+import { PopoverSide } from "../../../components/Popover";
 
 export const renderSidebarMinimizedOptionsIcons = (
   args: CandySidebarProps & CandySideBarControl
@@ -11,11 +12,16 @@ export const renderSidebarMinimizedOptionsIcons = (
   >
     <div style="width: 20rem;">
       <candy-sidebar @onCollapse=${args.onCollapse}>
-        <candy-accordion label="Section" ?minimizeOptions=${true}>
+        <candy-accordion label="Section" ?minimizeOptions=${true} optionsPopoverSide=${PopoverSide.Right}>
           <fa-icon slot="icon" class="fa-solid fa-cubes"></fa-icon>
           <fa-icon slot="options" class="fa-regular fa-eye"></fa-icon>
           <fa-icon slot="options" class="fa-regular fa-eye"></fa-icon>
         </candy-accordion>
+        <candy-sidebar-element label="Element" ?minimizeOptions=${true} optionsPopoverSide=${PopoverSide.Right}>
+          <fa-icon slot="icon" class="fa-solid fa-diamond"></fa-icon>
+          <fa-icon slot="options" class="fa-regular fa-eye"></fa-icon>
+          <fa-icon slot="options" class="fa-regular fa-eye"></fa-icon>
+        </candy-sidebar-element>
       </candy-sidebar>
     </div>
     <div

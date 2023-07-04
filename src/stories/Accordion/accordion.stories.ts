@@ -5,10 +5,10 @@ import { AccordionControl, meta } from "./AccordionMeta";
 import { testOpenCloseAccordion, accordionWithOptionsTesting } from "./Accordion.test";
 import { renderAccordion } from "./Stories/renderAccordion";
 import { PopoverSide } from "../../components/Popover";
-import "../../components/Accordion";
-import "../../components/Alert";
 import { renderAccordionWithOption } from "./Stories/renderAccordionWithOption";
 import { renderAccordionWithOptions } from "./Stories/renderAccordionWithOptions";
+import "../../components/Accordion";
+import "../../components/Alert";
 
 type Story = StoryObj<CandyAccordionProps & AccordionControl>;
 
