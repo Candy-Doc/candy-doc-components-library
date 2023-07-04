@@ -9,7 +9,7 @@ import "../../components/Popover/";
 import "../../components/Sidebar";
 import "../../components/Sidebar/Element";
 import "../../components/Accordion";
-import "./Stories/style.css"
+import "./Stories/style.css";
 
 type Story = StoryObj<CandyPopoverProps>;
 

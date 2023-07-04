@@ -50,4 +50,4 @@ export default css`
     top: -8px;
     left: calc(50% - 8px);
   }
-`
+`;

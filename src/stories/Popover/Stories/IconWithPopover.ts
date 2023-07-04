@@ -2,7 +2,9 @@ import { html } from "lit";
 
 import { CandyPopoverProps } from "../../../components/Popover";
 
-export const iconWithPopover = (args: CandyPopoverProps) => html`<div class="popover-container half-width">
+export const iconWithPopover = (args: CandyPopoverProps) => html`<div
+  class="popover-container half-width"
+>
   <candy-icon size="md">
     <fa-icon slot="icon" class="fa-solid fa-candy-cane" id="anchor-third"></fa-icon>
   </candy-icon>
