@@ -1,3 +1,8 @@
+# [v1.14.0](https://github.com/Candy-Doc/candy-doc-components-library/compare/v1.13.2...v1.14.0) (2023-07-04)
+
+## ✨ New minor Features
+- [`c613d22`](https://github.com/Candy-Doc/candy-doc-components-library/commit/c613d22)  feat: popover-component (#62) (Issues: [`#62`](https://github.com/Candy-Doc/candy-doc-components-library/issues/62))
+
 # [v1.13.2](https://github.com/Candy-Doc/candy-doc-components-library/compare/v1.13.1...v1.13.2) (2023-06-28)
 
 ## 🐛 Bug Fixes
