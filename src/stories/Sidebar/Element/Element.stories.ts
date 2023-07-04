@@ -4,8 +4,8 @@ import { html } from "lit";
 import { CandySidebarElementProps } from "../../../components/Sidebar/Element";
 import { CandyElementControl, meta } from "./ElementMeta";
 import { sidebarElementWithOptionsTesting } from "./Element.test";
-import "../../../components/Sidebar/Element";
 import { PopoverSide } from "../../../components/Popover";
+import "../../../components/Sidebar/Element";
 
 type Story = StoryObj<CandySidebarElementProps & CandyElementControl>;
 
