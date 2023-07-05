@@ -7,6 +7,7 @@ export default css`
     left: 0px;
     min-width: 50px;
     height: 50px;
+    z-index: 99;
   }
 
   .popover-content {
@@ -27,7 +28,7 @@ export default css`
     height: 16px;
     transform: rotate(45deg);
     position: absolute;
-    z-index: 1000;
+    z-index: 99;
     background-color: white;
   }
 

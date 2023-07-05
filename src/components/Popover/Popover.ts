@@ -112,8 +112,8 @@ export class CandyPopover extends LitElement {
         part="popover"
         data-testid="popover"
       >
-        <div class="${`popover-arrow popover-${this.side}`}"></div>
-        <div class="popover-content">
+        <div part="popover-arrow" class="${`popover-arrow popover-${this.side}`}"></div>
+        <div part="popover-content" class="popover-content">
           <slot></slot>
         </div>
       </div>
