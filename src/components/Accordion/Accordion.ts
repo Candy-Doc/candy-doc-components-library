@@ -1,5 +1,5 @@
 import { html } from "lit";
-import { customElement, property } from "lit/decorators.js";
+import { customElement, property, state } from "lit/decorators.js";
 
 import {
   PopoverInComponentHandler,
@@ -14,11 +14,15 @@ export type CandyAccordionProps = PopoverInComponentHandlerProps & {
   label: string;
   active: boolean;
   disabled: boolean;
+  collapsed: boolean;
 };
 
 @customElement("candy-accordion")
 export class CandyAccordion extends PopoverInComponentHandler {
   static styles = [PopoverInComponentHandler.styles, AccordionStyle];
+
+  @state()
+  hasSlotIcon = false;
 
   @property({ type: String })
   label = "Home";
@@ -47,6 +51,13 @@ export class CandyAccordion extends PopoverInComponentHandler {
       });
       this.dispatchEvent(reopen);
     }
+  };
+
+  doesComponentHasIcon = () =>
+    Array.from(this.children).some((child: Element) => child.slot === "icon");
+
+  onSlotIconChange = () => {
+    this.hasSlotIcon = this.doesComponentHasIcon();
   };
 
   render() {
@@ -99,10 +110,12 @@ export class CandyAccordion extends PopoverInComponentHandler {
           ?disabled="${this.disabled}"
           @click="${this.handleClick}"
         >
-          <slot name="icon"></slot>
-          <p part="accordion-text">${!this.collapsed ? this.label : null}</p>
+          <slot @slotchange=${this.onSlotIconChange} name="icon"></slot>
+          <p part="accordion-text" class="${this.collapsed ? "display-none" : ""}">${this.label}</p>
           ${!this.collapsed ? renderOptionsIcons : null}
-          <div part="accordion-chevron" class=${`chevron ${this.active ? "rotate" : ""}`}></div>
+          ${this.collapsed && this.hasSlotIcon
+            ? null
+              : html`<div  part="accordion-chevron" class=${`chevron ${this.active ? "rotate" : ""}`}></div>`}
         </button>
         ${slotContent}
       </div>

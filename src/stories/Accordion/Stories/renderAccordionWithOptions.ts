@@ -10,6 +10,7 @@ export const renderAccordionWithOptions = (
   label=${args.label}
   ?active=${args.active}
   ?disabled=${args.disabled}
+  ?collapsed=${args.collapsed}
   ?minimizeOptions=${args.minimizeOptions}
   optionsPopoverSide=${args.optionsPopoverSide}
   @onChange=${({ detail }: CustomEvent) => (isActive.value = detail.value)}

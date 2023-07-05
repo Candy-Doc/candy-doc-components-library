@@ -62,6 +62,18 @@ export const meta: Meta<CandyAccordionProps & AccordionControl> = {
         },
       },
     },
+    collapsed: {
+      description: "Collapse the component to display only its icon or arrow",
+      table: {
+        category: "props",
+        type: {
+          summary: "boolean",
+        },
+        defaultValue: {
+          summary: "false",
+        },
+      },
+    },
     minimizeOptions: {
       description:
         "Replace the options slots by a menu icon and put the options content inside a popover",
