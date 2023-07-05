@@ -8,7 +8,7 @@ export const meta = {
   parameters: {
     docs: {
       description: {
-        component: "CSS part selector: **sidebar-element**",
+        component: "CSS part selector: \n- **sidebar-element**\n- **sidebar-element-text**",
       },
     },
   },

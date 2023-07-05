@@ -8,7 +8,8 @@ export const meta = {
   parameters: {
     docs: {
       description: {
-        component: "CSS part selector: **accordion**",
+        component:
+          "CSS part selector: \n- **accordion**\n- **accordion-button**\n- **accordion-text**\n- **accordion-chevron**",
       },
     },
   },
