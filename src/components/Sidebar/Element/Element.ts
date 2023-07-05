@@ -49,7 +49,7 @@ export class CandySidebarElement extends LitElement {
         @click="${this.handleClick}"
       >
         <slot name="icon"></slot>
-        <p>${!this.collapsed ? this.label : null}</p>
+        <p part="sidebar-element-text">${!this.collapsed ? this.label : null}</p>
         ${!this.collapsed
           ? html`<div class="end-icons">
               <div class="options-container">

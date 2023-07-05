@@ -53,6 +53,7 @@ export class CandyAccordion extends LitElement {
     return html`
       <div part="accordion">
         <button
+          part="accordion-button"
           role="button"
           href="#"
           class="${"element-container " + styleClass} ${!this.collapsed
@@ -62,14 +63,17 @@ export class CandyAccordion extends LitElement {
           @click="${this.handleClick}"
         >
           <slot name="icon"></slot>
-          <p>${!this.collapsed ? this.label : null}</p>
+          <p part="accordion-text">${!this.collapsed ? this.label : null}</p>
           ${!this.collapsed
             ? html`<div class="end-icons">
                   <div class="options-container">
                     <slot name="options"></slot>
                   </div>
                 </div>
-                <div class=${`chevron ${this.active ? "rotate" : ""}`}></div> `
+                <div
+                  part="accordion-chevron"
+                  class=${`chevron ${this.active ? "rotate" : ""}`}
+                ></div> `
             : null}
         </button>
         ${slotContent}
