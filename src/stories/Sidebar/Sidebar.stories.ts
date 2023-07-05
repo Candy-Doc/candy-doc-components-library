@@ -5,7 +5,7 @@ import type { CandySideBarControl } from "./SidebarMeta";
 import { meta } from "./SidebarMeta";
 import { renderSideBar } from "./Stories/RenderSidebar";
 import { playFunction } from "./Sidebar.test";
-import { renderSideBarWithContent } from "./Stories/SideBarUseCase";
+import { renderSideBarWithContent } from "./Stories/SideBarWithContent";
 import { renderSidebarMinimizedOptionsIcons } from "./Stories/SidebarMinimizedOptionsIcons";
 
 type Story = StoryObj<CandySidebarProps & CandySideBarControl>;
@@ -61,7 +61,7 @@ export const Sidebar: Story = {
   play: ({ canvasElement, step }) => playFunction({ canvasElement, step }, isCollapse),
 };
 
-export const SidebarUseCase: Story = {
+export const SideBarWithContent: Story = {
   args: {
     ...Sidebar.args,
   },
