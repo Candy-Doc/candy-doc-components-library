@@ -1,3 +1,8 @@
+# [v1.14.1](https://github.com/Candy-Doc/candy-doc-components-library/compare/v1.14.0...v1.14.1) (2023-07-05)
+
+## 🐛 Bug Fixes
+- [`5a24a98`](https://github.com/Candy-Doc/candy-doc-components-library/commit/5a24a98)   fix: css part selector for accordion and sidebar-element (#71) (Issues: [`#71`](https://github.com/Candy-Doc/candy-doc-components-library/issues/71))
+
 # [v1.14.0](https://github.com/Candy-Doc/candy-doc-components-library/compare/v1.13.2...v1.14.0) (2023-07-04)
 
 ## ✨ New minor Features
