@@ -1,4 +1,4 @@
-import { html } from "lit";
+import { LitElement, html } from "lit";
 import { customElement, property, state } from "lit/decorators.js";
 
 import {
@@ -115,11 +115,11 @@ export class CandyAccordion extends PopoverInComponentHandler {
           ${!this.collapsed ? renderOptionsIcons : null}
           ${this.collapsed && this.hasSlotIcon
             ? null
-              : html`<div  part="accordion-chevron" class=${`chevron ${this.active ? "rotate" : ""}`}></div>`}
+            : html`<div part="accordion-chevron" class=${`chevron ${this.active ? "rotate" : ""}`}></div>`}
         </button>
         ${slotContent}
       </div>
-    `;
+      `;
   }
 }
 

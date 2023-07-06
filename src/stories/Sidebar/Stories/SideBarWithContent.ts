@@ -8,7 +8,7 @@ export const renderSideBarWithContent = (args: CandySidebarProps & CandySideBarC
   return html`<div
     style="display: flex; background-color: #F8F9FA; border-radius: 8px; min-height: 350px"
   >
-    <div style="width: 20rem;">${renderSideBar(args)}</div>
+    <div>${renderSideBar(args)}</div>
     <div
       style="
         background-color: #D2D4D6;

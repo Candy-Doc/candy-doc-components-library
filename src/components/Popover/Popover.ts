@@ -44,7 +44,7 @@ export class CandyPopover extends LitElement {
   }
 
   protected updated(changedProperties: PropertyValues | Map<PropertyKey, unknown>): void {
-    if (changedProperties.has("side") || changedProperties.get("isActive")) {
+    if (changedProperties.has("side") || (changedProperties.has("isActive") && this.isActive)) {
       this.setPosition();
     }
   }
@@ -84,19 +84,19 @@ export class CandyPopover extends LitElement {
     switch (this.side) {
       case PopoverSide.Left:
         offset.top = -offsetHeight / 2 + elemHeight / 2;
-        offset.left = -(offsetWidth - elemWidth / 2) - 30;
+        offset.left = -offsetWidth - 15
         break;
       case PopoverSide.Top:
-        offset.top = -offsetHeight - 20;
+        offset.top = -offsetHeight - 15;
         offset.left = -(offsetWidth / 2 - elemWidth / 2);
         break;
       case PopoverSide.Bottom:
-        offset.top = elemHeight + 20;
+        offset.top = elemHeight + 15;
         offset.left = -(offsetWidth / 2 - elemWidth / 2);
         break;
       default:
         offset.top = -offsetHeight / 2 + elemHeight / 2;
-        offset.left = elemWidth / 2 + 30;
+        offset.left = elemWidth + 15;
         break;
     }
     return offset;

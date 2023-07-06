@@ -10,8 +10,8 @@ export const renderSidebarMinimizedOptionsIcons = (
   return html`<div
     style="display: flex; background-color: #F8F9FA; border-radius: 8px; min-height: 350px"
   >
-    <div style="width: 20rem;">
-      <candy-sidebar @onCollapse=${args.onCollapse}>
+    <div>
+      <candy-sidebar @onCollapse=${args.onCollapse} ?canCollapse=${args.canCollapse}>
         <candy-accordion
           label="Sectio accordion"
           ?minimizeOptions=${true}
