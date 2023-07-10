@@ -7,7 +7,7 @@ import {
 } from "../Shared/PopoverInComponentHandler";
 import AccordionStyle from "./AccordionStyle";
 import VerticalMenuBlack from "../../assets/icons/vertical-menu-black.svg";
-import VerticalMenuBlue from "../../assets/icons/vertical-menu blue.svg";
+import VerticalMenuBlue from "../../assets/icons/vertical-menu-blue.svg";
 import "../Popover";
 
 export type CandyAccordionProps = PopoverInComponentHandlerProps & {
@@ -71,13 +71,8 @@ export class CandyAccordion extends PopoverInComponentHandler {
     const renderOptionsIcons =
       this.minimizeOptions && this.countOptionsSlotAmount() >= 2
         ? html` <div class="end-icons">
-            <candy-popover
-              class="options-container"
-              ?isActive=${this.isPopoverActive}
-              side=${this.optionsPopoverSide}
-            >
+            <candy-popover class="options-container" side=${this.position}>
               <img
-                style="width: 24px; height: 24px; color: pink !important;"
                 src=${this.active ? VerticalMenuBlue : VerticalMenuBlack}
                 alt="accordion-vertical-icon"
                 data-testid="accordion-options-icon"
@@ -106,14 +101,21 @@ export class CandyAccordion extends PopoverInComponentHandler {
           @click="${this.handleClick}"
         >
           <slot @slotchange=${this.onSlotIconChange} name="icon"></slot>
-          <p part="accordion-text" class="${this.collapsed ? "display-none" : ""}">${this.label}</p>
-          ${!this.collapsed ? renderOptionsIcons : null}
-          ${this.collapsed && this.hasSlotIcon
-            ? null
-            : html`<div
-                part="accordion-chevron"
-                class=${`chevron ${this.active ? "rotate" : ""}`}
-              ></div>`}
+          ${this.collapsed
+            ? html` ${this.hasSlotIcon
+                ? null
+                : html`<div
+                    part="accordion-chevron"
+                    class=${`chevron ${this.active ? "rotate" : ""}`}
+                  ></div>`}`
+            : html`
+                <p part="accordion-text">${this.label}</p>
+                ${renderOptionsIcons}
+                <div
+                  part="accordion-chevron"
+                  class=${`chevron ${this.active ? "rotate" : ""}`}
+                ></div>
+              `}
         </button>
         ${slotContent}
       </div>

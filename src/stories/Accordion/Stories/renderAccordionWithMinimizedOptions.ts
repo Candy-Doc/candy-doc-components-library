@@ -3,7 +3,7 @@ import { html } from "lit";
 import { CandyAccordionProps } from "../../../components/Accordion";
 import { AccordionControl } from "../AccordionMeta";
 
-export const renderAccordionWithOptions = (
+export const renderAccordionWithMinimizedOptions = (
   args: CandyAccordionProps & AccordionControl,
   isActive: { value: boolean }
 ) => html`<candy-accordion
@@ -12,7 +12,7 @@ export const renderAccordionWithOptions = (
   ?disabled=${args.disabled}
   ?collapsed=${args.collapsed}
   ?minimizeOptions=${args.minimizeOptions}
-  optionsPopoverSide=${args.optionsPopoverSide}
+  optionsPopoverSide=${args.position}
   @onChange=${({ detail }: CustomEvent) => (isActive.value = detail.value)}
 >
   ${args.hasIcon ? html`<fa-icon slot="icon" class="fa-solid fa-candy-cane"></fa-icon>` : null}

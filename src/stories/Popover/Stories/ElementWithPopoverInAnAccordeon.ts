@@ -6,14 +6,9 @@ export const elementWithPopoverInAnAccordeon = (args: CandyPopoverProps) => html
   class="popover-container half-width"
 >
   <candy-sidebar>
-    <candy-accordion ?active=${args.isParentVisible}>
+    <candy-accordion>
       <candy-sidebar-element label="Element">
-        <candy-popover
-          slot="options"
-          .isActive=${args.isActive}
-          side=${args.side}
-          .isParentVisible=${args.isParentVisible}
-        >
+        <candy-popover slot="options" side=${args.side}>
           <fa-icon class="fa-solid fa-location-crosshairs" size="2em"></fa-icon>
           <div slot="content" class="icon-container">
             <fa-icon class="fa-solid fa-location-crosshairs" size="2em"></fa-icon>

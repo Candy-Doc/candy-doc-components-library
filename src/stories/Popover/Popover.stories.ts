@@ -21,26 +21,20 @@ export default {
 
 export const ElementWithPopoverInSidebar: Story = {
   args: {
-    isActive: true,
     side: PopoverSide.Right,
-    isParentVisible: true,
   },
 };
 
 export const ElementWithPopoverInAnAccordeon: Story = {
   args: {
-    isActive: true,
     side: PopoverSide.Right,
-    isParentVisible: true,
   },
   render: (args: CandyPopoverProps) => elementWithPopoverInAnAccordeon(args),
 };
 
 export const IconWithPopover: Story = {
   args: {
-    isActive: true,
     side: PopoverSide.Right,
-    isParentVisible: true,
   },
   render: (args: CandyPopoverProps) => iconWithPopover(args),
 };

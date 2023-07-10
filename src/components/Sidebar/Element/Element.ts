@@ -6,7 +6,7 @@ import {
   PopoverInComponentHandlerProps,
 } from "../../Shared/PopoverInComponentHandler";
 import ElementStyle from "./ElementStyle";
-import VerticalMenuBlue from "../../../assets/icons/vertical-menu blue.svg";
+import VerticalMenuBlue from "../../../assets/icons/vertical-menu-blue.svg";
 import VerticalMenuBlack from "../../../assets/icons/vertical-menu-black.svg";
 import "../../Popover";
 
@@ -49,13 +49,8 @@ export class CandySidebarElement extends PopoverInComponentHandler {
     const renderOptionsIcons =
       this.minimizeOptions && this.countOptionsSlotAmount() >= 2
         ? html` <div class="end-icons">
-            <candy-popover
-              class="options-container"
-              ?isActive=${this.isPopoverActive}
-              side=${this.optionsPopoverSide}
-            >
+            <candy-popover class="options-container" side=${this.position}>
               <img
-                style="width: 24px; height: 24px; color: pink !important;"
                 src=${this.active ? VerticalMenuBlue : VerticalMenuBlack}
                 alt="accordion-vertical-icon"
                 data-testid="sidebar-element-options-icon"

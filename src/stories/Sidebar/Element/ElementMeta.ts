@@ -1,11 +1,13 @@
+import { Meta } from "@storybook/web-components";
 import { PopoverSide } from "../../../components/Popover";
+import { CandySidebarElementProps } from "../../../components/Sidebar/Element";
 
 export type CandyElementControl = {
   hasIcon: boolean;
   hasOptions: boolean;
 };
 
-export const meta = {
+export const meta: Meta<CandySidebarElementProps & CandyElementControl> = {
   component: "candy-sidebar-element",
   parameters: {
     docs: {
@@ -78,7 +80,7 @@ export const meta = {
         },
       },
     },
-    optionsPopoverSide: {
+    position: {
       description: "Side of the options' popover",
       table: {
         category: "props",

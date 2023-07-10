@@ -6,7 +6,7 @@ import { testOpenCloseAccordion, accordionWithOptionsTesting } from "./Accordion
 import { renderAccordion } from "./Stories/renderAccordion";
 import { PopoverSide } from "../../components/Popover";
 import { renderAccordionWithOption } from "./Stories/renderAccordionWithOption";
-import { renderAccordionWithOptions } from "./Stories/renderAccordionWithOptions";
+import { renderAccordionWithMinimizedOptions } from "./Stories/renderAccordionWithMinimizedOptions";
 import "../../components/Accordion";
 import "../../components/Alert";
 
@@ -49,7 +49,7 @@ export const AccordionWithIcon: Story = {
     testOpenCloseAccordion({ args, canvasElement, step }, isActive),
 };
 
-export const AccordionWithOption: Story = {
+export const AccordionWithMinimizedOptions: Story = {
   args: {
     label: "Accordion with option",
     active: false,
@@ -74,10 +74,10 @@ export const AccordionWithOptions: Story = {
     hasIcon: true,
     hasOptions: true,
     minimizeOptions: true,
-    optionsPopoverSide: PopoverSide.Left,
+    position: PopoverSide.Left,
   },
   render: (args: CandyAccordionProps & AccordionControl) =>
-    renderAccordionWithOptions(args, isActive),
+    renderAccordionWithMinimizedOptions(args, isActive),
   play: ({ args, canvasElement, step }) =>
     accordionWithOptionsTesting({ args, canvasElement, step }, isActive),
 };

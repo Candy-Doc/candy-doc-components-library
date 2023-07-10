@@ -6,9 +6,6 @@ import PopoverStyle from "./PopoverStyle";
 
 export type CandyPopoverProps = {
   side: PopoverSide;
-  isParentVisible: boolean;
-  isActive: boolean;
-  targetId: string;
 };
 
 @customElement("candy-popover")
@@ -17,9 +14,6 @@ export class CandyPopover extends LitElement {
 
   @state()
   isActive = false;
-
-  @property({ type: Boolean })
-  isParentVisible = true;
 
   @property({ type: String })
   side = PopoverSide.Right;
@@ -32,16 +26,14 @@ export class CandyPopover extends LitElement {
   render() {
     return html`
       <div id="popover" class="popover" part="popover" data-testid="popover">
-        <slot class="cursor-pointer" id="slot-target" @click=${this.handleClick}></slot>
+        <slot class="cursor-pointer" @click=${this.handleClick}></slot>
         <div
-          class="popover-content ${`popover-${this.side}`} ${!(
-            this.isActive && this.isParentVisible
-          )
+          class="popover-content ${`popover-${this.side}`} ${!this.isActive
             ? "popover-hide"
             : null}"
         >
           <div part="popover-arrow" class="popover-arrow ${`popover-arrow-${this.side}`}"></div>
-          <div part="popover-slot-content" class="popover-slot-content">
+          <div part="popover-box" class="popover-box">
             <slot name="content"></slot>
           </div>
         </div>

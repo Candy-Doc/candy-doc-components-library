@@ -5,7 +5,7 @@ export const meta = {
   parameters: {
     docs: {
       description: {
-        component: "CSS part selector:  \n- **popover**\n- **popover-arrow**\n- **popover-slot-content**\n",
+        component: "CSS part selector:  \n- **popover**\n- **popover-arrow**\n- **popover-box**\n",
       },
     },
   },
@@ -24,34 +24,19 @@ export const meta = {
       options: Object.values(PopoverSide),
       control: { type: "radio" },
     },
-    isActive: {
-      description: "State of the component. Determine if it is visible or not",
-      table: {
-        category: "props",
-        type: {
-          summary: "boolean",
-        },
-        defaultValue: {
-          summary: "true",
-        },
-      },
-    },
-    isParentVisible: {
-      description:
-        "State of the parent container. Allow popover to hide while being active if a container is being hidden",
-      table: {
-        category: "props",
-        type: {
-          summary: "boolean",
-        },
-        defaultValue: {
-          summary: "true",
-        },
-      },
-    },
     defaultSlot: {
       name: "default",
       description: "Default slot containing children of the component",
+      table: {
+        category: "Slots",
+        type: {
+          summary: "HTMLElement",
+        },
+      },
+    },
+    contentSlot: {
+      name: "content",
+      description: "Slot containing elements inside the popover",
       table: {
         category: "Slots",
         type: {

@@ -87,7 +87,7 @@ export const meta: Meta<CandyAccordionProps & AccordionControl> = {
         },
       },
     },
-    optionsPopoverSide: {
+    position: {
       description: "Side of the options' popover",
       table: {
         category: "props",

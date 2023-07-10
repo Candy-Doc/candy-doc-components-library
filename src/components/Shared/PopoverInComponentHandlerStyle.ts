@@ -19,4 +19,9 @@ export default css`
   .hidden {
     display: none;
   }
+
+  img {
+    width: 24px;
+    height: 24px;
+  }
 ` as CSSResultGroup;
