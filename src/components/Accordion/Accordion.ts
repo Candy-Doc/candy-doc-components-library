@@ -1,4 +1,4 @@
-import { LitElement, html } from "lit";
+import { html } from "lit";
 import { customElement, property, state } from "lit/decorators.js";
 
 import {
@@ -71,23 +71,18 @@ export class CandyAccordion extends PopoverInComponentHandler {
     const renderOptionsIcons =
       this.minimizeOptions && this.countOptionsSlotAmount() >= 2
         ? html` <div class="end-icons">
-            <div class="options-container">
+            <candy-popover
+              class="options-container"
+              ?isActive=${this.isPopoverActive}
+              side=${this.optionsPopoverSide}
+            >
               <img
-                @click=${this.handleVerticalIconClick}
-                id="vertical-icon"
-                style="width: 24px; height: 24px"
+                style="width: 24px; height: 24px; color: pink !important;"
                 src=${this.active ? VerticalMenuBlue : VerticalMenuBlack}
                 alt="accordion-vertical-icon"
                 data-testid="accordion-options-icon"
               />
-            </div>
-            <candy-popover
-              ?isActive=${this.isPopoverActive}
-              side=${this.optionsPopoverSide}
-              targetId="vertical-icon"
-              ?isTargetInShadowRoot=${true}
-            >
-              <div class="options-container">
+              <div slot="content" class="options-container">
                 <slot name="options"></slot>
               </div>
             </candy-popover>
@@ -105,8 +100,8 @@ export class CandyAccordion extends PopoverInComponentHandler {
           role="button"
           href="#"
           class="${"element-container " + textColor} ${!this.collapsed
-            ? "element-container-extended"
-            : null}"
+        ? "element-container-extended"
+        : null}"
           ?disabled="${this.disabled}"
           @click="${this.handleClick}"
         >
@@ -114,8 +109,8 @@ export class CandyAccordion extends PopoverInComponentHandler {
           <p part="accordion-text" class="${this.collapsed ? "display-none" : ""}">${this.label}</p>
           ${!this.collapsed ? renderOptionsIcons : null}
           ${this.collapsed && this.hasSlotIcon
-            ? null
-            : html`<div part="accordion-chevron" class=${`chevron ${this.active ? "rotate" : ""}`}></div>`}
+        ? null
+        : html`<div part="accordion-chevron" class=${`chevron ${this.active ? "rotate" : ""}`}></div>`}
         </button>
         ${slotContent}
       </div>

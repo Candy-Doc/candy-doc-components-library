@@ -47,5 +47,6 @@ export default css`
   p {
     all: unset;
     margin-left: 0.5rem;
+    line-height: 1rem;
   }
 `;

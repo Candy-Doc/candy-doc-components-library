@@ -16,15 +16,6 @@ export default css`
     padding: 0 1rem;
   }
 
-  .options-container > ::slotted(*) {
-    transition: 0.1s ease-in-out;
-  }
-
-  .options-container > ::slotted(*:hover) {
-    transform: scale(1.1);
-    transition: 0.2s ease-in-out;
-  }
-
   .hidden {
     display: none;
   }

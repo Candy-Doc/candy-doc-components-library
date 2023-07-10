@@ -7,22 +7,20 @@ export const elementWithPopoverInSidebar = (args: CandyPopoverProps) => html`<di
 >
   <candy-sidebar>
     <candy-sidebar-element label="Element">
-      <fa-icon
+      <candy-popover
+        .isActive=${args.isActive}
+        side=${args.side}
+        .isParentVisible=${args.isParentVisible}
         slot="options"
-        class="fa-solid fa-location-crosshairs"
-        size="2em"
-        id="anchor"
-      ></fa-icon>
-    </candy-sidebar-element>
-    <candy-popover
-      .isActive=${args.isActive}
-      targetId="anchor"
-      side=${args.side}
-      .isParentVisible=${args.isParentVisible}
-    >
-      <div class="icon-container">
+      >
         <fa-icon class="fa-solid fa-location-crosshairs" size="2em"></fa-icon>
-      </div>
-    </candy-popover>
+        <div slot="content" class="icon-container">
+          <fa-icon
+            class="fa-solid fa-location-crosshairs"
+            size="2em"
+          ></fa-icon>
+        </div>
+      </candy-popover>
+    </candy-sidebar-element>
   </candy-sidebar>
 </div>`;

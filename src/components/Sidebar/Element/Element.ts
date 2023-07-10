@@ -49,23 +49,18 @@ export class CandySidebarElement extends PopoverInComponentHandler {
     const renderOptionsIcons =
       this.minimizeOptions && this.countOptionsSlotAmount() >= 2
         ? html` <div class="end-icons">
-            <div class="options-container">
-              <img
-                @click=${this.handleVerticalIconClick}
-                id="sidebar-element-vertical-icon"
-                style="width: 24px; height: 24px"
-                src=${this.active ? VerticalMenuBlue : VerticalMenuBlack}
-                alt="sidebar-element-vertical-icon"
-                data-testid="sidebar-element-options-icon"
-              />
-            </div>
             <candy-popover
+              class="options-container"
               ?isActive=${this.isPopoverActive}
               side=${this.optionsPopoverSide}
-              targetId="sidebar-element-vertical-icon"
-              ?isTargetInShadowRoot=${true}
             >
-              <div class="options-container">
+              <img
+                style="width: 24px; height: 24px; color: pink !important;"
+                src=${this.active ? VerticalMenuBlue : VerticalMenuBlack}
+                alt="accordion-vertical-icon"
+                data-testid="sidebar-element-options-icon"
+              />
+              <div slot="content" class="options-container">
                 <slot name="options"></slot>
               </div>
             </candy-popover>
@@ -81,8 +76,8 @@ export class CandySidebarElement extends PopoverInComponentHandler {
         part="sidebar-element"
         href="#"
         class="${"element-container " + styleClass} ${!this.collapsed
-          ? "element-container-extended"
-          : null}"
+        ? "element-container-extended"
+        : null}"
         ?disabled="${this.disabled}"
         @click="${this.handleClick}"
       >

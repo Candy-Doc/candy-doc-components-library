@@ -40,6 +40,7 @@ export const IconWithPopover: Story = {
   args: {
     isActive: true,
     side: PopoverSide.Right,
+    isParentVisible: true,
   },
   render: (args: CandyPopoverProps) => iconWithPopover(args),
 };
