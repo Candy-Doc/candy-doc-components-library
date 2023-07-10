@@ -34,14 +34,14 @@ export class CandyPopover extends LitElement {
       <div id="popover" class="popover" part="popover" data-testid="popover">
         <slot class="cursor-pointer" id="slot-target" @click=${this.handleClick}></slot>
         <div
-          class="popover-container ${`popover-${this.side}`} ${!(
+          class="popover-content ${`popover-${this.side}`} ${!(
             this.isActive && this.isParentVisible
           )
             ? "popover-hide"
             : null}"
         >
           <div part="popover-arrow" class="popover-arrow ${`popover-arrow-${this.side}`}"></div>
-          <div part="popover-content" class="popover-content">
+          <div part="popover-slot-content" class="popover-slot-content">
             <slot name="content"></slot>
           </div>
         </div>

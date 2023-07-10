@@ -5,7 +5,7 @@ export const meta = {
   parameters: {
     docs: {
       description: {
-        component: "CSS part selector: **popover**",
+        component: "CSS part selector:  \n- **popover**\n- **popover-arrow**\n- **popover-slot-content**\n",
       },
     },
   },
