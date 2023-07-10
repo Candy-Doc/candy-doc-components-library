@@ -14,10 +14,7 @@ export const elementWithPopoverInAnAccordeon = (args: CandyPopoverProps) => html
           side=${args.side}
           .isParentVisible=${args.isParentVisible}
         >
-          <fa-icon
-          class="fa-solid fa-location-crosshairs"
-          size="2em"
-        ></fa-icon>
+          <fa-icon class="fa-solid fa-location-crosshairs" size="2em"></fa-icon>
           <div slot="content" class="icon-container">
             <fa-icon class="fa-solid fa-location-crosshairs" size="2em"></fa-icon>
           </div>

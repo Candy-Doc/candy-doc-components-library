@@ -15,10 +15,7 @@ export const elementWithPopoverInSidebar = (args: CandyPopoverProps) => html`<di
       >
         <fa-icon class="fa-solid fa-location-crosshairs" size="2em"></fa-icon>
         <div slot="content" class="icon-container">
-          <fa-icon
-            class="fa-solid fa-location-crosshairs"
-            size="2em"
-          ></fa-icon>
+          <fa-icon class="fa-solid fa-location-crosshairs" size="2em"></fa-icon>
         </div>
       </candy-popover>
     </candy-sidebar-element>

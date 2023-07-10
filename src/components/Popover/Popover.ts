@@ -27,23 +27,24 @@ export class CandyPopover extends LitElement {
   handleClick = (e: Event) => {
     e.stopPropagation();
     this.isActive = !this.isActive;
-  }
+  };
 
   render() {
     return html`
-      <div
-        id="popover"
-        class="popover"
-        part="popover"
-        data-testid="popover"
-      >
+      <div id="popover" class="popover" part="popover" data-testid="popover">
         <slot class="cursor-pointer" id="slot-target" @click=${this.handleClick}></slot>
-        <div class="popover-container ${`popover-${this.side}`} ${!(this.isActive && this.isParentVisible) ? 'popover-hide' : null}">
-            <div part="popover-arrow" class="popover-arrow ${`popover-arrow-${this.side}`}"></div>
-            <div part="popover-content" class="popover-content">
-              <slot name="content"></slot>
-            </div>
+        <div
+          class="popover-container ${`popover-${this.side}`} ${!(
+            this.isActive && this.isParentVisible
+          )
+            ? "popover-hide"
+            : null}"
+        >
+          <div part="popover-arrow" class="popover-arrow ${`popover-arrow-${this.side}`}"></div>
+          <div part="popover-content" class="popover-content">
+            <slot name="content"></slot>
           </div>
+        </div>
       </div>
     `;
   }

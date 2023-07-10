@@ -52,7 +52,6 @@ export default css`
     right: calc(100% + 20px);
   }
 
-
   .popover-top {
     bottom: calc(100% + 20px);
   }

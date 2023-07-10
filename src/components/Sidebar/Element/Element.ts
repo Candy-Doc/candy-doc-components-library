@@ -76,8 +76,8 @@ export class CandySidebarElement extends PopoverInComponentHandler {
         part="sidebar-element"
         href="#"
         class="${"element-container " + styleClass} ${!this.collapsed
-        ? "element-container-extended"
-        : null}"
+          ? "element-container-extended"
+          : null}"
         ?disabled="${this.disabled}"
         @click="${this.handleClick}"
       >

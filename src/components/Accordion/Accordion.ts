@@ -100,8 +100,8 @@ export class CandyAccordion extends PopoverInComponentHandler {
           role="button"
           href="#"
           class="${"element-container " + textColor} ${!this.collapsed
-        ? "element-container-extended"
-        : null}"
+            ? "element-container-extended"
+            : null}"
           ?disabled="${this.disabled}"
           @click="${this.handleClick}"
         >
@@ -109,12 +109,15 @@ export class CandyAccordion extends PopoverInComponentHandler {
           <p part="accordion-text" class="${this.collapsed ? "display-none" : ""}">${this.label}</p>
           ${!this.collapsed ? renderOptionsIcons : null}
           ${this.collapsed && this.hasSlotIcon
-        ? null
-        : html`<div part="accordion-chevron" class=${`chevron ${this.active ? "rotate" : ""}`}></div>`}
+            ? null
+            : html`<div
+                part="accordion-chevron"
+                class=${`chevron ${this.active ? "rotate" : ""}`}
+              ></div>`}
         </button>
         ${slotContent}
       </div>
-      `;
+    `;
   }
 }
 
