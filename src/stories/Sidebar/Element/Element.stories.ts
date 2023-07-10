@@ -30,11 +30,11 @@ const renderElement = (
 
 export default {
   ...meta,
-  title: "Components/Sidebar/Element",
+  title: "Components/Sidebar/Sidebar Element",
   render: renderElement,
 } as Meta<CandySidebarElementProps & CandyElementControl>;
 
-export const Element: Story = {
+export const SidebarElement: Story = {
   args: {
     label: "Candy-Doc",
     active: false,
@@ -44,7 +44,7 @@ export const Element: Story = {
   },
 };
 
-export const ElementWithIcon: Story = {
+export const SidebarElementWithIcon: Story = {
   args: {
     label: "Candy-Doc",
     active: false,
@@ -55,7 +55,7 @@ export const ElementWithIcon: Story = {
   },
 };
 
-export const ElementWithOptions: Story = {
+export const SidebarElementWithOptions: Story = {
   args: {
     label: "Candy-Doc",
     active: false,

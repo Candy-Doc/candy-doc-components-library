@@ -69,7 +69,7 @@ export const SideBarWithContent: Story = {
   play: Sidebar.play,
 };
 
-export const MinimizedOptionsIcons: Story = {
+export const SidebarElementsWithMinimizedOptionsIcons: Story = {
   args: {
     ...Sidebar.args,
   },
