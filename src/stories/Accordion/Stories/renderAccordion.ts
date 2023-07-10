@@ -12,7 +12,7 @@ export const renderAccordion = (
   ?disabled=${args.disabled}
   ?minimizeOptions=${args.minimizeOptions}
   ?collapsed=${args.collapsed}
-  optionsPopoverSide=${args.optionsPopoverSide}
+  position=${args.position}
   @onChange=${({ detail }: CustomEvent) => (isActive.value = detail.value)}
 >
   ${args.hasIcon ? html`<fa-icon slot="icon" class="fa-solid fa-candy-cane"></fa-icon>` : null}
