@@ -1,16 +1,27 @@
-import { LitElement, html } from "lit";
-import { customElement, property } from "lit/decorators.js";
-import AccordionStyle from "./AccordionStyle";
+import { html } from "lit";
+import { customElement, property, state } from "lit/decorators.js";
 
-export type CandyAccordionProps = {
+import {
+  PopoverInComponentHandler,
+  PopoverInComponentHandlerProps,
+} from "../Shared/PopoverInComponentHandler";
+import { verticalMenuIcon } from "../Shared/vertical-menu-icon";
+import AccordionStyle from "./AccordionStyle";
+import "../Popover";
+
+export type CandyAccordionProps = PopoverInComponentHandlerProps & {
   label: string;
   active: boolean;
   disabled: boolean;
+  collapsed: boolean;
 };
 
 @customElement("candy-accordion")
-export class CandyAccordion extends LitElement {
-  static styles = AccordionStyle;
+export class CandyAccordion extends PopoverInComponentHandler {
+  static styles = [PopoverInComponentHandler.styles, AccordionStyle];
+
+  @state()
+  hasSlotIcon = false;
 
   @property({ type: String })
   label = "Home";
@@ -26,7 +37,6 @@ export class CandyAccordion extends LitElement {
 
   handleClick = () => {
     this.active = !this.active;
-
     const event = new CustomEvent("onChange", {
       bubbles: false,
       composed: true,
@@ -42,13 +52,36 @@ export class CandyAccordion extends LitElement {
     }
   };
 
+  doesComponentHasIcon = () =>
+    Array.from(this.children).some((child: Element) => child.slot === "icon");
+
+  onSlotIconChange = () => {
+    this.hasSlotIcon = this.doesComponentHasIcon();
+  };
+
   render() {
-    const styleClass = this.active ? "text-blue" : "text-black";
+    const textColor = this.active ? "text-blue" : "text-black";
     const slotContent = html`
       <div class="accordion-childrens ${this.collapsed || !this.active ? "hidden" : null}">
         <slot></slot>
       </div>
     `;
+
+    const renderOptionsIcons =
+      this.minimizeOptions && this.countOptionsSlotAmount() >= 2
+        ? html` <div class="end-icons">
+            <candy-popover class="options-container" side=${this.position}>
+              <div class="vertical-menu-icon" data-testid="accordion-options-icon">${verticalMenuIcon}</div>
+              <div slot="content" class="options-container">
+                <slot name="options"></slot>
+              </div>
+            </candy-popover>
+          </div>`
+        : html`<div class="end-icons">
+            <div class="options-container">
+              <slot name="options"></slot>
+            </div>
+          </div> `;
 
     return html`
       <div part="accordion">
@@ -56,25 +89,28 @@ export class CandyAccordion extends LitElement {
           part="accordion-button"
           role="button"
           href="#"
-          class="${"element-container " + styleClass} ${!this.collapsed
+          class="${"element-container " + textColor} ${!this.collapsed
             ? "element-container-extended"
             : null}"
           ?disabled="${this.disabled}"
           @click="${this.handleClick}"
         >
-          <slot name="icon"></slot>
-          <p part="accordion-text">${!this.collapsed ? this.label : null}</p>
-          ${!this.collapsed
-            ? html`<div class="end-icons">
-                  <div class="options-container">
-                    <slot name="options"></slot>
-                  </div>
-                </div>
+          <slot @slotchange=${this.onSlotIconChange} name="icon"></slot>
+          ${this.collapsed
+            ? html` ${this.hasSlotIcon
+                ? null
+                : html`<div
+                    part="accordion-chevron"
+                    class=${`chevron ${this.active ? "rotate" : ""}`}
+                  ></div>`}`
+            : html`
+                <p part="accordion-text">${this.label}</p>
+                ${renderOptionsIcons}
                 <div
                   part="accordion-chevron"
                   class=${`chevron ${this.active ? "rotate" : ""}`}
-                ></div> `
-            : null}
+                ></div>
+              `}
         </button>
         ${slotContent}
       </div>
