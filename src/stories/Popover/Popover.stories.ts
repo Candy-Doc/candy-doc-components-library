@@ -3,7 +3,7 @@ import { StoryObj, Meta } from "@storybook/web-components";
 import { CandyPopoverProps, PopoverSide } from "../../components/Popover";
 import { meta } from "./PopoverMeta";
 import { elementWithPopoverInSidebar } from "./Stories/ElementWithPopoverInSidebar";
-import { elementWithPopoverInAnAccordeon } from "./Stories/ElementWithPopoverInAnAccordeon";
+import { elementWithPopoverInAnAccordion } from "./Stories/ElementWithPopoverInAnAccordion";
 import { iconWithPopover } from "./Stories/IconWithPopover";
 import "../../components/Popover/";
 import "../../components/Sidebar";
@@ -25,11 +25,11 @@ export const ElementWithPopoverInSidebar: Story = {
   },
 };
 
-export const ElementWithPopoverInAnAccordeon: Story = {
+export const ElementWithPopoverInAnAccordion: Story = {
   args: {
     side: PopoverSide.Right,
   },
-  render: (args: CandyPopoverProps) => elementWithPopoverInAnAccordeon(args),
+  render: (args: CandyPopoverProps) => elementWithPopoverInAnAccordion(args),
 };
 
 export const IconWithPopover: Story = {

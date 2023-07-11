@@ -2,7 +2,7 @@ import { html } from "lit";
 
 import { CandyPopoverProps } from "../../../components/Popover";
 
-export const elementWithPopoverInAnAccordeon = (args: CandyPopoverProps) => html`<div
+export const elementWithPopoverInAnAccordion = (args: CandyPopoverProps) => html`<div
   class="popover-container half-width"
 >
   <candy-sidebar>
