@@ -1,3 +1,8 @@
+# [v1.15.0](https://github.com/Candy-Doc/candy-doc-components-library/compare/v1.14.1...v1.15.0) (2023-07-11)
+
+## ✨ New minor Features
+- [`e0f3a3a`](https://github.com/Candy-Doc/candy-doc-components-library/commit/e0f3a3a)  feat: implement popover inside accordions and sidebar elements (#69) (Issues: [`#69`](https://github.com/Candy-Doc/candy-doc-components-library/issues/69))
+
 # [v1.14.1](https://github.com/Candy-Doc/candy-doc-components-library/compare/v1.14.0...v1.14.1) (2023-07-05)
 
 ## 🐛 Bug Fixes
