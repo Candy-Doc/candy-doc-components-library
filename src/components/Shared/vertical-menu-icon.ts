@@ -1,6 +1,6 @@
 import { html } from "lit";
 
-export const icon = html`<svg
+export const verticalMenuIcon = html`<svg
   width="auto"
   height="auto"
   viewBox="0 0 24 24"

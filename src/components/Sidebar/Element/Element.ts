@@ -6,7 +6,7 @@ import {
   PopoverInComponentHandlerProps,
 } from "../../Shared/PopoverInComponentHandler";
 import ElementStyle from "./ElementStyle";
-import { icon } from "../../Shared/vertical-menu-icon";
+import { verticalMenuIcon } from "../../Shared/vertical-menu-icon";
 import "../../Popover";
 
 export type CandySidebarElementProps = PopoverInComponentHandlerProps & {
@@ -50,7 +50,7 @@ export class CandySidebarElement extends PopoverInComponentHandler {
         ? html` <div class="end-icons">
             <candy-popover class="options-container" side=${this.position}>
               <div class="vertical-menu-icon" data-testid="sidebar-element-options-icon">
-                ${icon}
+                ${verticalMenuIcon}
               </div>
               <div slot="content" class="options-container">
                 <slot name="options"></slot>
