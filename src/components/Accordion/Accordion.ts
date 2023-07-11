@@ -5,9 +5,8 @@ import {
   PopoverInComponentHandler,
   PopoverInComponentHandlerProps,
 } from "../Shared/PopoverInComponentHandler";
+import { icon } from "../Shared/vertical-menu-icon";
 import AccordionStyle from "./AccordionStyle";
-import VerticalMenuBlack from "../../assets/icons/vertical-menu-black.svg";
-import VerticalMenuBlue from "../../assets/icons/vertical-menu-blue.svg";
 import "../Popover";
 
 export type CandyAccordionProps = PopoverInComponentHandlerProps & {
@@ -72,11 +71,7 @@ export class CandyAccordion extends PopoverInComponentHandler {
       this.minimizeOptions && this.countOptionsSlotAmount() >= 2
         ? html` <div class="end-icons">
             <candy-popover class="options-container" side=${this.position}>
-              <img
-                src=${this.active ? VerticalMenuBlue : VerticalMenuBlack}
-                alt="accordion-vertical-icon"
-                data-testid="accordion-options-icon"
-              />
+              <div class="vertical-menu-icon" data-testid="accordion-options-icon">${icon}</div>
               <div slot="content" class="options-container">
                 <slot name="options"></slot>
               </div>

@@ -20,7 +20,7 @@ export default css`
     display: none;
   }
 
-  img {
+  .vertical-menu-icon {
     width: 24px;
     height: 24px;
   }

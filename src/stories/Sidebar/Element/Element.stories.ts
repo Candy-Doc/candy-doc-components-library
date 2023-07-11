@@ -19,7 +19,7 @@ const renderElement = (
   ?disabled=${args.disabled}
   ?collapsed=${args.collapsed}
   ?minimizeOptions=${args.minimizeOptions}
-  optionsPopoverSide=${args.position}
+  position=${args.position}
 >
   ${args.hasIcon ? html`<fa-icon slot="icon" class=${icon} size="2em"></fa-icon>` : null}
   ${args.hasOptions
