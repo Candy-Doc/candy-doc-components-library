@@ -1,3 +1,9 @@
+import { CandyBreadcrumbElementProps } from "../../components/Breadcrumb/Element";
+
+export type CandyBreadcrumbControl = {
+  elements: Array<CandyBreadcrumbElementProps>;
+};
+
 export const meta = {
   component: "candy-breadcrumb",
   parameters: {
@@ -8,16 +14,18 @@ export const meta = {
     },
   },
   argTypes: {
-    items: {
-      name: "items",
-      description: "List of page's title",
+    elements: {
       table: {
-        category: "props",
+        disable: true,
+      },
+    },
+    defaultSlot: {
+      name: "default",
+      description: "Default slot containing children of the component",
+      table: {
+        category: "Slots",
         type: {
-          summary: "string[]",
-        },
-        defaultValue: {
-          summary: ["Home", "Page 1", "Subpage 1"],
+          summary: "HTMLElement",
         },
       },
     },
