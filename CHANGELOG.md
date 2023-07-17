@@ -1,3 +1,8 @@
+# [v1.16.1](https://github.com/Candy-Doc/candy-doc-components-library/compare/v1.16.0...v1.16.1) (2023-07-17)
+
+## 🐛 Bug Fixes
+- [`69b7b04`](https://github.com/Candy-Doc/candy-doc-components-library/commit/69b7b04)  fix: correct switch style to apply transition (#57) (#72) (Issues: [`#57`](https://github.com/Candy-Doc/candy-doc-components-library/issues/57) [`#72`](https://github.com/Candy-Doc/candy-doc-components-library/issues/72) [`#57`](https://github.com/Candy-Doc/candy-doc-components-library/issues/57))
+
 # [v1.16.0](https://github.com/Candy-Doc/candy-doc-components-library/compare/v1.15.0...v1.16.0) (2023-07-17)
 
 ## ♻ Code refactored
