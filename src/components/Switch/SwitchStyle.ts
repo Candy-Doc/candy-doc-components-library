@@ -33,11 +33,8 @@ export default css`
     box-shadow: 0 1px 3px 0 rgb(0 0 0 / 0.1), 0 1px 2px -1px rgb(0 0 0 / 0.1);
     transition-property: color, background-color, border-color, text-decoration-color, fill, stroke,
       opacity, box-shadow, transform, filter, backdrop-filter;
-  }
-
-  .switch .span {
-    transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
     transition-duration: 200ms;
+    transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
   }
 
   .blue {
