@@ -28,7 +28,6 @@ export const meta = {
     slotIcon: {
       name: "icon",
       description: "Slot for the icon",
-      control: { type: "radio" },
       table: {
         category: "slots",
         type: {

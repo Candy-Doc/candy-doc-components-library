@@ -1,3 +1,23 @@
+# [v1.15.0](https://github.com/Candy-Doc/candy-doc-components-library/compare/v1.14.1...v1.15.0) (2023-07-11)
+
+## ✨ New minor Features
+- [`e0f3a3a`](https://github.com/Candy-Doc/candy-doc-components-library/commit/e0f3a3a)  feat: implement popover inside accordions and sidebar elements (#69) (Issues: [`#69`](https://github.com/Candy-Doc/candy-doc-components-library/issues/69))
+
+# [v1.14.1](https://github.com/Candy-Doc/candy-doc-components-library/compare/v1.14.0...v1.14.1) (2023-07-05)
+
+## 🐛 Bug Fixes
+- [`5a24a98`](https://github.com/Candy-Doc/candy-doc-components-library/commit/5a24a98)   fix: css part selector for accordion and sidebar-element (#71) (Issues: [`#71`](https://github.com/Candy-Doc/candy-doc-components-library/issues/71))
+
+# [v1.14.0](https://github.com/Candy-Doc/candy-doc-components-library/compare/v1.13.2...v1.14.0) (2023-07-04)
+
+## ✨ New minor Features
+- [`c613d22`](https://github.com/Candy-Doc/candy-doc-components-library/commit/c613d22)  feat: popover-component (#62) (Issues: [`#62`](https://github.com/Candy-Doc/candy-doc-components-library/issues/62))
+
+# [v1.13.2](https://github.com/Candy-Doc/candy-doc-components-library/compare/v1.13.1...v1.13.2) (2023-06-28)
+
+## 🐛 Bug Fixes
+- [`4b01978`](https://github.com/Candy-Doc/candy-doc-components-library/commit/4b01978)  fix: css file to ts (#68) (Issues: [`#68`](https://github.com/Candy-Doc/candy-doc-components-library/issues/68))
+
 # [v1.13.1](https://github.com/Candy-Doc/candy-doc-components-library/compare/v1.13.0...v1.13.1) (2023-06-26)
 
 ## 🐛 Bug Fixes
