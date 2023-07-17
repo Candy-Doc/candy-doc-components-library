@@ -15,10 +15,8 @@ export const meta = {
   },
   argTypes: {
     elements: {
-      name: "elements",
-      description: "-",
       table: {
-        category: "Controls",
+        disable: true,
       },
     },
     defaultSlot: {
