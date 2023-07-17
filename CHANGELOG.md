@@ -1,3 +1,8 @@
+# [v1.16.0](https://github.com/Candy-Doc/candy-doc-components-library/compare/v1.15.0...v1.16.0) (2023-07-17)
+
+## ♻ Code refactored
+- [`c4b84e8`](https://github.com/Candy-Doc/candy-doc-components-library/commit/c4b84e8)  refactor: add new child component for breadcrumb (#65) (Issues: [`#65`](https://github.com/Candy-Doc/candy-doc-components-library/issues/65))
+
 # [v1.15.0](https://github.com/Candy-Doc/candy-doc-components-library/compare/v1.14.1...v1.15.0) (2023-07-11)
 
 ## ✨ New minor Features
