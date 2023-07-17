@@ -22,6 +22,7 @@ export default css`
 
   .element-container:hover {
     background-color: rgb(249 250 251);
+    cursor: pointer;
   }
 
   button:disabled {
@@ -46,5 +47,6 @@ export default css`
   p {
     all: unset;
     margin-left: 0.5rem;
+    line-height: 1rem;
   }
 `;

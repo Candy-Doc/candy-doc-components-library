@@ -1,13 +1,18 @@
+import { Meta } from "@storybook/web-components";
+import { PopoverSide } from "../../../components/Popover";
+import { CandySidebarElementProps } from "../../../components/Sidebar/Element";
+
 export type CandyElementControl = {
   hasIcon: boolean;
+  hasOptions: boolean;
 };
 
-export const meta = {
+export const meta: Meta<CandySidebarElementProps & CandyElementControl> = {
   component: "candy-sidebar-element",
   parameters: {
     docs: {
       description: {
-        component: "CSS part selector: **sidebar-element**",
+        component: "CSS part selector: \n- **sidebar-element**\n- **sidebar-element-text**",
       },
     },
   },
@@ -33,7 +38,7 @@ export const meta = {
           summary: "boolean",
         },
         defaultValue: {
-          summary: "False",
+          summary: "false",
         },
       },
     },
@@ -46,7 +51,7 @@ export const meta = {
           summary: "boolean",
         },
         defaultValue: {
-          summary: "False",
+          summary: "false",
         },
       },
     },
@@ -58,9 +63,36 @@ export const meta = {
           summary: "boolean",
         },
         defaultValue: {
-          summary: "False",
+          summary: "false",
         },
       },
+    },
+    minimizeOptions: {
+      description:
+        "Replace the options slots by a menu icon and put the options content inside a popover",
+      table: {
+        category: "props",
+        type: {
+          summary: "boolean",
+        },
+        defaultValue: {
+          summary: "false",
+        },
+      },
+    },
+    position: {
+      description: "Side of the options' popover",
+      table: {
+        category: "props",
+        type: {
+          summary: "string",
+        },
+        defaultValue: {
+          summary: PopoverSide.Right,
+        },
+      },
+      options: Object.values(PopoverSide),
+      control: { type: "radio" },
     },
     iconSlot: {
       name: "icon",
@@ -75,7 +107,25 @@ export const meta = {
         },
       },
     },
+    optionsSlot: {
+      name: "options",
+      description: "Slot for the element's options icon",
+      table: {
+        category: "slots",
+        type: {
+          summary: "HTMLElement",
+        },
+        defaultValue: {
+          summary: "options",
+        },
+      },
+    },
     hasIcon: {
+      table: {
+        disable: true,
+      },
+    },
+    hasOptions: {
       table: {
         disable: true,
       },

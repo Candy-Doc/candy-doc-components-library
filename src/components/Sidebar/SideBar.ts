@@ -40,13 +40,13 @@ export class CandySidebar extends LitElement {
     });
     this.dispatchEvent(event);
   }
-
   render() {
     return html`
       <section
         class="sidebar-container ${this.collapsed ? "sidebar-mini " : null}"
         part="sidebar"
         role="complementary"
+        @onReopen="${this.handleCollapse}"
       >
         <div>
           ${this.canCollapse

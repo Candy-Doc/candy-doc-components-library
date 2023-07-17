@@ -2,7 +2,6 @@ import { expect } from "@storybook/jest";
 import { userEvent } from "@storybook/testing-library";
 import { getByShadowAltText, getByShadowRole } from "shadow-dom-testing-library";
 
-// eslint-disable-next-line @typescript-eslint/no-explicit-any
 export const playFunction = async (
   { canvasElement, step }: any,
   isCollapse: { value: boolean }

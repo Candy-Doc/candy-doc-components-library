@@ -1,14 +1,25 @@
+import { Meta } from "@storybook/web-components";
+
+import { CandyAccordionProps } from "../../components/Accordion";
+import { PopoverSide } from "../../components/Popover";
+
 export type AccordionControl = {
   hasIcon: boolean;
   hasOptions: boolean;
+  onChange: () => void;
+  disabled: boolean;
+  iconSlot: string;
+  optionsSlot: string;
+  defaultSlot: string;
 };
 
-export const meta = {
+export const meta: Meta<CandyAccordionProps & AccordionControl> = {
   component: "candy-accordion",
   parameters: {
     docs: {
       description: {
-        component: "CSS part selector: **accordion**",
+        component:
+          "CSS part selector: \n- **accordion**\n- **accordion-button**\n- **accordion-text**\n- **accordion-chevron**",
       },
     },
   },
@@ -34,7 +45,7 @@ export const meta = {
           summary: "boolean",
         },
         defaultValue: {
-          summary: "False",
+          summary: "false",
         },
       },
     },
@@ -47,9 +58,48 @@ export const meta = {
           summary: "boolean",
         },
         defaultValue: {
-          summary: "False",
+          summary: "false",
         },
       },
+    },
+    collapsed: {
+      description: "Collapse the component to display only its icon or arrow",
+      table: {
+        category: "props",
+        type: {
+          summary: "boolean",
+        },
+        defaultValue: {
+          summary: "false",
+        },
+      },
+    },
+    minimizeOptions: {
+      description:
+        "Replace the options slots by a menu icon and put the options content inside a popover",
+      table: {
+        category: "props",
+        type: {
+          summary: "boolean",
+        },
+        defaultValue: {
+          summary: "false",
+        },
+      },
+    },
+    position: {
+      description: "Side of the options' popover",
+      table: {
+        category: "props",
+        type: {
+          summary: "string",
+        },
+        defaultValue: {
+          summary: PopoverSide.Right,
+        },
+      },
+      options: Object.values(PopoverSide),
+      control: { type: "radio" },
     },
     onChange: {
       name: "onChange",
@@ -99,6 +149,11 @@ export const meta = {
       },
     },
     hasIcon: {
+      table: {
+        disable: true,
+      },
+    },
+    hasOptions: {
       table: {
         disable: true,
       },

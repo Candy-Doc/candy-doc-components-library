@@ -1,5 +1,9 @@
 import { ButtonTypes, ButtonSizes } from "../../components/Button";
 
+export type ButtonControl = {
+  hasIcon: boolean;
+};
+
 export const meta = {
   component: "candy-button",
   parameters: {
@@ -49,6 +53,24 @@ export const meta = {
         defaultValue: {
           summary: ButtonSizes.md,
         },
+      },
+    },
+    iconSlot: {
+      name: "icon",
+      description: "Slot for the button's icon",
+      table: {
+        category: "slots",
+        type: {
+          summary: "HTMLElement",
+        },
+        defaultValue: {
+          summary: "icon",
+        },
+      },
+    },
+    hasIcon: {
+      table: {
+        disable: true,
       },
     },
   },
