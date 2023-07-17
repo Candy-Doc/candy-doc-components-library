@@ -15,7 +15,7 @@ const renderElement = (args: CandyBreadcrumbElementProps) => html`<candy-breadcr
 
 export default {
   ...meta,
-  title: "Components/Breadcrumb/Element",
+  title: "Components/Breadcrumb/Breadcrumb Element",
   render: renderElement,
 } as Meta<CandyBreadcrumbElementProps>;
 
