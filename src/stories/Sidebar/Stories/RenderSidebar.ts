@@ -1,6 +1,7 @@
 import { TemplateResult, html } from "lit";
-import type { CandySideBarControl, CandySideBarElement } from "./SidebarMeta";
-import type { CandySidebarProps } from "../../components/Sidebar";
+
+import type { CandySideBarControl, CandySideBarElement } from "../SidebarMeta";
+import type { CandySidebarProps } from "../../../components/Sidebar";
 
 const renderOptionsIcons = (optionsIcons: Array<string>) => {
   return optionsIcons.map((icon: string) => html`<fa-icon slot="options" class=${icon}></fa-icon>`);
@@ -8,7 +9,7 @@ const renderOptionsIcons = (optionsIcons: Array<string>) => {
 
 const renderAccordion = (element: CandySideBarElement) => {
   return html`<candy-accordion label=${element.label} ?active=${element.active}>
-    <fa-icon slot="icon" class=${element.icon}></fa-icon>
+    ${element.icon ? html`<fa-icon slot="icon" class=${element.icon}></fa-icon>` : null}
     ${element.childrens.map((child: CandySideBarElement) => renderSidebarElements(child))}
     ${element.optionsIcons ? renderOptionsIcons(element.optionsIcons) : null}
   </candy-accordion>`;

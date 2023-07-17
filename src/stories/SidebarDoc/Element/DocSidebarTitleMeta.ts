@@ -29,7 +29,7 @@ export const meta = {
           summary: "boolean",
         },
         defaultValue: {
-          summary: "False",
+          summary: "false",
         },
       },
     },

@@ -1,9 +1,8 @@
 import { expect } from "@storybook/jest";
 import { userEvent } from "@storybook/testing-library";
-import { getByShadowRole } from "shadow-dom-testing-library";
+import { getByShadowRole, getByShadowTestId } from "shadow-dom-testing-library";
 
-// eslint-disable-next-line @typescript-eslint/no-explicit-any
-export const playFunction = async (
+export const testOpenCloseAccordion = async (
   { args, canvasElement, step }: any,
   isActive: { value: boolean }
 ) => {
@@ -17,5 +16,24 @@ export const playFunction = async (
   await step("Close accordion", async () => {
     await userEvent.click(accordion);
     await expect(isActive.value).toEqual(initialAcccordionState);
+  });
+};
+
+export const accordionWithOptionsTesting = async (
+  { args, canvasElement, step }: any,
+  isActive: { value: boolean }
+) => {
+  await testOpenCloseAccordion({ args, canvasElement, step }, isActive);
+  await step("Has a filled popover containing at least 2 items", async () => {
+    const popoverIconWrapper = getByShadowTestId(canvasElement, "accordion-options-icon");
+    await userEvent.click(popoverIconWrapper);
+
+    const popoverComponent = getByShadowTestId(canvasElement, "popover");
+    const { offsetLeft, offsetTop } = popoverComponent;
+    const isPopoverCorrectlyPlaced = offsetLeft !== 0 && offsetTop !== 0;
+    await expect(isPopoverCorrectlyPlaced).toBeTruthy();
+    await expect(popoverComponent.childElementCount).toBeGreaterThanOrEqual(2);
+
+    await userEvent.click(popoverIconWrapper);
   });
 };

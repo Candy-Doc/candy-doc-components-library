@@ -47,26 +47,6 @@ export default css`
   p {
     all: unset;
     margin-left: 0.5rem;
-  }
-
-  .end-icons {
-    display: flex;
-    justify-content: end;
-    flex-grow: 1;
-  }
-
-  .options-container {
-    display: flex;
-    gap: 1rem;
-    padding: 0 1rem;
-  }
-
-  .options-container > ::slotted(*) {
-    transition: 0.1s ease-in-out;
-  }
-
-  .options-container > ::slotted(*:hover) {
-    transform: scale(1.1);
-    transition: 0.2s ease-in-out;
+    line-height: 1rem;
   }
 `;
