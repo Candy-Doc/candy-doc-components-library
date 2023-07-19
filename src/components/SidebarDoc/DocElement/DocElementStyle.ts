@@ -5,7 +5,7 @@ export default css`
     width: 100%;
     margin-bottom: 0.25rem;
     border-radius: 0.375rem;
-    padding: 0.5rem;
+    padding: 0.2rem 0;
     display: flex;
     align-items: center;
     font-size: 1rem;
@@ -44,6 +44,7 @@ export default css`
     all: unset;
     width: 100%;
     text-align: left;
+    margin-left: 0.5rem;
     transition: 0.1s ease-in-out;
   }
 
