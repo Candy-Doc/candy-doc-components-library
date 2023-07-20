@@ -6,6 +6,10 @@ import "../Logos/LogoMark";
 import "../Logos/LogoHorizontal";
 import "../Divider";
 
+export type CandyTopbarProps = {
+  isopen: boolean;
+};
+
 @customElement("candy-topbar")
 export class CandyTopbar extends LitElement {
   static styles = TopbarStyle;

@@ -12,8 +12,15 @@ export default {
   render: renderTobpar,
 };
 
-export const Topbar: StoryObj = {};
+export const Topbar: StoryObj = {
+  args: {
+    isopen: false,
+  },
+};
 
 export const RenderTopbarWithAdditionalContent: StoryObj = {
+  args: {
+    isopen: false,
+  },
   render: renderTopbarWithAdditionalContent,
 };

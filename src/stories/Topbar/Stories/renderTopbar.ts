@@ -1,6 +1,11 @@
 import { html } from "lit";
 
-export const renderTobpar = () => html` <candy-topbar>
+import { CandyTopbarProps } from "../../../components/Topbar";
+
+export const renderTobpar = (args: CandyTopbarProps) => html` <candy-topbar
+  ?isopen=${args.isopen}
+  style="position: relative"
+>
   <candy-topbar-element label="Getting Started"></candy-topbar-element>
   <candy-topbar-element label="Graph"></candy-topbar-element>
   <candy-topbar-element label="Contact">
