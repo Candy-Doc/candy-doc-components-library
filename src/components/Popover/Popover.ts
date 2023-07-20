@@ -3,6 +3,7 @@ import { customElement, property, state } from "lit/decorators.js";
 
 import { PopoverSide } from "./Types";
 import PopoverStyle from "./PopoverStyle";
+import crossIcon from "../Shared/cross-icon";
 
 export type CandyPopoverProps = {
   side: PopoverSide;
@@ -32,6 +33,7 @@ export class CandyPopover extends LitElement {
             ? "popover-hide"
             : null}"
         >
+          <div @click=${this.handleClick} class="popover-cross">${crossIcon}</div>
           <div part="popover-arrow" class="popover-arrow ${`popover-arrow-${this.side}`}"></div>
           <div part="popover-box" class="popover-box">
             <slot name="content"></slot>
