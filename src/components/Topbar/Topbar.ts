@@ -28,33 +28,29 @@ export class CandyTopbar extends LitElement {
 
   connectedCallback() {
     super.connectedCallback();
-    this.resize();
-    window.addEventListener("resize", this.resize);
+    this.defineIfDeviceIsMobile();
+    window.addEventListener("resize", this.defineIfDeviceIsMobile);
   }
 
   disconnectedCallback() {
-    window.removeEventListener("resize", this.resize);
+    window.removeEventListener("resize", this.defineIfDeviceIsMobile);
     super.disconnectedCallback();
   }
 
   updated(changedProperties: PropertyValues<this>) {
     if (this.mobile && changedProperties.has("isopen")) {
-      this.handleBurgerClick(this.isopen);
+      this.handleMenuState();
     }
   }
 
   protected firstUpdated(): void {
     if (this.mobile) {
-      this.handleBurgerClick(this.isopen);
+      this.handleMenuState();
     }
   }
 
-  resize = () => {
-    if (window.innerWidth < 768) {
-      this.mobile = true;
-    } else {
-      this.mobile = false;
-    }
+  defineIfDeviceIsMobile = () => {
+    this.mobile = window.innerWidth < 768;
   };
 
   openDrawer() {
@@ -82,15 +78,18 @@ export class CandyTopbar extends LitElement {
     this.dispatchEvent(eventOnChange);
   };
 
-  handleBurgerClick = (openValue: boolean) => {
-    this.isopen = openValue;
-    this.emitValueChangeEvent(openValue);
-    if (openValue) {
+  handleMenuState = () => {
+    if (this.isopen) {
       this.openDrawer();
     } else {
       this.closeDrawer();
     }
+    this.emitValueChangeEvent(this.isopen);
   };
+
+  updateIsOpenValue = (newValue: boolean) => {
+    this.isopen = newValue;
+  }
 
   render() {
     const displaySlot = html`<slot></slot>`;
@@ -98,7 +97,7 @@ export class CandyTopbar extends LitElement {
     const displayBurger = html` <button
       part="tobpar-burger"
       id="topbar-burger"
-      @click=${() => this.handleBurgerClick(!this.isopen)}
+      @click=${() => this.updateIsOpenValue(!this.isopen)}
     >
       <span></span>
       <span></span>
@@ -111,7 +110,7 @@ export class CandyTopbar extends LitElement {
       class="topbar-drawer display-none"
     >
       <div
-        @click=${() => this.handleBurgerClick(!this.isopen)}
+        @click=${() => this.updateIsOpenValue(!this.isopen)}
         class="topbar-drawer-backdrop"
       ></div>
       <aside part="tobpar-drawer-content" class="topbar-drawer-content">
@@ -132,8 +131,8 @@ export class CandyTopbar extends LitElement {
       <div class="${this.mobile ? "logo-reduced" : "logo"}">
         <a href="/">
           ${this.mobile
-            ? html`<candy-logo-mark></candy-logo-mark>`
-            : html`<candy-logo-horizontal></candy-logo-horizontal>`}
+        ? html`<candy-logo-mark></candy-logo-mark>`
+        : html`<candy-logo-horizontal></candy-logo-horizontal>`}
         </a>
       </div>
       <nav class="navbar">
