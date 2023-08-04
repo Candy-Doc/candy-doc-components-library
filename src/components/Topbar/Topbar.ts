@@ -43,12 +43,6 @@ export class CandyTopbar extends LitElement {
     }
   }
 
-  protected firstUpdated(): void {
-    if (this.mobile) {
-      this.handleMenuState();
-    }
-  }
-
   defineIfDeviceIsMobile = () => {
     this.mobile = window.innerWidth < 768;
   };
@@ -69,26 +63,20 @@ export class CandyTopbar extends LitElement {
     }, 150);
   }
 
-  emitValueChangeEvent = (openValue: boolean) => {
-    const eventOnChange = new CustomEvent("onchange", {
-      bubbles: false,
-      composed: true,
-      detail: { value: openValue },
-    });
-    this.dispatchEvent(eventOnChange);
-  };
-
   handleMenuState = () => {
     if (this.isopen) {
       this.openDrawer();
     } else {
       this.closeDrawer();
     }
-    this.emitValueChangeEvent(this.isopen);
   };
 
-  updateIsOpenValue = (newValue: boolean) => {
-    this.isopen = newValue;
+  emitBurgerClickEvent = () => {
+    const eventOnChange = new CustomEvent("onchange", {
+      bubbles: false,
+      composed: true,
+    });
+    this.dispatchEvent(eventOnChange);
   }
 
   render() {
@@ -97,7 +85,7 @@ export class CandyTopbar extends LitElement {
     const displayBurger = html` <button
       part="tobpar-burger"
       id="topbar-burger"
-      @click=${() => this.updateIsOpenValue(!this.isopen)}
+      @click=${this.emitBurgerClickEvent}
     >
       <span></span>
       <span></span>
@@ -110,7 +98,7 @@ export class CandyTopbar extends LitElement {
       class="topbar-drawer display-none"
     >
       <div
-        @click=${() => this.updateIsOpenValue(!this.isopen)}
+        @click=${this.emitBurgerClickEvent}
         class="topbar-drawer-backdrop"
       ></div>
       <aside part="tobpar-drawer-content" class="topbar-drawer-content">
