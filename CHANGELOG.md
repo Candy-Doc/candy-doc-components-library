@@ -1,3 +1,8 @@
+# [v1.18.0](https://github.com/Candy-Doc/candy-doc-components-library/compare/v1.17.0...v1.18.0) (2023-08-07)
+
+## ✨ New minor Features
+- [`a7322e8`](https://github.com/Candy-Doc/candy-doc-components-library/commit/a7322e8)  feat(popover): add close icon (#75) (Issues: [`#75`](https://github.com/Candy-Doc/candy-doc-components-library/issues/75))
+
 # [v1.17.0](https://github.com/Candy-Doc/candy-doc-components-library/compare/v1.16.1...v1.17.0) (2023-08-07)
 
 ## ✨ New minor Features
