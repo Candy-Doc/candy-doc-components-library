@@ -23,8 +23,28 @@ export default css`
     width: 100%;
   }
 
+  .popover-cross {
+    position: absolute;
+    right: 3px;
+    top: 0px;
+    z-index: 100;
+  }
+
+  .popover-cross > svg {
+    width: 16px;
+    height: 16px;
+  }
+
+  .popover-cross:hover > svg {
+    color: rgb(220 38 38);
+  }
+
   .popover-hide {
     visibility: hidden;
+  }
+
+  ::slotted(*) {
+    padding: 0 1rem;
   }
 
   .popover-arrow {
