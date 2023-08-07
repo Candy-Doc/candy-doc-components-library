@@ -3,11 +3,11 @@ import { css } from "lit";
 export default css`
   .element-container {
     width: 100%;
-    margin-bottom: 0.25rem;
     border-radius: 0.375rem;
-    padding: 0.5rem;
+    padding: 0.25rem;
     display: flex;
     align-items: center;
+    justify-content: flex-start;
     font-size: 1rem;
     line-height: 1.5rem;
     font-weight: 500;
@@ -20,7 +20,7 @@ export default css`
   }
 
   .title-container {
-    padding-bottom: 1rem;
+    padding-bottom: 0.75rem;
   }
 
   p {

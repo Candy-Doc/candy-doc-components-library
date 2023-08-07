@@ -10,7 +10,7 @@ export default css`
     align-items: center;
     justify-content: center;
     min-height: 2.5rem;
-    z-index: 999;
+    z-index: 100;
   }
 
   .button:hover {

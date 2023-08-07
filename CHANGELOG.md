@@ -1,3 +1,8 @@
+# [v1.17.0](https://github.com/Candy-Doc/candy-doc-components-library/compare/v1.16.1...v1.17.0) (2023-08-07)
+
+## ✨ New minor Features
+- [`0c48a75`](https://github.com/Candy-Doc/candy-doc-components-library/commit/0c48a75)  refactor: topbar and sidebar responsiveness (#74) (Issues: [`#74`](https://github.com/Candy-Doc/candy-doc-components-library/issues/74))
+
 # [v1.16.1](https://github.com/Candy-Doc/candy-doc-components-library/compare/v1.16.0...v1.16.1) (2023-07-17)
 
 ## 🐛 Bug Fixes

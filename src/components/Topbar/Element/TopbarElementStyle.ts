@@ -5,7 +5,7 @@ export default css`
     display: flex;
     justify-content: center;
     align-items: center;
-    color: black;
+    color: inherit;
   }
 
   .title {
