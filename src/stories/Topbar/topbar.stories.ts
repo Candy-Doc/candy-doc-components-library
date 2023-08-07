@@ -1,25 +1,26 @@
 import { StoryObj } from "@storybook/web-components";
-import { html } from "lit";
 
 import { meta } from "./TopbarMeta";
+import { renderTobpar } from "./Stories/renderTopbar";
+import { renderTopbarWithAdditionalContent } from "./Stories/renderTopbarWithAdditionalContent";
 import "../../components/Topbar/Topbar";
 import "../../components/Topbar/Element";
-
-const renderTopBar = () => html`<candy-topbar>
-  <candy-topbar-element label="Getting Started"></candy-topbar-element>
-  <candy-topbar-element label="Graph"></candy-topbar-element>
-  <candy-topbar-element label="Contact">
-    <fa-icon slot="icon" class="fa-brands fa-github"></fa-icon>
-  </candy-topbar-element>
-  <candy-topbar-element>
-    <a slot="icon" href="https://google.com"> <fa-icon class="fa-brands fa-github"> </fa-icon></a>
-  </candy-topbar-element>
-</candy-topbar>`;
 
 export default {
   ...meta,
   title: "Components/Topbar",
-  render: renderTopBar,
+  render: renderTobpar,
 };
 
-export const Topbar: StoryObj = {};
+export const Topbar: StoryObj = {
+  args: {
+    isopen: false,
+  },
+};
+
+export const RenderTopbarWithAdditionalContent: StoryObj = {
+  args: {
+    isopen: false,
+  },
+  render: renderTopbarWithAdditionalContent,
+};

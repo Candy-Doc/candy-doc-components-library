@@ -3,12 +3,9 @@ import { css } from "lit";
 export default css`
   .sidebar-doc-container {
     display: flex;
-    height: 100%;
     border-right: 1px rgb(229 231 235);
-    padding-top: 1rem;
     background-color: transparent;
     border-radius: 10px;
-    overflow-y: auto;
   }
 
   section {

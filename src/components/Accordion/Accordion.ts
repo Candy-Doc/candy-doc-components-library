@@ -71,7 +71,9 @@ export class CandyAccordion extends PopoverInComponentHandler {
       this.minimizeOptions && this.countOptionsSlotAmount() >= 2
         ? html` <div class="end-icons">
             <candy-popover class="options-container" side=${this.position}>
-              <div class="vertical-menu-icon" data-testid="accordion-options-icon">${verticalMenuIcon}</div>
+              <div class="vertical-menu-icon" data-testid="accordion-options-icon">
+                ${verticalMenuIcon}
+              </div>
               <div slot="content" class="options-container">
                 <slot name="options"></slot>
               </div>

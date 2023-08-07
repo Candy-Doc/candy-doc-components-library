@@ -26,9 +26,9 @@ const renderSidebarElements = (element: CandySideBarDocElement): TemplateResult 
 };
 
 const renderSideBar = (args: CandySideBarDocControl) => {
-  return html`<candy-sidebar>
+  return html`<candy-sidebar-doc>
     ${args.elements.map((item) => renderSidebarElements(item))}
-  </candy-sidebar>`;
+  </candy-sidebar-doc>`;
 };
 
 export default {
